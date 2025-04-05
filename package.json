@@ -1,0 +1,12 @@
+{
+  "name": "seo-and-web-pros",
+  "version": "1.0.0",
+  "description": "SEO and Web Pros website with SEO audit functionality",
+  "scripts": {
+    "start": "http-server -p 8000",
+    "build": "cd netlify/functions && npm install"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+} 
