@@ -96,42 +96,81 @@
 
             <section id="auditResults" class="hidden">
                 <h2 class="text-3xl font-bold text-center mb-8">Your SEO Audit Results</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                    <div class="bg-gray-800 rounded-xl p-6 text-center">
-                        <div class="w-20 h-20 bg-emerald-900 bg-opacity-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <div class="score-circle">
-                                <span id="seoScore">0</span>
+                
+                <!-- Status indicators -->
+                <div id="auditStatus" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-gray-800 rounded-lg p-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div id="technicalStatus" class="w-3 h-3 rounded-full bg-gray-500 mr-3"></div>
+                                <span class="text-gray-300">Technical SEO</span>
                             </div>
+                            <span id="technicalTime" class="text-sm text-gray-500"></span>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">SEO Score</h3>
-                        <p class="text-gray-400">Overall website performance</p>
                     </div>
-                    <div class="bg-gray-800 rounded-xl p-6 text-center">
-                        <div class="w-20 h-20 bg-blue-900 bg-opacity-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-tachometer-alt text-3xl text-blue-400"></i>
+                    <div class="bg-gray-800 rounded-lg p-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div id="onPageStatus" class="w-3 h-3 rounded-full bg-gray-500 mr-3"></div>
+                                <span class="text-gray-300">On-Page SEO</span>
+                            </div>
+                            <span id="onPageTime" class="text-sm text-gray-500"></span>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Page Speed</h3>
-                        <p id="pageSpeed" class="text-gray-400">Loading speed analysis</p>
                     </div>
-                    <div class="bg-gray-800 rounded-xl p-6 text-center">
-                        <div class="w-20 h-20 bg-purple-900 bg-opacity-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-mobile-alt text-3xl text-purple-400"></i>
+                    <div class="bg-gray-800 rounded-lg p-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div id="securityStatus" class="w-3 h-3 rounded-full bg-gray-500 mr-3"></div>
+                                <span class="text-gray-300">Security Check</span>
+                            </div>
+                            <span id="securityTime" class="text-sm text-gray-500"></span>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Mobile Friendly</h3>
-                        <p id="mobileFriendly" class="text-gray-400">Mobile optimization status</p>
-                    </div>
-                    <div class="bg-gray-800 rounded-xl p-6 text-center">
-                        <div class="w-20 h-20 bg-pink-900 bg-opacity-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-tags text-3xl text-pink-400"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Meta Tags</h3>
-                        <p id="metaTags" class="text-gray-400">Meta information analysis</p>
                     </div>
                 </div>
 
-                <div class="bg-gray-800 rounded-xl p-8">
-                    <h3 class="text-2xl font-bold mb-6">Detailed Analysis</h3>
-                    <div id="detailedAnalysis" class="space-y-4"></div>
+                <div class="results-container">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                        <div class="bg-gray-800 rounded-xl p-6 text-center">
+                            <div class="w-20 h-20 bg-emerald-900 bg-opacity-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <div class="score-circle">
+                                    <span id="seoScore">0</span>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">SEO Score</h3>
+                            <p class="text-gray-400">Overall website performance</p>
+                        </div>
+                        <div class="bg-gray-800 rounded-xl p-6 text-center">
+                            <div class="w-20 h-20 bg-blue-900 bg-opacity-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-tachometer-alt text-3xl text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Page Speed</h3>
+                            <p id="pageSpeed" class="text-gray-400">Loading speed analysis</p>
+                        </div>
+                        <div class="bg-gray-800 rounded-xl p-6 text-center">
+                            <div class="w-20 h-20 bg-purple-900 bg-opacity-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-mobile-alt text-3xl text-purple-400"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Mobile Friendly</h3>
+                            <p id="mobileFriendly" class="text-gray-400">Loading...</p>
+                            <p id="mobileFriendlyStatus" class="mt-2 text-sm"></p>
+                        </div>
+                        <div class="bg-gray-800 rounded-xl p-6 text-center">
+                            <div class="w-20 h-20 bg-pink-900 bg-opacity-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-tags text-3xl text-pink-400"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Meta Tags</h3>
+                            <p id="metaTags" class="text-gray-400">Meta information analysis</p>
+                        </div>
+                    </div>
+
+                    <div id="download-container" class="text-center mb-8">
+                        <!-- Download button will be inserted here -->
+                    </div>
+
+                    <div class="bg-gray-800 rounded-xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">Detailed Analysis</h3>
+                        <div id="detailedAnalysis" class="space-y-4"></div>
+                    </div>
                 </div>
             </section>
         </div>

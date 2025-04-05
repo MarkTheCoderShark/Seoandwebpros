@@ -7,6 +7,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const metaTags = document.getElementById('metaTags');
     const detailedAnalysis = document.getElementById('detailedAnalysis');
 
+    // Add status update function
+    function updateStatusIndicator(type, status) {
+        const statusElement = document.getElementById(`${type}Status`);
+        if (!statusElement) return;
+
+        // Remove existing classes
+        statusElement.className = 'w-3 h-3 rounded-full mr-3';
+
+        // Add appropriate color class based on status
+        switch (status) {
+            case 'pending':
+                statusElement.classList.add('bg-gray-500');
+                break;
+            case 'in_progress':
+                statusElement.classList.add('bg-yellow-500', 'animate-pulse');
+                break;
+            case 'completed':
+                statusElement.classList.add('bg-green-500');
+                break;
+            case 'failed':
+                statusElement.classList.add('bg-red-500');
+                break;
+            default:
+                statusElement.classList.add('bg-gray-500');
+        }
+    }
+
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
@@ -14,13 +41,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = document.getElementById('email').value;
         const submitButton = form.querySelector('button');
         
+        // Reset and show status indicators
+        ['technical', 'onPage', 'security'].forEach(type => {
+            updateStatusIndicator(type, 'pending');
+        });
+        
         // Show loading state
         submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Analyzing...';
         submitButton.disabled = true;
         
-        // Hide any previous results
-        resultsSection.classList.add('hidden');
-
+        // Show results section with status indicators
+        resultsSection.classList.remove('hidden');
+        
         try {
             const response = await fetch('/.netlify/functions/seo-audit', {
                 method: 'POST',
@@ -36,6 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 throw new Error(data.error || 'Failed to analyze website');
             }
 
+            // Update status indicators if available
+            if (data.status) {
+                Object.entries(data.status).forEach(([type, status]) => {
+                    updateStatusIndicator(type, status);
+                });
+            }
+
             if (data.error) {
                 // Handle partial results
                 updateResults(data);
@@ -49,9 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             
-            // Show results section
-            resultsSection.classList.remove('hidden');
-            
             // Scroll to results
             resultsSection.scrollIntoView({ behavior: 'smooth' });
 
@@ -62,6 +98,11 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error('Error:', error);
             showError(error.message || 'Failed to analyze website. Please try again later.');
+            
+            // Update status indicators to failed state
+            ['technical', 'onPage', 'security'].forEach(type => {
+                updateStatusIndicator(type, 'failed');
+            });
         } finally {
             // Reset button state
             submitButton.innerHTML = 'Start Free Audit';
@@ -81,16 +122,37 @@ document.addEventListener('DOMContentLoaded', function() {
             pageSpeed.title = data.technical.performance.details || 'Performance metrics unavailable';
         }
         
-        // Update mobile friendly status
+        // Update mobile friendly status with LCP interpretation
         if (data.technical?.performance?.metrics?.lcp) {
-            mobileFriendly.textContent = `LCP: ${data.technical.performance.metrics.lcp}`;
+            const lcp = data.technical.performance.metrics.lcp;
+            const lcpValue = parseFloat(lcp);
+            let status = '';
+            let statusClass = '';
+            
+            if (lcpValue <= 2.5) {
+                status = 'Good';
+                statusClass = 'text-emerald-400';
+            } else if (lcpValue <= 4.0) {
+                status = 'Needs Improvement';
+                statusClass = 'text-yellow-400';
+            } else {
+                status = 'Poor';
+                statusClass = 'text-red-400';
+            }
+            
+            mobileFriendly.textContent = lcp;
+            const statusElement = document.getElementById('mobileFriendlyStatus');
+            statusElement.textContent = `${status} - Largest Contentful Paint`;
+            statusElement.className = `mt-2 text-sm ${statusClass}`;
         } else {
             mobileFriendly.textContent = 'N/A';
+            document.getElementById('mobileFriendlyStatus').textContent = '';
         }
         
         // Update meta tags status
         if (data.onPage?.meta?.title?.optimal !== undefined) {
             metaTags.textContent = data.onPage.meta.title.optimal ? 'Optimized' : 'Needs Improvement';
+            metaTags.className = data.onPage.meta.title.optimal ? 'text-emerald-400' : 'text-yellow-400';
         } else {
             metaTags.textContent = 'N/A';
         }
@@ -120,6 +182,17 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         } else {
             detailedAnalysis.innerHTML = '<p class="text-gray-400">No recommendations available</p>';
+        }
+        
+        // Show download button if URL is available
+        if (data.downloadUrl) {
+            const downloadContainer = document.getElementById('download-container');
+            downloadContainer.innerHTML = `
+                <a href="${data.downloadUrl}" class="inline-block bg-gradient-to-r from-blue-500 to-emerald-500 px-6 py-3 rounded-full text-white font-medium hover:opacity-90 transition duration-300 glow">
+                    <i class="fas fa-download mr-2"></i>
+                    Download Full Report
+                </a>
+            `;
         }
     }
 

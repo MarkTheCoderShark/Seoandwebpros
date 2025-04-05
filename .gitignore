@@ -32,3 +32,5 @@ out/
 # Logs
 logs
 *.log 
+# Local Netlify folder
+.netlify

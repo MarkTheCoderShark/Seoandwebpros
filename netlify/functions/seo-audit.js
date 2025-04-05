@@ -6,6 +6,10 @@ const crypto = require('crypto');
 // In-memory storage for audit results (will reset on function cold start)
 const auditResults = new Map();
 
+// Add at the top of the file after imports
+const MAX_RETRIES = 2;
+const RETRY_DELAY = 1000;
+
 exports.handler = async (event, context) => {
   const headers = {
     'Content-Type': 'application/json',
@@ -100,12 +104,32 @@ exports.handler = async (event, context) => {
 // Export the auditResults map for the download function
 exports.auditResults = auditResults;
 
+async function checkWithRetry(checkFn, checkName, results) {
+  for (let i = 0; i < MAX_RETRIES; i++) {
+    try {
+      console.log(`Attempting ${checkName} check (attempt ${i + 1}/${MAX_RETRIES})`);
+      const result = await checkFn();
+      console.log(`${checkName} check completed successfully`);
+      return result;
+    } catch (error) {
+      console.error(`${checkName} check failed (attempt ${i + 1}):`, error);
+      if (i === MAX_RETRIES - 1) throw error;
+      await new Promise(resolve => setTimeout(resolve, RETRY_DELAY));
+    }
+  }
+}
+
 async function performSEOAudit(url) {
   console.log('Starting performSEOAudit');
   
   // Initialize with default structure matching frontend expectations
   const results = {
     score: 0,
+    status: {
+      technical: 'pending',
+      onPage: 'pending',
+      security: 'pending'
+    },
     technical: {
       performance: {
         score: 0,
@@ -123,21 +147,70 @@ async function performSEOAudit(url) {
   };
 
   try {
-    // Run checks sequentially to avoid timeout issues
-    await checkTechnicalSEO(url, results);
-    await checkOnPageSEO(url, results);
-    await checkSecurity(url, results);
-    
+    // Run all checks in parallel with individual timeouts and retries
+    const [technicalResult, onPageResult, securityResult] = await Promise.allSettled([
+      Promise.race([
+        (async () => {
+          results.status.technical = 'in_progress';
+          await checkWithRetry(() => checkTechnicalSEO(url, results), 'Technical SEO');
+          results.status.technical = 'completed';
+        })(),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('Technical SEO check timed out')), 20000))
+      ]).catch(error => {
+        console.error('Technical SEO check failed:', error);
+        results.technical.error = error.message;
+        results.status.technical = 'failed';
+      }),
+      
+      Promise.race([
+        (async () => {
+          results.status.onPage = 'in_progress';
+          await checkWithRetry(() => checkOnPageSEO(url, results), 'On-page SEO');
+          results.status.onPage = 'completed';
+        })(),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('On-page SEO check timed out')), 20000))
+      ]).catch(error => {
+        console.error('On-page SEO check failed:', error);
+        results.onPage.error = error.message;
+        results.status.onPage = 'failed';
+      }),
+      
+      Promise.race([
+        (async () => {
+          results.status.security = 'in_progress';
+          await checkWithRetry(() => checkSecurity(url, results), 'Security');
+          results.status.security = 'completed';
+        })(),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('Security check timed out')), 20000))
+      ]).catch(error => {
+        console.error('Security check failed:', error);
+        results.security.error = error.message;
+        results.status.security = 'failed';
+      })
+    ]);
+
+    // Log the status of each check
+    console.log('Check statuses:', results.status);
+
+    // Calculate score even if some checks failed
     calculateScore(results);
     generateRecommendations(results);
+
+    // Add warning if any check failed
+    const failedChecks = Object.entries(results.status)
+      .filter(([_, status]) => status === 'failed')
+      .map(([check]) => check);
+    
+    if (failedChecks.length > 0) {
+      results.warning = `Some checks could not be completed (${failedChecks.join(', ')}). The score may not reflect the full analysis.`;
+    }
 
     return results;
   } catch (error) {
     console.error('Audit error:', error);
-    // Return partial results instead of throwing
     return {
       ...results,
-      error: error.message
+      error: error.message || 'Audit failed to complete'
     };
   }
 }
@@ -289,6 +362,7 @@ async function checkSecurity(url, results) {
   }
 }
 
+// Update the checkSSL function to handle missing certificate info
 function checkSSL(hostname) {
   return new Promise((resolve, reject) => {
     const options = {
@@ -299,17 +373,35 @@ function checkSSL(hostname) {
 
     const req = https.request(options, (res) => {
       const cert = res.socket.getPeerCertificate();
-      resolve({
-        valid: true,
-        expires: new Date(cert.valid_to),
-        issuer: cert.issuer.CN
-      });
+      
+      // Check if we have a valid certificate with required properties
+      if (cert && Object.keys(cert).length > 0) {
+        resolve({
+          valid: true,
+          expires: cert.valid_to ? new Date(cert.valid_to) : null,
+          issuer: cert.issuer?.CN || cert.issuer?.O || 'Unknown Issuer'
+        });
+      } else {
+        resolve({
+          valid: false,
+          error: 'No SSL certificate found'
+        });
+      }
     });
 
     req.on('error', (error) => {
-      reject({
+      resolve({
         valid: false,
-        error: error.message
+        error: error.message || 'SSL check failed'
+      });
+    });
+
+    // Set a timeout of 10 seconds
+    req.setTimeout(10000, () => {
+      req.destroy();
+      resolve({
+        valid: false,
+        error: 'SSL check timed out'
       });
     });
 
