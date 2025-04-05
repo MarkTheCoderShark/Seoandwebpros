@@ -111,12 +111,7 @@ function initTestimonialsCarousel() {
     if (!container || !prevButton || !nextButton) return;
     
     const cards = container.querySelectorAll('.testimonial-card');
-    const cardWidth = cards[0].offsetWidth;
-    const cardMargin = 16; // 1rem margin on each side
-    const totalWidth = cardWidth + (cardMargin * 2);
-    
     let currentIndex = 0;
-    const maxIndex = cards.length - getVisibleCards();
     
     // Function to get number of visible cards based on screen size
     function getVisibleCards() {
@@ -125,9 +120,19 @@ function initTestimonialsCarousel() {
         return 1; // mobile
     }
     
+    // Calculate card width based on viewport
+    function getCardWidth() {
+        const containerWidth = container.parentElement.offsetWidth;
+        const visibleCards = getVisibleCards();
+        const margin = 16; // 1rem margin
+        return (containerWidth - (margin * (visibleCards + 1))) / visibleCards;
+    }
+    
     // Update carousel position
     function updateCarousel() {
-        const offset = currentIndex * totalWidth;
+        const cardWidth = getCardWidth();
+        const margin = 16;
+        const offset = currentIndex * (cardWidth + margin);
         container.style.transform = `translateX(-${offset}px)`;
         
         // Update dots
@@ -142,6 +147,7 @@ function initTestimonialsCarousel() {
         });
         
         // Update button states
+        const maxIndex = cards.length - getVisibleCards();
         prevButton.disabled = currentIndex === 0;
         nextButton.disabled = currentIndex >= maxIndex;
         
@@ -156,6 +162,12 @@ function initTestimonialsCarousel() {
         } else {
             nextButton.classList.remove('opacity-50', 'cursor-not-allowed');
         }
+        
+        // Update card widths
+        cards.forEach(card => {
+            card.style.width = `${cardWidth}px`;
+            card.style.minWidth = `${cardWidth}px`;
+        });
     }
     
     // Event listeners for buttons
@@ -167,6 +179,7 @@ function initTestimonialsCarousel() {
     });
     
     nextButton.addEventListener('click', () => {
+        const maxIndex = cards.length - getVisibleCards();
         if (currentIndex < maxIndex) {
             currentIndex++;
             updateCarousel();
@@ -176,19 +189,23 @@ function initTestimonialsCarousel() {
     // Event listeners for dots
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
-            currentIndex = index;
+            const maxIndex = cards.length - getVisibleCards();
+            currentIndex = Math.min(index, maxIndex);
             updateCarousel();
         });
     });
     
     // Handle window resize
+    let resizeTimer;
     window.addEventListener('resize', () => {
-        // Recalculate maxIndex based on new visible cards count
-        const newMaxIndex = cards.length - getVisibleCards();
-        if (currentIndex > newMaxIndex) {
-            currentIndex = newMaxIndex;
-        }
-        updateCarousel();
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const maxIndex = cards.length - getVisibleCards();
+            if (currentIndex > maxIndex) {
+                currentIndex = maxIndex;
+            }
+            updateCarousel();
+        }, 100);
     });
     
     // Initial setup
