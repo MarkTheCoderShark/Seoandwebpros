@@ -14,56 +14,45 @@ exports.handler = async (event, context) => {
     };
   }
 
-  if (event.httpMethod !== 'GET') {
-    return {
-      statusCode: 405,
-      headers,
-      body: JSON.stringify({ error: 'Method not allowed' })
-    };
+  if (event.httpMethod === 'POST') {
+    try {
+      const results = JSON.parse(event.body);
+      console.log("Received audit results:", results);
+
+      if (!results || !results.url) {
+        throw new Error('Invalid audit data provided');
+      }
+
+      const reportContent = generateReport(results);
+
+      return {
+        statusCode: 200,
+        headers: {
+          ...headers,
+          'Content-Type': 'text/html',
+          'Content-Disposition': `attachment; filename="seo-audit-report-${results.url.replace(/[^a-z0-9]/gi, '-')}.html"`
+        },
+        body: reportContent
+      };
+    } catch (error) {
+      console.error('Error in download handler:', error.message);
+      
+      return {
+        statusCode: error.statusCode || 500,
+        headers: {
+          ...headers,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ error: error.message || 'Internal server error' })
+      };
+    }
   }
 
-  try {
-    // Get auditId from query parameters
-    const auditId = event.queryStringParameters?.auditId;
-    console.log("Requested audit ID:", auditId);
-    
-    if (!auditId) {
-      throw new Error('Audit ID is required');
-    }
-
-    // Get the audit results
-    const results = auditResults.get(auditId);
-    console.log("Audit results:", results);
-    
-    if (!results) {
-      throw new Error('Audit results not found');
-    }
-
-    // Generate the report content
-    const reportContent = generateReport(results);
-    
-    // Return the report as a downloadable file
-    return {
-      statusCode: 200,
-      headers: {
-        ...headers,
-        'Content-Type': 'text/html',
-        'Content-Disposition': `attachment; filename="seo-audit-report-${results.url.replace(/[^a-z0-9]/gi, '-')}.html"`
-      },
-      body: reportContent
-    };
-  } catch (error) {
-    console.error('Error in download handler:', error.message);
-    
-    return {
-      statusCode: error.statusCode || 500,
-      headers: {
-        ...headers,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ error: error.message || 'Internal server error' })
-    };
-  }
+  return {
+    statusCode: 405,
+    headers,
+    body: JSON.stringify({ error: 'Method not allowed' })
+  };
 };
 
 function generateReport(results) {

@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const metaTags = document.getElementById('metaTags');
     const detailedAnalysis = document.getElementById('detailedAnalysis');
 
+    let latestAuditResults = null;
+
     // Add status update function
     function updateStatusIndicator(type, status) {
         const statusElement = document.getElementById(`${type}Status`);
@@ -82,6 +84,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 throw new Error(data.error || 'Failed to analyze website');
             }
 
+            // Store the latest results
+            latestAuditResults = data;
+
             // Update status indicators if available
             if (data.status) {
                 Object.entries(data.status).forEach(([type, status]) => {
@@ -105,10 +110,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Scroll to results
             resultsSection.scrollIntoView({ behavior: 'smooth' });
 
-            // If there's a download URL, show the download button
-            if (data.downloadUrl) {
-                showDownloadButton(data.downloadUrl);
-            }
+            // Show download button
+            showDownloadButton();
         } catch (error) {
             console.error('Error:', error);
             showError(error.message || 'Failed to analyze website. Please try again later.');
@@ -244,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
         resultsSection.insertBefore(successDiv, resultsSection.firstChild);
     }
 
-    function showDownloadButton(downloadUrl) {
+    function showDownloadButton() {
         const downloadContainer = document.getElementById('download-container');
         if (!downloadContainer) {
             const container = document.createElement('div');
@@ -259,10 +262,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
         downloadButton.addEventListener('click', async () => {
             try {
+                if (!latestAuditResults) {
+                    throw new Error('No audit results available');
+                }
+
                 downloadButton.disabled = true;
                 downloadButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Preparing Download...';
                 
-                const res = await fetch(downloadUrl);
+                const res = await fetch("/api/download-audit", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(latestAuditResults)
+                });
+
                 if (!res.ok) throw new Error('Download failed');
 
                 const blob = await res.blob();
