@@ -25,6 +25,7 @@ exports.handler = async (event, context) => {
   try {
     // Get auditId from query parameters
     const auditId = event.queryStringParameters?.auditId;
+    console.log("Requested audit ID:", auditId);
     
     if (!auditId) {
       throw new Error('Audit ID is required');
@@ -32,6 +33,7 @@ exports.handler = async (event, context) => {
 
     // Get the audit results
     const results = auditResults.get(auditId);
+    console.log("Audit results:", results);
     
     if (!results) {
       throw new Error('Audit results not found');
@@ -51,7 +53,7 @@ exports.handler = async (event, context) => {
       body: reportContent
     };
   } catch (error) {
-    console.error('Error in download handler:', error);
+    console.error('Error in download handler:', error.message);
     
     return {
       statusCode: error.statusCode || 500,
@@ -59,9 +61,7 @@ exports.handler = async (event, context) => {
         ...headers,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ 
-        error: error.message || 'Internal server error'
-      })
+      body: JSON.stringify({ error: error.message || 'Internal server error' })
     };
   }
 };
