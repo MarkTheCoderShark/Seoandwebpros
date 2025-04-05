@@ -202,10 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (data.downloadUrl) {
             const downloadContainer = document.getElementById('download-container');
             downloadContainer.innerHTML = `
-                <a href="${data.downloadUrl}" class="inline-block bg-gradient-to-r from-blue-500 to-emerald-500 px-6 py-3 rounded-full text-white font-medium hover:opacity-90 transition duration-300 glow">
-                    <i class="fas fa-download mr-2"></i>
-                    Download Full Report
-                </a>
+                <button class="download-button">Download Full Report</button>
             `;
         }
     }
@@ -256,17 +253,37 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.results-container').appendChild(container);
         }
 
-        const downloadButton = document.createElement('a');
-        downloadButton.href = downloadUrl;
-        downloadButton.className = 'download-button';
-        downloadButton.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8 0a8 8 0 0 1 8 8 8 8 0 0 1-8 8A8 8 0 0 1 0 8a8 8 0 0 1 8-8zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-            </svg>
-            Download Full Report
-        `;
-        downloadButton.download = 'seo-audit-report.html';
-        
+        const downloadButton = document.createElement('button');
+        downloadButton.innerHTML = '<i class="fas fa-download mr-2"></i>Download Full Report';
+        downloadButton.className = 'inline-block bg-gradient-to-r from-blue-500 to-emerald-500 px-6 py-3 rounded-full text-white font-medium hover:opacity-90 transition duration-300 glow download-button';
+
+        downloadButton.addEventListener('click', async () => {
+            try {
+                downloadButton.disabled = true;
+                downloadButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Preparing Download...';
+                
+                const res = await fetch(downloadUrl);
+                if (!res.ok) throw new Error('Download failed');
+
+                const blob = await res.blob();
+                const url = window.URL.createObjectURL(blob);
+
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'seo-audit-report.html';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                window.URL.revokeObjectURL(url);
+            } catch (err) {
+                alert('Failed to download the report. Please try again.');
+                console.error('Download error:', err);
+            } finally {
+                downloadButton.disabled = false;
+                downloadButton.innerHTML = '<i class="fas fa-download mr-2"></i>Download Full Report';
+            }
+        });
+
         const container = document.getElementById('download-container');
         container.innerHTML = '';
         container.appendChild(downloadButton);
