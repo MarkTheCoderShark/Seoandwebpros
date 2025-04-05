@@ -1,102 +1,144 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const https = require('https');
+const crypto = require('crypto');
+
+// In-memory storage for audit results (will reset on function cold start)
+const auditResults = new Map();
 
 exports.handler = async (event, context) => {
-  // Only allow POST requests
+  const headers = {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type'
+  };
+
+  // Handle OPTIONS request for CORS
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 204,
+      headers
+    };
+  }
+
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
+      headers,
       body: JSON.stringify({ error: 'Method not allowed' })
     };
   }
 
   try {
-    // Validate input
+    console.log('Received request:', event.body);
+
     if (!event.body) {
       throw new Error('Request body is required');
     }
 
-    const { url } = JSON.parse(event.body);
+    const { url, email } = JSON.parse(event.body);
     
     if (!url) {
       throw new Error('URL is required');
     }
 
+    if (!email) {
+      throw new Error('Email is required');
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      throw new Error('Invalid email format');
+    }
+
     // Validate URL format
-    try {
-      new URL(url);
-    } catch (e) {
-      throw new Error('Invalid URL format');
-    }
+    new URL(url);
 
-    // Check if API key is available
-    if (!process.env.GOOGLE_API_KEY) {
-      throw new Error('Google API key is not configured');
-    }
-
-    console.log('Starting SEO audit for:', url);
+    console.log('Starting SEO audit for:', url, 'Email:', email);
     const results = await performSEOAudit(url);
     
+    // Add metadata to results
+    results.email = email;
+    results.auditDate = new Date().toISOString();
+    results.url = url;
+    
+    // Generate a unique ID for the audit
+    const auditId = crypto.randomBytes(16).toString('hex');
+    
+    // Store the results
+    auditResults.set(auditId, results);
+    
+    console.log('Audit completed successfully');
+    
+    // Return results with download information
     return {
       statusCode: 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      },
-      body: JSON.stringify(results)
+      headers,
+      body: JSON.stringify({
+        ...results,
+        auditId,
+        downloadUrl: `/.netlify/functions/download-audit?auditId=${auditId}`,
+        message: 'Audit completed successfully. You can download the full report using the button below.'
+      })
     };
   } catch (error) {
     console.error('Error in handler:', error);
+    
     return {
       statusCode: error.statusCode || 500,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      },
+      headers,
       body: JSON.stringify({ 
         error: error.message || 'Internal server error',
+        type: error.name,
         details: process.env.NODE_ENV === 'development' ? error.stack : undefined
       })
     };
   }
 };
 
+// Export the auditResults map for the download function
+exports.auditResults = auditResults;
+
 async function performSEOAudit(url) {
   console.log('Starting performSEOAudit');
+  
+  // Initialize with default structure matching frontend expectations
   const results = {
     score: 0,
-    technical: {},
-    onPage: {},
+    technical: {
+      performance: {
+        score: 0,
+        metrics: {}
+      }
+    },
+    onPage: {
+      meta: {
+        title: { optimal: false },
+        description: { optimal: false }
+      }
+    },
     security: {},
     recommendations: []
   };
 
   try {
-    // Run checks in parallel for better performance
-    await Promise.all([
-      checkTechnicalSEO(url, results).catch(error => {
-        console.error('Technical SEO check failed:', error);
-        results.technical.error = 'Technical analysis failed';
-      }),
-      checkOnPageSEO(url, results).catch(error => {
-        console.error('On-page SEO check failed:', error);
-        results.onPage.error = 'On-page analysis failed';
-      }),
-      checkSecurity(url, results).catch(error => {
-        console.error('Security check failed:', error);
-        results.security.error = 'Security analysis failed';
-      })
-    ]);
-
-    // Continue with score calculation even if some checks failed
+    // Run checks sequentially to avoid timeout issues
+    await checkTechnicalSEO(url, results);
+    await checkOnPageSEO(url, results);
+    await checkSecurity(url, results);
+    
     calculateScore(results);
     generateRecommendations(results);
 
     return results;
   } catch (error) {
     console.error('Audit error:', error);
-    throw new Error('Failed to complete SEO audit: ' + error.message);
+    // Return partial results instead of throwing
+    return {
+      ...results,
+      error: error.message
+    };
   }
 }
 
@@ -106,19 +148,24 @@ async function checkTechnicalSEO(url, results) {
     const pageSpeedUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${process.env.GOOGLE_API_KEY}`;
     const pageSpeedData = await axios.get(pageSpeedUrl);
     
-    results.technical.performance = {
-      score: pageSpeedData.data.lighthouseResult.categories.performance.score * 100,
-      metrics: {
-        fcp: pageSpeedData.data.lighthouseResult.audits['first-contentful-paint'].displayValue,
-        lcp: pageSpeedData.data.lighthouseResult.audits['largest-contentful-paint'].displayValue,
-        cls: pageSpeedData.data.lighthouseResult.audits['cumulative-layout-shift'].displayValue,
-        speed_index: pageSpeedData.data.lighthouseResult.audits['speed-index'].displayValue
-      }
-    };
+    if (pageSpeedData.data && pageSpeedData.data.lighthouseResult) {
+      results.technical.performance = {
+        score: pageSpeedData.data.lighthouseResult.categories.performance.score * 100,
+        metrics: {
+          fcp: pageSpeedData.data.lighthouseResult.audits['first-contentful-paint'].displayValue,
+          lcp: pageSpeedData.data.lighthouseResult.audits['largest-contentful-paint'].displayValue,
+          cls: pageSpeedData.data.lighthouseResult.audits['cumulative-layout-shift'].displayValue,
+          speed_index: pageSpeedData.data.lighthouseResult.audits['speed-index'].displayValue
+        }
+      };
+    } else {
+      throw new Error('Invalid PageSpeed API response');
+    }
   } catch (error) {
     console.error('PageSpeed API error:', error);
     results.technical.performance = {
-      error: 'Could not fetch performance metrics'
+      error: 'Could not fetch performance metrics',
+      details: error.message
     };
   }
 
@@ -159,17 +206,19 @@ async function checkOnPageSEO(url, results) {
     const $ = cheerio.load(response.data);
     
     // Meta Tags Analysis
+    const title = $('title').text();
+    const description = $('meta[name="description"]').attr('content') || '';
+    
     results.onPage.meta = {
       title: {
-        content: $('title').text(),
-        length: $('title').text().length,
-        optimal: $('title').text().length >= 50 && $('title').text().length <= 60
+        content: title,
+        length: title.length,
+        optimal: title.length >= 50 && title.length <= 60
       },
       description: {
-        content: $('meta[name="description"]').attr('content'),
-        length: $('meta[name="description"]').attr('content')?.length || 0,
-        optimal: $('meta[name="description"]').attr('content')?.length >= 120 && 
-                $('meta[name="description"]').attr('content')?.length <= 160
+        content: description,
+        length: description.length,
+        optimal: description.length >= 120 && description.length <= 160
       },
       viewport: $('meta[name="viewport"]').length > 0,
       canonical: $('link[rel="canonical"]').attr('href'),
@@ -201,13 +250,6 @@ async function checkOnPageSEO(url, results) {
         return src && (src.includes('.jpg') || src.includes('.png') || src.includes('.gif'));
       }).length
     };
-
-    // Content Analysis
-    const content = $('body').text();
-    results.onPage.content = {
-      word_count: content.split(/\s+/).length,
-      density: calculateKeywordDensity(content)
-    };
   } catch (error) {
     console.error('On-page analysis error:', error);
     results.onPage.error = 'Could not analyze page content';
@@ -215,25 +257,25 @@ async function checkOnPageSEO(url, results) {
 }
 
 async function checkSecurity(url, results) {
-  // Check HTTPS
-  const parsedUrl = new URL(url);
-  results.security.https = parsedUrl.protocol === 'https:';
-
-  // Check SSL Certificate
-  if (results.security.https) {
-    try {
-      const sslDetails = await checkSSL(parsedUrl.hostname);
-      results.security.ssl = sslDetails;
-    } catch (error) {
-      results.security.ssl = {
-        valid: false,
-        error: error.message
-      };
-    }
-  }
-
-  // Security Headers
   try {
+    // Check HTTPS
+    const parsedUrl = new URL(url);
+    results.security.https = parsedUrl.protocol === 'https:';
+
+    // Check SSL Certificate
+    if (results.security.https) {
+      try {
+        const sslDetails = await checkSSL(parsedUrl.hostname);
+        results.security.ssl = sslDetails;
+      } catch (error) {
+        results.security.ssl = {
+          valid: false,
+          error: error.message
+        };
+      }
+    }
+
+    // Security Headers
     const response = await axios.get(url);
     results.security.headers = {
       'x-frame-options': response.headers['x-frame-options'] || 'missing',
@@ -242,9 +284,8 @@ async function checkSecurity(url, results) {
       'content-security-policy': response.headers['content-security-policy'] || 'missing'
     };
   } catch (error) {
-    results.security.headers = {
-      error: 'Could not check security headers'
-    };
+    console.error('Security check error:', error);
+    results.security.error = 'Could not complete security checks';
   }
 }
 
@@ -274,25 +315,6 @@ function checkSSL(hostname) {
 
     req.end();
   });
-}
-
-function calculateKeywordDensity(content) {
-  const words = content.toLowerCase().split(/\s+/);
-  const wordCount = {};
-  words.forEach(word => {
-    if (word.length > 3) {
-      wordCount[word] = (wordCount[word] || 0) + 1;
-    }
-  });
-
-  return Object.entries(wordCount)
-    .sort(([,a], [,b]) => b - a)
-    .slice(0, 10)
-    .map(([word, count]) => ({
-      word,
-      count,
-      density: ((count / words.length) * 100).toFixed(2) + '%'
-    }));
 }
 
 function calculateScore(results) {
