@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO & Web Pros | Digital Marketing & Web Development Agency</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="gradient-bg fixed w-full z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-bold gradient-text">SEO & WEB PROS</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#home" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">Home</a>
+                            <a href="#services" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">Services</a>
+                            <a href="#results" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">Results</a>
+                            <a href="#about" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">About</a>
+                            <a href="#contact" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <button class="bg-gradient-to-r from-blue-500 to-emerald-500 px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition duration-300">
+                            Free SEO Audit
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden gradient-bg border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Home</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Services</a>
+                <a href="#results" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Results</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">About</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Contact</a>
+                <button class="w-full bg-gradient-to-r from-blue-500 to-emerald-500 px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition duration-300 mt-2">
+                    Free SEO Audit
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <span class="seo-badge text-xs font-medium px-2.5 py-0.5 rounded text-emerald-400">SEO</span>
+                        <span class="web-badge text-xs font-medium px-2.5 py-0.5 rounded text-blue-400">WEB DEV</span>
+                        <span class="marketing-badge text-xs font-medium px-2.5 py-0.5 rounded text-purple-400">MARKETING</span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        Grow Your Business With <span class="gradient-text">Proven Results</span>
+                    </h1>
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg">
+                        We combine cutting-edge web development with data-driven SEO strategies to help your business dominate search rankings and convert more visitors.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-gradient-to-r from-blue-500 to-emerald-500 px-8 py-3 rounded-full text-white font-medium hover:opacity-90 transition duration-300 glow">
+                            Get Your Free Audit
+                        </button>
+                        <button class="border border-gray-600 px-8 py-3 rounded-full text-white font-medium hover:bg-gray-800 transition duration-300">
+                            View Case Studies
+                        </button>
+                    </div>
+                    <div class="mt-8 flex items-center space-x-4">
+                        <div class="flex -space-x-2">
+                            <img class="w-10 h-10 rounded-full border-2 border-gray-800" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Client">
+                            <img class="w-10 h-10 rounded-full border-2 border-gray-800" src="https://randomuser.me/api/portraits/men/43.jpg" alt="Client">
+                            <img class="w-10 h-10 rounded-full border-2 border-gray-800" src="https://randomuser.me/api/portraits/women/34.jpg" alt="Client">
+                        </div>
+                        <div>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-400 text-sm">Trusted by 250+ businesses</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -top-10 -left-10 w-32 h-32 bg-emerald-600 rounded-full filter blur-3xl opacity-20"></div>
+                        <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-blue-600 rounded-full filter blur-3xl opacity-20"></div>
+                        <div class="bg-gray-800 p-4 rounded-xl shadow-2xl floating relative z-10">
+                            <div class="bg-gray-700 rounded-lg p-3 mb-3">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-r from-blue-500 to-emerald-500 p-4 rounded-lg text-white">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-medium">SEO Score</span>
+                                    <span class="text-xs bg-white bg-opacity-20 px-2 py-1 rounded">+85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 bg-opacity-30 rounded-full h-2 mb-3">
+                                    <div class="bg-white h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 text-xs">
+                                    <div class="bg-white bg-opacity-10 p-2 rounded">
+                                        <p class="text-gray-300">Keywords</p>
+                                        <p class="font-bold">1,240+</p>
+                                    </div>
+                                    <div class="bg-white bg-opacity-10 p-2 rounded">
+                                        <p class="text-gray-300">Traffic</p>
+                                        <p class="font-bold">3.2M</p>
+                                    </div>
+                                    <div class="bg-white bg-opacity-10 p-2 rounded">
+                                        <p class="text-gray-300">Conversions</p>
+                                        <p class="font-bold">+62%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="py-12 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-center text-3xl md:text-4xl font-bold mb-12">Serving <span class="gradient-text">Businesses</span> Across Industries</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <i class="fas fa-store text-4xl gradient-text mb-4"></i>
+                    <div class="text-gray-300">E-commerce</div>
+                </div>
+                <div class="text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <i class="fas fa-building text-4xl gradient-text mb-4"></i>
+                    <div class="text-gray-300">Real Estate</div>
+                </div>
+                <div class="text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <i class="fas fa-heartbeat text-4xl gradient-text mb-4"></i>
+                    <div class="text-gray-300">Healthcare</div>
+                </div>
+                <div class="text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <i class="fas fa-graduation-cap text-4xl gradient-text mb-4"></i>
+                    <div class="text-gray-300">Education</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Proven <span class="gradient-text">Results</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    We deliver measurable improvements that impact your bottom line
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Result 1 -->
+                <div class="bg-gray-800 rounded-xl p-8 text-center">
+                    <div class="w-20 h-20 bg-emerald-900 bg-opacity-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-chart-line text-3xl text-emerald-400"></i>
+                    </div>
+                    <h3 class="text-5xl font-bold gradient-text mb-3">320%</h3>
+                    <p class="text-gray-400">Increase in organic traffic</p>
+                </div>
+                
+                <!-- Result 2 -->
+                <div class="bg-gray-800 rounded-xl p-8 text-center">
+                    <div class="w-20 h-20 bg-blue-900 bg-opacity-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-search-dollar text-3xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-5xl font-bold gradient-text mb-3">1,850+</h3>
+                    <p class="text-gray-400">Keywords ranking on page 1</p>
+                </div>
+                
+                <!-- Result 3 -->
+                <div class="bg-gray-800 rounded-xl p-8 text-center">
+                    <div class="w-20 h-20 bg-purple-900 bg-opacity-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-dollar-sign text-3xl text-purple-400"></i>
+                    </div>
+                    <h3 class="text-5xl font-bold gradient-text mb-3">5.2x</h3>
+                    <p class="text-gray-400">Return on marketing investment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <span class="gradient-text">Services</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Comprehensive digital solutions tailored to your business goals
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-gray-800 rounded-xl p-8 transition duration-500 hover:border border-emerald-500 border-opacity-30">
+                    <div class="w-14 h-14 bg-emerald-900 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-emerald-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">SEO Optimization</h3>
+                    <p class="text-gray-400 mb-4">
+                        Dominate search rankings with our comprehensive on-page, technical, and off-page SEO strategies.
+                    </p>
+                    <div class="mt-6">
+                        <span class="seo-badge text-xs font-medium px-2.5 py-0.5 rounded text-emerald-400 mr-2">Keyword Research</span>
+                        <span class="seo-badge text-xs font-medium px-2.5 py-0.5 rounded text-emerald-400 mr-2">Technical SEO</span>
+                        <span class="seo-badge text-xs font-medium px-2.5 py-0.5 rounded text-emerald-400">Content Strategy</span>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-gray-800 rounded-xl p-8 transition duration-500 hover:border border-blue-500 border-opacity-30">
+                    <div class="w-14 h-14 bg-blue-900 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Web Development</h3>
+                    <p class="text-gray-400 mb-4">
+                        High-performance websites built with modern technologies for speed, security, and scalability.
+                    </p>
+                    <div class="mt-6">
+                        <span class="web-badge text-xs font-medium px-2.5 py-0.5 rounded text-blue-400 mr-2">React</span>
+                        <span class="web-badge text-xs font-medium px-2.5 py-0.5 rounded text-blue-400 mr-2">WordPress</span>
+                        <span class="web-badge text-xs font-medium px-2.5 py-0.5 rounded text-blue-400">E-commerce</span>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-gray-800 rounded-xl p-8 transition duration-500 hover:border border-purple-500 border-opacity-30">
+                    <div class="w-14 h-14 bg-purple-900 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-ad text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Paid Advertising</h3>
+                    <p class="text-gray-400 mb-4">
+                        Data-driven PPC campaigns that maximize conversions and minimize customer acquisition costs.
+                    </p>
+                    <div class="mt-6">
+                        <span class="marketing-badge text-xs font-medium px-2.5 py-0.5 rounded text-purple-400 mr-2">Google Ads</span>
+                        <span class="marketing-badge text-xs font-medium px-2.5 py-0.5 rounded text-purple-400 mr-2">Facebook Ads</span>
+                        <span class="marketing-badge text-xs font-medium px-2.5 py-0.5 rounded text-purple-400">Retargeting</span>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-gray-800 rounded-xl p-8 transition duration-500 hover:border border-emerald-500 border-opacity-30">
+                    <div class="w-14 h-14 bg-emerald-900 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-envelope-open-text text-emerald-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Content Marketing</h3>
+                    <p class="text-gray-400 mb-4">
+                        Strategic content that attracts, engages, and converts your target audience.
+                    </p>
+                    <div class="mt-6">
+                        <span class="seo-badge text-xs font-medium px-2.5 py-0.5 rounded text-emerald-400 mr-2">Blog Writing</span>
+                        <span class="seo-badge text-xs font-medium px-2.5 py-0.5 rounded text-emerald-400 mr-2">Email Campaigns</span>
+                        <span class="seo-badge text-xs font-medium px-2.5 py-0.5 rounded text-emerald-400">Lead Magnets</span>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-gray-800 rounded-xl p-8 transition duration-500 hover:border border-blue-500 border-opacity-30">
+                    <div class="w-14 h-14 bg-blue-900 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Mobile Development</h3>
+                    <p class="text-gray-400 mb-4">
+                        Cross-platform mobile apps that deliver seamless user experiences across devices.
+                    </p>
+                    <div class="mt-6">
+                        <span class="web-badge text-xs font-medium px-2.5 py-0.5 rounded text-blue-400 mr-2">React Native</span>
+                        <span class="web-badge text-xs font-medium px-2.5 py-0.5 rounded text-blue-400 mr-2">Flutter</span>
+                        <span class="web-badge text-xs font-medium px-2.5 py-0.5 rounded text-blue-400">iOS/Android</span>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-gray-800 rounded-xl p-8 transition duration-500 hover:border border-purple-500 border-opacity-30">
+                    <div class="w-14 h-14 bg-purple-900 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-hashtag text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Social Media Marketing</h3>
+                    <p class="text-gray-400 mb-4">
+                        Grow your brand and engage your audience with strategic social media campaigns.
+                    </p>
+                    <div class="mt-6">
+                        <span class="marketing-badge text-xs font-medium px-2.5 py-0.5 rounded text-purple-400 mr-2">Instagram</span>
+                        <span class="marketing-badge text-xs font-medium px-2.5 py-0.5 rounded text-purple-400 mr-2">LinkedIn</span>
+                        <span class="marketing-badge text-xs font-medium px-2.5 py-0.5 rounded text-purple-400">TikTok</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <span class="gradient-text">Process</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    A proven methodology that delivers consistent results
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="hidden md:block absolute left-1/2 h-full w-0.5 bg-gray-700 transform -translate-x-1/2"></div>
+                
+                <!-- Process steps -->
+                <div class="space-y-16 md:space-y-0">
+                    <!-- Step 1 -->
+                    <div class="relative md:flex items-center">
+                        <div class="md:w-1/2 md:pr-16 mb-8 md:mb-0 text-right">
+                            <div class="inline-block bg-gray-800 p-6 rounded-xl">
+                                <div class="w-12 h-12 bg-emerald-900 rounded-full flex items-center justify-center mb-4 mx-auto md:ml-auto">
+                                    <span class="text-white font-bold">1</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Discovery & Strategy</h3>
+                                <p class="text-gray-400">
+                                    We analyze your business, competitors, and target audience to develop a customized strategy.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 mx-auto z-10">
+                            <i class="fas fa-search text-white text-xl"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16"></div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="relative md:flex items-center">
+                        <div class="md:w-1/2 md:pr-16"></div>
+                        <div class="hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 mx-auto z-10">
+                            <i class="fas fa-pencil-ruler text-white text-xl"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 mb-8 md:mb-0 text-left">
+                            <div class="inline-block bg-gray-800 p-6 rounded-xl">
+                                <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center mb-4 mx-auto md:mr-auto">
+                                    <span class="text-white font-bold">2</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Implementation</h3>
+                                <p class="text-gray-400">
+                                    Our experts execute the strategy with precision, using the latest tools and technologies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="relative md:flex items-center">
+                        <div class="md:w-1/2 md:pr-16 mb-8 md:mb-0 text-right">
+                            <div class="inline-block bg-gray-800 p-6 rounded-xl">
+                                <div class="w-12 h-12 bg-purple-900 rounded-full flex items-center justify-center mb-4 mx-auto md:ml-auto">
+                                    <span class="text-white font-bold">3</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Testing & Optimization</h3>
+                                <p class="text-gray-400">
+                                    We continuously test and refine our approach based on performance data.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 mx-auto z-10">
+                            <i class="fas fa-tachometer-alt text-white text-xl"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16"></div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="relative md:flex items-center">
+                        <div class="md:w-1/2 md:pr-16"></div>
+                        <div class="hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 mx-auto z-10">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 mb-8 md:mb-0 text-left">
+                            <div class="inline-block bg-gray-800 p-6 rounded-xl">
+                                <div class="w-12 h-12 bg-emerald-900 rounded-full flex items-center justify-center mb-4 mx-auto md:mr-auto">
+                                    <span class="text-white font-bold">4</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Growth & Scaling</h3>
+                                <p class="text-gray-400">
+                                    We scale successful strategies to maximize your return on investment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About <span class="gradient-text">SEO & Web Pros</span></h2>
+                    <p class="text-gray-400 mb-6">
+                        Founded in 2012, we've grown from a small SEO consultancy to a full-service digital agency helping businesses of all sizes achieve remarkable online growth.
+                    </p>
+                    <p class="text-gray-400 mb-8">
+                        What sets us apart is our unique combination of technical expertise and marketing savvy. Our team includes former Google engineers, award-winning designers, and marketing strategists who've helped Fortune 500 companies dominate their markets.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h3 class="text-3xl font-bold gradient-text mb-2">12+</h3>
+                            <p class="text-gray-400">Years Experience</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h3 class="text-3xl font-bold gradient-text mb-2">500+</h3>
+                            <p class="text-gray-400">Successful Projects</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h3 class="text-3xl font-bold gradient-text mb-2">96%</h3>
+                            <p class="text-gray-400">Client Retention</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h3 class="text-3xl font-bold gradient-text mb-2">24/7</h3>
+                            <p class="text-gray-400">Support Available</p>
+                        </div>
+                    </div>
+                    <button class="bg-gradient-to-r from-blue-500 to-emerald-500 px-8 py-3 rounded-full text-white font-medium hover:opacity-90 transition duration-300">
+                        Meet Our Team
+                    </button>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Our Team" 
+                                 class="rounded-lg shadow-xl h-64 w-full object-cover">
+                            <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center">
+                                <i class="fas fa-trophy text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="relative mt-8">
+                            <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Our Office" 
+                                 class="rounded-lg shadow-xl h-64 w-full object-cover">
+                            <div class="absolute -top-4 -left-4 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
+                                <i class="fas fa-award text-white text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Member Highlight -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center text-3xl md:text-4xl font-bold mb-12">Meet Our <span class="gradient-text">Pros</span></h2>
+            
+            <!-- Mark's Profile -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-12 mb-20">
+                <div class="w-64 h-64 relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full animate-pulse" style="filter: blur(15px); opacity: 0.5;"></div>
+                    <img src="mark shvaya.jpg" alt="Mark" class="w-full h-full object-cover rounded-full relative z-10 border-4 border-gray-800 filter grayscale hover:grayscale-0 transition duration-500">
+                </div>
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h3 class="text-2xl font-bold mb-4">Mark</h3>
+                    <p class="text-gray-400 mb-6">Senior Digital Strategist</p>
+                    <p class="text-gray-300 mb-6">
+                        With over 5 years at SEO & Web Pros, Mark has been instrumental in driving success for our clients through innovative digital strategies and cutting-edge web solutions. His expertise in SEO and web development has helped numerous businesses achieve remarkable online growth.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <span class="bg-gray-800 px-4 py-2 rounded-full text-sm text-gray-300">
+                            <i class="fas fa-chart-line text-emerald-400 mr-2"></i>500+ Projects
+                        </span>
+                        <span class="bg-gray-800 px-4 py-2 rounded-full text-sm text-gray-300">
+                            <i class="fas fa-trophy text-blue-400 mr-2"></i>98% Client Satisfaction
+                        </span>
+                        <span class="bg-gray-800 px-4 py-2 rounded-full text-sm text-gray-300">
+                            <i class="fas fa-certificate text-purple-400 mr-2"></i>Google Certified
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- George's Profile -->
+            <div class="flex flex-col md:flex-row-reverse items-center justify-center gap-12">
+                <div class="w-64 h-64 relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full animate-pulse" style="filter: blur(15px); opacity: 0.5;"></div>
+                    <img src="george shvaya.jpg" alt="George" class="w-full h-full object-cover rounded-full relative z-10 border-4 border-gray-800 filter grayscale hover:grayscale-0 transition duration-500">
+                </div>
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h3 class="text-2xl font-bold mb-4">George</h3>
+                    <p class="text-gray-400 mb-6">Technical Lead & Web Developer</p>
+                    <p class="text-gray-300 mb-6">
+                        George brings a wealth of technical expertise to our team, specializing in creating high-performance, scalable web solutions. His innovative approach to web development and deep understanding of modern technologies ensures our clients receive cutting-edge digital solutions that drive results.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <span class="bg-gray-800 px-4 py-2 rounded-full text-sm text-gray-300">
+                            <i class="fas fa-code text-emerald-400 mr-2"></i>Full-Stack Development
+                        </span>
+                        <span class="bg-gray-800 px-4 py-2 rounded-full text-sm text-gray-300">
+                            <i class="fas fa-mobile-alt text-blue-400 mr-2"></i>Responsive Design
+                        </span>
+                        <span class="bg-gray-800 px-4 py-2 rounded-full text-sm text-gray-300">
+                            <i class="fas fa-server text-purple-400 mr-2"></i>Cloud Architecture
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="bg-gray-800 bg-opacity-50 p-8 rounded-xl backdrop-blur-sm">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Get Your Free <span class="gradient-text">SEO Audit</span></h2>
+                <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Discover how your website performs and get actionable recommendations to improve your search rankings.
+                </p>
+                <form class="max-w-md mx-auto">
+                    <div class="flex">
+                        <input type="email" placeholder="Your website URL" class="flex-grow bg-gray-700 border border-gray-600 rounded-l-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        <button type="submit" class="bg-gradient-to-r from-blue-500 to-emerald-500 px-6 py-3 rounded-r-lg text-white font-medium hover:opacity-90 transition duration-300">
+                            Analyze
+                        </button>
+                    </div>
+                </form>
+                <p class="text-gray-400 text-sm mt-4">No credit card required. 100% confidential.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our <span class="gradient-text">Clients Say</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Don't just take our word for it - hear from businesses we've helped grow
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-800 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-gray-400 text-sm">CEO, TechStart</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        "SEO & Web Pros completely transformed our online presence. Our organic traffic increased by 320% within 6 months of working with them."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-800 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-gray-400 text-sm">Marketing Director</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        "Their technical SEO expertise is unmatched. They fixed issues we didn't even know we had and our rankings improved dramatically."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-800 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma Rodriguez" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Emma Rodriguez</h4>
+                            <p class="text-gray-400 text-sm">Founder, Boutique Co</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        "Our e-commerce conversion rate doubled after their web development team redesigned our product pages. Worth every penny!"
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's <span class="gradient-text">Connect</span></h2>
+                    <p class="text-gray-400 mb-8 max-w-lg">
+                        Ready to grow your business? Fill out the form and we'll get back to you within 24 hours.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Our Office</h4>
+                                <p class="text-gray-400">123 Digital Lane, Tech City, TC 10001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-purple-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email Us</h4>
+                                <p class="text-gray-400">hello@seowebpros.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-emerald-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt text-emerald-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Call Us</h4>
+                                <p class="text-gray-400">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-bold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form class="bg-gray-800 p-8 rounded-xl">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-300 mb-2">Name</label>
+                                <input type="text" id="name" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-300 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-300 mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-300 mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-emerald-500 px-6 py-3 rounded-lg text-white font-medium hover:opacity-90 transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg border-t border-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold gradient-text mb-4">SEO & WEB PROS</h3>
+                    <p class="text-gray-400 mb-6">
+                        We help businesses dominate search rankings and convert more visitors through cutting-edge web development and data-driven marketing strategies.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">SEO Optimization</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Paid Advertising</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Content Marketing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Social Media</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Case Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 SEO & Web Pros. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
