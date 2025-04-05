@@ -422,7 +422,7 @@ function generateReport(results) {
   <div class="contact-info">
     <h3>Need Help Implementing These Recommendations?</h3>
     <p>Our team of SEO experts is ready to help you improve your website's performance.</p>
-    <p>Contact us at: <a href="mailto:hello@seowebpros.com">hello@seowebpros.com</a></p>
+    <p>Contact us at: <a href="mailto:hello@seoandwebpros.com">hello@seoandwebpros.com</a></p>
   </div>
 
   <div class="footer">
