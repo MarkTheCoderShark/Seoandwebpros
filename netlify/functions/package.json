@@ -1,0 +1,10 @@
+{
+  "name": "seo-audit-functions",
+  "version": "1.0.0",
+  "description": "SEO Audit Netlify Functions",
+  "main": "seo-audit.js",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0-rc.12"
+  }
+} 

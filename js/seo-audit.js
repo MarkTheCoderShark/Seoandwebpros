@@ -1,214 +1,97 @@
-class SEOAudit {
-    constructor() {
-        this.form = document.getElementById('seoAuditForm');
-        this.resultsSection = document.getElementById('auditResults');
-        this.init();
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('seoAuditForm');
+    const resultsSection = document.getElementById('auditResults');
+    const seoScore = document.getElementById('seoScore');
+    const pageSpeed = document.getElementById('pageSpeed');
+    const mobileFriendly = document.getElementById('mobileFriendly');
+    const metaTags = document.getElementById('metaTags');
+    const detailedAnalysis = document.getElementById('detailedAnalysis');
 
-    init() {
-        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-    }
-
-    async handleSubmit(e) {
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
+        
         const url = document.getElementById('websiteUrl').value;
         const email = document.getElementById('email').value;
 
         // Show loading state
-        this.showLoading();
+        form.querySelector('button').innerHTML = '<i class="fas fa-spinner fa-spin"></i> Analyzing...';
+        form.querySelector('button').disabled = true;
 
         try {
-            // Perform the audit
-            const results = await this.performAudit(url);
+            const response = await fetch('/.netlify/functions/seo-audit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ url })
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to analyze website');
+            }
+
+            const data = await response.json();
             
-            // Display results
-            this.displayResults(results);
+            // Update UI with results
+            updateResults(data);
             
-            // Send results to email
-            await this.sendResultsEmail(email, results);
+            // Show results section
+            resultsSection.classList.remove('hidden');
+            
+            // Scroll to results
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
         } catch (error) {
-            this.showError(error.message);
+            console.error('Error:', error);
+            alert('Failed to analyze website. Please try again later.');
+        } finally {
+            // Reset button state
+            form.querySelector('button').innerHTML = 'Start Free Audit';
+            form.querySelector('button').disabled = false;
         }
-    }
+    });
 
-    showLoading() {
-        this.form.querySelector('button').textContent = 'Analyzing...';
-        this.form.querySelector('button').disabled = true;
-    }
-
-    async performAudit(url) {
-        // Perform various SEO checks
-        const results = {
-            score: 0,
-            checks: []
-        };
-
-        // Check 1: SSL Certificate
-        if (url.startsWith('https://')) {
-            results.checks.push({
-                name: 'SSL Certificate',
-                status: 'pass',
-                message: 'Your website is secure with HTTPS'
-            });
-            results.score += 10;
-        } else {
-            results.checks.push({
-                name: 'SSL Certificate',
-                status: 'fail',
-                message: 'Your website is not secure. Consider adding HTTPS'
-            });
-        }
-
-        // Fetch the webpage
-        try {
-            const response = await fetch(url);
-            const html = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-
-            // Check 2: Meta Title
-            const metaTitle = doc.querySelector('title');
-            if (metaTitle && metaTitle.textContent.length > 0) {
-                const titleLength = metaTitle.textContent.length;
-                if (titleLength >= 50 && titleLength <= 60) {
-                    results.checks.push({
-                        name: 'Meta Title',
-                        status: 'pass',
-                        message: 'Meta title has optimal length'
-                    });
-                    results.score += 10;
-                } else {
-                    results.checks.push({
-                        name: 'Meta Title',
-                        status: 'warning',
-                        message: `Meta title length (${titleLength}) is not optimal (50-60 chars)`
-                    });
-                    results.score += 5;
-                }
-            } else {
-                results.checks.push({
-                    name: 'Meta Title',
-                    status: 'fail',
-                    message: 'Meta title is missing'
-                });
-            }
-
-            // Check 3: Meta Description
-            const metaDesc = doc.querySelector('meta[name="description"]');
-            if (metaDesc && metaDesc.getAttribute('content')) {
-                const descLength = metaDesc.getAttribute('content').length;
-                if (descLength >= 120 && descLength <= 160) {
-                    results.checks.push({
-                        name: 'Meta Description',
-                        status: 'pass',
-                        message: 'Meta description has optimal length'
-                    });
-                    results.score += 10;
-                } else {
-                    results.checks.push({
-                        name: 'Meta Description',
-                        status: 'warning',
-                        message: `Meta description length (${descLength}) is not optimal (120-160 chars)`
-                    });
-                    results.score += 5;
-                }
-            } else {
-                results.checks.push({
-                    name: 'Meta Description',
-                    status: 'fail',
-                    message: 'Meta description is missing'
-                });
-            }
-
-            // Check 4: Headings
-            const h1s = doc.querySelectorAll('h1');
-            if (h1s.length === 1) {
-                results.checks.push({
-                    name: 'H1 Heading',
-                    status: 'pass',
-                    message: 'Page has exactly one H1 heading'
-                });
-                results.score += 10;
-            } else {
-                results.checks.push({
-                    name: 'H1 Heading',
-                    status: 'fail',
-                    message: `Page has ${h1s.length} H1 headings (should have exactly 1)`
-                });
-            }
-
-            // Check 5: Image Alt Tags
-            const images = doc.querySelectorAll('img');
-            const imagesWithAlt = Array.from(images).filter(img => img.hasAttribute('alt'));
-            const altPercentage = (imagesWithAlt.length / images.length) * 100 || 0;
-
-            if (altPercentage === 100) {
-                results.checks.push({
-                    name: 'Image Alt Tags',
-                    status: 'pass',
-                    message: 'All images have alt tags'
-                });
-                results.score += 10;
-            } else {
-                results.checks.push({
-                    name: 'Image Alt Tags',
-                    status: 'warning',
-                    message: `${Math.round(altPercentage)}% of images have alt tags`
-                });
-                results.score += Math.round(altPercentage / 10);
-            }
-
-        } catch (error) {
-            results.checks.push({
-                name: 'Website Accessibility',
-                status: 'fail',
-                message: 'Unable to access website. Please check the URL and try again.'
-            });
-        }
-
-        return results;
-    }
-
-    displayResults(results) {
-        // Reset loading state
-        this.form.querySelector('button').textContent = 'Start Free Audit';
-        this.form.querySelector('button').disabled = false;
-
-        // Show results section
-        this.resultsSection.classList.remove('hidden');
-
+    function updateResults(data) {
         // Update score
-        const scoreElement = document.getElementById('seoScore');
-        scoreElement.textContent = results.score;
-        scoreElement.parentElement.style.setProperty('--percentage', `${results.score}%`);
-
+        seoScore.textContent = data.score;
+        
+        // Update performance metrics
+        if (data.technical.performance?.score) {
+            pageSpeed.textContent = `${data.technical.performance.score}%`;
+        }
+        
+        // Update mobile friendly status
+        if (data.technical.performance?.metrics) {
+            const metrics = data.technical.performance.metrics;
+            mobileFriendly.textContent = `LCP: ${metrics.lcp}`;
+        }
+        
+        // Update meta tags status
+        if (data.onPage.meta) {
+            const meta = data.onPage.meta;
+            metaTags.textContent = meta.title.optimal ? 'Optimized' : 'Needs Improvement';
+        }
+        
         // Update detailed analysis
-        const detailedAnalysis = document.getElementById('detailedAnalysis');
-        detailedAnalysis.innerHTML = results.checks.map(check => `
-            <div class="check-item ${check.status}">
-                <h4>${check.name}</h4>
-                <p>${check.message}</p>
-            </div>
-        `).join('');
+        detailedAnalysis.innerHTML = '';
+        
+        // Add recommendations
+        data.recommendations.forEach(rec => {
+            const priorityClass = rec.priority === 'high' ? 'text-red-400' : 'text-yellow-400';
+            const recElement = document.createElement('div');
+            recElement.className = 'bg-gray-700 rounded-lg p-4';
+            recElement.innerHTML = `
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <i class="fas ${rec.priority === 'high' ? 'fa-exclamation-circle' : 'fa-info-circle'} ${priorityClass}"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h4 class="text-lg font-medium text-white">${rec.category}</h4>
+                        <p class="text-gray-300 mt-1">${rec.issue}</p>
+                        <p class="text-emerald-400 mt-2">${rec.recommendation}</p>
+                    </div>
+                </div>
+            `;
+            detailedAnalysis.appendChild(recElement);
+        });
     }
-
-    async sendResultsEmail(email, results) {
-        // In a real implementation, this would send the results to your backend
-        // which would then email the results to the user
-        console.log('Sending results to:', email);
-    }
-
-    showError(message) {
-        // Reset loading state
-        this.form.querySelector('button').textContent = 'Start Free Audit';
-        this.form.querySelector('button').disabled = false;
-
-        // Show error message
-        alert(message);
-    }
-}
-
-// Initialize the SEO Audit tool when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-    new SEOAudit();
 }); 
