@@ -3,16 +3,19 @@ const cheerio = require('cheerio');
 const https = require('https');
 const crypto = require('crypto');
 
+// Initialize auditResults map
+const auditResults = new Map();
+
 // Configure axios with longer timeout
 const axiosInstance = axios.create({
-  timeout: 8000, // 8 seconds timeout
+  timeout: 30000, // 30 seconds timeout
   httpsAgent: new https.Agent({ keepAlive: true })
 });
 
-// Reduced timeout for individual checks
-const CHECK_TIMEOUT = 8000; // 8 seconds
-const MAX_RETRIES = 2;
-const RETRY_DELAY = 1000;
+// Increased timeout for individual checks
+const CHECK_TIMEOUT = 30000; // 30 seconds
+const MAX_RETRIES = 3;
+const RETRY_DELAY = 2000;
 
 exports.handler = async (event, context) => {
   const headers = {
@@ -194,23 +197,27 @@ async function performSEOAudit(url) {
 
 async function checkTechnicalSEO(url, results) {
   try {
-    // PageSpeed Insights API
-    const pageSpeedUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${process.env.GOOGLE_API_KEY}`;
-    const pageSpeedData = await axios.get(pageSpeedUrl);
+    // PageSpeed Insights API with error handling
+    const pageSpeedUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&key=${process.env.GOOGLE_API_KEY}`;
+    console.log('Calling PageSpeed API...');
+    const pageSpeedData = await axiosInstance.get(pageSpeedUrl).catch(error => {
+      console.error('PageSpeed API error:', error.message);
+      throw new Error(`PageSpeed API error: ${error.message}`);
+    });
     
-    if (pageSpeedData.data && pageSpeedData.data.lighthouseResult) {
-      results.technical.performance = {
-        score: pageSpeedData.data.lighthouseResult.categories.performance.score * 100,
-        metrics: {
-          fcp: pageSpeedData.data.lighthouseResult.audits['first-contentful-paint'].displayValue,
-          lcp: pageSpeedData.data.lighthouseResult.audits['largest-contentful-paint'].displayValue,
-          cls: pageSpeedData.data.lighthouseResult.audits['cumulative-layout-shift'].displayValue,
-          speed_index: pageSpeedData.data.lighthouseResult.audits['speed-index'].displayValue
-        }
-      };
-    } else {
-      throw new Error('Invalid PageSpeed API response');
+    if (!pageSpeedData?.data?.lighthouseResult) {
+      throw new Error('Invalid PageSpeed API response structure');
     }
+    
+    results.technical.performance = {
+      score: pageSpeedData.data.lighthouseResult.categories.performance.score * 100,
+      metrics: {
+        fcp: pageSpeedData.data.lighthouseResult.audits['first-contentful-paint'].displayValue,
+        lcp: pageSpeedData.data.lighthouseResult.audits['largest-contentful-paint'].displayValue,
+        cls: pageSpeedData.data.lighthouseResult.audits['cumulative-layout-shift'].displayValue,
+        speed_index: pageSpeedData.data.lighthouseResult.audits['speed-index'].displayValue
+      }
+    };
   } catch (error) {
     console.error('PageSpeed API error:', error);
     results.technical.performance = {

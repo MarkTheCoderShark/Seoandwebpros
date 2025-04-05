@@ -40,6 +40,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const url = document.getElementById('websiteUrl').value;
         const email = document.getElementById('email').value;
         const submitButton = form.querySelector('button');
+        const originalButtonText = submitButton.innerHTML;
+        
+        // Basic validation
+        if (!url || !url.trim()) {
+            showError('Please enter a valid URL');
+            return;
+        }
+        if (!email || !email.trim()) {
+            showError('Please enter your email address');
+            return;
+        }
         
         // Reset and show status indicators
         ['technical', 'onPage', 'security'].forEach(type => {
@@ -59,7 +70,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ url, email })
+                body: JSON.stringify({ 
+                    url: url.trim(),
+                    email: email.trim() 
+                })
             });
 
             const data = await response.json();
@@ -105,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         } finally {
             // Reset button state
-            submitButton.innerHTML = 'Start Free Audit';
+            submitButton.innerHTML = originalButtonText;
             submitButton.disabled = false;
         }
     });
