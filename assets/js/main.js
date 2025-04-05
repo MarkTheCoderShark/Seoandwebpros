@@ -6,16 +6,19 @@ const observer = new IntersectionObserver((entries) => {
                 startScoreAnimations();
             } else if (entry.target.id === 'results') {
                 startResultsAnimations();
+            } else if (entry.target.id === 'process') {
+                startProcessAnimations();
             }
             observer.unobserve(entry.target);
         }
     });
 }, { threshold: 0.5 });
 
-// Observe the score bar and results section
+// Observe the score bar, results section, and process section
 document.addEventListener('DOMContentLoaded', function() {
     observer.observe(document.getElementById('score-bar'));
     observer.observe(document.getElementById('results'));
+    observer.observe(document.getElementById('process'));
 
     // Mobile menu toggle
     document.getElementById('mobile-menu-button').addEventListener('click', function() {
@@ -53,6 +56,23 @@ function startResultsAnimations() {
         const value = parseFloat(number.dataset.value);
         const decimals = value % 1 === 0 ? 0 : 1;
         animateValue(number, 0, value, 2000, '', decimals);
+    });
+}
+
+function startProcessAnimations() {
+    // Animate the timeline line
+    const timelineLine = document.querySelector('.timeline-line');
+    timelineLine.classList.add('animate');
+
+    // Animate each process step with a delay
+    const processSteps = document.querySelectorAll('.process-step');
+    const processIcons = document.querySelectorAll('.process-icon');
+
+    processSteps.forEach((step, index) => {
+        setTimeout(() => {
+            step.classList.add('animate');
+            processIcons[index].classList.add('animate');
+        }, index * 400); // 400ms delay between each step
     });
 }
 

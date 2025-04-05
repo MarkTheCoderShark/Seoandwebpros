@@ -174,4 +174,42 @@
 .animated-logo:hover {
     transform: scale(1.05);
     letter-spacing: 2px;
+}
+
+/* Process Section Animations */
+.process-step {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.process-icon {
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.timeline-line {
+    transition: opacity 1s ease-in-out;
+    transform-origin: top;
+}
+
+@keyframes growLine {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
+    }
+}
+
+.timeline-line.animate {
+    opacity: 1;
+    animation: growLine 1.5s ease-out forwards;
+}
+
+.process-step.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.process-icon.animate {
+    opacity: 1;
+    transform: scale(1);
 } 
