@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('mobile-menu-button').addEventListener('click', function() {
         document.getElementById('mobile-menu').classList.toggle('hidden');
     });
+    
+    // Initialize testimonials carousel
+    initTestimonialsCarousel();
 });
 
 function startScoreAnimations() {
@@ -98,53 +101,96 @@ function animateValue(element, start, end, duration, suffix = '', decimals = 0) 
     requestAnimationFrame(updateValue);
 }
 
-// Testimonials scrolling functionality
-function scrollTestimonials(direction) {
-    const track = document.querySelector('.testimonials-track');
-    const cards = document.querySelectorAll('.testimonial-card');
+// Testimonials carousel functionality
+function initTestimonialsCarousel() {
+    const container = document.getElementById('testimonials-container');
+    const prevButton = document.getElementById('prev-testimonial');
+    const nextButton = document.getElementById('next-testimonial');
+    const dots = document.querySelectorAll('.testimonial-dot');
+    
+    if (!container || !prevButton || !nextButton) return;
+    
+    const cards = container.querySelectorAll('.testimonial-card');
     const cardWidth = cards[0].offsetWidth;
-    const gap = 32; // 2rem gap between cards
-    const scrollAmount = cardWidth + gap;
+    const cardMargin = 16; // 1rem margin on each side
+    const totalWidth = cardWidth + (cardMargin * 2);
     
-    if (direction === 'next') {
-        track.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
-    } else {
-        track.scrollBy({
-            left: -scrollAmount,
-            behavior: 'smooth'
-        });
-    }
-}
-
-// Initialize testimonials scroll buttons visibility
-function initTestimonialsScroll() {
-    const track = document.querySelector('.testimonials-track');
-    const prevButton = document.querySelector('.scroll-button.prev');
-    const nextButton = document.querySelector('.scroll-button.next');
+    let currentIndex = 0;
+    const maxIndex = cards.length - getVisibleCards();
     
-    // Check scroll position and update button visibility
-    function updateScrollButtons() {
-        const isAtStart = track.scrollLeft === 0;
-        const isAtEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth;
-        
-        prevButton.style.opacity = isAtStart ? '0.5' : '1';
-        prevButton.style.cursor = isAtStart ? 'not-allowed' : 'pointer';
-        
-        nextButton.style.opacity = isAtEnd ? '0.5' : '1';
-        nextButton.style.cursor = isAtEnd ? 'not-allowed' : 'pointer';
+    // Function to get number of visible cards based on screen size
+    function getVisibleCards() {
+        if (window.innerWidth >= 1024) return 3; // lg breakpoint
+        if (window.innerWidth >= 768) return 2;  // md breakpoint
+        return 1; // mobile
     }
     
-    // Update buttons on scroll
-    track.addEventListener('scroll', updateScrollButtons);
+    // Update carousel position
+    function updateCarousel() {
+        const offset = currentIndex * totalWidth;
+        container.style.transform = `translateX(-${offset}px)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.add('bg-emerald-500');
+                dot.classList.remove('bg-gray-600');
+            } else {
+                dot.classList.remove('bg-emerald-500');
+                dot.classList.add('bg-gray-600');
+            }
+        });
+        
+        // Update button states
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex >= maxIndex;
+        
+        if (prevButton.disabled) {
+            prevButton.classList.add('opacity-50', 'cursor-not-allowed');
+        } else {
+            prevButton.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+        
+        if (nextButton.disabled) {
+            nextButton.classList.add('opacity-50', 'cursor-not-allowed');
+        } else {
+            nextButton.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+    }
     
-    // Initial check
-    updateScrollButtons();
-}
-
-// Initialize testimonials when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    initTestimonialsScroll();
-}); 
+    // Event listeners for buttons
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+    
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+    
+    // Event listeners for dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel();
+        });
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        // Recalculate maxIndex based on new visible cards count
+        const newMaxIndex = cards.length - getVisibleCards();
+        if (currentIndex > newMaxIndex) {
+            currentIndex = newMaxIndex;
+        }
+        updateCarousel();
+    });
+    
+    // Initial setup
+    updateCarousel();
+} 

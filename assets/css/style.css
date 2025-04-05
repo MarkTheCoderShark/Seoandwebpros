@@ -44,4 +44,56 @@ body {
 .marketing-badge {
     background: rgba(168, 85, 247, 0.1);
     border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* Testimonials Carousel Styles */
+#testimonials-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.testimonial-card {
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+#prev-testimonial, #next-testimonial {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+#prev-testimonial:hover, #next-testimonial:hover {
+    background-color: rgba(16, 185, 129, 0.8);
+    transform: scale(1.1);
+}
+
+.testimonial-dot {
+    transition: all 0.3s ease;
+}
+
+.testimonial-dot:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    #prev-testimonial, #next-testimonial {
+        width: 36px;
+        height: 36px;
+    }
 } 
