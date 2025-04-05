@@ -605,73 +605,151 @@
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-gray-800 p-8 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Sarah Johnson</h4>
-                            <p class="text-gray-400 text-sm">CEO, TechStart</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        "SEO & Web Pros completely transformed our online presence. Our organic traffic increased by 320% within 6 months of working with them."
-                    </p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
+            <div class="testimonials-container">
+                <button class="scroll-button prev" onclick="scrollTestimonials('prev')">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="scroll-button next" onclick="scrollTestimonials('next')">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
                 
-                <!-- Testimonial 2 -->
-                <div class="bg-gray-800 p-8 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="w-full h-full object-cover">
+                <div class="testimonials-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card p-8 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 testimonial-image overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Sarah Johnson</h4>
+                                <p class="text-gray-400 text-sm">CEO, TechStart</p>
+                            </div>
                         </div>
-                        <div>
-                            <h4 class="font-bold">Michael Chen</h4>
-                            <p class="text-gray-400 text-sm">Marketing Director</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        "Their technical SEO expertise is unmatched. They fixed issues we didn't even know we had and our rankings improved dramatically."
-                    </p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="bg-gray-800 p-8 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma Rodriguez" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Emma Rodriguez</h4>
-                            <p class="text-gray-400 text-sm">Founder, Boutique Co</p>
+                        <p class="text-gray-300 mb-4">
+                            "SEO & Web Pros completely transformed our online presence. Our organic traffic increased by 320% within 6 months of working with them."
+                        </p>
+                        <div class="testimonial-rating text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-300 mb-4">
-                        "Our e-commerce conversion rate doubled after their web development team redesigned our product pages. Worth every penny!"
-                    </p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card p-8 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 testimonial-image overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Michael Chen</h4>
+                                <p class="text-gray-400 text-sm">Marketing Director</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            "Their technical SEO expertise is unmatched. They fixed issues we didn't even know we had and our rankings improved dramatically."
+                        </p>
+                        <div class="testimonial-rating text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card p-8 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 testimonial-image overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma Rodriguez" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Emma Rodriguez</h4>
+                                <p class="text-gray-400 text-sm">Founder, Boutique Co</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            "Our e-commerce conversion rate doubled after their web development team redesigned our product pages. Worth every penny!"
+                        </p>
+                        <div class="testimonial-rating text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card p-8 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 testimonial-image overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="David Wilson" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">David Wilson</h4>
+                                <p class="text-gray-400 text-sm">CTO, HealthTech</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            "The team's expertise in healthcare SEO helped us dominate local search results. Patient appointments increased by 180%!"
+                        </p>
+                        <div class="testimonial-rating text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-card p-8 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 testimonial-image overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Lisa Thompson" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Lisa Thompson</h4>
+                                <p class="text-gray-400 text-sm">Owner, Real Estate Pro</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            "Our property listings now rank at the top of local search results. Lead generation has never been better!"
+                        </p>
+                        <div class="testimonial-rating text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-card p-8 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 testimonial-image overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="James Anderson" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">James Anderson</h4>
+                                <p class="text-gray-400 text-sm">Director, EduTech</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            "Their content strategy helped us establish authority in our niche. Student enrollment increased by 85%!"
+                        </p>
+                        <div class="testimonial-rating text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                     </div>
                 </div>
             </div>

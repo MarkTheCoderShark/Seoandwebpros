@@ -96,4 +96,55 @@ function animateValue(element, start, end, duration, suffix = '', decimals = 0) 
     }
     
     requestAnimationFrame(updateValue);
-} 
+}
+
+// Testimonials scrolling functionality
+function scrollTestimonials(direction) {
+    const track = document.querySelector('.testimonials-track');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 32; // 2rem gap between cards
+    const scrollAmount = cardWidth + gap;
+    
+    if (direction === 'next') {
+        track.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    } else {
+        track.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Initialize testimonials scroll buttons visibility
+function initTestimonialsScroll() {
+    const track = document.querySelector('.testimonials-track');
+    const prevButton = document.querySelector('.scroll-button.prev');
+    const nextButton = document.querySelector('.scroll-button.next');
+    
+    // Check scroll position and update button visibility
+    function updateScrollButtons() {
+        const isAtStart = track.scrollLeft === 0;
+        const isAtEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth;
+        
+        prevButton.style.opacity = isAtStart ? '0.5' : '1';
+        prevButton.style.cursor = isAtStart ? 'not-allowed' : 'pointer';
+        
+        nextButton.style.opacity = isAtEnd ? '0.5' : '1';
+        nextButton.style.cursor = isAtEnd ? 'not-allowed' : 'pointer';
+    }
+    
+    // Update buttons on scroll
+    track.addEventListener('scroll', updateScrollButtons);
+    
+    // Initial check
+    updateScrollButtons();
+}
+
+// Initialize testimonials when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initTestimonialsScroll();
+}); 

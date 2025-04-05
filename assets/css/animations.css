@@ -278,4 +278,104 @@
 
 .pro-stat:hover::before {
     opacity: 1;
+}
+
+/* Testimonials Section Animations */
+.testimonials-container {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+.testimonials-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 2rem;
+}
+
+.testimonial-card {
+    flex: 0 0 350px;
+    background: rgba(31, 41, 55, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 9999px;
+}
+
+.testimonial-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(59, 130, 246, 0.2), rgba(16, 185, 129, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-image::after {
+    opacity: 1;
+}
+
+.testimonial-rating {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.testimonial-rating i {
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-rating i {
+    transform: scale(1.2);
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(31, 41, 55, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 1rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.scroll-button:hover {
+    background: rgba(59, 130, 246, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.scroll-button.prev {
+    left: 1rem;
+}
+
+.scroll-button.next {
+    right: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.testimonial-card {
+    animation: fadeIn 0.5s ease forwards;
 } 
