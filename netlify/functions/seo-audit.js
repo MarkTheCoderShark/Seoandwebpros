@@ -3,10 +3,14 @@ const cheerio = require('cheerio');
 const https = require('https');
 const crypto = require('crypto');
 
-// In-memory storage for audit results (will reset on function cold start)
-const auditResults = new Map();
+// Configure axios with longer timeout
+const axiosInstance = axios.create({
+  timeout: 8000, // 8 seconds timeout
+  httpsAgent: new https.Agent({ keepAlive: true })
+});
 
-// Add at the top of the file after imports
+// Reduced timeout for individual checks
+const CHECK_TIMEOUT = 8000; // 8 seconds
 const MAX_RETRIES = 2;
 const RETRY_DELAY = 1000;
 
@@ -122,7 +126,6 @@ async function checkWithRetry(checkFn, checkName, results) {
 async function performSEOAudit(url) {
   console.log('Starting performSEOAudit');
   
-  // Initialize with default structure matching frontend expectations
   const results = {
     score: 0,
     status: {
@@ -147,71 +150,45 @@ async function performSEOAudit(url) {
   };
 
   try {
-    // Run all checks in parallel with individual timeouts and retries
-    const [technicalResult, onPageResult, securityResult] = await Promise.allSettled([
-      Promise.race([
-        (async () => {
-          results.status.technical = 'in_progress';
-          await checkWithRetry(() => checkTechnicalSEO(url, results), 'Technical SEO');
-          results.status.technical = 'completed';
-        })(),
-        new Promise((_, reject) => setTimeout(() => reject(new Error('Technical SEO check timed out')), 20000))
-      ]).catch(error => {
-        console.error('Technical SEO check failed:', error);
-        results.technical.error = error.message;
-        results.status.technical = 'failed';
-      }),
-      
-      Promise.race([
-        (async () => {
-          results.status.onPage = 'in_progress';
-          await checkWithRetry(() => checkOnPageSEO(url, results), 'On-page SEO');
-          results.status.onPage = 'completed';
-        })(),
-        new Promise((_, reject) => setTimeout(() => reject(new Error('On-page SEO check timed out')), 20000))
-      ]).catch(error => {
-        console.error('On-page SEO check failed:', error);
-        results.onPage.error = error.message;
-        results.status.onPage = 'failed';
-      }),
-      
-      Promise.race([
-        (async () => {
-          results.status.security = 'in_progress';
-          await checkWithRetry(() => checkSecurity(url, results), 'Security');
-          results.status.security = 'completed';
-        })(),
-        new Promise((_, reject) => setTimeout(() => reject(new Error('Security check timed out')), 20000))
-      ]).catch(error => {
-        console.error('Security check failed:', error);
-        results.security.error = error.message;
-        results.status.security = 'failed';
-      })
-    ]);
+    // Run checks sequentially instead of parallel to reduce memory usage
+    try {
+      results.status.technical = 'in_progress';
+      await checkWithRetry(() => checkTechnicalSEO(url, results), 'Technical SEO');
+      results.status.technical = 'completed';
+    } catch (error) {
+      console.error('Technical SEO check failed:', error);
+      results.technical.error = error.message;
+      results.status.technical = 'failed';
+    }
 
-    // Log the status of each check
-    console.log('Check statuses:', results.status);
+    try {
+      results.status.onPage = 'in_progress';
+      await checkWithRetry(() => checkOnPageSEO(url, results), 'On-page SEO');
+      results.status.onPage = 'completed';
+    } catch (error) {
+      console.error('On-page SEO check failed:', error);
+      results.onPage.error = error.message;
+      results.status.onPage = 'failed';
+    }
+
+    try {
+      results.status.security = 'in_progress';
+      await checkWithRetry(() => checkSecurity(url, results), 'Security');
+      results.status.security = 'completed';
+    } catch (error) {
+      console.error('Security check failed:', error);
+      results.security.error = error.message;
+      results.status.security = 'failed';
+    }
 
     // Calculate score even if some checks failed
     calculateScore(results);
     generateRecommendations(results);
 
-    // Add warning if any check failed
-    const failedChecks = Object.entries(results.status)
-      .filter(([_, status]) => status === 'failed')
-      .map(([check]) => check);
-    
-    if (failedChecks.length > 0) {
-      results.warning = `Some checks could not be completed (${failedChecks.join(', ')}). The score may not reflect the full analysis.`;
-    }
-
     return results;
   } catch (error) {
-    console.error('Audit error:', error);
-    return {
-      ...results,
-      error: error.message || 'Audit failed to complete'
-    };
+    console.error('Error in performSEOAudit:', error);
+    throw error;
   }
 }
 
