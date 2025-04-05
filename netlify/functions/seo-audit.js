@@ -12,7 +12,30 @@ exports.handler = async (event, context) => {
   }
 
   try {
+    // Validate input
+    if (!event.body) {
+      throw new Error('Request body is required');
+    }
+
     const { url } = JSON.parse(event.body);
+    
+    if (!url) {
+      throw new Error('URL is required');
+    }
+
+    // Validate URL format
+    try {
+      new URL(url);
+    } catch (e) {
+      throw new Error('Invalid URL format');
+    }
+
+    // Check if API key is available
+    if (!process.env.GOOGLE_API_KEY) {
+      throw new Error('Google API key is not configured');
+    }
+
+    console.log('Starting SEO audit for:', url);
     const results = await performSEOAudit(url);
     
     return {
@@ -24,14 +47,23 @@ exports.handler = async (event, context) => {
       body: JSON.stringify(results)
     };
   } catch (error) {
+    console.error('Error in handler:', error);
     return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error.message })
+      statusCode: error.statusCode || 500,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
+      body: JSON.stringify({ 
+        error: error.message || 'Internal server error',
+        details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      })
     };
   }
 };
 
 async function performSEOAudit(url) {
+  console.log('Starting performSEOAudit');
   const results = {
     score: 0,
     technical: {},
@@ -41,25 +73,30 @@ async function performSEOAudit(url) {
   };
 
   try {
-    // 1. Technical Checks
-    await checkTechnicalSEO(url, results);
-    
-    // 2. On-Page SEO
-    await checkOnPageSEO(url, results);
-    
-    // 3. Security Checks
-    await checkSecurity(url, results);
-    
-    // 4. Calculate Overall Score
+    // Run checks in parallel for better performance
+    await Promise.all([
+      checkTechnicalSEO(url, results).catch(error => {
+        console.error('Technical SEO check failed:', error);
+        results.technical.error = 'Technical analysis failed';
+      }),
+      checkOnPageSEO(url, results).catch(error => {
+        console.error('On-page SEO check failed:', error);
+        results.onPage.error = 'On-page analysis failed';
+      }),
+      checkSecurity(url, results).catch(error => {
+        console.error('Security check failed:', error);
+        results.security.error = 'Security analysis failed';
+      })
+    ]);
+
+    // Continue with score calculation even if some checks failed
     calculateScore(results);
-    
-    // 5. Generate Recommendations
     generateRecommendations(results);
 
     return results;
   } catch (error) {
     console.error('Audit error:', error);
-    throw error;
+    throw new Error('Failed to complete SEO audit: ' + error.message);
   }
 }
 
