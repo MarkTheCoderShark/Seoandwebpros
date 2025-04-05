@@ -63,127 +63,371 @@ function generateReport(results) {
   <meta charset="UTF-8">
   <title>SEO Audit Report - ${results.url}</title>
   <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #1e40af;
+      --success-color: #059669;
+      --warning-color: #d97706;
+      --danger-color: #dc2626;
+      --text-color: #1f2937;
+      --light-bg: #f3f4f6;
+      --border-color: #e5e7eb;
+    }
+    
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px;
-      color: #333;
-    }
-    h1, h2, h3 {
-      color: #2c3e50;
-    }
-    .score {
-      font-size: 24px;
-      font-weight: bold;
-      color: #27ae60;
-    }
-    .section {
-      margin: 20px 0;
-      padding: 20px;
-      background: #f8f9fa;
-      border-radius: 5px;
-    }
-    .recommendation {
-      margin: 10px 0;
-      padding: 10px;
-      border-left: 4px solid #3498db;
+      padding: 40px;
+      color: var(--text-color);
       background: #fff;
     }
-    .high-priority {
-      border-left-color: #e74c3c;
+    
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--border-color);
     }
-    .medium-priority {
-      border-left-color: #f1c40f;
+    
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--primary-color);
+      margin-bottom: 10px;
     }
+    
     .metadata {
-      color: #7f8c8d;
-      font-size: 0.9em;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+      padding: 20px;
+      background: var(--light-bg);
+      border-radius: 8px;
+    }
+    
+    .metadata-item {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .metadata-label {
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    
+    .metadata-value {
+      font-weight: 500;
+    }
+    
+    .score-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+    
+    .score {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--primary-color);
+      margin: 10px 0;
+    }
+    
+    .score-label {
+      font-size: 18px;
+      color: #6b7280;
+    }
+    
+    .section {
+      margin: 30px 0;
+      padding: 30px;
+      background: var(--light-bg);
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-color);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border-color);
+    }
+    
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+    
+    .metric-card {
+      background: white;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    
+    .metric-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 8px;
+    }
+    
+    .metric-label {
+      font-size: 14px;
+      color: #6b7280;
+    }
+    
+    .recommendation {
+      margin: 15px 0;
+      padding: 20px;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    
+    .recommendation-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .priority-badge {
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 10px;
+    }
+    
+    .high-priority .priority-badge {
+      background: #fee2e2;
+      color: var(--danger-color);
+    }
+    
+    .medium-priority .priority-badge {
+      background: #fef3c7;
+      color: var(--warning-color);
+    }
+    
+    .low-priority .priority-badge {
+      background: #d1fae5;
+      color: var(--success-color);
+    }
+    
+    .recommendation-title {
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    .recommendation-content {
+      margin-top: 10px;
+    }
+    
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 2px solid var(--border-color);
+      text-align: center;
+      color: #6b7280;
+      font-size: 14px;
+    }
+    
+    .contact-info {
+      margin-top: 20px;
+      padding: 20px;
+      background: var(--light-bg);
+      border-radius: 8px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <h1>SEO Audit Report</h1>
+  <div class="header">
+    <div class="logo">SEO & WEB PROS</div>
+    <h1>SEO Audit Report</h1>
+  </div>
+
   <div class="metadata">
-    <p>URL: ${results.url}</p>
-    <p>Date: ${new Date(results.auditDate).toLocaleString()}</p>
-    <p>Email: ${results.email}</p>
+    <div class="metadata-item">
+      <span class="metadata-label">Website URL</span>
+      <span class="metadata-value">${results.url}</span>
+    </div>
+    <div class="metadata-item">
+      <span class="metadata-label">Audit Date</span>
+      <span class="metadata-value">${new Date(results.auditDate).toLocaleString()}</span>
+    </div>
+    <div class="metadata-item">
+      <span class="metadata-label">Contact Email</span>
+      <span class="metadata-value">${results.email}</span>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>Overall Score</h2>
+  <div class="score-container">
+    <div class="score-label">Overall SEO Score</div>
     <div class="score">${results.score}%</div>
+    <div class="score-description">Based on comprehensive analysis of technical, on-page, and performance metrics</div>
   </div>
 
   <div class="section">
-    <h2>Performance Metrics</h2>
+    <h2 class="section-title">Executive Summary</h2>
+    <p>This SEO audit report provides a comprehensive analysis of your website's search engine optimization status. The audit covers technical SEO, on-page optimization, performance metrics, and security aspects. Below you'll find detailed recommendations to improve your website's search engine visibility and user experience.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Performance Metrics</h2>
     ${results.technical?.performance?.score ? `
-      <p>Page Speed Score: ${Math.round(results.technical.performance.score)}%</p>
-      <p>First Contentful Paint: ${results.technical.performance.metrics.fcp}</p>
-      <p>Largest Contentful Paint: ${results.technical.performance.metrics.lcp}</p>
-      <p>Cumulative Layout Shift: ${results.technical.performance.metrics.cls}</p>
-      <p>Speed Index: ${results.technical.performance.metrics.speed_index}</p>
+      <div class="metric-grid">
+        <div class="metric-card">
+          <div class="metric-value">${Math.round(results.technical.performance.score)}%</div>
+          <div class="metric-label">Page Speed Score</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">${results.technical.performance.metrics.fcp}</div>
+          <div class="metric-label">First Contentful Paint</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">${results.technical.performance.metrics.lcp}</div>
+          <div class="metric-label">Largest Contentful Paint</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">${results.technical.performance.metrics.cls}</div>
+          <div class="metric-label">Cumulative Layout Shift</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">${results.technical.performance.metrics.speed_index}</div>
+          <div class="metric-label">Speed Index</div>
+        </div>
+      </div>
     ` : '<p>Performance metrics not available</p>'}
   </div>
 
   <div class="section">
-    <h2>On-Page SEO</h2>
+    <h2 class="section-title">On-Page SEO Analysis</h2>
     ${results.onPage?.meta ? `
-      <h3>Meta Tags</h3>
-      <p>Title: ${results.onPage.meta.title.content}</p>
-      <p>Title Length: ${results.onPage.meta.title.length} characters (${results.onPage.meta.title.optimal ? 'Optimal' : 'Needs improvement'})</p>
-      <p>Description: ${results.onPage.meta.description.content || 'Not found'}</p>
-      <p>Description Length: ${results.onPage.meta.description.length} characters (${results.onPage.meta.description.optimal ? 'Optimal' : 'Needs improvement'})</p>
+      <div class="metric-grid">
+        <div class="metric-card">
+          <div class="metric-value">${results.onPage.meta.title.length}</div>
+          <div class="metric-label">Title Length (${results.onPage.meta.title.optimal ? 'Optimal' : 'Needs improvement'})</div>
+          <div class="metric-detail">${results.onPage.meta.title.content}</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">${results.onPage.meta.description.length}</div>
+          <div class="metric-label">Description Length (${results.onPage.meta.description.optimal ? 'Optimal' : 'Needs improvement'})</div>
+          <div class="metric-detail">${results.onPage.meta.description.content || 'Not found'}</div>
+        </div>
+      </div>
     ` : ''}
     
     ${results.onPage?.headings ? `
       <h3>Heading Structure</h3>
-      <p>H1 Tags: ${results.onPage.headings.h1.count}</p>
-      <p>H2 Tags: ${results.onPage.headings.h2.count}</p>
-      <p>H3 Tags: ${results.onPage.headings.h3.count}</p>
+      <div class="metric-grid">
+        <div class="metric-card">
+          <div class="metric-value">${results.onPage.headings.h1.count}</div>
+          <div class="metric-label">H1 Tags</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">${results.onPage.headings.h2.count}</div>
+          <div class="metric-label">H2 Tags</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">${results.onPage.headings.h3.count}</div>
+          <div class="metric-label">H3 Tags</div>
+        </div>
+      </div>
     ` : ''}
     
     ${results.onPage?.images ? `
-      <h3>Images</h3>
-      <p>Total Images: ${results.onPage.images.total}</p>
-      <p>Images Missing Alt Text: ${results.onPage.images.missing_alt}</p>
+      <h3>Image Optimization</h3>
+      <div class="metric-grid">
+        <div class="metric-card">
+          <div class="metric-value">${results.onPage.images.total}</div>
+          <div class="metric-label">Total Images</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">${results.onPage.images.missing_alt}</div>
+          <div class="metric-label">Images Missing Alt Text</div>
+        </div>
+      </div>
     ` : ''}
   </div>
 
   <div class="section">
-    <h2>Technical SEO</h2>
-    ${results.technical?.robots_txt ? `
-      <p>Robots.txt: ${results.technical.robots_txt.exists ? 'Found' : 'Not found'}</p>
-    ` : ''}
-    ${results.technical?.sitemap ? `
-      <p>Sitemap.xml: ${results.technical.sitemap.exists ? 'Found' : 'Not found'}</p>
-    ` : ''}
+    <h2 class="section-title">Technical SEO</h2>
+    <div class="metric-grid">
+      ${results.technical?.robots_txt ? `
+        <div class="metric-card">
+          <div class="metric-value">${results.technical.robots_txt.exists ? '✓' : '✗'}</div>
+          <div class="metric-label">Robots.txt</div>
+          <div class="metric-detail">${results.technical.robots_txt.exists ? 'Found' : 'Not found'}</div>
+        </div>
+      ` : ''}
+      ${results.technical?.sitemap ? `
+        <div class="metric-card">
+          <div class="metric-value">${results.technical.sitemap.exists ? '✓' : '✗'}</div>
+          <div class="metric-label">Sitemap.xml</div>
+          <div class="metric-detail">${results.technical.sitemap.exists ? 'Found' : 'Not found'}</div>
+        </div>
+      ` : ''}
+    </div>
   </div>
 
   <div class="section">
-    <h2>Security</h2>
-    ${results.security?.https ? `
-      <p>HTTPS: ${results.security.https ? 'Enabled' : 'Not enabled'}</p>
-    ` : ''}
-    ${results.security?.ssl ? `
-      <p>SSL Certificate: ${results.security.ssl.valid ? 'Valid' : 'Invalid'}</p>
-      ${results.security.ssl.valid ? `<p>Expires: ${new Date(results.security.ssl.expires).toLocaleDateString()}</p>` : ''}
-    ` : ''}
+    <h2 class="section-title">Security Analysis</h2>
+    <div class="metric-grid">
+      ${results.security?.https ? `
+        <div class="metric-card">
+          <div class="metric-value">${results.security.https ? '✓' : '✗'}</div>
+          <div class="metric-label">HTTPS</div>
+          <div class="metric-detail">${results.security.https ? 'Enabled' : 'Not enabled'}</div>
+        </div>
+      ` : ''}
+      ${results.security?.ssl ? `
+        <div class="metric-card">
+          <div class="metric-value">${results.security.ssl.valid ? '✓' : '✗'}</div>
+          <div class="metric-label">SSL Certificate</div>
+          <div class="metric-detail">
+            ${results.security.ssl.valid ? 'Valid' : 'Invalid'}
+            ${results.security.ssl.valid ? `<br>Expires: ${new Date(results.security.ssl.expires).toLocaleDateString()}` : ''}
+          </div>
+        </div>
+      ` : ''}
+    </div>
   </div>
 
   <div class="section">
-    <h2>Recommendations</h2>
+    <h2 class="section-title">Recommendations</h2>
     ${results.recommendations && results.recommendations.length > 0 ? 
       results.recommendations.map(rec => `
         <div class="recommendation ${rec.priority}-priority">
-          <h3>${rec.category}</h3>
-          <p><strong>Issue:</strong> ${rec.issue}</p>
-          <p><strong>Recommendation:</strong> ${rec.recommendation}</p>
+          <div class="recommendation-header">
+            <span class="priority-badge">${rec.priority.toUpperCase()}</span>
+            <h3 class="recommendation-title">${rec.category}</h3>
+          </div>
+          <div class="recommendation-content">
+            <p><strong>Issue:</strong> ${rec.issue}</p>
+            <p><strong>Recommendation:</strong> ${rec.recommendation}</p>
+          </div>
         </div>
       `).join('') 
       : '<p>No recommendations available</p>'
     }
+  </div>
+
+  <div class="contact-info">
+    <h3>Need Help Implementing These Recommendations?</h3>
+    <p>Our team of SEO experts is ready to help you improve your website's performance.</p>
+    <p>Contact us at: <a href="mailto:${results.email}">${results.email}</a></p>
+  </div>
+
+  <div class="footer">
+    <p>Generated by SEO & WEB PROS - Professional SEO Audit Tool</p>
+    <p>© ${new Date().getFullYear()} SEO & WEB PROS. All rights reserved.</p>
   </div>
 </body>
 </html>
