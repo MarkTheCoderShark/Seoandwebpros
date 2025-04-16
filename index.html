@@ -14,96 +14,121 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        dark: '#111827',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    },
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-gray-900 text-white">
     <!-- Navigation -->
     <div id="navigation"></div>
-    <script>
-        fetch('components/navigation.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navigation').innerHTML = data;
-            });
-    </script>
-
+    
     <!-- Hero Section -->
     <div id="hero"></div>
-    <script>
-        fetch('components/hero.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('hero').innerHTML = data;
-            });
-    </script>
-
+    
     <!-- Clients Section -->
     <div id="clients"></div>
-    <script>
-        fetch('components/clients.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('clients').innerHTML = data;
-            });
-    </script>
-
+    
     <!-- Results Section -->
     <div id="results"></div>
-    <script>
-        fetch('components/results.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('results').innerHTML = data;
-            });
-    </script>
-
+    
     <!-- Services Section -->
     <div id="services"></div>
-    <script>
-        fetch('components/services.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('services').innerHTML = data;
-            });
-    </script>
-
+    
     <!-- Testimonials Section -->
     <div id="testimonials"></div>
-    <script>
-        fetch('components/testimonials.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('testimonials').innerHTML = data;
-            });
-    </script>
-
+    
     <!-- Team Section -->
     <div id="team"></div>
-    <script>
-        fetch('components/team.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('team').innerHTML = data;
-            });
-    </script>
-
+    
     <!-- Contact Section -->
     <div id="contact"></div>
+    
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+    
+    <!-- Component Loading Script -->
     <script>
-        fetch('components/contact.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('contact').innerHTML = data;
-            });
-    </script>
-
-    <!-- Footer Scripts -->
-    <div id="footer-scripts"></div>
-    <script>
-        fetch('components/footer-scripts.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-scripts').innerHTML = data;
-            });
+        // Function to load a component
+        async function loadComponent(componentId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(componentId).innerHTML = html;
+                
+                // If this is the results section, initialize the counter animation
+                if (componentId === 'results') {
+                    initializeCounterAnimation();
+                }
+            } catch (error) {
+                console.error(`Error loading ${componentId}:`, error);
+            }
+        }
+        
+        // Load all components
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('navigation', 'components/navigation.html');
+            loadComponent('hero', 'components/hero.html');
+            loadComponent('clients', 'components/clients.html');
+            loadComponent('results', 'components/results.html');
+            loadComponent('services', 'components/services.html');
+            loadComponent('testimonials', 'components/testimonials.html');
+            loadComponent('team', 'components/team.html');
+            loadComponent('contact', 'components/contact.html');
+            loadComponent('footer', 'components/footer.html');
+        });
+        
+        // Counter animation function
+        function initializeCounterAnimation() {
+            const resultNumbers = document.querySelectorAll('.result-number');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        const targetValue = parseInt(element.getAttribute('data-value'));
+                        const duration = 2000; // 2 seconds
+                        const startTime = performance.now();
+                        
+                        function updateNumber(currentTime) {
+                            const elapsedTime = currentTime - startTime;
+                            const progress = Math.min(elapsedTime / duration, 1);
+                            
+                            const currentValue = Math.floor(progress * targetValue);
+                            element.textContent = currentValue;
+                            
+                            if (progress < 1) {
+                                requestAnimationFrame(updateNumber);
+                            } else {
+                                element.textContent = targetValue;
+                            }
+                        }
+                        
+                        requestAnimationFrame(updateNumber);
+                        observer.unobserve(element);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            resultNumbers.forEach(number => observer.observe(number));
+        }
     </script>
 </body>
 </html> 
