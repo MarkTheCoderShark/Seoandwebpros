@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO & Web Pros - Expert Digital Marketing Services</title>
+    <meta name="description" content="Expert SEO, web development, and digital marketing services to help your business grow online. Get a free consultation today!">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <div id="navigation"></div>
+    <script>
+        fetch('components/navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation').innerHTML = data;
+            });
+    </script>
+
+    <!-- Hero Section -->
+    <div id="hero"></div>
+    <script>
+        fetch('components/hero.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('hero').innerHTML = data;
+            });
+    </script>
+
+    <!-- Clients Section -->
+    <div id="clients"></div>
+    <script>
+        fetch('components/clients.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('clients').innerHTML = data;
+            });
+    </script>
+
+    <!-- Results Section -->
+    <div id="results"></div>
+    <script>
+        fetch('components/results.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('results').innerHTML = data;
+            });
+    </script>
+
+    <!-- Services Section -->
+    <div id="services"></div>
+    <script>
+        fetch('components/services.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('services').innerHTML = data;
+            });
+    </script>
+
+    <!-- Testimonials Section -->
+    <div id="testimonials"></div>
+    <script>
+        fetch('components/testimonials.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('testimonials').innerHTML = data;
+            });
+    </script>
+
+    <!-- Team Section -->
+    <div id="team"></div>
+    <script>
+        fetch('components/team.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('team').innerHTML = data;
+            });
+    </script>
+
+    <!-- Contact Section -->
+    <div id="contact"></div>
+    <script>
+        fetch('components/contact.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('contact').innerHTML = data;
+            });
+    </script>
+
+    <!-- Footer Scripts -->
+    <div id="footer-scripts"></div>
+    <script>
+        fetch('components/footer-scripts.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-scripts').innerHTML = data;
+            });
+    </script>
+</body>
+</html> 
