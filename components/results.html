@@ -1,5 +1,5 @@
 <!-- Results Section -->
-<section id="results" class="py-20 px-4 sm:px-6 lg:px-8">
+<section id="results" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-gray-800">
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Proven <span class="gradient-text">Results</span></h2>
@@ -8,32 +8,95 @@
             </p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Main Stats Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <!-- Result 1 -->
-            <div class="bg-gray-800 rounded-xl p-8 text-center transform transition-all duration-500 opacity-0 translate-y-8 result-card">
+            <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 text-center transform transition-all duration-500 opacity-0 translate-y-8 result-card border border-gray-700/50 hover:border-emerald-500/30">
                 <div class="w-20 h-20 bg-emerald-900 bg-opacity-50 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-chart-line text-3xl text-emerald-400"></i>
                 </div>
                 <h3 class="text-5xl font-bold gradient-text mb-3"><span class="result-number" data-value="320">0</span>%</h3>
-                <p class="text-gray-400">Increase in organic traffic</p>
+                <p class="text-gray-400 mb-4">Increase in organic traffic</p>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div class="bg-gradient-to-r from-emerald-500 to-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                </div>
             </div>
             
             <!-- Result 2 -->
-            <div class="bg-gray-800 rounded-xl p-8 text-center transform transition-all duration-500 opacity-0 translate-y-8 result-card" style="transition-delay: 200ms;">
+            <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 text-center transform transition-all duration-500 opacity-0 translate-y-8 result-card border border-gray-700/50 hover:border-blue-500/30" style="transition-delay: 200ms;">
                 <div class="w-20 h-20 bg-blue-900 bg-opacity-50 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-search-dollar text-3xl text-blue-400"></i>
                 </div>
                 <h3 class="text-5xl font-bold gradient-text mb-3"><span class="result-number" data-value="1850">0</span>+</h3>
-                <p class="text-gray-400">Keywords ranking on page 1</p>
+                <p class="text-gray-400 mb-4">Keywords ranking on page 1</p>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full" style="width: 92%"></div>
+                </div>
             </div>
             
             <!-- Result 3 -->
-            <div class="bg-gray-800 rounded-xl p-8 text-center transform transition-all duration-500 opacity-0 translate-y-8 result-card" style="transition-delay: 400ms;">
+            <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 text-center transform transition-all duration-500 opacity-0 translate-y-8 result-card border border-gray-700/50 hover:border-purple-500/30" style="transition-delay: 400ms;">
                 <div class="w-20 h-20 bg-purple-900 bg-opacity-50 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-chart-pie text-3xl text-purple-400"></i>
                 </div>
                 <h3 class="text-5xl font-bold gradient-text mb-3"><span class="result-number" data-value="5.2">0</span>x</h3>
-                <p class="text-gray-400">Return on marketing investment</p>
+                <p class="text-gray-400 mb-4">Return on marketing investment</p>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style="width: 78%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Metrics -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            <div class="text-center">
+                <div class="text-3xl font-bold text-emerald-400 mb-2">98%</div>
+                <div class="text-gray-400 text-sm">Client Satisfaction</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-blue-400 mb-2">500+</div>
+                <div class="text-gray-400 text-sm">Projects Completed</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-purple-400 mb-2">45%</div>
+                <div class="text-gray-400 text-sm">Avg. Conversion Increase</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-pink-400 mb-2">24/7</div>
+                <div class="text-gray-400 text-sm">Support Available</div>
+            </div>
+        </div>
+
+        <!-- Success Stories -->
+        <div class="bg-gray-800/30 rounded-xl p-8 border border-gray-700/50">
+            <h3 class="text-2xl font-bold text-center mb-8">Recent <span class="gradient-text">Success Stories</span></h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-store text-white"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">E-commerce Store</h4>
+                        <p class="text-gray-400 text-sm mb-2">Increased online sales by 280% in 6 months through SEO optimization and conversion rate improvements.</p>
+                        <div class="flex items-center text-emerald-400 text-sm">
+                            <i class="fas fa-arrow-up mr-1"></i>
+                            <span>280% Sales Increase</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-building text-white"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">Real Estate Agency</h4>
+                        <p class="text-gray-400 text-sm mb-2">Generated 450+ qualified leads monthly through targeted PPC campaigns and landing page optimization.</p>
+                        <div class="flex items-center text-blue-400 text-sm">
+                            <i class="fas fa-arrow-up mr-1"></i>
+                            <span>450+ Monthly Leads</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
