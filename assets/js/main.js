@@ -326,7 +326,13 @@ function initializeModal() {
             e.preventDefault();
             console.log('Website form submitted');
             
-            const websiteUrl = document.getElementById('websiteUrl').value;
+            let websiteUrl = document.getElementById('websiteUrl').value.trim();
+            // Auto-prepend scheme if missing so the URL input is always valid
+            if (websiteUrl && !/^(https?:\/\/)/i.test(websiteUrl)) {
+                websiteUrl = 'https://' + websiteUrl;
+                // reflect the formatted value back into the input so the user sees it
+                document.getElementById('websiteUrl').value = websiteUrl;
+            }
             console.log('Website URL:', websiteUrl);
             
             if (!websiteUrl) {
