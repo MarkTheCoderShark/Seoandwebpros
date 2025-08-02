@@ -278,29 +278,34 @@ function initializeModal() {
     noWebsiteLink.addEventListener('click', function(e) {
         e.preventDefault();
         console.log('No website link clicked!');
+        // Hide website field for users without websites
+        const websiteField = document.getElementById('websiteField');
+        if (websiteField) websiteField.style.display = 'none';
         modal.classList.add('show');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
     });
     
-    // Close modal when X button is clicked
-    closeModal.addEventListener('click', function() {
+    // Function to close modal and clean up
+    function closeModalAndCleanup() {
         modal.classList.remove('show');
         document.body.style.overflow = ''; // Restore scrolling
-    });
+        localStorage.removeItem('submittedWebsite'); // Clear stored website
+    }
+    
+    // Close modal when X button is clicked
+    closeModal.addEventListener('click', closeModalAndCleanup);
     
     // Close modal when clicking outside
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
-            modal.classList.remove('show');
-            document.body.style.overflow = '';
+            closeModalAndCleanup();
         }
     });
     
     // Close modal with Escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.classList.contains('show')) {
-            modal.classList.remove('show');
-            document.body.style.overflow = '';
+            closeModalAndCleanup();
         }
     });
     
@@ -323,18 +328,22 @@ function initializeModal() {
                 return;
             }
             
-            // Simulate form submission
-            const submitBtn = websiteForm.querySelector('.proposal-btn');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
+            // Store the website URL and show the modal form
+            localStorage.setItem('submittedWebsite', websiteUrl);
             
-            setTimeout(() => {
-                showNotification('Thank you! We\'ll analyze your website and send you a proposal within 24 hours.', 'success');
-                websiteForm.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
+            // Show website field and populate it
+            const websiteField = document.getElementById('websiteField');
+            const submittedWebsiteInput = document.getElementById('submittedWebsite');
+            if (websiteField && submittedWebsiteInput) {
+                websiteField.style.display = 'block';
+                submittedWebsiteInput.value = websiteUrl;
+            }
+            
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+            
+            // Reset the website form
+            websiteForm.reset();
         });
     }
     
@@ -353,8 +362,7 @@ function initializeModal() {
             setTimeout(() => {
                 showNotification('Thank you! We\'ll be in touch with your custom proposal within 24 hours.', 'success');
                 proposalForm.reset();
-                modal.classList.remove('show');
-                document.body.style.overflow = '';
+                closeModalAndCleanup();
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
             }, 1500);
