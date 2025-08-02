@@ -1,12 +1,5 @@
 // Professional SEO & Web Pros - Main JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all components
-    initializeNavigation();
-    initializeAnimations();
-    initializeFormHandling();
-    initializeCounterAnimations();
-    initializeScrollEffects();
-});
+// Functions are now initialized after components load in index.html
 
 // Navigation functionality
 function initializeNavigation() {

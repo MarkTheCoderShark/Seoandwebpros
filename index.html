@@ -67,22 +67,30 @@
                 const response = await fetch(componentPath);
                 const html = await response.text();
                 document.getElementById(componentId).innerHTML = html;
+                console.log(`Loaded component: ${componentId}`);
             } catch (error) {
                 console.error(`Error loading ${componentId}:`, error);
             }
         }
         
-        // Load all components
-        document.addEventListener('DOMContentLoaded', () => {
-            loadComponent('navigation', 'components/navigation.html');
-            loadComponent('hero', 'components/hero.html');
-            loadComponent('clients', 'components/clients.html');
-            loadComponent('results', 'components/results.html');
-            loadComponent('services', 'components/services.html');
-            loadComponent('testimonials', 'components/testimonials.html');
-            loadComponent('team', 'components/team.html');
-            loadComponent('contact', 'components/contact.html');
-            loadComponent('footer', 'components/footer.html');
+        // Load all components and initialize JavaScript after
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('navigation', 'components/navigation.html');
+            await loadComponent('hero', 'components/hero.html');
+            await loadComponent('clients', 'components/clients.html');
+            await loadComponent('results', 'components/results.html');
+            await loadComponent('services', 'components/services.html');
+            await loadComponent('testimonials', 'components/testimonials.html');
+            await loadComponent('team', 'components/team.html');
+            await loadComponent('contact', 'components/contact.html');
+            await loadComponent('footer', 'components/footer.html');
+            
+            // Initialize JavaScript after all components are loaded
+            if (typeof initializeNavigation === 'function') initializeNavigation();
+            if (typeof initializeAnimations === 'function') initializeAnimations();
+            if (typeof initializeFormHandling === 'function') initializeFormHandling();
+            if (typeof initializeCounterAnimations === 'function') initializeCounterAnimations();
+            if (typeof initializeScrollEffects === 'function') initializeScrollEffects();
         });
     </script>
 </body>
