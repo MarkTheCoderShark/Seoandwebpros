@@ -7,15 +7,21 @@
     <meta name="description" content="Comprehensive social media marketing services to build your brand presence, engage your audience, and drive growth across all major platforms.">
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome - Load asynchronously -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/optimized-ui.css">
-    <link rel="stylesheet" href="../assets/css/animations.css">
+    <!-- Custom CSS - Load asynchronously -->
+    <link rel="preload" href="../assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="../assets/css/optimized-ui.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="../assets/css/animations.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/optimized-ui.css">
+        <link rel="stylesheet" href="../assets/css/animations.css">
+    </noscript>
 </head>
 <body class="min-h-screen bg-gray-50">
     <!-- Navigation -->
