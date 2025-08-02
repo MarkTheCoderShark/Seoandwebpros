@@ -111,6 +111,22 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icon-192x192.png">
     <link rel="apple-touch-icon" sizes="167x167" href="/assets/images/icon-152x152.png">
     
+    <!-- Hidden form for Netlify form detection -->
+    <form name="proposal-submission" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="fullName" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <select name="service">
+            <option value="seo">SEO Optimization</option>
+            <option value="web-development">Web Development</option>
+            <option value="content-marketing">Content Marketing</option>
+            <option value="paid-advertising">Paid Advertising</option>
+            <option value="social-media">Social Media Marketing</option>
+            <option value="consultation">General Consultation</option>
+        </select>
+        <input type="url" name="submittedWebsite" />
+    </form>
+    
     <!-- Fallback for CSS -->
     <noscript><link rel="stylesheet" href="assets/css/optimized-ui.css"></noscript>
 </head>

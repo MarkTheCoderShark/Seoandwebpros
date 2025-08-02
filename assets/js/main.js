@@ -355,25 +355,31 @@ function initializeModal() {
     
     // Handle proposal form submission
     if (proposalForm) {
+        console.log('Proposal form found, adding event listener');
         proposalForm.addEventListener('submit', function(e) {
+            console.log('Proposal form submitted');
+            
             const submitBtn = proposalForm.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
             
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             
-            // Let Netlify handle the form submission
-            // The form will be processed automatically by Netlify
-            // and you'll receive notifications in your Netlify dashboard
+            // Let the form submit naturally to Netlify
+            // Don't prevent default - let Netlify handle it
+            console.log('Form data being submitted to Netlify');
             
+            // Show success message after a short delay
             setTimeout(() => {
                 showNotification('Thank you! We\'ll be in touch with your custom proposal within 24 hours.', 'success');
                 proposalForm.reset();
                 closeModalAndCleanup();
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-            }, 1500);
+            }, 2000);
         });
+    } else {
+        console.log('Proposal form not found');
     }
 }
 
