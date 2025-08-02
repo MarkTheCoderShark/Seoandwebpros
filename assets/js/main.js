@@ -78,7 +78,7 @@ function initializeAnimations() {
     }, observerOptions);
     
     // Observe all cards and sections
-    const animatedElements = document.querySelectorAll('.card, .service-card, .testimonial-card');
+    const animatedElements = document.querySelectorAll('.card, .service-card, .testimonial-card, .result-card');
     animatedElements.forEach(el => {
         observer.observe(el);
     });
@@ -94,43 +94,50 @@ function initializeAnimations() {
 // Professional counter animations
 function initializeCounterAnimations() {
     const counterElements = document.querySelectorAll('[data-value]');
+    console.log('Found counter elements:', counterElements.length);
+    
+    // Helper function to animate counter
+    function animateCounter(element, targetValue) {
+        const duration = 2000;
+        const startTime = performance.now();
+        
+        function updateCounter(currentTime) {
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / duration, 1);
+            
+            const currentValue = progress * targetValue;
+            
+            if (element.id === 'score-percentage') {
+                element.textContent = Math.round(currentValue) + '%';
+            } else if (element.id === 'traffic-count') {
+                element.textContent = currentValue.toFixed(1);
+            } else {
+                element.textContent = Math.round(currentValue);
+            }
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                if (element.id === 'score-percentage') {
+                    element.textContent = Math.round(targetValue) + '%';
+                } else if (element.id === 'traffic-count') {
+                    element.textContent = targetValue.toFixed(1);
+                } else {
+                    element.textContent = Math.round(targetValue);
+                }
+            }
+        }
+        
+        requestAnimationFrame(updateCounter);
+    }
     
     const counterObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const element = entry.target;
                 const targetValue = parseFloat(element.getAttribute('data-value'));
-                const duration = 2000;
-                const startTime = performance.now();
-                
-                function updateCounter(currentTime) {
-                    const elapsedTime = currentTime - startTime;
-                    const progress = Math.min(elapsedTime / duration, 1);
-                    
-                    const currentValue = progress * targetValue;
-                    
-                    if (element.id === 'score-percentage') {
-                        element.textContent = Math.round(currentValue) + '%';
-                    } else if (element.id === 'traffic-count') {
-                        element.textContent = currentValue.toFixed(1);
-                    } else {
-                        element.textContent = Math.round(currentValue);
-                    }
-                    
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        if (element.id === 'score-percentage') {
-                            element.textContent = Math.round(targetValue) + '%';
-                        } else if (element.id === 'traffic-count') {
-                            element.textContent = targetValue.toFixed(1);
-                        } else {
-                            element.textContent = Math.round(targetValue);
-                        }
-                    }
-                }
-                
-                requestAnimationFrame(updateCounter);
+                console.log('Starting counter animation for:', element, 'target:', targetValue);
+                animateCounter(element, targetValue);
                 counterObserver.unobserve(element);
             }
         });
@@ -139,6 +146,17 @@ function initializeCounterAnimations() {
     counterElements.forEach(element => {
         counterObserver.observe(element);
     });
+    
+    // Fallback: Start animations after a delay if they haven't started
+    setTimeout(() => {
+        counterElements.forEach(element => {
+            if (element.textContent === '0' || element.textContent === '0%' || element.textContent === '0+') {
+                const targetValue = parseFloat(element.getAttribute('data-value'));
+                console.log('Fallback animation for:', element, 'target:', targetValue);
+                animateCounter(element, targetValue);
+            }
+        });
+    }, 1000);
     
     // Progress bar animation
     const progressBar = document.getElementById('score-bar');
