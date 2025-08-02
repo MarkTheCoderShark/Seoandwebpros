@@ -242,6 +242,21 @@ function initializeScrollEffects() {
             }
         });
     }
+    
+    // Debug: Check if hero section is being affected by scroll
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        console.log('Hero section found:', hero);
+        // Monitor for any transform changes
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                    console.log('Hero style changed:', hero.style.transform);
+                }
+            });
+        });
+        observer.observe(hero, { attributes: true, attributeFilter: ['style'] });
+    }
 }
 
 // Professional utility functions
