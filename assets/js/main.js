@@ -93,13 +93,13 @@ function initializeAnimations() {
 
 // Professional counter animations
 function initializeCounterAnimations() {
-    const counterElements = document.querySelectorAll('[data-target]');
+    const counterElements = document.querySelectorAll('[data-value]');
     
     const counterObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const element = entry.target;
-                const targetValue = parseFloat(element.getAttribute('data-target'));
+                const targetValue = parseFloat(element.getAttribute('data-value'));
                 const duration = 2000;
                 const startTime = performance.now();
                 
