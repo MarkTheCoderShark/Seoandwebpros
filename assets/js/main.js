@@ -18,6 +18,10 @@ function initializeNavigation() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
+            
+            // Skip if targetId is just "#" (invalid selector)
+            if (targetId === '#') return;
+            
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
