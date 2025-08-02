@@ -7,66 +7,65 @@ This directory contains Netlify serverless functions for the SEO & Web Pros webs
 ### 1. SEO Audit (`seo-audit.js`)
 Handles SEO audit requests and generates reports.
 
-### 2. Proposal Submission (`proposal-submission.js`)
-Handles proposal form submissions and sends email notifications.
+### 2. Form Handling
+Proposal form submissions are handled automatically by Netlify's built-in form processing.
 
-## Email Configuration
+## Form Configuration
 
-To enable email notifications for proposal submissions, you need to set up the following environment variables in your Netlify dashboard:
+The proposal form uses Netlify's native form handling with the `netlify` attribute:
 
-### Required Environment Variables
-
-1. **SMTP_USER** - Your email address (e.g., `your-email@gmail.com`)
-2. **SMTP_PASS** - Your email password or app password
-3. **NOTIFICATION_EMAIL** - Email address to receive notifications (optional, defaults to SMTP_USER)
-
-### Optional Environment Variables
-
-4. **SMTP_HOST** - SMTP server host (defaults to `smtp.gmail.com`)
-5. **SMTP_PORT** - SMTP server port (defaults to `587`)
-
-## Gmail Setup (Recommended)
-
-1. **Enable 2-Factor Authentication** on your Gmail account
-2. **Generate an App Password**:
-   - Go to Google Account settings
-   - Security → 2-Step Verification → App passwords
-   - Generate a new app password for "Mail"
-3. **Use the app password** as your `SMTP_PASS`
-
-## Netlify Environment Variables Setup
-
-1. Go to your Netlify dashboard
-2. Navigate to Site settings → Environment variables
-3. Add the following variables:
-
-```
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
-NOTIFICATION_EMAIL=notifications@yourcompany.com
+```html
+<form name="proposal-submission" netlify>
 ```
 
-## Testing
+## How It Works
 
-After deployment, the proposal form will automatically send email notifications when users submit the form. The email will include:
+1. **Automatic Processing**: When users submit the proposal form, Netlify automatically captures the data
+2. **Dashboard Access**: All submissions appear in your Netlify dashboard under "Forms"
+3. **Email Notifications**: You can configure email notifications directly in Netlify dashboard
+4. **No Setup Required**: No SMTP configuration or environment variables needed
 
-- Contact information (name, email, phone)
-- Service requested
+## Data Captured
+
+The form automatically captures:
+- Full Name
+- Email Address
+- Phone Number (optional)
+- Service Requested
 - Website URL (if provided)
 - Submission timestamp
-- Next steps for follow-up
 
-## Troubleshooting
+## Netlify Dashboard Setup
 
-If emails are not being sent:
+1. Go to your Netlify dashboard
+2. Navigate to your site
+3. Click on "Forms" tab
+4. You'll see "proposal-submission" form listed
+5. Click on the form to view submissions
+6. Configure email notifications if desired
 
-1. Check Netlify function logs in the dashboard
-2. Verify environment variables are set correctly
-3. Ensure your email provider allows SMTP access
-4. Check spam folder for test emails
+## Email Notifications (Optional)
 
-## Security Notes
+To receive email notifications for form submissions:
 
-- Never commit email credentials to version control
-- Use app passwords instead of regular passwords
-- Consider using a dedicated email service like SendGrid for production 
+1. In Netlify dashboard, go to Site settings → Forms
+2. Enable "Form notifications"
+3. Add your email address
+4. Choose notification frequency (immediate, daily, weekly)
+
+## Benefits
+
+- **Zero Configuration**: Works out of the box
+- **Reliable**: Netlify's infrastructure handles everything
+- **Secure**: Data is encrypted and stored securely
+- **Scalable**: Handles any volume of submissions
+- **Exportable**: Download submissions as CSV
+- **Spam Protection**: Built-in spam filtering
+
+## No Additional Setup Required
+
+Unlike custom email solutions, Netlify forms require no:
+- SMTP configuration
+- Environment variables
+- Email service setup
+- Server maintenance 

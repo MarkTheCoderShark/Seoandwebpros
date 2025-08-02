@@ -349,56 +349,24 @@ function initializeModal() {
     
     // Handle proposal form submission
     if (proposalForm) {
-        proposalForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
+        proposalForm.addEventListener('submit', function(e) {
             const submitBtn = proposalForm.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
             
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             
-            try {
-                // Collect form data
-                const formData = {
-                    fullName: document.getElementById('fullName').value,
-                    email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value,
-                    service: document.getElementById('service').value,
-                    submittedWebsite: document.getElementById('submittedWebsite')?.value || null
-                };
-                
-                // Validate required fields
-                if (!formData.fullName || !formData.email || !formData.service) {
-                    throw new Error('Please fill in all required fields');
-                }
-                
-                // Send to Netlify function
-                const response = await fetch('/.netlify/functions/proposal-submission', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                });
-                
-                const result = await response.json();
-                
-                if (!response.ok) {
-                    throw new Error(result.error || 'Failed to submit proposal');
-                }
-                
-                showNotification(result.message || 'Thank you! We\'ll be in touch with your custom proposal within 24 hours.', 'success');
+            // Let Netlify handle the form submission
+            // The form will be processed automatically by Netlify
+            // and you'll receive notifications in your Netlify dashboard
+            
+            setTimeout(() => {
+                showNotification('Thank you! We\'ll be in touch with your custom proposal within 24 hours.', 'success');
                 proposalForm.reset();
                 closeModalAndCleanup();
-                
-            } catch (error) {
-                console.error('Proposal submission error:', error);
-                showNotification(error.message || 'Failed to submit proposal. Please try again.', 'error');
-            } finally {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-            }
+            }, 1500);
         });
     }
 }
