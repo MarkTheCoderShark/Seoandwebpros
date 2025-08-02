@@ -357,6 +357,26 @@ function initializeModal() {
         console.log('Website form not found');
     }
     
+    // Handle consultation buttons (Free Consultation buttons in navigation)
+    const desktopConsultationBtn = document.getElementById('desktopConsultationBtn');
+    const mobileConsultationBtn = document.getElementById('mobileConsultationBtn');
+    
+    function openConsultationModal() {
+        // Hide website field for direct consultation
+        const websiteField = document.getElementById('websiteField');
+        if (websiteField) websiteField.style.display = 'none';
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    if (desktopConsultationBtn) {
+        desktopConsultationBtn.addEventListener('click', openConsultationModal);
+    }
+    
+    if (mobileConsultationBtn) {
+        mobileConsultationBtn.addEventListener('click', openConsultationModal);
+    }
+    
     // Handle proposal form submission
     if (proposalForm) {
         console.log('Proposal form found, adding event listener');
