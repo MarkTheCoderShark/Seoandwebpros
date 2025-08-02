@@ -25,33 +25,36 @@
     <link rel="preload" href="assets/css/optimized-ui.css" as="style">
     <link rel="preload" href="assets/js/main.js" as="script">
 </head>
-<body>
-    <!-- Navigation -->
-    <div id="navigation"></div>
+<body class="overflow-hidden h-screen">
+    <!-- Fixed Navigation -->
+    <div id="navigation" class="fixed top-0 left-0 right-0 z-50"></div>
     
-    <!-- Hero Section -->
-    <div id="hero"></div>
-    
-    <!-- Clients Section -->
-    <div id="clients"></div>
-    
-    <!-- Results Section -->
-    <div id="results"></div>
-    
-    <!-- Services Section -->
-    <div id="services"></div>
-    
-    <!-- Testimonials Section -->
-    <div id="testimonials"></div>
-    
-    <!-- Team Section -->
-    <div id="team"></div>
-    
-    <!-- Contact Section -->
-    <div id="contact"></div>
-    
-    <!-- Footer -->
-    <div id="footer"></div>
+    <!-- Scrollable Content Container -->
+    <div class="content-container h-screen overflow-y-auto pt-16">
+        <!-- Hero Section -->
+        <div id="hero"></div>
+        
+        <!-- Clients Section -->
+        <div id="clients"></div>
+        
+        <!-- Results Section -->
+        <div id="results"></div>
+        
+        <!-- Services Section -->
+        <div id="services"></div>
+        
+        <!-- Testimonials Section -->
+        <div id="testimonials"></div>
+        
+        <!-- Team Section -->
+        <div id="team"></div>
+        
+        <!-- Contact Section -->
+        <div id="contact"></div>
+        
+        <!-- Footer -->
+        <div id="footer"></div>
+    </div>
     
     <!-- Custom JavaScript -->
     <script src="assets/js/main.js"></script>
