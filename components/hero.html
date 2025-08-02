@@ -32,10 +32,17 @@
             
             <!-- Hero Actions -->
             <div class="hero-actions">
-                <a href="#contact" class="btn btn-primary btn-lg">
-                    <i class="fas fa-envelope"></i>
-                    Free Consultation
-                </a>
+                <div class="website-submission-form">
+                    <div class="form-row">
+                        <input type="url" id="websiteUrl" placeholder="Enter your website" class="website-input" required>
+                        <button type="submit" class="btn btn-primary btn-lg proposal-btn">
+                            Send Me A Proposal
+                        </button>
+                    </div>
+                    <p class="no-website-text">
+                        Don't have a site? <a href="#" id="noWebsiteLink" class="no-website-link">Click Here</a>
+                    </p>
+                </div>
             </div>
             
             <!-- Hero Stats -->
@@ -63,7 +70,47 @@
                 </div>
             </div>
         </div>
-        
-
+    </div>
+    
+    <!-- Modal for users without website -->
+    <div id="noWebsiteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Get Your Free Proposal</h2>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">
+                    Thank you for your interest in our <strong>services</strong>. Please fill out the form below, and we will be in touch shortly!
+                </p>
+                <form id="proposalForm" class="proposal-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name*</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (___) ___-____">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service You are Looking For*</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="seo">SEO Optimization</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="content-marketing">Content Marketing</option>
+                            <option value="paid-advertising">Paid Advertising</option>
+                            <option value="social-media">Social Media Marketing</option>
+                            <option value="consultation">General Consultation</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
 </section> 

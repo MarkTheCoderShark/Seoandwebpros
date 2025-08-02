@@ -257,4 +257,108 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeLazyLoading);
 } else {
     initializeLazyLoading();
+}
+
+// Modal functionality for website submission
+function initializeModal() {
+    const modal = document.getElementById('noWebsiteModal');
+    const noWebsiteLink = document.getElementById('noWebsiteLink');
+    const closeModal = document.getElementById('closeModal');
+    const websiteForm = document.querySelector('.website-submission-form');
+    const proposalForm = document.getElementById('proposalForm');
+    
+    if (!modal || !noWebsiteLink || !closeModal) return;
+    
+    // Open modal when "Don't have a site?" is clicked
+    noWebsiteLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
+    
+    // Close modal when X button is clicked
+    closeModal.addEventListener('click', function() {
+        modal.classList.remove('show');
+        document.body.style.overflow = ''; // Restore scrolling
+    });
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Handle website submission form
+    if (websiteForm) {
+        websiteForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const websiteUrl = document.getElementById('websiteUrl').value;
+            
+            if (!websiteUrl) {
+                showNotification('Please enter your website URL', 'error');
+                return;
+            }
+            
+            // Validate URL format
+            try {
+                new URL(websiteUrl);
+            } catch {
+                showNotification('Please enter a valid website URL', 'error');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = websiteForm.querySelector('.proposal-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                showNotification('Thank you! We\'ll analyze your website and send you a proposal within 24 hours.', 'success');
+                websiteForm.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+    }
+    
+    // Handle proposal form submission
+    if (proposalForm) {
+        proposalForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(proposalForm);
+            const submitBtn = proposalForm.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                showNotification('Thank you! We\'ll be in touch with your custom proposal within 24 hours.', 'success');
+                proposalForm.reset();
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+    }
+}
+
+// Initialize modal when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeModal);
+} else {
+    initializeModal();
 } 
