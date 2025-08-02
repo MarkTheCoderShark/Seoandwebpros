@@ -344,11 +344,11 @@ h6 { font-size: var(--font-size-lg); }
 
 /* Hero Section */
 .hero {
-  min-height: calc(100vh - 8rem);
+  min-height: calc(100vh - 4rem);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 1.75rem 0 3rem;
+  padding: 2rem 0;
   background: linear-gradient(135deg, rgb(var(--background)), rgb(var(--card)));
   position: relative;
   z-index: 1;
@@ -360,6 +360,10 @@ h6 { font-size: var(--font-size-lg); }
   padding: 0 1rem;
   text-align: center;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-badges {
