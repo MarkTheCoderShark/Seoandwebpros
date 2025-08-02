@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paid Advertising Services | SEO & Web Pros</title>
-    <meta name="description" content="Strategic paid advertising services including Google Ads, social media advertising, and display campaigns. Maximize your ROI with data-driven ad strategies.">
+    <meta name="description" content="Strategic paid advertising services including Google Ads, Facebook Ads, and social media advertising. Drive targeted traffic and maximize your ROI with our expert PPC management.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,38 +14,40 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/optimized-ui.css">
     <link rel="stylesheet" href="../assets/css/animations.css">
 </head>
-<body class="min-h-screen bg-gray-900">
+<body class="min-h-screen bg-gray-50">
     <!-- Navigation -->
-    <nav class="gradient-bg fixed w-full z-50 border-b border-gray-800">
+    <nav class="bg-white border-b border-gray-200 shadow-sm fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <a href="../index.html" class="text-2xl font-bold gradient-text">SEO & WEB PROS</a>
+                        <a href="../index.html" class="text-2xl font-bold text-blue-600">SEO & WEB PROS</a>
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
-                            <a href="../index.html#home" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">Home</a>
-                            <a href="../index.html#services" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">Services</a>
-                            <a href="../index.html#results" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">Results</a>
-                            <a href="../index.html#about" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">About</a>
-                            <a href="../index.html#contact" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">Contact</a>
+                            <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600">Home</a>
+                            <a href="../index.html#services" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600">Services</a>
+                            <a href="../index.html#results" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600">Results</a>
+                            <a href="../index.html#about" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600">About</a>
+                            <a href="../index.html#contact" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600">Contact</a>
                         </div>
                     </div>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
-                        <a href="../seo-audit.html">
-                            <button class="bg-gradient-to-r from-blue-500 to-emerald-500 px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition duration-300">
-                                Free SEO Audit
+                        <a href="../index.html#contact">
+                            <button class="bg-blue-600 px-6 py-2 rounded-full text-white font-medium hover:bg-blue-700 transition duration-300">
+                                <i class="fas fa-envelope mr-2"></i>
+                                Free Consultation
                             </button>
                         </a>
                     </div>
                 </div>
                 <div class="-mr-2 flex md:hidden">
-                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-blue-50 focus:outline-none">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -53,16 +55,17 @@
         </div>
         
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden gradient-bg border-t border-gray-800">
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="../index.html#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Home</a>
-                <a href="../index.html#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Services</a>
-                <a href="../index.html#results" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Results</a>
-                <a href="../index.html#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">About</a>
-                <a href="../index.html#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Contact</a>
-                <a href="../seo-audit.html" class="w-full">
-                    <button class="w-full bg-gradient-to-r from-blue-500 to-emerald-500 px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition duration-300 mt-2">
-                        Free SEO Audit
+                <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Home</a>
+                <a href="../index.html#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Services</a>
+                <a href="../index.html#results" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Results</a>
+                <a href="../index.html#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">About</a>
+                <a href="../index.html#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Contact</a>
+                <a href="../index.html#contact" class="w-full">
+                    <button class="w-full bg-blue-600 px-6 py-2 rounded-full text-white font-medium hover:bg-blue-700 transition duration-300 mt-2">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Free Consultation
                     </button>
                 </a>
             </div>
@@ -70,89 +73,89 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-white">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    Paid <span class="gradient-text">Advertising</span> Services
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
+                    Paid <span class="text-blue-600">Advertising</span> Services
                 </h1>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Drive targeted traffic and maximize ROI with our strategic paid advertising campaigns across multiple platforms.
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Strategic paid advertising services to drive targeted traffic and maximize your ROI with expert PPC management.
                 </p>
             </div>
         </div>
     </section>
 
     <!-- Service Details -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- Left Column -->
                 <div>
-                    <h2 class="text-3xl font-bold mb-6">Comprehensive Ad Solutions</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-gray-900">Comprehensive PPC Solutions</h2>
                     <div class="space-y-6">
-                        <div class="bg-gray-800 p-6 rounded-xl">
-                            <h3 class="text-xl font-semibold mb-3 text-purple-400">Search Engine Advertising</h3>
-                            <ul class="space-y-2 text-gray-300">
+                        <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                            <h3 class="text-xl font-semibold mb-3 text-blue-600">Google Ads Management</h3>
+                            <ul class="space-y-2 text-gray-600">
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-purple-400 mt-1 mr-2"></i>
-                                    <span>Google Ads campaign management</span>
+                                    <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                    <span>Search engine advertising campaigns</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-purple-400 mt-1 mr-2"></i>
-                                    <span>Keyword research and optimization</span>
+                                    <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                    <span>Display network advertising</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-purple-400 mt-1 mr-2"></i>
-                                    <span>Ad copy creation and testing</span>
+                                    <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                    <span>YouTube video advertising</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-purple-400 mt-1 mr-2"></i>
-                                    <span>Budget management and optimization</span>
+                                    <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                    <span>Shopping ads and remarketing</span>
                                 </li>
                             </ul>
                         </div>
 
-                        <div class="bg-gray-800 p-6 rounded-xl">
-                            <h3 class="text-xl font-semibold mb-3 text-purple-400">Social Media Advertising</h3>
-                            <ul class="space-y-2 text-gray-300">
+                        <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                            <h3 class="text-xl font-semibold mb-3 text-blue-600">Social Media Advertising</h3>
+                            <ul class="space-y-2 text-gray-600">
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-purple-400 mt-1 mr-2"></i>
+                                    <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
                                     <span>Facebook and Instagram ads</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-purple-400 mt-1 mr-2"></i>
-                                    <span>LinkedIn advertising</span>
+                                    <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                    <span>LinkedIn advertising campaigns</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-purple-400 mt-1 mr-2"></i>
-                                    <span>Twitter promoted content</span>
+                                    <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                    <span>Twitter and TikTok advertising</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-purple-400 mt-1 mr-2"></i>
-                                    <span>Audience targeting and retargeting</span>
+                                    <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                    <span>Audience targeting and optimization</span>
                                 </li>
                             </ul>
                         </div>
 
-                        <div class="bg-gray-800 p-6 rounded-xl">
-                            <h3 class="text-xl font-semibold mb-3 text-purple-400">Display Advertising</h3>
-                            <ul class="space-y-2 text-gray-300">
+                        <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                            <h3 class="text-xl font-semibold mb-3 text-blue-600">Campaign Optimization</h3>
+                            <ul class="space-y-2 text-gray-600">
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-purple-400 mt-1 mr-2"></i>
-                                    <span>Banner ad campaigns</span>
+                                    <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                    <span>Keyword research and optimization</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-purple-400 mt-1 mr-2"></i>
-                                    <span>Video advertising</span>
+                                    <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                    <span>Ad copy testing and improvement</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-purple-400 mt-1 mr-2"></i>
-                                    <span>Native advertising</span>
+                                    <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                    <span>Bid management and budget optimization</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-purple-400 mt-1 mr-2"></i>
-                                    <span>Programmatic advertising</span>
+                                    <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                    <span>Performance tracking and reporting</span>
                                 </li>
                             </ul>
                         </div>
@@ -161,44 +164,44 @@
 
                 <!-- Right Column -->
                 <div>
-                    <div class="bg-gray-800 p-8 rounded-xl mb-8">
-                        <h3 class="text-2xl font-bold mb-4">Why Choose Our Paid Advertising Services?</h3>
+                    <div class="bg-white border border-gray-200 p-8 rounded-xl mb-8 shadow-sm">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Why Choose Our PPC Services?</h3>
                         <div class="space-y-4">
                             <div class="flex items-start">
-                                <div class="w-12 h-12 bg-purple-900 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-chart-bar text-purple-400 text-xl"></i>
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-chart-line text-blue-600 text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-semibold mb-2">Data-Driven Strategy</h4>
-                                    <p class="text-gray-300">We use advanced analytics to optimize campaigns for maximum ROI.</p>
+                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">Data-Driven Strategy</h4>
+                                    <p class="text-gray-600">We use advanced analytics to optimize campaigns and maximize your advertising ROI.</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <div class="w-12 h-12 bg-purple-900 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-bullseye text-purple-400 text-xl"></i>
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-bullseye text-blue-600 text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-semibold mb-2">Precise Targeting</h4>
-                                    <p class="text-gray-300">Reach your ideal customers with sophisticated audience targeting.</p>
+                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">Targeted Approach</h4>
+                                    <p class="text-gray-600">Precise audience targeting to reach your ideal customers and drive quality leads.</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <div class="w-12 h-12 bg-purple-900 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-sync text-purple-400 text-xl"></i>
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-cog text-blue-600 text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-semibold mb-2">Continuous Optimization</h4>
-                                    <p class="text-gray-300">Regular monitoring and adjustments to improve campaign performance.</p>
+                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">Continuous Optimization</h4>
+                                    <p class="text-gray-600">Ongoing campaign monitoring and optimization to improve performance over time.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-gradient-to-r from-blue-500 to-emerald-500 p-8 rounded-xl text-white">
-                        <h3 class="text-2xl font-bold mb-4">Ready to Boost Your Online Presence?</h3>
-                        <p class="mb-6">Let's create a custom advertising strategy that drives results for your business.</p>
-                        <a href="../index.html#contact" class="inline-block bg-white text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition duration-300">
-                            Get Started
+                    <div class="bg-blue-600 p-8 rounded-xl text-white">
+                        <h3 class="text-2xl font-bold mb-4">Ready to Boost Your Advertising?</h3>
+                        <p class="mb-6">Get started with a free consultation and discuss your paid advertising strategy.</p>
+                        <a href="../index.html#contact" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition duration-300">
+                            Get Free Consultation
                         </a>
                     </div>
                 </div>
@@ -207,51 +210,42 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 py-12">
+    <footer class="bg-gray-50 py-12 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold gradient-text mb-4">SEO & WEB PROS</h3>
-                    <p class="text-gray-400">Your partner in digital success. We help businesses grow through effective SEO and web development strategies.</p>
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">SEO & WEB PROS</h3>
+                    <p class="text-gray-600">Your partner in digital success. We help businesses grow through effective SEO and web development strategies.</p>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Services</h4>
                     <ul class="space-y-2">
-                        <li><a href="seo-optimization.html" class="text-gray-400 hover:text-white">SEO Optimization</a></li>
-                        <li><a href="web-development.html" class="text-gray-400 hover:text-white">Web Development</a></li>
-                        <li><a href="paid-advertising.html" class="text-gray-400 hover:text-white">Paid Advertising</a></li>
-                        <li><a href="content-marketing.html" class="text-gray-400 hover:text-white">Content Marketing</a></li>
-                        <li><a href="social-media.html" class="text-gray-400 hover:text-white">Social Media</a></li>
+                        <li><a href="seo-optimization.html" class="text-gray-600 hover:text-blue-600">SEO Optimization</a></li>
+                        <li><a href="web-development.html" class="text-gray-600 hover:text-blue-600">Web Development</a></li>
+                        <li><a href="paid-advertising.html" class="text-gray-600 hover:text-blue-600">Paid Advertising</a></li>
+                        <li><a href="content-marketing.html" class="text-gray-600 hover:text-blue-600">Content Marketing</a></li>
+                        <li><a href="social-media.html" class="text-gray-600 hover:text-blue-600">Social Media</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="../index.html#about" class="text-gray-400 hover:text-white">About Us</a></li>
-                        <li><a href="../index.html#results" class="text-gray-400 hover:text-white">Case Studies</a></li>
-                        <li><a href="../index.html#contact" class="text-gray-400 hover:text-white">Contact</a></li>
-                        <li><a href="../seo-audit.html" class="text-gray-400 hover:text-white">Free SEO Audit</a></li>
+                        <li><a href="../index.html#about" class="text-gray-600 hover:text-blue-600">About Us</a></li>
+                        <li><a href="../index.html#results" class="text-gray-600 hover:text-blue-600">Case Studies</a></li>
+                        <li><a href="../index.html#contact" class="text-gray-600 hover:text-blue-600">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Contact Us</h4>
                     <ul class="space-y-2">
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-envelope mr-2"></i>
-                            <a href="mailto:contact@seoandwebpros.com" class="hover:text-white">contact@seoandwebpros.com</a>
-                        </li>
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-phone mr-2"></i>
-                            <a href="tel:+1234567890" class="hover:text-white">+1 (234) 567-890</a>
-                        </li>
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-map-marker-alt mr-2"></i>
-                            <span>123 Business Ave, Suite 100<br>New York, NY 10001</span>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-envelope mr-2 text-blue-600"></i>
+                            <a href="mailto:contact@seoandwebpros.com" class="hover:text-blue-600">contact@seoandwebpros.com</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
                 <p>&copy; 2025 SEO & Web Pros. All rights reserved.</p>
             </div>
         </div>

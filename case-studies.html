@@ -6,66 +6,44 @@
     <title>Case Studies - SEO & Web Pros</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/optimized-ui.css">
     <style>
-        .gradient-bg {
-            background: linear-gradient(to right, #1a1a1a, #2d2d2d);
-        }
-        .gradient-text {
-            background: linear-gradient(to right, #3b82f6, #10b981);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .animated-border {
-            position: relative;
-        }
-        .animated-border::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(to right, #3b82f6, #10b981);
-            transition: width 0.3s ease;
-        }
-        .animated-border:hover::after {
-            width: 100%;
-        }
         .glow {
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-50 text-gray-900">
     <!-- Navigation -->
-    <nav class="gradient-bg fixed w-full z-50 border-b border-gray-800">
+    <nav class="bg-white border-b border-gray-200 shadow-sm fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <a href="index.html" class="text-2xl font-bold gradient-text">SEO & WEB PROS</a>
+                        <a href="index.html" class="text-2xl font-bold text-blue-600">SEO & WEB PROS</a>
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
-                            <a href="index.html#home" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">Home</a>
-                            <a href="index.html#services" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">Services</a>
-                            <a href="index.html#results" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">Results</a>
-                            <a href="index.html#about" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">About</a>
-                            <a href="index.html#contact" class="animated-border px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white">Contact</a>
+                            <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600">Home</a>
+                            <a href="index.html#services" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600">Services</a>
+                            <a href="index.html#results" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600">Results</a>
+                            <a href="index.html#about" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600">About</a>
+                            <a href="index.html#contact" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600">Contact</a>
                         </div>
                     </div>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
-                        <a href="seo-audit.html">
-                            <button class="bg-gradient-to-r from-blue-500 to-emerald-500 px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition duration-300">
-                                Free SEO Audit
+                        <a href="index.html#contact">
+                            <button class="bg-blue-600 px-6 py-2 rounded-full text-white font-medium hover:bg-blue-700 transition duration-300">
+                                <i class="fas fa-envelope mr-2"></i>
+                                Free Consultation
                             </button>
                         </a>
                     </div>
                 </div>
                 <div class="-mr-2 flex md:hidden">
-                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-blue-50 focus:outline-none">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -73,16 +51,17 @@
         </div>
         
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden gradient-bg border-t border-gray-800">
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Home</a>
-                <a href="index.html#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Services</a>
-                <a href="index.html#results" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Results</a>
-                <a href="index.html#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">About</a>
-                <a href="index.html#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Contact</a>
-                <a href="seo-audit.html" class="w-full">
-                    <button class="w-full bg-gradient-to-r from-blue-500 to-emerald-500 px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition duration-300 mt-2">
-                        Free SEO Audit
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Home</a>
+                <a href="index.html#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Services</a>
+                <a href="index.html#results" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Results</a>
+                <a href="index.html#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">About</a>
+                <a href="index.html#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Contact</a>
+                <a href="index.html#contact" class="w-full">
+                    <button class="w-full bg-blue-600 px-6 py-2 rounded-full text-white font-medium hover:bg-blue-700 transition duration-300 mt-2">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Free Consultation
                     </button>
                 </a>
             </div>
@@ -90,18 +69,18 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-white">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <div class="flex items-center justify-center space-x-2 mb-6">
-                    <span class="seo-badge text-xs font-medium px-2.5 py-0.5 rounded text-emerald-400">SEO</span>
-                    <span class="web-badge text-xs font-medium px-2.5 py-0.5 rounded text-blue-400">WEB DEV</span>
-                    <span class="marketing-badge text-xs font-medium px-2.5 py-0.5 rounded text-purple-400">MARKETING</span>
+                    <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">SEO</span>
+                    <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">WEB DEV</span>
+                    <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">MARKETING</span>
                 </div>
                 <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    Our <span class="gradient-text">Case Studies</span>
+                    Our <span class="text-blue-600">Case Studies</span>
                 </h1>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Discover how we've helped businesses achieve remarkable growth through our comprehensive digital solutions.
                 </p>
             </div>
@@ -111,29 +90,29 @@
     <!-- Featured Case Study -->
     <section class="py-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <div class="bg-gray-800 rounded-2xl overflow-hidden">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="p-8 md:p-12">
                         <div class="flex items-center space-x-2 mb-4">
-                            <span class="seo-badge text-xs font-medium px-2.5 py-0.5 rounded text-emerald-400">Featured</span>
-                            <span class="web-badge text-xs font-medium px-2.5 py-0.5 rounded text-blue-400">E-commerce</span>
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">Featured</span>
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">E-commerce</span>
                         </div>
                         <h2 class="text-3xl font-bold mb-4">Global Fashion Retailer</h2>
-                        <p class="text-gray-300 mb-6">
+                        <p class="text-gray-600 mb-6">
                             How we helped a leading fashion retailer increase their organic traffic by 300% and boost online sales by 250% through comprehensive SEO and web development strategies.
                         </p>
                         <div class="grid grid-cols-2 gap-4 mb-8">
-                            <div class="bg-gray-700 p-4 rounded-lg">
-                                <h3 class="text-2xl font-bold gradient-text mb-1">300%</h3>
-                                <p class="text-gray-400">Traffic Increase</p>
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h3 class="text-2xl font-bold text-blue-600 mb-1">300%</h3>
+                                <p class="text-gray-600">Traffic Increase</p>
                             </div>
-                            <div class="bg-gray-700 p-4 rounded-lg">
-                                <h3 class="text-2xl font-bold gradient-text mb-1">250%</h3>
-                                <p class="text-gray-400">Sales Growth</p>
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h3 class="text-2xl font-bold text-blue-600 mb-1">250%</h3>
+                                <p class="text-gray-600">Sales Growth</p>
                             </div>
                         </div>
                         <div class="flex justify-center mt-8">
-                            <a href="case-study-fashion-retailer.html" class="bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300">
+                            <a href="case-study-fashion-retailer.html" class="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition duration-300">
                                 Read Full Case Study
                             </a>
                         </div>
@@ -152,18 +131,18 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Case Study 1 -->
-                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
                     <div class="relative h-48">
                         <img src="real estate.png" alt="Real Estate Agency Success Story" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80"></div>
                     </div>
                     <div class="p-6">
                         <div class="flex items-center space-x-2 mb-4">
-                            <span class="seo-badge text-xs font-medium px-2.5 py-0.5 rounded text-emerald-400">SEO</span>
-                            <span class="web-badge text-xs font-medium px-2.5 py-0.5 rounded text-blue-400">Real Estate</span>
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">SEO</span>
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">Real Estate</span>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Real Estate Agency</h3>
-                        <p class="text-gray-400 mb-4">
+                        <p class="text-gray-600 mb-4">
                             Increased organic visibility by 200% and generated 150% more qualified leads through targeted SEO strategies.
                         </p>
                         <div class="flex justify-center mt-4">
@@ -175,18 +154,18 @@
                 </div>
 
                 <!-- Healthcare Case Study Card -->
-                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
                     <div class="relative h-48">
                         <img src="health care.png" alt="Healthcare Provider Success Story" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80"></div>
                     </div>
                     <div class="p-6">
                         <div class="flex items-center space-x-2 mb-4">
-                            <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-900 text-blue-300">SEO</span>
-                            <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-purple-900 text-purple-300">Healthcare</span>
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">SEO</span>
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-purple-100 text-purple-600">Healthcare</span>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Healthcare Provider</h3>
-                        <p class="text-gray-400 mb-4">
+                        <p class="text-gray-600 mb-4">
                             Achieved 180% growth in patient appointments through local SEO and content marketing strategies.
                         </p>
                         <div class="flex justify-center mt-4">
@@ -198,18 +177,18 @@
                 </div>
 
                 <!-- Online Learning Case Study Card -->
-                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
                     <div class="relative h-48">
                         <img src="online learning.png" alt="Online Learning Platform Success Story" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80"></div>
                     </div>
                     <div class="p-6">
                         <div class="flex items-center space-x-2 mb-4">
-                            <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-900 text-blue-300">Web Dev</span>
-                            <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-purple-900 text-purple-300">Education</span>
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">Web Dev</span>
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-purple-100 text-purple-600">Education</span>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Online Learning Platform</h3>
-                        <p class="text-gray-400 mb-4">
+                        <p class="text-gray-600 mb-4">
                             Redesigned website increased user engagement by 120% and course enrollment by 85%.
                         </p>
                         <div class="flex justify-center mt-4">
@@ -224,15 +203,15 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-blue-600">
         <div class="max-w-4xl mx-auto text-center">
-            <div class="bg-gray-800 bg-opacity-50 p-8 rounded-xl backdrop-blur-sm">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Create Your <span class="gradient-text">Success Story</span>?</h2>
-                <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+            <div class="bg-white bg-opacity-50 p-8 rounded-xl backdrop-blur-sm">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Create Your <span class="text-white">Success Story</span>?</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
                     Let's work together to achieve remarkable results for your business through our proven digital strategies.
                 </p>
                 <a href="index.html#contact" class="inline-block">
-                    <button class="bg-gradient-to-r from-blue-500 to-emerald-500 px-8 py-3 rounded-full text-white font-medium hover:opacity-90 transition duration-300 glow">
+                    <button class="bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 glow">
                         Start Your Journey
                     </button>
                 </a>
@@ -241,51 +220,42 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 py-12">
+    <footer class="bg-gray-50 py-12 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold gradient-text mb-4">SEO & WEB PROS</h3>
-                    <p class="text-gray-400">Your partner in digital success. We help businesses grow through effective SEO and web development strategies.</p>
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">SEO & WEB PROS</h3>
+                    <p class="text-gray-600">Your partner in digital success. We help businesses grow through effective SEO and web development strategies.</p>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4">Services</h4>
+                    <h4 class="text-gray-900 font-bold mb-4">Services</h4>
                     <ul class="space-y-2">
-                        <li><a href="services/seo-optimization.html" class="text-gray-400 hover:text-white transition duration-300">SEO Optimization</a></li>
-                        <li><a href="services/web-development.html" class="text-gray-400 hover:text-white transition duration-300">Web Development</a></li>
-                        <li><a href="services/paid-advertising.html" class="text-gray-400 hover:text-white transition duration-300">Paid Advertising</a></li>
-                        <li><a href="services/content-marketing.html" class="text-gray-400 hover:text-white transition duration-300">Content Marketing</a></li>
-                        <li><a href="services/social-media.html" class="text-gray-400 hover:text-white transition duration-300">Social Media</a></li>
+                        <li><a href="services/seo-optimization.html" class="text-gray-600 hover:text-blue-600 transition duration-300">SEO Optimization</a></li>
+                        <li><a href="services/web-development.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Web Development</a></li>
+                        <li><a href="services/paid-advertising.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Paid Advertising</a></li>
+                        <li><a href="services/content-marketing.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Content Marketing</a></li>
+                        <li><a href="services/social-media.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Social Media</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <h4 class="text-gray-900 font-bold mb-4">Company</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
-                        <li><a href="case-studies.html" class="text-gray-400 hover:text-white transition duration-300">Case Studies</a></li>
-                        <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
-                        <li><a href="seo-audit.html" class="text-gray-400 hover:text-white transition duration-300">Free SEO Audit</a></li>
+                        <li><a href="index.html#about" class="text-gray-600 hover:text-blue-600 transition duration-300">About Us</a></li>
+                        <li><a href="case-studies.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Case Studies</a></li>
+                        <li><a href="index.html#contact" class="text-gray-600 hover:text-blue-600 transition duration-300">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4">Connect</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-facebook text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
-                    </div>
+                    <h4 class="text-gray-900 font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-envelope mr-2 text-blue-600"></i>
+                            <a href="mailto:contact@seoandwebpros.com" class="hover:text-blue-600">contact@seoandwebpros.com</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
                 <p>&copy; 2025 SEO & Web Pros. All rights reserved.</p>
             </div>
         </div>
