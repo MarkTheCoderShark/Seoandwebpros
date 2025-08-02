@@ -338,7 +338,7 @@ h6 { font-size: var(--font-size-lg); }
 
 /* Professional Hero Section */
 .hero {
-  min-height: calc(100vh - 5rem);
+  min-height: calc(100vh - 8rem);
   display: flex;
   align-items: flex-start;
   padding-top: 1.75rem;
