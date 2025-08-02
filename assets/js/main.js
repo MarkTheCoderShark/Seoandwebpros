@@ -385,15 +385,22 @@ function initializeModal() {
             phoneInput.addEventListener('input', function(e) {
                 let value = e.target.value.replace(/\D/g, ''); // Remove all non-digits
                 
-                if (value.length > 0) {
-                    // Format as +1 (XXX) XXX-XXXX
-                    if (value.length <= 3) {
-                        value = '+1 (' + value;
-                    } else if (value.length <= 6) {
-                        value = '+1 (' + value.substring(0, 3) + ') ' + value.substring(3);
-                    } else {
-                        value = '+1 (' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10);
-                    }
+                // Don't format if empty
+                if (value.length === 0) {
+                    e.target.value = '';
+                    return;
+                }
+                
+                // Format based on length
+                if (value.length <= 3) {
+                    // Just show the area code
+                    value = value;
+                } else if (value.length <= 6) {
+                    // Show area code and first 3 digits
+                    value = value.substring(0, 3) + '-' + value.substring(3);
+                } else {
+                    // Full format: XXX-XXX-XXXX
+                    value = value.substring(0, 3) + '-' + value.substring(3, 6) + '-' + value.substring(6, 10);
                 }
                 
                 e.target.value = value;
@@ -405,9 +412,8 @@ function initializeModal() {
                     const value = e.target.value;
                     const cursorPosition = e.target.selectionStart;
                     
-                    // If cursor is at a formatting character, move it back
-                    if (value[cursorPosition - 1] === ' ' || value[cursorPosition - 1] === '(' || 
-                        value[cursorPosition - 1] === ')' || value[cursorPosition - 1] === '-') {
+                    // If cursor is at a dash, move it back
+                    if (value[cursorPosition - 1] === '-') {
                         e.preventDefault();
                         e.target.setSelectionRange(cursorPosition - 1, cursorPosition - 1);
                     }
