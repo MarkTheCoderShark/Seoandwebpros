@@ -375,7 +375,6 @@ function initializeModal() {
             
             // Show success message after a short delay
             setTimeout(() => {
-                showNotification('Thank you! We\'ll be in touch with your custom proposal within 24 hours.', 'success');
                 proposalForm.reset();
                 closeModalAndCleanup();
                 submitBtn.textContent = originalText;
