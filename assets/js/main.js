@@ -378,6 +378,42 @@ function initializeModal() {
                 submitBtn.disabled = false;
             }, 2000);
         });
+        
+        // Add phone number formatting
+        const phoneInput = document.getElementById('phone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, ''); // Remove all non-digits
+                
+                if (value.length > 0) {
+                    // Format as +1 (XXX) XXX-XXXX
+                    if (value.length <= 3) {
+                        value = '+1 (' + value;
+                    } else if (value.length <= 6) {
+                        value = '+1 (' + value.substring(0, 3) + ') ' + value.substring(3);
+                    } else {
+                        value = '+1 (' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10);
+                    }
+                }
+                
+                e.target.value = value;
+            });
+            
+            // Handle backspace to maintain formatting
+            phoneInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Backspace') {
+                    const value = e.target.value;
+                    const cursorPosition = e.target.selectionStart;
+                    
+                    // If cursor is at a formatting character, move it back
+                    if (value[cursorPosition - 1] === ' ' || value[cursorPosition - 1] === '(' || 
+                        value[cursorPosition - 1] === ')' || value[cursorPosition - 1] === '-') {
+                        e.preventDefault();
+                        e.target.setSelectionRange(cursorPosition - 1, cursorPosition - 1);
+                    }
+                }
+            });
+        }
     } else {
         console.log('Proposal form not found');
     }

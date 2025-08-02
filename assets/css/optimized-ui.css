@@ -1054,6 +1054,12 @@ section {
   box-shadow: 0 0 0 3px rgb(var(--primary) / 0.1);
 }
 
+/* Phone number input specific styling */
+.proposal-form .form-group input[type="tel"] {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
 .submit-btn {
   margin-top: 1rem;
   background: rgb(var(--destructive));
