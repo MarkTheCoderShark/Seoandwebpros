@@ -338,10 +338,10 @@ h6 { font-size: var(--font-size-lg); }
 
 /* Professional Hero Section */
 .hero {
-  min-height: calc(100vh - 4rem);
+  min-height: calc(100vh - 5rem);
   display: flex;
   align-items: flex-start;
-  padding-top: 1.25rem;
+  padding-top: 1.75rem;
   background: radial-gradient(circle at 20% 50%, rgb(var(--primary) / 0.1) 0%, transparent 50%),
               radial-gradient(circle at 80% 20%, rgb(var(--secondary) / 0.1) 0%, transparent 50%);
   position: relative;
