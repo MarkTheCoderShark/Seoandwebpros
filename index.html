@@ -64,11 +64,6 @@
                 const response = await fetch(componentPath);
                 const html = await response.text();
                 document.getElementById(componentId).innerHTML = html;
-                
-                // If this is the results section, initialize the counter animation
-                if (componentId === 'results') {
-                    initializeCounterAnimation();
-                }
             } catch (error) {
                 console.error(`Error loading ${componentId}:`, error);
             }
@@ -86,41 +81,6 @@
             loadComponent('contact', 'components/contact.html');
             loadComponent('footer', 'components/footer.html');
         });
-        
-        // Counter animation function
-        function initializeCounterAnimation() {
-            const resultNumbers = document.querySelectorAll('.result-number');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const element = entry.target;
-                        const targetValue = parseInt(element.getAttribute('data-value'));
-                        const duration = 2000; // 2 seconds
-                        const startTime = performance.now();
-                        
-                        function updateNumber(currentTime) {
-                            const elapsedTime = currentTime - startTime;
-                            const progress = Math.min(elapsedTime / duration, 1);
-                            
-                            const currentValue = Math.floor(progress * targetValue);
-                            element.textContent = currentValue;
-                            
-                            if (progress < 1) {
-                                requestAnimationFrame(updateNumber);
-                            } else {
-                                element.textContent = targetValue;
-                            }
-                        }
-                        
-                        requestAnimationFrame(updateNumber);
-                        observer.unobserve(element);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            resultNumbers.forEach(number => observer.observe(number));
-        }
     </script>
 </body>
 </html> 
