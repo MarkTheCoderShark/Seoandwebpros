@@ -311,9 +311,13 @@ function initializeModal() {
     
     // Handle website submission form
     if (websiteForm) {
+        console.log('Website form found, adding event listener');
         websiteForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            console.log('Website form submitted');
+            
             const websiteUrl = document.getElementById('websiteUrl').value;
+            console.log('Website URL:', websiteUrl);
             
             if (!websiteUrl) {
                 showNotification('Please enter your website URL', 'error');
@@ -345,6 +349,8 @@ function initializeModal() {
             // Reset the website form
             websiteForm.reset();
         });
+    } else {
+        console.log('Website form not found');
     }
     
     // Handle proposal form submission
@@ -375,13 +381,17 @@ function initializeModal() {
 function initializeModalWithRetry() {
     const modal = document.getElementById('noWebsiteModal');
     const noWebsiteLink = document.getElementById('noWebsiteLink');
+    const websiteForm = document.getElementById('websiteForm');
     
-    if (!modal || !noWebsiteLink) {
-        console.log('Modal elements not found, retrying in 100ms...');
+    console.log('Checking for modal elements:', { modal, noWebsiteLink, websiteForm });
+    
+    if (!modal || !noWebsiteLink || !websiteForm) {
+        console.log('Some modal elements not found, retrying in 100ms...');
         setTimeout(initializeModalWithRetry, 100);
         return;
     }
     
+    console.log('All modal elements found, initializing...');
     initializeModal();
 }
 
