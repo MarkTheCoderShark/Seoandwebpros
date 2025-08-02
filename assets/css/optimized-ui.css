@@ -74,6 +74,28 @@ body {
   overflow-x: hidden;
 }
 
+/* Light Theme Overrides */
+.gradient-text {
+  color: rgb(var(--primary));
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+}
+
+.gradient-primary {
+  color: rgb(var(--primary));
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+}
+
+.gradient-secondary {
+  color: rgb(var(--secondary));
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+}
+
 /* Professional Typography */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
