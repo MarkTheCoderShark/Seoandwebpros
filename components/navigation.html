@@ -1,79 +1,61 @@
-<!-- Navigation -->
-<nav class="bg-gray-900/95 backdrop-blur-md fixed w-full z-50 border-b border-gray-800/50 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-            <div class="flex items-center">
-                <div class="flex-shrink-0">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-lg flex items-center justify-center logo-icon">
-                            <i class="fas fa-chart-line text-white text-sm"></i>
-                        </div>
-                        <span class="text-xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">SEO & WEB PROS</span>
-                    </div>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-12 flex items-baseline space-x-8">
-                        <a href="#home" class="nav-link px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 relative group">
-                            Home
-                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        <a href="#services" class="nav-link px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 relative group">
-                            Services
-                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        <a href="#results" class="nav-link px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 relative group">
-                            Results
-                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        <a href="#team" class="nav-link px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 relative group">
-                            About
-                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 relative group">
-                            Contact
-                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                    </div>
-                </div>
+<!-- Professional Navigation -->
+<nav class="nav">
+    <div class="nav-container">
+        <!-- Brand -->
+        <div class="nav-brand">
+            <div class="w-8 h-8 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-lg flex items-center justify-center">
+                <i class="fas fa-chart-line text-white text-sm"></i>
             </div>
-            <div class="hidden md:block">
-                <div class="ml-4 flex items-center md:ml-6 space-x-3">
-                    <a href="#contact">
-                        <button class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-4 py-2.5 rounded-lg text-white text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                            Free Consultation
-                        </button>
-                    </a>
-                    <a href="seo-audit.html">
-                        <button class="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 px-4 py-2.5 rounded-lg text-white text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                            Free SEO Audit
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="-mr-2 flex md:hidden">
-                <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none transition-all duration-300">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+            <span class="gradient-primary font-bold">SEO & WEB PROS</span>
         </div>
+        
+        <!-- Desktop Navigation Links -->
+        <div class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#results" class="nav-link">Results</a>
+            <a href="#team" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        
+        <!-- Desktop Action Buttons -->
+        <div class="hidden md:flex items-center gap-3">
+            <a href="seo-audit.html" class="btn btn-secondary btn-sm">
+                <i class="fas fa-search"></i>
+                Free SEO Audit
+            </a>
+            <a href="#contact" class="btn btn-primary btn-sm">
+                <i class="fas fa-phone"></i>
+                Free Consultation
+            </a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button type="button" id="mobile-menu-button" class="md:hidden btn btn-ghost btn-sm">
+            <i class="fas fa-bars"></i>
+            <span class="sr-only">Open menu</span>
+        </button>
     </div>
     
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-800/50">
-        <div class="px-4 pt-4 pb-6 space-y-2">
-            <a href="#home" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-300">Home</a>
-            <a href="#services" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-300">Services</a>
-            <a href="#results" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-300">Results</a>
-            <a href="#team" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-300">About</a>
-            <a href="#contact" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-300">Contact</a>
-            <div class="pt-4 space-y-3">
-                <a href="seo-audit.html" class="w-full block">
-                    <button class="w-full bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 px-4 py-3 rounded-lg text-white text-sm font-medium transition-all duration-300 shadow-lg">
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-card border-t border-border">
+        <div class="p-4 space-y-2">
+            <a href="#home" class="block p-3 rounded-lg text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300">Home</a>
+            <a href="#services" class="block p-3 rounded-lg text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300">Services</a>
+            <a href="#results" class="block p-3 rounded-lg text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300">Results</a>
+            <a href="#team" class="block p-3 rounded-lg text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300">About</a>
+            <a href="#contact" class="block p-3 rounded-lg text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300">Contact</a>
+            
+            <div class="pt-4 space-y-3 border-t border-border">
+                <a href="seo-audit.html" class="block">
+                    <button class="w-full btn btn-secondary">
+                        <i class="fas fa-search"></i>
                         Free SEO Audit
                     </button>
                 </a>
-                <a href="#contact" class="w-full block">
-                    <button class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-4 py-3 rounded-lg text-white text-sm font-medium transition-all duration-300 shadow-lg">
+                <a href="#contact" class="block">
+                    <button class="w-full btn btn-primary">
+                        <i class="fas fa-phone"></i>
                         Free Consultation
                     </button>
                 </a>
