@@ -113,6 +113,7 @@
     
             <!-- Hidden forms for Netlify form detection -->
         <form name="proposal-submission" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+            <input type="hidden" name="form-name" value="proposal-submission" />
             <input type="text" name="fullName" />
             <input type="email" name="email" />
             <input type="tel" name="phone" />
@@ -125,9 +126,11 @@
                 <option value="consultation">General Consultation</option>
             </select>
             <input type="url" name="submittedWebsite" />
+            <input name="bot-field" />
         </form>
         
         <form name="seo-audit" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+            <input type="hidden" name="form-name" value="seo-audit" />
             <input type="text" name="website" />
             <input type="email" name="email" />
             <input type="text" name="businessName" />
@@ -139,6 +142,32 @@
                 <option value="technology">Technology</option>
                 <option value="other">Other</option>
             </select>
+            <input name="bot-field" />
+        </form>
+        
+        <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+            <input type="text" name="company" />
+            <select name="service">
+                <option value="seo">SEO Optimization</option>
+                <option value="web">Web Development</option>
+                <option value="marketing">Digital Marketing</option>
+                <option value="content">Content Marketing</option>
+                <option value="social">Social Media Marketing</option>
+                <option value="ads">Paid Advertising</option>
+                <option value="consultation">General Consultation</option>
+            </select>
+            <select name="budget">
+                <option value="under-1000">Under $1,000</option>
+                <option value="1000-5000">$1,000 - $5,000</option>
+                <option value="5000-10000">$5,000 - $10,000</option>
+                <option value="10000-25000">$10,000 - $25,000</option>
+                <option value="over-25000">Over $25,000</option>
+            </select>
+            <textarea name="message"></textarea>
+            <input name="bot-field" />
         </form>
     
     <!-- Fallback for CSS -->
