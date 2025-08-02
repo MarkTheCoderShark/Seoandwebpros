@@ -340,8 +340,8 @@ h6 { font-size: var(--font-size-lg); }
 .hero {
   min-height: calc(100vh - 4rem);
   display: flex;
-  align-items: center;
-  padding-top: 1rem;
+  align-items: flex-start;
+  padding-top: 2rem;
   background: radial-gradient(circle at 20% 50%, rgb(var(--primary) / 0.1) 0%, transparent 50%),
               radial-gradient(circle at 80% 20%, rgb(var(--secondary) / 0.1) 0%, transparent 50%);
   position: relative;
@@ -362,7 +362,7 @@ h6 { font-size: var(--font-size-lg); }
 .hero-badges {
   display: flex;
   gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
 }
 
 .hero-title {
