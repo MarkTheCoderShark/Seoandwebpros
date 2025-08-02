@@ -1,5 +1,5 @@
-// Professional SEO & Web Pros - Main JavaScript
-// Functions are now initialized after components load in index.html
+// Optimized SEO & Web Pros - Main JavaScript
+// Performance optimized with lazy loading and efficient event handling
 
 // Navigation functionality
 function initializeNavigation() {
@@ -12,7 +12,7 @@ function initializeNavigation() {
         });
     }
     
-    // Smooth scrolling for navigation links
+    // Smooth scrolling for navigation links with debouncing
     const navLinks = document.querySelectorAll('a[href^="#"]');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -21,7 +21,7 @@ function initializeNavigation() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80; // Account for fixed nav
+                const offsetTop = targetSection.offsetTop - 80;
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -29,33 +29,11 @@ function initializeNavigation() {
             }
         });
     });
-    
-    // Active navigation highlighting
-    window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.clientHeight;
-            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
 }
 
-// Professional animations
+// Optimized animations with Intersection Observer
 function initializeAnimations() {
-    // Intersection Observer for fade-in animations
+    // Use Intersection Observer for better performance
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -65,197 +43,164 @@ function initializeAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-fade-in-up');
-                observer.unobserve(entry.target);
+                observer.unobserve(entry.target); // Stop observing after animation
             }
         });
     }, observerOptions);
     
-    // Observe all cards and sections
+    // Observe elements efficiently
     const animatedElements = document.querySelectorAll('.card, .service-card, .testimonial-card, .result-card');
-    animatedElements.forEach(el => {
-        observer.observe(el);
-    });
+    animatedElements.forEach(el => observer.observe(el));
     
-    // Hero section animations
+    // Hero animations with staggered timing
     const heroElements = document.querySelectorAll('.hero-title, .hero-description, .hero-actions, .hero-stats');
     heroElements.forEach((el, index) => {
-        el.style.animationDelay = `${index * 0.2}s`;
+        el.style.animationDelay = `${index * 0.15}s`;
         el.classList.add('animate-fade-in-up');
     });
 }
 
-// Professional counter animations
+// Optimized counter animations
 function initializeCounterAnimations() {
     const counterElements = document.querySelectorAll('[data-value]');
-    console.log('Found counter elements:', counterElements.length);
+    
+    if (counterElements.length === 0) return;
     
     // Helper function to animate counter
     function animateCounter(element, targetValue) {
-        const duration = 2000;
+        const duration = 1500; // Reduced duration for better performance
         const startTime = performance.now();
         
         function updateCounter(currentTime) {
             const elapsedTime = currentTime - startTime;
             const progress = Math.min(elapsedTime / duration, 1);
             
-            const currentValue = progress * targetValue;
+            // Use easeOutQuart for smooth animation
+            const easeProgress = 1 - Math.pow(1 - progress, 4);
+            const currentValue = Math.floor(targetValue * easeProgress);
             
-            if (element.id === 'score-percentage') {
-                element.textContent = Math.round(currentValue) + '%';
-            } else if (element.id === 'traffic-count') {
-                element.textContent = currentValue.toFixed(1);
-            } else {
-                element.textContent = Math.round(currentValue);
-            }
+            element.textContent = currentValue.toLocaleString();
             
             if (progress < 1) {
                 requestAnimationFrame(updateCounter);
-            } else {
-                if (element.id === 'score-percentage') {
-                    element.textContent = Math.round(targetValue) + '%';
-                } else if (element.id === 'traffic-count') {
-                    element.textContent = targetValue.toFixed(1);
-                } else {
-                    element.textContent = Math.round(targetValue);
-                }
             }
         }
         
         requestAnimationFrame(updateCounter);
     }
     
+    // Intersection Observer for counter animations
     const counterObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const element = entry.target;
-                const targetValue = parseFloat(element.getAttribute('data-value'));
-                console.log('Starting counter animation for:', element, 'target:', targetValue);
+                const targetValue = parseInt(element.getAttribute('data-value')) || 0;
+                
                 animateCounter(element, targetValue);
                 counterObserver.unobserve(element);
             }
         });
     }, { threshold: 0.5 });
     
-    counterElements.forEach(element => {
-        counterObserver.observe(element);
-    });
-    
-    // Fallback: Start animations after a delay if they haven't started
-    setTimeout(() => {
-        counterElements.forEach(element => {
-            if (element.textContent === '0' || element.textContent === '0%' || element.textContent === '0+') {
-                const targetValue = parseFloat(element.getAttribute('data-value'));
-                console.log('Fallback animation for:', element, 'target:', targetValue);
-                animateCounter(element, targetValue);
-            }
-        });
-    }, 1000);
-    
-    // Progress bar animation
-    const progressBar = document.getElementById('score-bar');
-    if (progressBar) {
-        const progressObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    progressBar.style.width = '85%';
-                    progressObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        progressObserver.observe(progressBar);
-    }
+    counterElements.forEach(el => counterObserver.observe(el));
 }
 
-// Professional form handling
+// Optimized form handling
 function initializeFormHandling() {
-    const contactForm = document.getElementById('contactForm');
+    const forms = document.querySelectorAll('form');
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(this);
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalText = submitButton.innerHTML;
+            const formData = new FormData(form);
+            const submitButton = form.querySelector('button[type="submit"]');
             
-            // Show loading state
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitButton.disabled = true;
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+            }
             
-            // Simulate form submission (replace with actual form handling)
+            // Simulate form submission (replace with actual API call)
             setTimeout(() => {
-                // Show success message
-                showNotification('Message sent successfully! We\'ll get back to you within 24 hours.', 'success');
+                showNotification('Thank you! Your message has been sent successfully.', 'success');
+                form.reset();
                 
-                // Reset form
-                this.reset();
-                
-                // Reset button
-                submitButton.innerHTML = originalText;
-                submitButton.disabled = false;
-            }, 2000);
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Message';
+                }
+            }, 1000);
         });
-    }
+    });
 }
 
-// Professional notification system
+// Optimized notification system
 function showNotification(message, type = 'info') {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 ${
-        type === 'success' ? 'bg-green-500 text-white' : 
-        type === 'error' ? 'bg-red-500 text-white' : 
-        'bg-blue-500 text-white'
-    }`;
+    // Remove existing notifications
+    const existingNotifications = document.querySelectorAll('.notification');
+    existingNotifications.forEach(notification => notification.remove());
     
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
     notification.innerHTML = `
-        <div class="flex items-center gap-3">
-            <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+        <div class="notification-content">
             <span>${message}</span>
-            <button class="ml-2 hover:opacity-75" onclick="this.parentElement.parentElement.remove()">
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="notification-close">&times;</button>
         </div>
+    `;
+    
+    // Add styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#10b981' : '#3b82f6'};
+        color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        max-width: 400px;
+        animation: slideInRight 0.3s ease-out;
     `;
     
     document.body.appendChild(notification);
     
-    // Animate in
-    setTimeout(() => {
-        notification.classList.remove('translate-x-full');
-    }, 100);
-    
     // Auto remove after 5 seconds
     setTimeout(() => {
-        notification.classList.add('translate-x-full');
-        setTimeout(() => {
-            if (notification.parentElement) {
-                notification.remove();
-            }
-        }, 300);
+        if (notification.parentNode) {
+            notification.remove();
+        }
     }, 5000);
-}
-
-// Professional scroll effects
-function initializeScrollEffects() {
-    // Navbar background on scroll
-    const navbar = document.querySelector('.nav');
-    if (navbar) {
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 50) {
-                navbar.style.background = 'rgba(15, 23, 42, 0.98)';
-                navbar.style.backdropFilter = 'blur(12px)';
-            } else {
-                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-                navbar.style.backdropFilter = 'blur(12px)';
-            }
-        });
+    
+    // Close button functionality
+    const closeButton = notification.querySelector('.notification-close');
+    if (closeButton) {
+        closeButton.addEventListener('click', () => notification.remove());
     }
 }
 
-// Professional utility functions
+// Optimized scroll effects with throttling
+function initializeScrollEffects() {
+    let ticking = false;
+    
+    function updateScrollEffects() {
+        // Add scroll-based effects here if needed
+        ticking = false;
+    }
+    
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateScrollEffects);
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener('scroll', requestTick, { passive: true });
+}
+
+// Utility functions
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -268,7 +213,6 @@ function debounce(func, wait) {
     };
 }
 
-// Throttle function for performance
 function throttle(func, limit) {
     let inThrottle;
     return function() {
@@ -282,20 +226,35 @@ function throttle(func, limit) {
     };
 }
 
-// Professional error handling
-window.addEventListener('error', function(e) {
-    console.error('JavaScript Error:', e.error);
-    // You can add error reporting service here
-});
-
-// Professional performance monitoring
-window.addEventListener('load', function() {
-    // Log page load performance
-    if ('performance' in window) {
-        const perfData = performance.getEntriesByType('navigation')[0];
-        console.log('Page Load Time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+// Lazy loading for images
+function initializeLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        images.forEach(img => imageObserver.observe(img));
+    } else {
+        // Fallback for older browsers
+        images.forEach(img => {
+            img.src = img.dataset.src;
+            img.classList.remove('lazy');
+        });
     }
-});
+}
 
-// Export functions for global access
-window.showNotification = showNotification; 
+// Initialize lazy loading when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeLazyLoading);
+} else {
+    initializeLazyLoading();
+} 

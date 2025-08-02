@@ -7,23 +7,105 @@
     <title>SEO & Web Pros - Expert Digital Marketing Services</title>
     <meta name="description" content="Expert SEO, web development, and digital marketing services to help your business grow online. Get a free consultation today!">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        :root {
+            --primary: 37 99 235;
+            --background: 249 250 251;
+            --foreground: 17 24 39;
+            --card: 255 255 255;
+            --border: 229 231 235;
+        }
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: rgb(var(--background));
+            color: rgb(var(--foreground));
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        .overflow-hidden { overflow: hidden; }
+        .h-screen { height: 100vh; }
+        .fixed { position: fixed; }
+        .top-0 { top: 0; }
+        .left-0 { left: 0; }
+        .right-0 { right: 0; }
+        .z-50 { z-index: 50; }
+        .overflow-y-auto { overflow-y: auto; }
+        .pt-\[3\.5rem\] { padding-top: 3.5rem; }
+        .bg-white { background-color: rgb(255 255 255); }
+        .border-b { border-bottom-width: 1px; }
+        .border-gray-200 { border-color: rgb(229 231 235); }
+        .shadow-sm { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); }
+        .max-w-7xl { max-width: 80rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .sm\:px-6 { @media (min-width: 640px) { padding-left: 1.5rem; padding-right: 1.5rem; } }
+        .lg\:px-8 { @media (min-width: 1024px) { padding-left: 2rem; padding-right: 2rem; } }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .h-16 { height: 4rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .font-bold { font-weight: 700; }
+        .text-blue-600 { color: rgb(37 99 235); }
+        .hidden { display: none; }
+        .md\:block { @media (min-width: 768px) { display: block; } }
+        .ml-10 { margin-left: 2.5rem; }
+        .space-x-4 > * + * { margin-left: 1rem; }
+        .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .rounded-md { border-radius: 0.375rem; }
+        .text-sm { font-size: 0.875rem; }
+        .font-medium { font-weight: 500; }
+        .text-gray-600 { color: rgb(75 85 99); }
+        .hover\:text-blue-600:hover { color: rgb(37 99 235); }
+        .bg-blue-600 { background-color: rgb(37 99 235); }
+        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .rounded-full { border-radius: 9999px; }
+        .text-white { color: rgb(255 255 255); }
+        .hover\:bg-blue-700:hover { background-color: rgb(29 78 216); }
+        .transition { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; }
+        .duration-300 { transition-duration: 300ms; }
+        .content-container { height: 100vh; overflow-y: auto; padding-top: 3.5rem; }
+    </style>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="assets/css/optimized-ui.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/js/main.js" as="script">
     
-    <!-- Optimized Professional CSS -->
-    <link rel="stylesheet" href="assets/css/optimized-ui.css">
+    <!-- Font Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome - Load asynchronously -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    
+    <!-- Tailwind CSS - Load asynchronously -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
     
     <!-- Professional Meta Tags -->
-    <meta name="theme-color" content="#0f172a">
+    <meta name="theme-color" content="#2563eb">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="assets/css/optimized-ui.css" as="style">
-    <link rel="preload" href="assets/js/main.js" as="script">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/assets/images/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/images/icon-152x152.png">
+    
+    <!-- Fallback for CSS -->
+    <noscript><link rel="stylesheet" href="assets/css/optimized-ui.css"></noscript>
 </head>
 <body class="overflow-hidden h-screen">
     <!-- Fixed Navigation -->
@@ -56,8 +138,24 @@
         <div id="footer"></div>
     </div>
     
-    <!-- Custom JavaScript -->
-    <script src="assets/js/main.js"></script>
+    <!-- Custom JavaScript - Load after content -->
+    <script src="assets/js/main.js" defer></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        // Register service worker for caching and offline functionality
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registered successfully:', registration);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
     
     <!-- Component Loading Script -->
     <script>
@@ -75,15 +173,22 @@
         
         // Load all components and initialize JavaScript after
         document.addEventListener('DOMContentLoaded', async () => {
+            // Load critical components first
             await loadComponent('navigation', 'components/navigation.html');
             await loadComponent('hero', 'components/hero.html');
-            await loadComponent('clients', 'components/clients.html');
-            await loadComponent('results', 'components/results.html');
-            await loadComponent('services', 'components/services.html');
-            await loadComponent('testimonials', 'components/testimonials.html');
-            await loadComponent('team', 'components/team.html');
-            await loadComponent('contact', 'components/contact.html');
-            await loadComponent('footer', 'components/footer.html');
+            
+            // Load remaining components in parallel
+            const remainingComponents = [
+                ['clients', 'components/clients.html'],
+                ['results', 'components/results.html'],
+                ['services', 'components/services.html'],
+                ['testimonials', 'components/testimonials.html'],
+                ['team', 'components/team.html'],
+                ['contact', 'components/contact.html'],
+                ['footer', 'components/footer.html']
+            ];
+            
+            await Promise.all(remainingComponents.map(([id, path]) => loadComponent(id, path)));
             
             // Initialize JavaScript after all components are loaded
             if (typeof initializeNavigation === 'function') initializeNavigation();
