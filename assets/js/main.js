@@ -114,6 +114,12 @@ function initializeFormHandling() {
     const forms = document.querySelectorAll('form');
     
     forms.forEach(form => {
+        // Skip forms that should submit to Netlify
+        if (form.hasAttribute('data-netlify') || form.hasAttribute('netlify')) {
+            console.log('Skipping Netlify form:', form.name || form.id);
+            return;
+        }
+        
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -393,13 +399,8 @@ function initializeModal() {
             // Don't prevent default - let Netlify handle it
             console.log('Form data being submitted to Netlify');
             
-            // Show success message after a short delay
-            setTimeout(() => {
-                proposalForm.reset();
-                closeModalAndCleanup();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
+            // Don't reset or close modal immediately - let Netlify handle the submission
+            // The form will redirect to a success page or show a success message
         });
         
         // Add phone number formatting
