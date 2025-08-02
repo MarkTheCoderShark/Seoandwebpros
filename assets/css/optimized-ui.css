@@ -341,7 +341,7 @@ h6 { font-size: var(--font-size-lg); }
   min-height: calc(100vh - 4rem);
   display: flex;
   align-items: flex-start;
-  padding-top: 0.5rem;
+  padding-top: 1.25rem;
   background: radial-gradient(circle at 20% 50%, rgb(var(--primary) / 0.1) 0%, transparent 50%),
               radial-gradient(circle at 80% 20%, rgb(var(--secondary) / 0.1) 0%, transparent 50%);
   position: relative;
