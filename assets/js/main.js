@@ -267,11 +267,17 @@ function initializeModal() {
     const websiteForm = document.querySelector('.website-submission-form');
     const proposalForm = document.getElementById('proposalForm');
     
-    if (!modal || !noWebsiteLink || !closeModal) return;
+    console.log('Modal elements found:', { modal, noWebsiteLink, closeModal, websiteForm, proposalForm });
+    
+    if (!modal || !noWebsiteLink || !closeModal) {
+        console.log('Some modal elements not found, retrying...');
+        return;
+    }
     
     // Open modal when "Don't have a site?" is clicked
     noWebsiteLink.addEventListener('click', function(e) {
         e.preventDefault();
+        console.log('No website link clicked!');
         modal.classList.add('show');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
     });
@@ -357,8 +363,21 @@ function initializeModal() {
 }
 
 // Initialize modal when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeModal);
-} else {
+function initializeModalWithRetry() {
+    const modal = document.getElementById('noWebsiteModal');
+    const noWebsiteLink = document.getElementById('noWebsiteLink');
+    
+    if (!modal || !noWebsiteLink) {
+        console.log('Modal elements not found, retrying in 100ms...');
+        setTimeout(initializeModalWithRetry, 100);
+        return;
+    }
+    
     initializeModal();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeModalWithRetry);
+} else {
+    initializeModalWithRetry();
 } 
