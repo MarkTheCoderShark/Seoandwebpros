@@ -3,7 +3,7 @@
   publish = "."
 
 [functions]
-  external_node_modules = ["axios", "cheerio"]
+  external_node_modules = ["axios", "cheerio", "resend"]
   node_bundler = "esbuild"
 
 [[redirects]]
