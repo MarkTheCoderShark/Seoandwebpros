@@ -109,38 +109,60 @@ function initializeCounterAnimations() {
     counterElements.forEach(el => counterObserver.observe(el));
 }
 
-// Optimized form handling
+// Form handling with Resend
 function initializeFormHandling() {
     const forms = document.querySelectorAll('form');
     
     forms.forEach(form => {
-        // Skip forms that should submit to Netlify
-        if (form.hasAttribute('data-netlify') || form.hasAttribute('netlify')) {
-            console.log('Skipping Netlify form:', form.name || form.id);
-            return;
-        }
-        
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const formData = new FormData(form);
             const submitButton = form.querySelector('button[type="submit"]');
+            const formDataObj = {};
+            
+            formData.forEach((value, key) => {
+                formDataObj[key] = value;
+            });
             
             if (submitButton) {
                 submitButton.disabled = true;
+                const originalText = submitButton.textContent;
                 submitButton.textContent = 'Sending...';
             }
             
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
+            try {
+                const response = await fetch('/.netlify/functions/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        formName: form.getAttribute('name') || form.id || 'Contact Form',
+                        formData: formDataObj
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Failed to send message');
+                }
+                
                 showNotification('Thank you! Your message has been sent successfully.', 'success');
                 form.reset();
                 
+                // If this is the proposal form in the modal, close it
+                if (form.id === 'proposalForm') {
+                    closeModalAndCleanup();
+                }
+            } catch (error) {
+                console.error('Error sending form:', error);
+                showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
+            } finally {
                 if (submitButton) {
                     submitButton.disabled = false;
-                    submitButton.textContent = 'Send Message';
+                    submitButton.textContent = originalText;
                 }
-            }, 1000);
+            }
         });
     });
 }
