@@ -344,7 +344,7 @@ function initializeModal() {
     // Handle website submission form
     if (websiteForm) {
         console.log('Website form found, adding event listener');
-        websiteForm.addEventListener('submit', function(e) {
+        websiteForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             console.log('Website form submitted');
             
@@ -368,6 +368,23 @@ function initializeModal() {
             } catch {
                 showNotification('Please enter a valid website URL', 'error');
                 return;
+            }
+            
+            // Silently submit the website URL to Resend
+            try {
+                await fetch('/.netlify/functions/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        formName: 'Website Submission',
+                        formData: { website: websiteUrl }
+                    })
+                });
+            } catch (error) {
+                console.error('Error sending website submission:', error);
+                // Silently handle error - don't show to user
             }
             
             // Store the website URL and show the modal form
