@@ -943,7 +943,7 @@ section {
 .p-4 { padding: var(--spacing-lg); }
 .p-5 { padding: var(--spacing-xl); }
 .p-6 { padding: var(--spacing-2xl); }
-.p-8 { padding: var(--spacing-3xl); }
+.p-8 { padding: var(--spacing-3xl); } 
 
 /* Modal Styles */
 .modal {
