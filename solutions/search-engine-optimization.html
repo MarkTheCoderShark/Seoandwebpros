@@ -4,264 +4,226 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Engine Optimization - SEO & Web Pros</title>
-    <meta name="description" content="Expert SEO services to improve your search rankings, drive organic traffic, and grow your business online.">
-    
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="../assets/css/optimized-ui.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../assets/css/optimized-ui.css"></noscript>
-    
-    <!-- Font Optimization -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet"></noscript>
-    
-    <!-- Font Awesome -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <meta name="description" content="Improve your search rankings and drive organic traffic with our expert SEO services. Get more visibility and qualified leads.">
+    <link rel="stylesheet" href="../assets/css/optimized-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-gray-50">
+<body>
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="../index.html" class="text-2xl font-bold text-blue-600">SEO & WEB PROS</a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-4 flex items-center md:ml-6">
-                        <a href="../index.html#contact" class="bg-blue-600 px-6 py-2 rounded-full text-white font-medium hover:bg-blue-700 transition duration-300 brand-font">
-                            <i class="fas fa-envelope mr-2"></i>
-                            Free Consultation
-                        </a>
-                    </div>
-                </div>
-                <div class="-mr-2 flex md:hidden">
-                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-blue-50 focus:outline-none">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Home</a>
-                <a href="../index.html#contact" class="w-full">
-                    <button class="w-full bg-blue-600 px-6 py-2 rounded-full text-white font-medium hover:bg-blue-700 transition duration-300 mt-2 brand-font">
-                        <i class="fas fa-envelope mr-2"></i>
-                        Free Consultation
-                    </button>
-                </a>
-            </div>
-        </div>
-    </nav>
+    <div id="navigation"></div>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="flex items-center justify-center space-x-2 mb-6">
-                    <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">SEO</span>
-                    <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">OPTIMIZATION</span>
-                    <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">GROWTH</span>
-                </div>
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    Search Engine <span class="text-blue-600">Optimization</span>
-                </h1>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Improve your search rankings, drive organic traffic, and grow your business with our comprehensive SEO strategies.
-                </p>
+    <section class="hero bg-gradient-to-br from-blue-50 via-white to-gray-50">
+        <div class="hero-content">
+            <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
+                <span class="gradient-primary">Search Engine Optimization</span>
+                <br>That Drives Real Results
+            </h1>
+            
+            <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
+                Boost your website's visibility in search engines and attract qualified organic traffic. Our data-driven SEO strategies help you rank higher and convert more visitors into customers.
+            </p>
+            
+            <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
+                <button type="button" id="heroConsultationBtn" class="proposal-btn brand-font">
+                    Get Free SEO Audit
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <!-- Main Content -->
-                <div class="lg:col-span-2">
-                    <div class="bg-white border border-gray-200 p-8 rounded-xl mb-8 shadow-sm">
-                        <h2 class="text-3xl font-bold mb-6 text-gray-900">What is Search Engine Optimization?</h2>
-                        <p class="text-gray-600 mb-6">
-                            Search Engine Optimization (SEO) is the practice of optimizing your website to improve its visibility in search engine results pages (SERPs). Our comprehensive SEO services help businesses rank higher in search results, drive more organic traffic, and ultimately increase conversions and revenue.
-                        </p>
+    <!-- Service Details -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Comprehensive SEO Services</h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        We provide end-to-end SEO solutions that improve your search rankings, increase organic traffic, and drive more qualified leads to your business.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold">Technical SEO</h3>
+                                <p class="text-gray-600">Optimize your website's technical foundation for better search engine crawling and indexing.</p>
+                            </div>
+                        </div>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                            <div class="bg-blue-50 p-6 rounded-lg">
-                                <h3 class="text-xl font-semibold mb-3 text-blue-900">Organic Traffic Growth</h3>
-                                <p class="text-blue-700">Increase your website's visibility in search results and attract qualified visitors who are actively searching for your products or services.</p>
-                            </div>
-                            <div class="bg-green-50 p-6 rounded-lg">
-                                <h3 class="text-xl font-semibold mb-3 text-green-900">Long-term Results</h3>
-                                <p class="text-green-700">Unlike paid advertising, SEO provides sustainable, long-term results that continue to drive traffic and conversions.</p>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold">On-Page Optimization</h3>
+                                <p class="text-gray-600">Optimize content, meta tags, and internal linking structure for better rankings.</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="bg-white border border-gray-200 p-8 rounded-xl mb-8 shadow-sm">
-                        <h3 class="text-2xl font-bold mb-6 text-gray-900">Our SEO Services Include:</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-search text-blue-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">Technical SEO</h4>
-                                    <p class="text-gray-600">Optimize your website's technical foundation including site speed, mobile responsiveness, crawlability, and indexability.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-file-alt text-blue-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">On-Page SEO</h4>
-                                    <p class="text-gray-600">Optimize individual pages with targeted keywords, meta tags, content optimization, and internal linking strategies.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-link text-blue-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">Off-Page SEO</h4>
-                                    <p class="text-gray-600">Build quality backlinks, improve domain authority, and enhance your website's reputation across the web.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-chart-line text-blue-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">Local SEO</h4>
-                                    <p class="text-gray-600">Optimize for local search results, Google My Business, and location-based keywords to attract nearby customers.</p>
-                                </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold">Content Strategy</h3>
+                                <p class="text-gray-600">Create high-quality, keyword-optimized content that ranks and converts.</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="bg-white border border-gray-200 p-8 rounded-xl mb-8 shadow-sm">
-                        <h3 class="text-2xl font-bold mb-6 text-gray-900">Why Choose Our SEO Services?</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-chart-line text-blue-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">Data-Driven Approach</h4>
-                                    <p class="text-gray-600">We use advanced analytics and tracking tools to measure and optimize your SEO performance.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-users text-blue-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">Expert Team</h4>
-                                    <p class="text-gray-600">Our certified SEO specialists bring years of experience and industry expertise.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                    <i class="fas fa-rocket text-blue-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">Sustainable Results</h4>
-                                    <p class="text-gray-600">We focus on long-term strategies that deliver lasting improvements to your search rankings.</p>
-                                </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold">Link Building</h3>
+                                <p class="text-gray-600">Build authoritative backlinks to strengthen your domain authority and rankings.</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="bg-blue-600 p-8 rounded-xl text-white">
-                        <h3 class="text-2xl font-bold mb-4">Ready to Improve Your SEO?</h3>
-                        <p class="mb-6">Get started with a free consultation and discover opportunities for your website.</p>
-                        <a href="../index.html#contact" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition duration-300 brand-font">
-                            Get Free Consultation
-                        </a>
                     </div>
                 </div>
                 
-                <!-- Sidebar -->
-                <div class="lg:col-span-1">
-                    <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm mb-6">
-                        <h3 class="text-xl font-bold mb-4 text-gray-900">Quick Links</h3>
-                        <ul class="space-y-2">
-                            <li><a href="website-design.html" class="text-blue-600 hover:text-blue-800 transition duration-300">Website Design</a></li>
-                            <li><a href="website-development.html" class="text-blue-600 hover:text-blue-800 transition duration-300">Website Development</a></li>
-                            <li><a href="app-design-development.html" class="text-blue-600 hover:text-blue-800 transition duration-300">App Design & Development</a></li>
-                            <li><a href="software-design-development.html" class="text-blue-600 hover:text-blue-800 transition duration-300">Software Design & Development</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
-                        <h3 class="text-xl font-bold mb-4 text-gray-900">Contact Us</h3>
-                        <p class="text-gray-600 mb-4">Ready to start your SEO journey? Get in touch with our experts.</p>
-                        <a href="../index.html#contact" class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300 brand-font">
-                            Get Started Today
-                        </a>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6">What You'll Get</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white mr-4">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Increased Rankings</h4>
+                                <p class="text-gray-600">See your keywords climb the search results</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white mr-4">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">More Organic Traffic</h4>
+                                <p class="text-gray-600">Attract qualified visitors from search engines</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white mr-4">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Higher Conversions</h4>
+                                <p class="text-gray-600">Convert more visitors into paying customers</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-50 py-12 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold text-blue-600 mb-4">SEO & WEB PROS</h3>
-                    <p class="text-gray-600">Your partner in digital success. We help businesses grow through effective SEO and web development strategies.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Solutions</h4>
-                    <ul class="space-y-2">
-                        <li><a href="website-design.html" class="text-gray-600 hover:text-blue-600">Website Design</a></li>
-                        <li><a href="website-development.html" class="text-gray-600 hover:text-blue-600">Website Development</a></li>
-                        <li><a href="search-engine-optimization.html" class="text-gray-600 hover:text-blue-600">Search Engine Optimization</a></li>
-                        <li><a href="app-design-development.html" class="text-gray-600 hover:text-blue-600">App Design & Development</a></li>
-                        <li><a href="software-design-development.html" class="text-gray-600 hover:text-blue-600">Software Design & Development</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="../index.html#about" class="text-gray-600 hover:text-blue-600">About Us</a></li>
-                        <li><a href="../index.html#results" class="text-gray-600 hover:text-blue-600">Case Studies</a></li>
-                        <li><a href="../index.html#contact" class="text-gray-600 hover:text-blue-600">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Contact Us</h4>
-                    <ul class="space-y-2">
-                        <li class="flex items-center text-gray-600">
-                            <i class="fas fa-envelope mr-2 text-blue-600"></i>
-                            <a href="mailto:contact@seoandwebpros.com" class="hover:text-blue-600">contact@seoandwebpros.com</a>
-                        </li>
-                    </ul>
-                </div>
+    <!-- Contact Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Boost Your Rankings?</h2>
+            <p class="text-lg text-gray-600 mb-8">
+                Get a free SEO audit and discover how we can improve your search visibility and drive more organic traffic to your website.
+            </p>
+            <button type="button" id="contactConsultationBtn" class="proposal-btn brand-font">
+                Get Free Consultation
+            </button>
+        </div>
+    </section>
+
+    <!-- Modal for consultation -->
+    <div id="noWebsiteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Get Your Free SEO Strategy</h2>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-            <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
-                <p>&copy; 2025 SEO & Web Pros. All rights reserved.</p>
+            <div class="modal-body">
+                <p class="modal-description">
+                    Ready to improve your search rankings? Fill out the form below and we'll create a custom SEO strategy for your business.
+                </p>
+                
+                <form id="proposalForm" class="proposal-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="555-123-4567" maxlength="12">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="website">Website URL</label>
+                        <input type="text" id="website" name="website" placeholder="https://yourwebsite.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">SEO Goals</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your SEO goals, target keywords, and current challenges..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn brand-font">
+                        <span class="btn-text">Get My SEO Strategy</span>
+                        <span class="btn-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Sending...
+                        </span>
+                    </button>
+                </form>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        // Load navigation
+        async function loadNavigation() {
+            try {
+                const response = await fetch('../components/navigation.html');
+                const html = await response.text();
+                document.getElementById('navigation').innerHTML = html;
+                
+                // Initialize navigation after loading
+                if (typeof initializeNavigation === 'function') {
+                    initializeNavigation();
+                }
+            } catch (error) {
+                console.error('Error loading navigation:', error);
+            }
+        }
+        
+        // Load navigation when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNavigation();
+            
+            // Add event listeners for consultation buttons
+            const heroBtn = document.getElementById('heroConsultationBtn');
+            const contactBtn = document.getElementById('contactConsultationBtn');
+            
+            if (heroBtn) {
+                heroBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showModal();
+                });
+            }
+            
+            if (contactBtn) {
+                contactBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showModal();
+                });
+            }
         });
     </script>
 </body>
