@@ -649,6 +649,13 @@ h6 { font-size: var(--font-size-lg); }
   background-clip: text;
 }
 
+.brand-font {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
 /* Button Styles */
 .btn {
   display: inline-flex;
@@ -860,6 +867,8 @@ h6 { font-size: var(--font-size-lg); }
   line-height: 1.1;
   color: rgb(var(--primary));
   text-decoration: none;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: -0.025em;
 }
 
 .nav-links {
