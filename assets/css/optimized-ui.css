@@ -887,7 +887,8 @@ h6 { font-size: var(--font-size-lg); }
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 
 .hero-title {
@@ -1456,8 +1457,8 @@ section {
   .hero-badges {
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
   
   .hero-stats {
