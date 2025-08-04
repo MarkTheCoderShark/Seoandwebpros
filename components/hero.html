@@ -1,0 +1,148 @@
+<!-- Hero Section -->
+<section class="hero bg-gradient-to-br from-blue-50 via-white to-gray-50">
+    <!-- Background Elements -->
+    <div class="hero-background">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+    </div>
+    
+    <div class="hero-content">
+        <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
+            Transform Your Business with 
+            <span class="gradient-primary">Expert Digital Solutions</span>
+        </h1>
+        
+        <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
+            Comprehensive digital services including SEO optimization, web development, UI/UX design, and digital marketing strategies. We help businesses grow online with data-driven solutions and user-centered design.
+        </p>
+        
+        <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
+            <form id="websiteForm" class="website-submission-form">
+                <div class="form-row">
+                    <input 
+                        type="text" 
+                        id="websiteUrl" 
+                        name="websiteUrl"
+                        class="website-input" 
+                        placeholder="Enter your website URL"
+                        required
+                    >
+                    <button type="submit" class="proposal-btn brand-font">
+                        Get Free Proposal
+                    </button>
+                </div>
+            </form>
+            
+            <div class="no-website-section">
+                <p class="no-website-text">
+                    Don't have a site? <a href="#" class="no-website-link">Click Here</a> to get started
+                </p>
+            </div>
+        </div>
+        
+        <div class="hero-stats animate-fade-in-up" style="animation-delay: 0.8s;">
+            <div class="hero-avatars">
+                <div class="hero-avatar">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" alt="Client" class="w-8 h-8 rounded-full">
+                </div>
+                <div class="hero-avatar">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face" alt="Client" class="w-8 h-8 rounded-full">
+                </div>
+                <div class="hero-avatar">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" alt="Client" class="w-8 h-8 rounded-full">
+                </div>
+            </div>
+            <div class="hero-rating">
+                <div class="hero-stars">★★★★★</div>
+                <div class="hero-trust">Trusted by 500+ businesses</div>
+            </div>
+        </div>
+        
+        <div class="hero-badges animate-fade-in-up" style="animation-delay: 1s;">
+            <span class="badge badge-primary">Full-Service Digital Agency</span>
+            <span class="badge badge-primary">SEO & Web Development</span>
+            <span class="badge badge-primary">UI/UX Design</span>
+        </div>
+    </div>
+</section>
+
+<!-- Modal for users without a website -->
+<div id="noWebsiteModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Get Your Free Digital Strategy</h2>
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p class="modal-description">
+                Thank you for your interest in our comprehensive digital services! Please fill out the form below, and we'll create a custom strategy for your business growth.
+            </p>
+            
+            <form id="proposalForm" class="proposal-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="555-123-4567" maxlength="12">
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                
+                <div class="form-group">
+                    <label for="services">Services of Interest *</label>
+                    <select id="services" name="services" required>
+                        <option value="">Select services...</option>
+                        <option value="SEO Optimization">SEO Optimization</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="UI/UX Design">UI/UX Design</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option value="Full Package">Full Package (All Services)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="budget">Budget Range</label>
+                    <select id="budget" name="budget">
+                        <option value="">Select budget...</option>
+                        <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                        <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                        <option value="$25,000+">$25,000+</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Project Details</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us about your project goals, timeline, and any specific requirements..."></textarea>
+                </div>
+                
+                <div class="form-group" id="websiteField" style="display: none;">
+                    <label for="submittedWebsite">Website URL</label>
+                    <input type="text" id="submittedWebsite" name="submittedWebsite" readonly>
+                </div>
+                
+                <button type="submit" class="submit-btn brand-font">
+                    <span class="btn-text">Send Me A Proposal</span>
+                    <span class="btn-loading" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i> Sending...
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div> 
