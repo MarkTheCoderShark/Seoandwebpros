@@ -816,7 +816,7 @@ h6 { font-size: var(--font-size-lg); }
   z-index: 1;
   overflow: hidden;
   margin-top: -4rem;
-  padding-top: 6rem;
+  padding-top: 8rem;
 }
 
 .hero-background {
@@ -1358,7 +1358,7 @@ section {
 @media (max-width: 768px) {
   .hero-content {
     padding: 0 1rem;
-    padding-top: 2rem;
+    padding-top: 4rem;
   }
   
   .hero-title {
