@@ -921,13 +921,35 @@ h6 { font-size: var(--font-size-lg); }
   cursor: pointer;
   border: none;
   background: none;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
+  color: rgb(var(--muted-foreground));
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+  position: relative;
 }
 
 .dropdown-toggle:hover {
   color: rgb(var(--primary));
+  background: rgb(var(--primary) / 0.1);
+  transform: translateY(-1px);
+}
+
+.dropdown-toggle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: rgb(var(--primary));
+  transition: width 0.3s ease;
+}
+
+.dropdown-toggle:hover::after {
+  width: 100%;
 }
 
 .dropdown-toggle i {
