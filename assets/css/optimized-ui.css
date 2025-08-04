@@ -839,6 +839,12 @@ h6 { font-size: var(--font-size-lg); }
   background: linear-gradient(135deg, rgb(var(--primary) / 0.2), rgb(var(--secondary) / 0.2));
   animation: float 3s ease-in-out infinite;
   box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
+  transition: transform 0.3s ease-out;
+  pointer-events: none;
+}
+
+.floating-shape.cursor-avoid {
+  animation-play-state: paused;
 }
 
 .shape-1 {
@@ -875,6 +881,67 @@ h6 { font-size: var(--font-size-lg); }
   right: 25%;
   animation: float 3s ease-in-out infinite, floatX 4.5s ease-in-out infinite reverse;
   animation-delay: 0.5s;
+}
+
+/* Responsive floating shapes */
+@media (max-width: 768px) {
+  .floating-shape {
+    opacity: 0.8;
+  }
+  
+  .shape-1 {
+    width: 80px;
+    height: 80px;
+    top: 10%;
+    left: 5%;
+  }
+  
+  .shape-2 {
+    width: 120px;
+    height: 120px;
+    top: 60%;
+    right: 8%;
+  }
+  
+  .shape-3 {
+    width: 70px;
+    height: 70px;
+    bottom: 10%;
+    left: 10%;
+  }
+  
+  .shape-4 {
+    width: 100px;
+    height: 100px;
+    top: 35%;
+    right: 15%;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-shape {
+    opacity: 0.6;
+  }
+  
+  .shape-1 {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .shape-2 {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .shape-3 {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .shape-4 {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 @keyframes float {

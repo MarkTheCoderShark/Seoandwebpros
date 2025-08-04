@@ -494,6 +494,74 @@ function initializeModal() {
     }
 }
 
+// Cursor avoidance for floating shapes
+function initializeCursorAvoidance() {
+    const shapes = document.querySelectorAll('.floating-shape');
+    const hero = document.querySelector('.hero');
+    
+    if (!hero || shapes.length === 0) return;
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let isMouseMoving = false;
+    let mouseTimeout;
+    
+    // Track mouse position
+    hero.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        isMouseMoving = true;
+        
+        // Clear previous timeout
+        clearTimeout(mouseTimeout);
+        
+        // Set timeout to stop avoidance after mouse stops moving
+        mouseTimeout = setTimeout(() => {
+            isMouseMoving = false;
+            shapes.forEach(shape => {
+                shape.classList.remove('cursor-avoid');
+                shape.style.transform = '';
+            });
+        }, 1000);
+        
+        // Calculate avoidance for each shape
+        shapes.forEach(shape => {
+            const rect = shape.getBoundingClientRect();
+            const shapeCenterX = rect.left + rect.width / 2;
+            const shapeCenterY = rect.top + rect.height / 2;
+            
+            // Calculate distance from mouse to shape center
+            const distanceX = mouseX - shapeCenterX;
+            const distanceY = mouseY - shapeCenterY;
+            const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+            
+            // Avoid if mouse is within 150px of shape
+            if (distance < 150) {
+                shape.classList.add('cursor-avoid');
+                
+                // Calculate avoidance direction (opposite to mouse)
+                const avoidX = -distanceX / distance * 30;
+                const avoidY = -distanceY / distance * 30;
+                
+                // Apply avoidance transform
+                shape.style.transform = `translate(${avoidX}px, ${avoidY}px)`;
+            } else {
+                shape.classList.remove('cursor-avoid');
+                shape.style.transform = '';
+            }
+        });
+    });
+    
+    // Reset shapes when mouse leaves hero area
+    hero.addEventListener('mouseleave', function() {
+        isMouseMoving = false;
+        shapes.forEach(shape => {
+            shape.classList.remove('cursor-avoid');
+            shape.style.transform = '';
+        });
+    });
+}
+
 // Initialize modal when DOM is ready
 function initializeModalWithRetry() {
     const modal = document.getElementById('noWebsiteModal');
@@ -512,8 +580,19 @@ function initializeModalWithRetry() {
     initializeModal();
 }
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeModalWithRetry);
-} else {
+// Initialize everything when DOM is ready
+function initializeAll() {
+    initializeNavigation();
+    initializeAnimations();
+    initializeCounterAnimations();
+    initializeFormHandling();
+    initializeScrollEffects();
+    initializeCursorAvoidance();
     initializeModalWithRetry();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeAll);
+} else {
+    initializeAll();
 } 
