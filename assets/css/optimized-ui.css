@@ -1600,6 +1600,14 @@ section {
   .nav-container {
     margin: 0 0.5rem;
     padding: 0 1rem;
+    position: relative;
+  }
+  
+  .nav-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
   }
   
   .showcase-grid {
