@@ -1610,6 +1610,31 @@ section {
     z-index: 10;
   }
   
+  #mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  #mobile-menu-close {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background: rgb(var(--muted) / 0.1);
+  }
+  
+  #mobile-menu-close:hover {
+    background: rgb(var(--muted) / 0.2);
+  }
+  
   .showcase-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;

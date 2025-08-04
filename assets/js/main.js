@@ -5,10 +5,17 @@
 function initializeNavigation() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
     
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', function() {
             mobileMenu.classList.toggle('hidden');
+        });
+    }
+    
+    if (mobileMenuClose && mobileMenu) {
+        mobileMenuClose.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
         });
     }
     
@@ -30,6 +37,11 @@ function initializeNavigation() {
                     top: offsetTop,
                     behavior: 'smooth'
                 });
+                
+                // Close mobile menu if open
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
             }
         });
     });
