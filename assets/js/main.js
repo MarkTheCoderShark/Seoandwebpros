@@ -19,6 +19,44 @@ function initializeNavigation() {
         });
     }
     
+    // Desktop Solutions Dropdown
+    const solutionsDropdown = document.getElementById('solutionsDropdown');
+    const solutionsDropdownMenu = document.getElementById('solutionsDropdownMenu');
+    
+    if (solutionsDropdown && solutionsDropdownMenu) {
+        solutionsDropdown.addEventListener('click', function(e) {
+            e.preventDefault();
+            solutionsDropdown.classList.toggle('active');
+            solutionsDropdownMenu.classList.toggle('show');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!solutionsDropdown.contains(e.target) && !solutionsDropdownMenu.contains(e.target)) {
+                solutionsDropdown.classList.remove('active');
+                solutionsDropdownMenu.classList.remove('show');
+            }
+        });
+    }
+    
+    // Mobile Solutions Dropdown
+    const mobileSolutionsDropdown = document.getElementById('mobileSolutionsDropdown');
+    const mobileSolutionsDropdownMenu = document.getElementById('mobileSolutionsDropdownMenu');
+    
+    if (mobileSolutionsDropdown && mobileSolutionsDropdownMenu) {
+        mobileSolutionsDropdown.addEventListener('click', function(e) {
+            e.preventDefault();
+            const icon = this.querySelector('i');
+            mobileSolutionsDropdownMenu.classList.toggle('show');
+            
+            if (mobileSolutionsDropdownMenu.classList.contains('show')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        });
+    }
+    
     // Smooth scrolling for navigation links with debouncing
     const navLinks = document.querySelectorAll('a[href^="#"]');
     navLinks.forEach(link => {
