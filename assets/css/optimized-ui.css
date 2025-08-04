@@ -1562,6 +1562,33 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* Prevent horizontal scrolling on mobile */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  .content-container {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  /* Ensure all sections stay within viewport */
+  section, .hero, .services, .testimonials, .contact, .footer {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  /* Ensure all containers respect viewport width */
+  .nav-container, .hero-content, .services-grid, .testimonials-grid, .contact-container {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
   .hero-content {
     padding: 0 1rem;
     padding-top: 4rem;
