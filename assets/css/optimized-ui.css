@@ -680,6 +680,8 @@ h6 { font-size: var(--font-size-lg); }
   font-size: var(--font-size-xs);
   font-weight: 500;
   line-height: 1;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease-in-out;
 }
 
 .badge-primary {
@@ -698,6 +700,11 @@ h6 { font-size: var(--font-size-lg); }
   background: rgb(var(--accent) / 0.1);
   color: rgb(var(--accent));
   border: 1px solid rgb(var(--accent) / 0.2);
+}
+
+.badge:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 /* Progress Bar */
@@ -1350,6 +1357,7 @@ section {
 @media (max-width: 768px) {
   .hero-content {
     padding: 0 1rem;
+    padding-top: 2rem;
   }
   
   .hero-title {
@@ -1447,6 +1455,9 @@ section {
   
   .hero-badges {
     flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
   }
   
   .hero-stats {
