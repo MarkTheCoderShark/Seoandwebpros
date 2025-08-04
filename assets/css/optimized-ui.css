@@ -380,10 +380,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tech-categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
   margin-bottom: 3rem;
+}
+
+.tech-categories-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tech-categories-bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.tech-category-wide {
+  max-width: 800px;
+  width: 100%;
 }
 
 .tech-category {
@@ -418,6 +432,12 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   gap: 1rem;
+}
+
+.tech-grid-wide {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
 }
 
 .tech-item {
@@ -1374,9 +1394,18 @@ section {
     gap: 1rem;
   }
   
-  .tech-categories {
+  .tech-categories-top {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+  }
+  
+  .tech-category-wide {
+    max-width: 100%;
+  }
+  
+  .tech-grid-wide {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
   
   .tech-grid {
