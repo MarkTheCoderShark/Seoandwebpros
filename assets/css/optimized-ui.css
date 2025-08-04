@@ -799,7 +799,7 @@ h6 { font-size: var(--font-size-lg); }
 
 /* Hero Section */
 .hero {
-  min-height: calc(100vh - 4rem);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -808,6 +808,8 @@ h6 { font-size: var(--font-size-lg); }
   position: relative;
   z-index: 1;
   overflow: hidden;
+  margin-top: -4rem;
+  padding-top: 6rem;
 }
 
 .hero-background {
