@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Design & Development - SEO & Web Pros</title>
+    <meta name="description" content="Expert mobile app design and development services for iOS, Android, and cross-platform applications.">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="../assets/css/optimized-ui.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/optimized-ui.css"></noscript>
+    
+    <!-- Font Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-blue-600">SEO & WEB PROS</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <a href="../index.html#contact" class="bg-blue-600 px-6 py-2 rounded-full text-white font-medium hover:bg-blue-700 transition duration-300 brand-font">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Free Consultation
+                        </a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-blue-50 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Home</a>
+                <a href="../index.html#contact" class="w-full">
+                    <button class="w-full bg-blue-600 px-6 py-2 rounded-full text-white font-medium hover:bg-blue-700 transition duration-300 mt-2 brand-font">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Free Consultation
+                    </button>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center space-x-2 mb-6">
+                    <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">MOBILE</span>
+                    <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">APPS</span>
+                    <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-600">DEVELOPMENT</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    App Design & <span class="text-blue-600">Development</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Create stunning mobile applications for iOS, Android, and cross-platform with our expert design and development services.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white border border-gray-200 p-8 rounded-xl mb-8 shadow-sm">
+                        <h2 class="text-3xl font-bold mb-6 text-gray-900">Mobile App Development Services</h2>
+                        <p class="text-gray-600 mb-6">
+                            We specialize in creating high-quality mobile applications that deliver exceptional user experiences. From concept to launch, our team handles every aspect of app development, ensuring your app stands out in the competitive mobile market.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-blue-50 p-6 rounded-lg">
+                                <h3 class="text-xl font-semibold mb-3 text-blue-900">Native Development</h3>
+                                <p class="text-blue-700">Build high-performance apps specifically for iOS and Android platforms using native technologies.</p>
+                            </div>
+                            <div class="bg-green-50 p-6 rounded-lg">
+                                <h3 class="text-xl font-semibold mb-3 text-green-900">Cross-Platform</h3>
+                                <p class="text-green-700">Develop once and deploy everywhere with React Native, Flutter, and other cross-platform frameworks.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 p-8 rounded-xl mb-8 shadow-sm">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-900">Our App Development Process:</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-lightbulb text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">Discovery & Planning</h4>
+                                    <p class="text-gray-600">We start by understanding your business goals, target audience, and app requirements to create a comprehensive development plan.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-palette text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">UI/UX Design</h4>
+                                    <p class="text-gray-600">Create intuitive, beautiful user interfaces and seamless user experiences that engage and delight your users.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-code text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">Development</h4>
+                                    <p class="text-gray-600">Build your app using modern technologies and best practices, ensuring scalability, security, and performance.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-bug text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">Testing & Quality Assurance</h4>
+                                    <p class="text-gray-600">Rigorous testing across multiple devices and platforms to ensure your app works flawlessly.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-rocket text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2 text-gray-900">Launch & Maintenance</h4>
+                                    <p class="text-gray-600">Deploy your app to app stores and provide ongoing maintenance, updates, and support.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 p-8 rounded-xl mb-8 shadow-sm">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-900">App Development Technologies:</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h4 class="text-lg font-semibold mb-3 text-gray-900">iOS Development</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>• Swift & SwiftUI</li>
+                                    <li>• Objective-C</li>
+                                    <li>• Xcode & iOS SDK</li>
+                                    <li>• Core Data & CloudKit</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h4 class="text-lg font-semibold mb-3 text-gray-900">Android Development</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>• Kotlin & Java</li>
+                                    <li>• Jetpack Compose</li>
+                                    <li>• Android Studio</li>
+                                    <li>• Room Database</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h4 class="text-lg font-semibold mb-3 text-gray-900">Cross-Platform</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>• React Native</li>
+                                    <li>• Flutter</li>
+                                    <li>• Xamarin</li>
+                                    <li>• Ionic</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h4 class="text-lg font-semibold mb-3 text-gray-900">Backend & APIs</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>• Node.js & Express</li>
+                                    <li>• Firebase</li>
+                                    <li>• RESTful APIs</li>
+                                    <li>• GraphQL</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-600 p-8 rounded-xl text-white">
+                        <h3 class="text-2xl font-bold mb-4">Ready to Build Your App?</h3>
+                        <p class="mb-6">Get started with a free consultation and discuss your mobile app development needs.</p>
+                        <a href="../index.html#contact" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition duration-300 brand-font">
+                            Get Free Consultation
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm mb-6">
+                        <h3 class="text-xl font-bold mb-4 text-gray-900">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="website-design.html" class="text-blue-600 hover:text-blue-800 transition duration-300">Website Design</a></li>
+                            <li><a href="website-development.html" class="text-blue-600 hover:text-blue-800 transition duration-300">Website Development</a></li>
+                            <li><a href="search-engine-optimization.html" class="text-blue-600 hover:text-blue-800 transition duration-300">Search Engine Optimization</a></li>
+                            <li><a href="software-design-development.html" class="text-blue-600 hover:text-blue-800 transition duration-300">Software Design & Development</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-bold mb-4 text-gray-900">Contact Us</h3>
+                        <p class="text-gray-600 mb-4">Ready to start your app development journey? Get in touch with our experts.</p>
+                        <a href="../index.html#contact" class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300 brand-font">
+                            Get Started Today
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-12 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">SEO & WEB PROS</h3>
+                    <p class="text-gray-600">Your partner in digital success. We help businesses grow through effective SEO and web development strategies.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li><a href="website-design.html" class="text-gray-600 hover:text-blue-600">Website Design</a></li>
+                        <li><a href="website-development.html" class="text-gray-600 hover:text-blue-600">Website Development</a></li>
+                        <li><a href="search-engine-optimization.html" class="text-gray-600 hover:text-blue-600">Search Engine Optimization</a></li>
+                        <li><a href="app-design-development.html" class="text-gray-600 hover:text-blue-600">App Design & Development</a></li>
+                        <li><a href="software-design-development.html" class="text-gray-600 hover:text-blue-600">Software Design & Development</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html#about" class="text-gray-600 hover:text-blue-600">About Us</a></li>
+                        <li><a href="../index.html#results" class="text-gray-600 hover:text-blue-600">Case Studies</a></li>
+                        <li><a href="../index.html#contact" class="text-gray-600 hover:text-blue-600">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-envelope mr-2 text-blue-600"></i>
+                            <a href="mailto:contact@seoandwebpros.com" class="hover:text-blue-600">contact@seoandwebpros.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
+                <p>&copy; 2025 SEO & Web Pros. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html> 
