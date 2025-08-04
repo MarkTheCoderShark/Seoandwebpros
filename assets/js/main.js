@@ -23,20 +23,49 @@ function initializeNavigation() {
     const solutionsDropdown = document.getElementById('solutionsDropdown');
     const solutionsDropdownMenu = document.getElementById('solutionsDropdownMenu');
     
+    console.log('Dropdown elements found:', { solutionsDropdown, solutionsDropdownMenu });
+    
     if (solutionsDropdown && solutionsDropdownMenu) {
-        solutionsDropdown.addEventListener('click', function(e) {
-            e.preventDefault();
-            solutionsDropdown.classList.toggle('active');
-            solutionsDropdownMenu.classList.toggle('show');
+        // Show dropdown on hover
+        solutionsDropdown.addEventListener('mouseenter', function(e) {
+            console.log('Mouse entered solutions dropdown');
+            solutionsDropdown.classList.add('active');
+            solutionsDropdownMenu.classList.add('show');
+            console.log('Dropdown classes after show:', {
+                dropdown: solutionsDropdown.classList.toString(),
+                menu: solutionsDropdownMenu.classList.toString()
+            });
         });
         
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!solutionsDropdown.contains(e.target) && !solutionsDropdownMenu.contains(e.target)) {
-                solutionsDropdown.classList.remove('active');
-                solutionsDropdownMenu.classList.remove('show');
+        // Hide dropdown when mouse leaves the dropdown area
+        solutionsDropdown.addEventListener('mouseleave', function(e) {
+            console.log('Mouse left solutions dropdown');
+            // Check if mouse is moving to the dropdown menu
+            const relatedTarget = e.relatedTarget;
+            if (relatedTarget && solutionsDropdownMenu.contains(relatedTarget)) {
+                console.log('Mouse moving to dropdown menu, keeping open');
+                return; // Don't hide if moving to dropdown menu
             }
+            solutionsDropdown.classList.remove('active');
+            solutionsDropdownMenu.classList.remove('show');
+            console.log('Dropdown hidden');
         });
+        
+        // Hide dropdown when mouse leaves the dropdown menu
+        solutionsDropdownMenu.addEventListener('mouseleave', function(e) {
+            console.log('Mouse left dropdown menu');
+            solutionsDropdown.classList.remove('active');
+            solutionsDropdownMenu.classList.remove('show');
+        });
+        
+        // Keep dropdown open when hovering over the menu
+        solutionsDropdownMenu.addEventListener('mouseenter', function(e) {
+            console.log('Mouse entered dropdown menu');
+            solutionsDropdown.classList.add('active');
+            solutionsDropdownMenu.classList.add('show');
+        });
+    } else {
+        console.error('Dropdown elements not found:', { solutionsDropdown, solutionsDropdownMenu });
     }
     
     // Mobile Solutions Dropdown
