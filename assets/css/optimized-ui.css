@@ -501,9 +501,11 @@ body {
   font-family: inherit;
   font-size: inherit;
   font-weight: 500;
-  color: rgb(15 23 42);  /* Match nav-link color */
+  color: rgb(15 23 42);
   padding: 0;
-  transition: color 0.2s ease;  /* Match nav-link transition */
+  transition: color 0.2s ease;
+  text-decoration: none;
+  position: relative;
 }
 
 .dropdown-toggle:hover {
