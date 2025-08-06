@@ -500,9 +500,10 @@ body {
   gap: 0.25rem;
   font-family: inherit;
   font-size: inherit;
-  font-weight: inherit;
-  color: inherit;
+  font-weight: 500;
+  color: rgb(15 23 42);  /* Match nav-link color */
   padding: 0;
+  transition: color 0.2s ease;  /* Match nav-link transition */
 }
 
 .dropdown-menu {
