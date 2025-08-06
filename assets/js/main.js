@@ -15,14 +15,68 @@ function initializeNavigation() {
     const mobileMenuClose = document.getElementById('mobile-menu-close');
 
     if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
+        mobileMenuButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             mobileMenu.classList.toggle('hidden');
+            
+            // Toggle hamburger icon
+            const icon = mobileMenuButton.querySelector('i');
+            if (icon) {
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.className = 'fas fa-bars';
+                } else {
+                    icon.className = 'fas fa-times';
+                }
+            }
         });
     }
 
     if (mobileMenuClose && mobileMenu) {
-        mobileMenuClose.addEventListener('click', function() {
+        mobileMenuClose.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             mobileMenu.classList.add('hidden');
+            
+            // Reset hamburger icon
+            const mobileMenuButtonIcon = mobileMenuButton?.querySelector('i');
+            if (mobileMenuButtonIcon) {
+                mobileMenuButtonIcon.className = 'fas fa-bars';
+            }
+        });
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            const isClickInsideMenu = mobileMenu.contains(e.target);
+            const isClickOnButton = mobileMenuButton && mobileMenuButton.contains(e.target);
+            
+            if (!isClickInsideMenu && !isClickOnButton) {
+                mobileMenu.classList.add('hidden');
+                
+                // Reset hamburger icon
+                const mobileMenuButtonIcon = mobileMenuButton?.querySelector('i');
+                if (mobileMenuButtonIcon) {
+                    mobileMenuButtonIcon.className = 'fas fa-bars';
+                }
+            }
+        }
+    });
+
+    // Close mobile menu when a link is clicked
+    if (mobileMenu) {
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                
+                // Reset hamburger icon
+                const mobileMenuButtonIcon = mobileMenuButton?.querySelector('i');
+                if (mobileMenuButtonIcon) {
+                    mobileMenuButtonIcon.className = 'fas fa-bars';
+                }
+            });
         });
     }
 
