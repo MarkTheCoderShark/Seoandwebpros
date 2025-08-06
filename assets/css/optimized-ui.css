@@ -506,6 +506,10 @@ body {
   transition: color 0.2s ease;  /* Match nav-link transition */
 }
 
+.dropdown-toggle:hover {
+  color: rgb(59 130 246);  /* Match nav-link hover color */
+}
+
 .dropdown-menu {
   position: absolute;
   top: 100%;
