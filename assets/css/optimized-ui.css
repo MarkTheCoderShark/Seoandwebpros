@@ -1357,7 +1357,7 @@ body {
 
 /* Mobile Menu Button Styles */
 #mobile-menu-button {
-  display: flex;
+  display: none;  /* Hide by default */
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
