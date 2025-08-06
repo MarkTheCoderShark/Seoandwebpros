@@ -1775,3 +1775,270 @@ body {
 .md\:flex-row { @media (min-width: 768px) { flex-direction: row; } }
 .justify-between { justify-content: space-between; }
 .transition-colors { transition: color 0.15s ease-in-out; } 
+
+/* Statistics Cards */
+.stats-card {
+    @apply bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.stats-card-header {
+    @apply p-6 border-b border-gray-100;
+}
+
+.stats-card-content {
+    @apply p-6;
+}
+
+.stats-number {
+    @apply text-4xl font-bold mb-2 bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, #2563eb, #3b82f6);
+}
+
+.stats-label {
+    @apply text-gray-600 text-sm;
+}
+
+/* Impact Cards */
+.impact-card {
+    @apply bg-white rounded-xl p-6 transition-all duration-300 hover:shadow-lg;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.impact-card-icon {
+    @apply w-12 h-12 rounded-full flex items-center justify-center mb-4;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+}
+
+.impact-card-title {
+    @apply text-xl font-bold mb-3 text-gray-900;
+}
+
+.impact-card-description {
+    @apply text-gray-600 leading-relaxed;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Hover Effects */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Enhanced Hover Effects */
+.stats-card {
+    @apply bg-white rounded-xl shadow-lg transition-all duration-300;
+    transform: translateY(0);
+}
+
+.stats-card:hover {
+    @apply shadow-xl;
+    transform: translateY(-5px);
+}
+
+.impact-card {
+    @apply bg-white rounded-xl p-6 transition-all duration-300;
+    transform: translateY(0);
+}
+
+.impact-card:hover {
+    @apply shadow-xl;
+    transform: translateY(-5px);
+    background: linear-gradient(to bottom right, #ffffff, #f8fafc);
+}
+
+.impact-card-icon {
+    @apply w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-all duration-300;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+}
+
+.impact-card:hover .impact-card-icon {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.impact-card-title {
+    @apply text-xl font-bold mb-3 text-gray-900 transition-colors duration-300;
+}
+
+.impact-card:hover .impact-card-title {
+    background: linear-gradient(to right, #2563eb, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stats-number {
+    @apply text-4xl font-bold mb-2 transition-all duration-300;
+    background: linear-gradient(to right, #2563eb, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stats-card:hover .stats-number {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #1d4ed8, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Smooth Transitions */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+/* Interactive Elements */
+.interactive-element {
+    @apply relative overflow-hidden transition-all duration-300;
+}
+
+.interactive-element::after {
+    content: '';
+    @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300;
+}
+
+.interactive-element:hover::after {
+    @apply opacity-10;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    /* Container Spacing */
+    .max-w-7xl {
+        @apply px-4;
+    }
+    
+    /* Typography Scaling */
+    h2 {
+        @apply text-3xl !important;
+    }
+    
+    h3 {
+        @apply text-2xl !important;
+    }
+    
+    h4 {
+        @apply text-xl !important;
+    }
+    
+    /* Card Layouts */
+    .stats-card,
+    .impact-card {
+        @apply mx-0 mb-6;
+        transform: none !important;
+    }
+    
+    .stats-card:hover,
+    .impact-card:hover {
+        transform: none !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .stats-number {
+        @apply text-3xl;
+    }
+    
+    .impact-card-icon {
+        @apply w-10 h-10;
+    }
+    
+    .impact-card-icon i {
+        @apply text-lg;
+    }
+    
+    /* Grid Adjustments */
+    .grid {
+        @apply gap-4;
+    }
+    
+    .grid-cols-2 {
+        @apply grid-cols-1;
+    }
+    
+    /* Spacing Adjustments */
+    .py-20 {
+        @apply py-12;
+    }
+    
+    .px-6 {
+        @apply px-4;
+    }
+    
+    .mb-16 {
+        @apply mb-8;
+    }
+    
+    .space-y-6 > * + * {
+        @apply mt-4;
+    }
+    
+    /* Text Adjustments */
+    .text-xl {
+        @apply text-lg;
+    }
+    
+    .text-gray-600 {
+        @apply text-gray-700;
+    }
+    
+    /* Animation Adjustments */
+    .animate-fade-in-up {
+        animation-duration: 0.4s;
+    }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .max-w-7xl {
+        @apply px-6;
+    }
+    
+    .grid {
+        @apply gap-6;
+    }
+    
+    .stats-card,
+    .impact-card {
+        @apply mx-0;
+    }
+    
+    .py-20 {
+        @apply py-16;
+    }
+}
+
+/* General Responsive Improvements */
+.responsive-container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.responsive-grid {
+    @apply grid gap-4 sm:gap-6 lg:gap-8;
+}
+
+.responsive-text {
+    @apply text-base sm:text-lg lg:text-xl;
+}
+
+.responsive-heading {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold;
+} 
