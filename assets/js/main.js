@@ -227,13 +227,13 @@ function handleProposalSubmission() {
 
 // Counter animations
 function initializeCounterAnimations() {
-    const counters = document.querySelectorAll('.counter');
+    const counters = document.querySelectorAll('.result-number');
     
     const counterObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const counter = entry.target;
-                const target = parseInt(counter.getAttribute('data-target'));
+                const target = parseFloat(counter.getAttribute('data-value'));
                 const duration = 2000; // 2 seconds
                 const increment = target / (duration / 16); // 60fps
                 let current = 0;
@@ -241,10 +241,20 @@ function initializeCounterAnimations() {
                 const updateCounter = () => {
                     current += increment;
                     if (current < target) {
-                        counter.textContent = Math.floor(current);
+                        // Handle decimal values properly
+                        if (target % 1 !== 0) {
+                            counter.textContent = current.toFixed(1);
+                        } else {
+                            counter.textContent = Math.floor(current);
+                        }
                         requestAnimationFrame(updateCounter);
                     } else {
-                        counter.textContent = target;
+                        // Show final value
+                        if (target % 1 !== 0) {
+                            counter.textContent = target.toFixed(1);
+                        } else {
+                            counter.textContent = target;
+                        }
                     }
                 };
                 

@@ -77,9 +77,8 @@
         .content-container { height: 100vh; overflow-y: auto; padding-top: 0; }
     </style>
     
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="assets/css/optimized-ui.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/optimized-ui.css"></noscript>
+    <!-- Critical CSS - Load immediately -->
+    <link rel="stylesheet" href="assets/css/optimized-ui.css?v=2.0.0">
     <link rel="preload" href="assets/js/main.js" as="script">
     
     <!-- Font Optimization - Preload and async loading -->
@@ -92,9 +91,8 @@
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2" as="font" type="font/woff2" crossorigin>
     
-    <!-- Font Awesome - Load asynchronously -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    <!-- Font Awesome - Load immediately -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Tailwind CSS - Load asynchronously -->
     <script src="https://cdn.tailwindcss.com" defer></script>
