@@ -412,6 +412,17 @@ body {
   color: rgb(59 130 246);
 }
 
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.brand-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
