@@ -1398,7 +1398,7 @@ body {
   /* Ensure page content starts below fixed navigation */
   .hero {
     margin-top: 70px;
-    padding-top: 50px; /* Reduced padding to eliminate gap */
+    padding-top: 10px; /* Minimal padding to eliminate white gap */
   }
   
   section:not(.hero):first-of-type,
