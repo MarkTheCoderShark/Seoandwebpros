@@ -1398,7 +1398,7 @@ body {
   /* Ensure page content starts below fixed navigation */
   .hero {
     margin-top: 70px;
-    padding: 0 0 80px; /* Override base padding completely, keep bottom padding for spacing */
+    padding: 30px 0 80px; /* Add some top padding for better spacing while keeping bottom padding */
   }
   
   section:not(.hero):first-of-type,
