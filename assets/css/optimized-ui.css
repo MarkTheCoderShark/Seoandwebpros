@@ -403,7 +403,7 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 70px;
-  background: white;
+  background: transparent;
 }
 
 .nav-brand {
