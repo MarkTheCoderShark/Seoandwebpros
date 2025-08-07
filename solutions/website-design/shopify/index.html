@@ -105,9 +105,17 @@
         .shape-3 {
             width: 80px;
             height: 80px;
-            top: 40%;
-            left: 70%;
+            bottom: 20%;
+            left: 20%;
             animation-delay: 4s;
+        }
+
+        .shape-4 {
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            right: 30%;
+            animation-delay: 1s;
         }
 
         @keyframes float {
@@ -464,6 +472,7 @@
             <div class="floating-shape shape-1"></div>
             <div class="floating-shape shape-2"></div>
             <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
         </div>
         
         <div class="hero-content-wrapper">
@@ -997,6 +1006,17 @@
                 const footerResponse = await fetch('../../../components/footer.html');
                 const footerHtml = await footerResponse.text();
                 document.getElementById('footer').innerHTML = footerHtml;
+
+                // Load and initialize main navigation functionality
+                const mainScript = document.createElement('script');
+                mainScript.src = '../../../assets/js/main.js';
+                mainScript.onload = function() {
+                    // Initialize navigation after main.js loads
+                    if (typeof initializeNavigation === 'function') {
+                        initializeNavigation();
+                    }
+                };
+                document.head.appendChild(mainScript);
 
                 // Initialize FAQ functionality
                 initializeFAQ();
