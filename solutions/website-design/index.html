@@ -293,15 +293,20 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Hero layout with CTA on right */
+        /* Hero layout with CTA on right - separate from content flow */
+        .hero-content-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            width: 100%;
+        }
+
         .hero-main-content {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 3rem;
             align-items: start;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
             width: 100%;
         }
 
@@ -310,17 +315,27 @@
         }
 
         .hero-right {
-            position: sticky;
-            top: 2rem;
+            position: absolute;
+            top: 0;
+            right: 1rem;
+            width: 300px;
+            z-index: 10;
         }
 
-        /* Make services grid span full width below hero content */
-        .hero-main-content .services-grid {
-            grid-column: 1 / -1;
-            margin-top: 4rem;
+        /* Services grid spans full width independently */
+        .hero-services-section {
+            max-width: 1200px;
+            margin: 4rem auto 0;
+            padding: 0 1rem;
+            width: 100%;
+        }
+
+        .hero-services-section .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             width: 100%;
-            max-width: none;
+            box-sizing: border-box;
         }
 
         @media (max-width: 968px) {
@@ -331,6 +346,33 @@
             
             .hero-left {
                 text-align: center;
+            }
+
+            .hero-right {
+                position: relative;
+                right: auto;
+                width: 100%;
+                margin-top: 2rem;
+            }
+
+            .hero-services-section .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .hero-services-section {
+                margin-top: 3rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-services-section .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .hero-services-section {
+                margin-top: 2rem;
             }
         }
 
@@ -565,81 +607,85 @@
             <div class="floating-shape shape-4"></div>
         </div>
         
-        <div class="hero-main-content">
-            <div class="hero-left">
-                <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
-                    Website Design Company
-                </h1>
-                
-                <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
-                    Your website is more than just a digital storefront—it's a critical tool for growing your business. Our expert team in WordPress website design, development, and SEO is ready to deliver a custom solution that drives results and helps your business stand out.
-                </p>
-                
-                <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
-                    <div class="hero-buttons">
-                        <a href="#pricing" class="hero-button-primary">See Our Pricing</a>
-                        <a href="#services" class="hero-button-secondary">View Services</a>
-                    </div>
-                </div>
-
-                <!-- Service Overview Cards -->
-                <div class="services-grid animate-fade-in-up" style="animation-delay: 0.8s;">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3>Website Design</h3>
-                        <p>Beautiful websites made by top WordPress designers.</p>
-                    </div>
+        <div class="hero-content-wrapper">
+            <div class="hero-main-content">
+                <div class="hero-left">
+                    <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
+                        Website Design Company
+                    </h1>
                     
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>WordPress Development</h3>
-                        <p>Full WordPress development team with deep technical experience.</p>
-                    </div>
+                    <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
+                        Your website is more than just a digital storefront—it's a critical tool for growing your business. Our expert team in WordPress website design, development, and SEO is ready to deliver a custom solution that drives results and helps your business stand out.
+                    </p>
                     
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-shield-alt"></i>
+                    <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
+                        <div class="hero-buttons">
+                            <a href="#pricing" class="hero-button-primary">See Our Pricing</a>
+                            <a href="#services" class="hero-button-secondary">View Services</a>
                         </div>
-                        <h3>WordPress Maintenance</h3>
-                        <p>Our sites are always secured, always up and always fully functional.</p>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h3>WordPress Managed Hosting</h3>
-                        <p>High-level security, ultra-fast speeds, fully managed updates.</p>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h3>Premium Support</h3>
-                        <p>A dedicated point of contact, priority support and more.</p>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h3>Search Engine Optimization</h3>
-                        <p>Set your website up for success with our SEO programs.</p>
                     </div>
                 </div>
             </div>
             
-            <!-- CTA Box moved to right side -->
+            <!-- CTA Box positioned absolutely on right -->
             <div class="hero-right animate-fade-in-up" style="animation-delay: 1s;">
                 <div class="cta-box">
                     <h3>Schedule a FREE Discovery Call & Website Audit!</h3>
                     <p>Speak to a marketing expert today. Schedule now</p>
                     <a href="tel:9168667893" class="cta-button">Get a Free Consultation</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Overview Cards - Separate section spanning full width -->
+        <div class="hero-services-section animate-fade-in-up" style="animation-delay: 0.8s;">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Website Design</h3>
+                    <p>Beautiful websites made by top WordPress designers.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>WordPress Development</h3>
+                    <p>Full WordPress development team with deep technical experience.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>WordPress Maintenance</h3>
+                    <p>Our sites are always secured, always up and always fully functional.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>WordPress Managed Hosting</h3>
+                    <p>High-level security, ultra-fast speeds, fully managed updates.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Premium Support</h3>
+                    <p>A dedicated point of contact, priority support and more.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Search Engine Optimization</h3>
+                    <p>Set your website up for success with our SEO programs.</p>
                 </div>
             </div>
         </div>
