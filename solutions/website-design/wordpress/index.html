@@ -128,35 +128,36 @@
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 2rem;
             width: 100%;
         }
 
         .hero-main-content {
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            align-items: start;
+            gap: 4rem;
+            align-items: center;
             width: 100%;
+            min-height: 400px;
         }
 
         .hero-left {
             text-align: left;
+            padding-right: 2rem;
         }
 
         .hero-right {
-            position: absolute;
-            top: 0;
-            right: 1rem;
-            width: 300px;
-            z-index: 10;
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            justify-self: center;
         }
 
         .hero-title {
             font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            margin-bottom: 2rem;
             color: rgb(var(--foreground));
         }
 
@@ -273,11 +274,14 @@
         @media (max-width: 968px) {
             .hero-main-content {
                 grid-template-columns: 1fr;
+                gap: 3rem;
                 text-align: center;
+                min-height: auto;
             }
             
             .hero-left {
                 text-align: center;
+                padding-right: 0;
             }
 
             .hero-buttons {
@@ -290,10 +294,8 @@
             }
 
             .hero-right {
-                position: relative;
-                right: auto;
-                width: 100%;
-                margin-top: 2rem;
+                max-width: 400px;
+                margin: 0 auto;
             }
 
             .hero-services-section .services-grid {
@@ -553,7 +555,7 @@
                 </div>
             </div>
             
-            <!-- CTA Box positioned absolutely on right -->
+            <!-- CTA Box positioned on right -->
             <div class="hero-right animate-fade-in-up" style="animation-delay: 1s;">
                 <div class="cta-box">
                     <h3>Schedule a FREE Discovery Call & Website Audit!</h3>
