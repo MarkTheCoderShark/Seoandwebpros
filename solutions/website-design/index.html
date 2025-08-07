@@ -362,48 +362,27 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <div id="navigation"></div>
-
-    <!-- Hero Section -->
+    <!-- Header -->
+    <div id="header"></div>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background">
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-            <div class="floating-shape shape-3"></div>
-        </div>
-        
         <div class="hero-content-wrapper">
             <div class="hero-main-content">
                 <div class="hero-left">
-                    <h1 class="hero-title">
-                        Professional <span class="gradient-primary">Website Design</span>
-                        <br>Services That Convert
-                    </h1>
-                    
-                    <p class="hero-description">
-                        Transform your business with stunning, user-centered website designs that drive conversions and deliver exceptional user experiences. Our expert web designers create beautiful, functional websites that stand out in today's competitive digital landscape.
-                    </p>
-                    
-                    <div class="hero-actions">
-                        <div class="hero-buttons">
-                            <button type="button" id="heroConsultationBtn" class="hero-button-primary">
-                                Get Free Design Consultation
-                            </button>
-                            <a href="#services" class="hero-button-secondary">
-                                Explore Our Services
-                            </a>
-                        </div>
-                    </div>
+                    <h1>Website Design Services</h1>
+                    <p>Transform your business with stunning, user-centered website designs that drive conversions and deliver exceptional user experiences. Our expert web designers create beautiful, functional websites that stand out in today's competitive digital landscape.</p>
                 </div>
-                
                 <div class="hero-right">
-                    <div class="hero-cta-card">
-                        <h3>Schedule a FREE Design Consultation!</h3>
-                        <p>Speak to a web design expert today.</p>
-                        <button type="button" id="heroCtaBtn" class="hero-button-primary">
-                            Get a Free Consultation
-                        </button>
+                    <div class="cta-box">
+                        <h3>Start Your Design Project</h3>
+                        <p>Get a free consultation and discover how we can create your perfect website.</p>
+                        <a href="#contact" class="hero-cta-button">
+                            <i class="fas fa-calendar-check"></i>
+                            Free Consultation
+                        </a>
                     </div>
                 </div>
             </div>
@@ -420,125 +399,161 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- WordPress Web Design -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fab fa-wordpress"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fab fa-wordpress"></i>
+                        </div>
+                        <h3 class="card-title">WordPress Web Design</h3>
+                        <p class="card-description">
+                            Create beautiful, responsive WordPress websites with custom themes and user-friendly content management systems.
+                        </p>
                     </div>
-                    <h3 class="service-title">WordPress Web Design</h3>
-                    <p class="service-description">
-                        Create beautiful, responsive WordPress websites with custom themes and user-friendly content management systems.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i>Custom WordPress Themes</li>
-                        <li><i class="fas fa-check"></i>Responsive Design</li>
-                        <li><i class="fas fa-check"></i>User-Friendly CMS</li>
-                        <li><i class="fas fa-check"></i>SEO-Optimized Design</li>
-                    </ul>
-                    <a href="/solutions/website-design/wordpress/" class="service-link">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Custom Themes</span>
+                            <span class="badge badge-primary">Responsive Design</span>
+                            <span class="badge badge-primary">User-Friendly CMS</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/solutions/website-design/wordpress/" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Shopify Web Design -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fab fa-shopify"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fab fa-shopify"></i>
+                        </div>
+                        <h3 class="card-title">Shopify Web Design</h3>
+                        <p class="card-description">
+                            Design stunning e-commerce websites on Shopify with custom themes and optimized shopping experiences.
+                        </p>
                     </div>
-                    <h3 class="service-title">Shopify Web Design</h3>
-                    <p class="service-description">
-                        Design stunning e-commerce websites on Shopify with custom themes and optimized shopping experiences.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i>Custom Shopify Themes</li>
-                        <li><i class="fas fa-check"></i>E-commerce Optimization</li>
-                        <li><i class="fas fa-check"></i>Mobile-First Design</li>
-                        <li><i class="fas fa-check"></i>Conversion Optimization</li>
-                    </ul>
-                    <a href="/solutions/website-design/shopify/" class="service-link">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Custom Themes</span>
+                            <span class="badge badge-primary">E-commerce</span>
+                            <span class="badge badge-primary">Mobile-First</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/solutions/website-design/shopify/" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- E-commerce Web Design -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shopping-cart"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3 class="card-title">E-commerce Web Design</h3>
+                        <p class="card-description">
+                            Create powerful e-commerce websites that drive sales and provide seamless shopping experiences.
+                        </p>
                     </div>
-                    <h3 class="service-title">E-commerce Web Design</h3>
-                    <p class="service-description">
-                        Create powerful e-commerce websites that drive sales and provide seamless shopping experiences.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i>Product Showcase Design</li>
-                        <li><i class="fas fa-check"></i>Shopping Cart Optimization</li>
-                        <li><i class="fas fa-check"></i>Payment Gateway Integration</li>
-                        <li><i class="fas fa-check"></i>Inventory Management</li>
-                    </ul>
-                    <a href="/solutions/website-design/ecommerce/" class="service-link">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Product Showcase</span>
+                            <span class="badge badge-primary">Shopping Cart</span>
+                            <span class="badge badge-primary">Payment Gateway</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/solutions/website-design/ecommerce/" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Custom Web Design -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="card-title">Custom Web Design</h3>
+                        <p class="card-description">
+                            Bespoke website designs tailored to your unique brand identity and business requirements.
+                        </p>
                     </div>
-                    <h3 class="service-title">Custom Web Design</h3>
-                    <p class="service-description">
-                        Bespoke website designs tailored to your unique brand identity and business requirements.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i>Brand-Centric Design</li>
-                        <li><i class="fas fa-check"></i>Unique Visual Identity</li>
-                        <li><i class="fas fa-check"></i>Custom Functionality</li>
-                        <li><i class="fas fa-check"></i>Scalable Architecture</li>
-                    </ul>
-                    <a href="/solutions/website-design/custom/" class="service-link">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Brand-Centric</span>
+                            <span class="badge badge-primary">Unique Identity</span>
+                            <span class="badge badge-primary">Custom Functionality</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/solutions/website-design/custom/" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Website Redesign -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-redo"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-redo"></i>
+                        </div>
+                        <h3 class="card-title">Website Redesign</h3>
+                        <p class="card-description">
+                            Transform your existing website with modern design, improved functionality, and better user experience.
+                        </p>
                     </div>
-                    <h3 class="service-title">Website Redesign</h3>
-                    <p class="service-description">
-                        Transform your existing website with modern design, improved functionality, and better user experience.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i>Modern Design Updates</li>
-                        <li><i class="fas fa-check"></i>Improved User Experience</li>
-                        <li><i class="fas fa-check"></i>Performance Optimization</li>
-                        <li><i class="fas fa-check"></i>Mobile Responsiveness</li>
-                    </ul>
-                    <a href="/solutions/website-design/redesign/" class="service-link">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Modern Design</span>
+                            <span class="badge badge-primary">User Experience</span>
+                            <span class="badge badge-primary">Performance</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/solutions/website-design/redesign/" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- UI/UX Design -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="card-title">UI/UX Design</h3>
+                        <p class="card-description">
+                            Create intuitive user interfaces and exceptional user experiences that engage and convert visitors.
+                        </p>
                     </div>
-                    <h3 class="service-title">UI/UX Design</h3>
-                    <p class="service-description">
-                        Create intuitive user interfaces and exceptional user experiences that engage and convert visitors.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i>User Research & Testing</li>
-                        <li><i class="fas fa-check"></i>Wireframing & Prototyping</li>
-                        <li><i class="fas fa-check"></i>Interactive Design</li>
-                        <li><i class="fas fa-check"></i>Usability Optimization</li>
-                    </ul>
-                    <a href="/services/ui-ux-design.html" class="service-link">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">User Research</span>
+                            <span class="badge badge-primary">Wireframing</span>
+                            <span class="badge badge-primary">Interactive Design</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/services/ui-ux-design.html" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -722,6 +737,14 @@
     }
     </script>
 
-    <script src="../../assets/js/main.js" defer></script>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+    <!-- Scripts -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/solution-components.js"></script>
 </body>
 </html> 
