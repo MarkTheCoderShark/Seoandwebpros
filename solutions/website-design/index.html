@@ -429,17 +429,34 @@
             background: linear-gradient(to bottom right, #f9fafb, #ffffff);
         }
 
-        /* Process Steps */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        /* Process Steps with Enhanced UI */
+        .process-container {
+            position: relative;
             margin-top: 3rem;
         }
 
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            position: relative;
+        }
+
         .process-step {
-            text-align: center;
+            background: white;
+            border-radius: 1rem;
             padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgb(var(--border));
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
         }
 
         .process-number {
@@ -454,6 +471,9 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 3;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
 
         .process-step h3 {
@@ -466,6 +486,67 @@
         .process-step p {
             color: rgb(var(--muted-foreground));
             line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Connecting Arrows */
+        .process-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            color: rgb(var(--primary));
+            font-size: 2rem;
+            opacity: 0.6;
+        }
+
+        .process-arrow-1 {
+            left: 22%;
+        }
+
+        .process-arrow-2 {
+            left: 47%;
+        }
+
+        .process-arrow-3 {
+            left: 72%;
+        }
+
+        /* Process Icons for each step */
+        .process-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(var(--primary));
+            font-size: 1.25rem;
+            margin: 0 auto 1rem;
+        }
+
+        /* Timeline connector */
+        .process-timeline {
+            position: absolute;
+            top: 4rem;
+            left: 12.5%;
+            right: 12.5%;
+            height: 2px;
+            background: linear-gradient(to right, rgb(var(--primary)), rgba(59, 130, 246, 0.3));
+            z-index: 1;
+        }
+
+        .process-timeline::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: -6px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid rgb(var(--primary));
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
         }
 
         /* Animations */
@@ -534,7 +615,23 @@
             }
 
             .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .process-timeline {
+                display: none;
+            }
+
+            .process-arrow {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .process-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
     </style>
@@ -726,29 +823,57 @@
                     </p>
                 </div>
                 
-                <div class="process-grid">
-                    <div class="process-step">
-                        <div class="process-number">01</div>
-                        <h3>Discovery & Strategy</h3>
-                        <p>We start by understanding your business, target audience, and goals through a detailed questionnaire and strategic planning session.</p>
+                <div class="process-container">
+                    <!-- Timeline connector -->
+                    <div class="process-timeline"></div>
+                    
+                    <div class="process-grid">
+                        <div class="process-step">
+                            <div class="process-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="process-number">01</div>
+                            <h3>Discovery & Strategy</h3>
+                            <p>We start by understanding your business, target audience, and goals through a detailed questionnaire and strategic planning session.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="process-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="process-number">02</div>
+                            <h3>Design & Review</h3>
+                            <p>Our team creates custom mockups for your entire website, including homepage and inner pages. We review everything together and refine based on your feedback.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="process-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="process-number">03</div>
+                            <h3>Development & Testing</h3>
+                            <p>Once designs are approved, we develop your website using the latest technologies, conduct comprehensive QA testing, and make any necessary edits.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="process-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="process-number">04</div>
+                            <h3>Launch & Optimization</h3>
+                            <p>When you're ready, we launch your website and implement SEO optimization to ensure maximum visibility and performance from day one.</p>
+                        </div>
                     </div>
                     
-                    <div class="process-step">
-                        <div class="process-number">02</div>
-                        <h3>Design & Review</h3>
-                        <p>Our team creates custom mockups for your entire website, including homepage and inner pages. We review everything together and refine based on your feedback.</p>
+                    <!-- Connecting arrows -->
+                    <div class="process-arrow process-arrow-1">
+                        <i class="fas fa-arrow-right"></i>
                     </div>
-                    
-                    <div class="process-step">
-                        <div class="process-number">03</div>
-                        <h3>Development & Testing</h3>
-                        <p>Once designs are approved, we develop your website using the latest technologies, conduct comprehensive QA testing, and make any necessary edits.</p>
+                    <div class="process-arrow process-arrow-2">
+                        <i class="fas fa-arrow-right"></i>
                     </div>
-                    
-                    <div class="process-step">
-                        <div class="process-number">04</div>
-                        <h3>Launch & Optimization</h3>
-                        <p>When you're ready, we launch your website and implement SEO optimization to ensure maximum visibility and performance from day one.</p>
+                    <div class="process-arrow process-arrow-3">
+                        <i class="fas fa-arrow-right"></i>
                     </div>
                 </div>
             </div>
