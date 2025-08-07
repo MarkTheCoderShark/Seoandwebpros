@@ -153,95 +153,106 @@
             z-index: 10;
         }
 
-        .hero h1 {
+        .hero-title {
             font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, rgb(var(--foreground)), rgb(var(--primary)));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: rgb(var(--foreground));
         }
 
-        .hero p {
+        .hero-description {
             font-size: 1.25rem;
             color: rgb(var(--muted-foreground));
-            margin-bottom: 2rem;
-            max-width: 600px;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            margin-bottom: 3rem;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+        .hero-button-primary {
+            background: rgb(var(--primary));
+            color: white;
             padding: 0.875rem 2rem;
-            border-radius: var(--radius);
+            border-radius: 0.75rem;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--primary) / 0.8));
-            color: white;
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-primary:hover {
+        .hero-button-primary:hover {
+            background: rgb(var(--primary) / 0.9);
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
         }
 
-        .btn-outline {
-            border: 2px solid rgb(var(--primary));
-            color: rgb(var(--primary));
+        .hero-button-secondary {
             background: transparent;
+            color: rgb(var(--primary));
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgb(var(--primary));
+            transition: all 0.3s ease;
+            font-size: 1rem;
         }
 
-        .btn-outline:hover {
+        .hero-button-secondary:hover {
             background: rgb(var(--primary));
             color: white;
             transform: translateY(-2px);
         }
 
         .cta-box {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
             color: white;
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: var(--shadow-xl);
             text-align: center;
-            margin-top: 2rem;
+            box-shadow: var(--shadow-xl);
         }
 
         .cta-box h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.25rem;
             font-weight: 700;
+            margin-bottom: 1rem;
         }
 
         .cta-box p {
             margin-bottom: 1.5rem;
             opacity: 0.9;
+            font-size: 0.95rem;
         }
 
-        .cta-box .btn {
+        .cta-button {
             background: white;
-            color: #2563eb;
-            font-weight: 700;
+            color: rgb(var(--primary));
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
-        .cta-box .btn:hover {
-            background: #f8fafc;
+        .cta-button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         /* Services Grid */
@@ -426,6 +437,23 @@
         /* Background variations */
         .bg-white { background: white; }
         .bg-gray-50 { background: rgb(var(--background)); }
+        .bg-gradient-to-br {
+            background: linear-gradient(to bottom right, #f9fafb, #ffffff);
+        }
+
+        /* Animation classes */
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         /* Utility classes */
         .text-center { text-align: center; }
@@ -466,8 +494,9 @@
     <!-- Navigation placeholder -->
     <div id="navigation"></div>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section - Using home page design -->
+    <section class="hero bg-gradient-to-br from-blue-50 via-white to-gray-50">
+        <!-- Background Elements -->
         <div class="hero-background">
             <div class="floating-shape shape-1"></div>
             <div class="floating-shape shape-2"></div>
@@ -478,78 +507,86 @@
         <div class="hero-content-wrapper">
             <div class="hero-main-content">
                 <div class="hero-left">
-                    <h1>Professional WordPress Website Design</h1>
-                    <p>Create stunning, user-friendly WordPress websites that captivate your audience and drive business growth. Our expert designers craft custom WordPress solutions tailored to your brand.</p>
-                    <div class="hero-buttons">
-                        <a href="#pricing" class="btn btn-primary">View Our Packages</a>
-                        <a href="#services" class="btn btn-outline">Explore Services</a>
+                    <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
+                        Professional WordPress Website Design
+                    </h1>
+                    
+                    <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
+                        Create stunning, user-friendly WordPress websites that captivate your audience and drive business growth. Our expert designers craft custom WordPress solutions tailored to your brand.
+                    </p>
+                    
+                    <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
+                        <div class="hero-buttons">
+                            <a href="#pricing" class="hero-button-primary">View Our Packages</a>
+                            <a href="#services" class="hero-button-secondary">Explore Services</a>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="hero-right">
+            <!-- CTA Box positioned absolutely on right -->
+            <div class="hero-right animate-fade-in-up" style="animation-delay: 1s;">
                 <div class="cta-box">
                     <h3>Schedule a FREE Discovery Call & Website Audit!</h3>
                     <p>Speak to a WordPress expert today.</p>
-                    <a href="#contact" class="btn">Schedule now</a>
-                    <a href="#contact" class="btn" style="margin-top: 0.5rem;">Get a Free Consultation</a>
+                    <a href="tel:9168667893" class="cta-button">Get a Free Consultation</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Grid Section -->
-    <section class="hero-services-section">
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fab fa-wordpress"></i>
+        <!-- Service Overview Cards - Separate section spanning full width -->
+        <div class="hero-services-section animate-fade-in-up" style="animation-delay: 0.8s;">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h3>Custom WordPress Design</h3>
+                    <p>Beautiful, unique WordPress themes designed specifically for your brand and business needs.</p>
                 </div>
-                <h3>Custom WordPress Design</h3>
-                <p>Beautiful, unique WordPress themes designed specifically for your brand and business needs.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-mobile-alt"></i>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Mobile-first WordPress sites that look perfect on all devices and screen sizes.</p>
                 </div>
-                <h3>Responsive Design</h3>
-                <p>Mobile-first WordPress sites that look perfect on all devices and screen sizes.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-search"></i>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO Optimized</h3>
+                    <p>WordPress sites built with SEO best practices for better search engine visibility.</p>
                 </div>
-                <h3>SEO Optimized</h3>
-                <p>WordPress sites built with SEO best practices for better search engine visibility.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-shopping-cart"></i>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-commerce Integration</h3>
+                    <p>WooCommerce integration for powerful online stores and payment processing.</p>
                 </div>
-                <h3>E-commerce Integration</h3>
-                <p>WooCommerce integration for powerful online stores and payment processing.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-tools"></i>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>WordPress Maintenance</h3>
+                    <p>Ongoing support, updates, and maintenance to keep your site secure and running smoothly.</p>
                 </div>
-                <h3>WordPress Maintenance</h3>
-                <p>Ongoing support, updates, and maintenance to keep your site secure and running smoothly.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-tachometer-alt"></i>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Performance Optimization</h3>
+                    <p>Speed optimization and performance tuning for faster loading WordPress sites.</p>
                 </div>
-                <h3>Performance Optimization</h3>
-                <p>Speed optimization and performance tuning for faster loading WordPress sites.</p>
             </div>
         </div>
-    </section>
 
     <!-- Why Choose Us Section -->
     <section id="about" class="section-padding bg-gray-50">
