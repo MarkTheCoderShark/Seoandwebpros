@@ -204,12 +204,14 @@
             transform: translateY(-2px);
         }
 
-        /* Service Cards Grid */
+        /* Service Cards Grid - Full width spanning entire hero */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 3rem;
+            margin-top: 4rem;
+            grid-column: 1 / -1;
+            width: 100%;
         }
 
         .service-card {
@@ -309,6 +311,13 @@
         .hero-right {
             position: sticky;
             top: 2rem;
+        }
+
+        /* Make services grid span full width below hero content */
+        .hero-main-content .services-grid {
+            grid-column: 1 / -1;
+            margin-top: 4rem;
+            gap: 4rem;
         }
 
         @media (max-width: 968px) {
@@ -467,12 +476,16 @@
             
             .hero-main-content .services-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                margin-top: 3rem;
             }
         }
 
         @media (max-width: 640px) {
             .hero-main-content .services-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-top: 2rem;
             }
 
             .process-grid {
