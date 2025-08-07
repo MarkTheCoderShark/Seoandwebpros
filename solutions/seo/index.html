@@ -15,7 +15,7 @@
     <style>
         /* Critical CSS for above-the-fold content */
         :root {
-            --primary: 34 197 94;
+            --primary: 59 130 246;
             --background: 249 250 251;
             --foreground: 15 23 42;
             --card: 255 255 255;
@@ -302,6 +302,507 @@
                 max-width: 300px;
             }
         }
+
+        /* Service Cards - Matching App Development Template */
+        .card {
+            background: white;
+            border: 1px solid rgb(var(--border));
+            border-radius: var(--radius);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 400px;
+            position: relative;
+        }
+
+        .card-header {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon {
+            width: 4rem;
+            height: 4rem;
+            background: rgb(var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(var(--primary) / 0.3);
+        }
+
+        .service-icon.primary {
+            background: rgb(var(--primary));
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgb(var(--foreground));
+            line-height: 1.2;
+        }
+
+        .card-description {
+            color: rgb(var(--muted-foreground));
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            min-height: 3rem;
+        }
+
+        .badge {
+            background: rgb(var(--primary));
+            color: white;
+            padding: 0.375rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: none;
+            transition: all 0.2s ease;
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .badge-primary {
+            background: rgb(var(--primary));
+            color: white;
+            border: none;
+        }
+
+        .badge:hover {
+            background: rgb(var(--primary) / 0.9);
+            transform: translateY(-1px);
+        }
+
+        .card-footer {
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: rgb(var(--primary));
+            border: 2px solid rgb(var(--primary));
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background: rgb(var(--primary));
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgb(var(--primary) / 0.3);
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        /* Horizontal Timeline Flow */
+        .timeline-container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, rgb(var(--primary)), rgb(var(--primary) / 0.3));
+            z-index: 1;
+        }
+
+        .timeline-item {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding: 0 1rem;
+        }
+
+        .timeline-card {
+            position: relative;
+            width: 100%;
+            max-width: 280px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .timeline-card .card {
+            border: 2px solid rgb(var(--border));
+            transition: all 0.3s ease;
+        }
+
+        .timeline-card:hover .card {
+            border-color: rgb(var(--primary));
+            box-shadow: 0 20px 25px -5px rgb(var(--primary) / 0.1);
+        }
+
+        /* Step numbers in top left corner */
+        .timeline-card {
+            position: relative;
+        }
+
+        .timeline-card::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 35px;
+            height: 35px;
+            background: rgb(var(--primary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 700;
+            z-index: 3;
+            box-shadow: 0 2px 4px -1px rgb(var(--primary) / 0.3);
+        }
+
+        /* Remove the timeline line */
+        .timeline-line {
+            display: none;
+        }
+
+        /* Responsive timeline */
+        @media (max-width: 1024px) {
+            .timeline-container {
+                flex-direction: column;
+                gap: 3rem;
+                padding: 2rem 0;
+            }
+
+            .timeline-line {
+                display: none;
+            }
+
+            .timeline-item {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .timeline-item:not(:last-child)::after,
+            .timeline-item:not(:last-child)::before {
+                display: none;
+            }
+
+            .timeline-item:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                bottom: -2rem;
+                left: 50%;
+                width: 2px;
+                height: 2rem;
+                background: rgb(var(--primary));
+                transform: translateX(-50%);
+            }
+
+            .timeline-item:not(:last-child)::before {
+                content: '↓';
+                position: absolute;
+                bottom: -2.5rem;
+                left: 50%;
+                color: rgb(var(--primary));
+                font-size: 1.25rem;
+                font-weight: 700;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .timeline-item {
+                max-width: 100%;
+                padding: 0 0.5rem;
+            }
+            
+            .timeline-card {
+                max-width: 100%;
+            }
+        }
+
+        /* Interactive Accordion Styles */
+        .accordion-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: white;
+            border: 1px solid rgb(var(--border));
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 1.5rem;
+            background: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .accordion-header:hover {
+            background: rgb(var(--background));
+        }
+
+        .accordion-header.active {
+            background: rgb(var(--primary) / 0.05);
+        }
+
+        .accordion-icon {
+            width: 3rem;
+            height: 3rem;
+            background: rgb(var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .accordion-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: rgb(var(--foreground));
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .accordion-arrow {
+            color: rgb(var(--primary));
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-header.active .accordion-arrow {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 500px;
+        }
+
+        .accordion-body {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .accordion-description {
+            color: rgb(var(--muted-foreground));
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .accordion-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: rgb(var(--background));
+            border-radius: var(--radius);
+            transition: all 0.2s ease;
+        }
+
+        .feature-item:hover {
+            background: rgb(var(--primary) / 0.05);
+            transform: translateX(5px);
+        }
+
+        .feature-item i {
+            color: rgb(var(--primary));
+            font-size: 1rem;
+        }
+
+        .feature-item span {
+            font-weight: 500;
+            color: rgb(var(--foreground));
+        }
+
+        /* Responsive accordion */
+        @media (max-width: 768px) {
+            .accordion-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .accordion-header {
+                padding: 1rem;
+            }
+            
+            .accordion-body {
+                padding: 0 1rem 1rem;
+            }
+        }
+
+        /* CTA Section Styling */
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .cta-button-primary {
+            background: white;
+            color: rgb(var(--primary));
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button-primary:hover {
+            background: rgb(249, 250, 251);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button-primary i,
+        .cta-button-secondary i {
+            font-size: 1rem;
+        }
+
+        /* Responsive CTA buttons */
+        @media (max-width: 640px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .cta-button-primary,
+            .cta-button-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        .hero-cta-button {
+            background: white;
+            color: rgb(var(--primary));
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .hero-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
     </style>
     
     <!-- Schema Markup for SEO Services -->
@@ -366,7 +867,7 @@
     </section>
 
     <!-- SEO Services Overview -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-white" style="content-visibility: auto;">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-6">Comprehensive SEO Services</h2>
@@ -375,187 +876,181 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 services-grid-container" style="display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem;">
+                <style>
+                    @media (min-width: 768px) {
+                        .services-grid-container {
+                            grid-template-columns: repeat(2, 1fr) !important;
+                        }
+                    }
+                    @media (min-width: 1024px) {
+                        .services-grid-container {
+                            grid-template-columns: repeat(3, 1fr) !important;
+                        }
+                    }
+                </style>
                 <!-- Technical SEO -->
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-cogs text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="card-title">Technical SEO</h3>
+                        <p class="card-description">
+                            Optimize your website's technical foundation for search engines with site speed, mobile optimization, and crawlability improvements.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Technical SEO</h3>
-                    <p class="text-gray-600 mb-6">
-                        Optimize your website's technical foundation for search engines with site speed, mobile optimization, and crawlability improvements.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-blue-600 mr-2"></i>
-                            Site Speed Optimization
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-blue-600 mr-2"></i>
-                            Mobile Optimization
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-blue-600 mr-2"></i>
-                            Schema Markup
-                        </li>
-                    </ul>
-                    <a href="technical/technical-seo.html" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Site Speed Optimization</span>
+                            <span class="badge badge-primary">Mobile Optimization</span>
+                            <span class="badge badge-primary">Schema Markup</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="technical/technical-seo.html" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-
+                
                 <!-- Local SEO -->
-                <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="card-title">Local SEO</h3>
+                        <p class="card-description">
+                            Dominate local search results and attract customers in your area with targeted local SEO strategies.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Local SEO</h3>
-                    <p class="text-gray-600 mb-6">
-                        Dominate local search results and attract customers in your area with targeted local SEO strategies.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-600 mr-2"></i>
-                            Google My Business
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-600 mr-2"></i>
-                            Local Citations
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-600 mr-2"></i>
-                            Local Reviews
-                        </li>
-                    </ul>
-                    <a href="local/local-seo.html" class="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Google My Business</span>
+                            <span class="badge badge-primary">Local Citations</span>
+                            <span class="badge badge-primary">Local Reviews</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="local/local-seo.html" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-
+                
                 <!-- Content SEO -->
-                <div class="bg-gradient-to-br from-purple-50 to-violet-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-edit text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3 class="card-title">Content SEO</h3>
+                        <p class="card-description">
+                            Create high-quality, SEO-optimized content that ranks well and engages your target audience.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Content SEO</h3>
-                    <p class="text-gray-600 mb-6">
-                        Create high-quality, SEO-optimized content that ranks well and engages your target audience.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-purple-600 mr-2"></i>
-                            Keyword Research
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-purple-600 mr-2"></i>
-                            Content Strategy
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-purple-600 mr-2"></i>
-                            On-Page Optimization
-                        </li>
-                    </ul>
-                    <a href="content/content-seo.html" class="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 transition-colors">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Keyword Research</span>
+                            <span class="badge badge-primary">Content Strategy</span>
+                            <span class="badge badge-primary">On-Page Optimization</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="content/content-seo.html" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-
+                
                 <!-- E-commerce SEO -->
-                <div class="bg-gradient-to-br from-red-50 to-pink-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-red-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-shopping-cart text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3 class="card-title">E-commerce SEO</h3>
+                        <p class="card-description">
+                            Optimize your online store for search engines and drive more qualified traffic to your products.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">E-commerce SEO</h3>
-                    <p class="text-gray-600 mb-6">
-                        Optimize your online store for search engines and drive more qualified traffic to your products.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
-                            Product Page Optimization
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
-                            Category Page SEO
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
-                            Shopping Feed Optimization
-                        </li>
-                    </ul>
-                    <a href="ecommerce/ecommerce-seo.html" class="inline-flex items-center text-red-600 font-semibold hover:text-red-700 transition-colors">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Product Page Optimization</span>
+                            <span class="badge badge-primary">Category Page SEO</span>
+                            <span class="badge badge-primary">Shopping Feed Optimization</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="ecommerce/ecommerce-seo.html" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-
+                
                 <!-- WordPress SEO -->
-                <div class="bg-gradient-to-br from-orange-50 to-amber-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-orange-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fab fa-wordpress text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fab fa-wordpress"></i>
+                        </div>
+                        <h3 class="card-title">WordPress SEO</h3>
+                        <p class="card-description">
+                            Optimize your WordPress website for search engines with specialized WordPress SEO techniques.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">WordPress SEO</h3>
-                    <p class="text-gray-600 mb-6">
-                        Optimize your WordPress website for search engines with specialized WordPress SEO techniques.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-orange-600 mr-2"></i>
-                            WordPress Plugin Optimization
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-orange-600 mr-2"></i>
-                            Theme SEO Optimization
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-orange-600 mr-2"></i>
-                            WordPress Performance
-                        </li>
-                    </ul>
-                    <a href="wordpress/wordpress-seo.html" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition-colors">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">WordPress Plugin Optimization</span>
+                            <span class="badge badge-primary">Theme SEO Optimization</span>
+                            <span class="badge badge-primary">WordPress Performance</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="wordpress/wordpress-seo.html" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-
+                
                 <!-- SEO Audit -->
-                <div class="bg-gradient-to-br from-teal-50 to-cyan-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-teal-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="card-title">SEO Audit & Analysis</h3>
+                        <p class="card-description">
+                            Get a comprehensive analysis of your website's SEO performance and actionable recommendations.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">SEO Audit & Analysis</h3>
-                    <p class="text-gray-600 mb-6">
-                        Get a comprehensive analysis of your website's SEO performance and actionable recommendations.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Technical SEO Audit
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Competitor Analysis
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Action Plan
-                        </li>
-                    </ul>
-                    <button type="button" class="inline-flex items-center text-teal-600 font-semibold hover:text-teal-700 transition-colors" onclick="showModal()">
-                        Get Free Audit
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Technical SEO Audit</span>
+                            <span class="badge badge-primary">Competitor Analysis</span>
+                            <span class="badge badge-primary">Action Plan</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-outline btn-sm" onclick="showModal()">
+                            Get Free Audit
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Our SEO Services -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
+    <section class="py-20 bg-gray-50" style="content-visibility: auto;">
+        <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-6">Why Choose Our SEO Services?</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -563,44 +1058,164 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-search text-white text-2xl"></i>
+            <div class="accordion-container">
+                <!-- Data-Driven Approach -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="accordion-title">Data-Driven Approach</h3>
+                        <div class="accordion-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">
+                                SEO strategies based on comprehensive data analysis and industry best practices. We use advanced analytics tools to identify opportunities and optimize your website for maximum search visibility.
+                            </p>
+                            <div class="accordion-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Advanced Analytics & Reporting</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Competitor Analysis</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Keyword Research & Strategy</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Performance Tracking</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Data-Driven Approach</h3>
-                    <p class="text-gray-600">SEO strategies based on comprehensive data analysis and industry best practices.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-chart-bar text-white text-2xl"></i>
+                <!-- Measurable Results -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3 class="accordion-title">Measurable Results</h3>
+                        <div class="accordion-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">
+                                Track your progress with detailed reporting and performance analytics. We provide comprehensive insights into your SEO performance and ROI.
+                            </p>
+                            <div class="accordion-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Monthly Performance Reports</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Traffic & Conversion Tracking</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Ranking Position Monitoring</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>ROI Analysis & Insights</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Measurable Results</h3>
-                    <p class="text-gray-600">Track your progress with detailed reporting and performance analytics.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-clock text-white text-2xl"></i>
+                <!-- Long-term Success -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="accordion-title">Long-term Success</h3>
+                        <div class="accordion-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">
+                                Sustainable SEO strategies that provide lasting results and organic growth. We focus on building long-term value rather than quick wins.
+                            </p>
+                            <div class="accordion-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Sustainable Ranking Growth</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>White-Hat SEO Techniques</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Future-Proof Strategies</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Ongoing Optimization</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Long-term Success</h3>
-                    <p class="text-gray-600">Sustainable SEO strategies that provide lasting results and organic growth.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users text-white text-2xl"></i>
+                <!-- Expert Team -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="accordion-title">Expert Team</h3>
+                        <div class="accordion-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">
+                                Experienced SEO specialists with proven track records of success. Our team stays updated with the latest search engine algorithms and industry trends.
+                            </p>
+                            <div class="accordion-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Certified SEO Specialists</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Industry Experience</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Continuous Training</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Dedicated Account Manager</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Expert Team</h3>
-                    <p class="text-gray-600">Experienced SEO specialists with proven track records of success.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SEO Process -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-white" style="content-visibility: auto;">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-6">Our SEO Process</h2>
@@ -609,52 +1224,123 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
-                        1
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <!-- Step 1: Research & Analysis -->
+                <div class="timeline-item">
+                    <div class="timeline-card" data-step="1">
+                        <div class="card service-card">
+                            <div class="card-header">
+                                <div class="service-icon primary">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <h3 class="card-title">Research & Analysis</h3>
+                                <p class="card-description">
+                                    Conduct comprehensive keyword research and competitor analysis to identify opportunities and develop a strategic SEO roadmap.
+                                </p>
+                            </div>
+                            <div class="card-content">
+                                <div class="service-tags">
+                                    <span class="badge badge-primary">Keyword Research</span>
+                                    <span class="badge badge-primary">Competitor Analysis</span>
+                                    <span class="badge badge-primary">Market Research</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Research & Analysis</h3>
-                    <p class="text-gray-600">Conduct comprehensive keyword research and competitor analysis to identify opportunities.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
-                        2
+                <!-- Step 2: Technical Optimization -->
+                <div class="timeline-item">
+                    <div class="timeline-card" data-step="2">
+                        <div class="card service-card">
+                            <div class="card-header">
+                                <div class="service-icon primary">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h3 class="card-title">Technical Optimization</h3>
+                                <p class="card-description">
+                                    Optimize your website's technical foundation for search engines and user experience with comprehensive technical SEO improvements.
+                                </p>
+                            </div>
+                            <div class="card-content">
+                                <div class="service-tags">
+                                    <span class="badge badge-primary">Site Speed Optimization</span>
+                                    <span class="badge badge-primary">Mobile Optimization</span>
+                                    <span class="badge badge-primary">Schema Markup</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Technical Optimization</h3>
-                    <p class="text-gray-600">Optimize your website's technical foundation for search engines and user experience.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
-                        3
+                <!-- Step 3: Content & On-Page -->
+                <div class="timeline-item">
+                    <div class="timeline-card" data-step="3">
+                        <div class="card service-card">
+                            <div class="card-header">
+                                <div class="service-icon primary">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <h3 class="card-title">Content & On-Page</h3>
+                                <p class="card-description">
+                                    Create and optimize content that ranks well and engages your target audience with strategic on-page optimization.
+                                </p>
+                            </div>
+                            <div class="card-content">
+                                <div class="service-tags">
+                                    <span class="badge badge-primary">Content Strategy</span>
+                                    <span class="badge badge-primary">On-Page SEO</span>
+                                    <span class="badge badge-primary">Meta Optimization</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Content & On-Page</h3>
-                    <p class="text-gray-600">Create and optimize content that ranks well and engages your target audience.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
-                        4
+                <!-- Step 4: Monitor & Improve -->
+                <div class="timeline-item">
+                    <div class="timeline-card" data-step="4">
+                        <div class="card service-card">
+                            <div class="card-header">
+                                <div class="service-icon primary">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3 class="card-title">Monitor & Improve</h3>
+                                <p class="card-description">
+                                    Track performance, analyze results, and continuously improve your SEO strategy for sustainable growth and success.
+                                </p>
+                            </div>
+                            <div class="card-content">
+                                <div class="service-tags">
+                                    <span class="badge badge-primary">Performance Tracking</span>
+                                    <span class="badge badge-primary">Analytics & Reporting</span>
+                                    <span class="badge badge-primary">Continuous Optimization</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Monitor & Improve</h3>
-                    <p class="text-gray-600">Track performance, analyze results, and continuously improve your SEO strategy.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-green-600 to-blue-600">
+    <section class="py-20 bg-gradient-to-r from-green-600 to-blue-600" style="content-visibility: auto;">
         <div class="max-w-4xl mx-auto text-center px-4">
             <h2 class="text-4xl font-bold text-white mb-6">Ready to Improve Your Search Rankings?</h2>
             <p class="text-xl text-green-100 mb-8">
                 Get a free SEO audit and discover how we can boost your search engine visibility and drive more organic traffic.
             </p>
-            <button type="button" id="contactConsultationBtn" class="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-                Get Free SEO Audit
-            </button>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div class="cta-buttons">
+                    <button type="button" id="contactConsultationBtn" class="cta-button-primary">
+                        Get Free SEO Audit
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -776,6 +1462,26 @@
                 });
             }
         });
+
+        // Accordion functionality
+        function toggleAccordion(header) {
+            const accordionItem = header.parentElement;
+            const content = accordionItem.querySelector('.accordion-content');
+            const isActive = header.classList.contains('active');
+            
+            // Close all other accordion items
+            const allHeaders = document.querySelectorAll('.accordion-header');
+            const allContents = document.querySelectorAll('.accordion-content');
+            
+            allHeaders.forEach(h => h.classList.remove('active'));
+            allContents.forEach(c => c.classList.remove('active'));
+            
+            // Toggle current item
+            if (!isActive) {
+                header.classList.add('active');
+                content.classList.add('active');
+            }
+        }
     </script>
 </body>
 </html> 
