@@ -9,4 +9,14 @@
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/solutions/website-design/"
+  to = "/solutions/website-design/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/solutions/seo/"
+  to = "/solutions/seo/index.html"
   status = 200 
