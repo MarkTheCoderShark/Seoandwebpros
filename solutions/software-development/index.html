@@ -3,258 +3,1048 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Design & Development - SEO & Web Pros</title>
-    <meta name="description" content="Custom software solutions designed to streamline your business operations. Enterprise-grade applications built for your specific needs.">
-    <link rel="stylesheet" href="../assets/css/optimized-ui.css">
+    <title>Custom Software Development Services | Enterprise Solutions - SEO & Web Pros</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Transform your business with custom software development solutions. We build enterprise-grade applications, web platforms, and specialized software that streamline operations and drive growth.">
+    <meta name="keywords" content="custom software development, enterprise software, software development company, web applications, business automation, software solutions, API development, cloud software">
+    <meta name="author" content="SEO & Web Pros">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Custom Software Development Services | Enterprise Solutions">
+    <meta property="og:description" content="Transform your business with custom software development solutions that streamline operations and drive growth.">
+    <meta property="og:image" content="/assets/images/software-development-services.jpg">
+    <meta property="og:url" content="https://seoandwebpros.com/solutions/software-development/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Custom Software Development Services">
+    <meta name="twitter:description" content="Expert custom software development for enterprise solutions and business automation.">
+    <meta name="twitter:image" content="/assets/images/software-development-services.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://seoandwebpros.com/solutions/software-development/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/images/icon-144x144.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/optimized-ui.css">
+    <link rel="stylesheet" href="../../assets/css/enhanced-components.css">
+    <link rel="stylesheet" href="../../assets/css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Critical CSS for Hero Section -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        :root {
+            --primary: 59 130 246;
+            --background: 249 250 251;
+            --foreground: 15 23 42;
+            --card: 255 255 255;
+            --border: 226 232 240;
+            --muted-foreground: 100 116 139;
+            --radius: 0.5rem;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        * { box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, rgb(var(--background)), rgb(var(--card)));
+            color: rgb(var(--foreground));
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8fafc, #ffffff);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgb(var(--primary) / 0.1), rgb(var(--primary) / 0.05));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .shape-4 {
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            right: 30%;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Hero layout with CTA on right */
+        .hero-content-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .hero-main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+            min-height: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-left {
+            text-align: left;
+            padding-right: 2rem;
+        }
+
+        .hero-right {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            justify-self: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: rgb(var(--foreground));
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: rgb(var(--muted-foreground));
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            margin-bottom: 3rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .hero-button-primary {
+            background: rgb(var(--primary));
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .hero-button-primary:hover {
+            background: rgb(var(--primary) / 0.9);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-button-secondary {
+            background: transparent;
+            color: rgb(var(--primary));
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgb(var(--primary));
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .hero-button-secondary:hover {
+            background: rgb(var(--primary));
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .cta-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .cta-button {
+            background: white;
+            color: rgb(var(--primary));
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Service Cards Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            width: 100%;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgb(var(--border));
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgb(var(--foreground));
+        }
+
+        .service-card p {
+            color: rgb(var(--muted-foreground));
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Animations */
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-main-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+                min-height: auto;
+            }
+            
+            .hero-left {
+                text-align: center;
+                padding-right: 0;
+            }
+
+            .hero-right {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.125rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-button-primary,
+            .hero-button-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Section Styles */
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .responsive-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-16 {
+            margin-bottom: 4rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .responsive-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgb(var(--foreground));
+        }
+
+        .responsive-text {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: rgb(var(--muted-foreground));
+        }
+
+        .max-w-3xl {
+            max-width: 48rem;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bg-white {
+            background-color: white;
+        }
+
+        .bg-gradient-to-br {
+            background: linear-gradient(to bottom right, #f9fafb, #ffffff);
+        }
+    </style>
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Custom Software Development Services",
+        "provider": {
+            "@type": "Organization",
+            "name": "SEO & Web Pros",
+            "url": "https://seoandwebpros.com"
+        },
+        "description": "Expert custom software development services for enterprise solutions, web applications, and business automation that streamline operations and drive growth.",
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Software Development Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Enterprise Software Development",
+                        "description": "Large-scale enterprise applications with advanced features and integrations"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Custom Web Applications",
+                        "description": "Tailored web applications built with modern frameworks and technologies"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "API Development",
+                        "description": "RESTful APIs and microservices for seamless system integration"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
     <div id="navigation"></div>
-
+    
     <!-- Hero Section -->
     <section class="hero bg-gradient-to-br from-blue-50 via-white to-gray-50">
-        <div class="hero-content">
-            <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
-                <span class="gradient-primary">Software Design & Development</span>
-                <br>That Powers Your Business
-            </h1>
-            
-            <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
-                Build custom software solutions that streamline your operations, improve efficiency, and give you a competitive edge. From enterprise applications to specialized tools, we create software that works for you.
-            </p>
-            
-            <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
-                <button type="button" id="heroConsultationBtn" class="proposal-btn brand-font">
-                    Start Your Software Project
-                </button>
-            </div>
+        <!-- Background Elements -->
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
         </div>
-    </section>
-
-    <!-- Service Details -->
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold mb-6">Custom Software Development</h2>
-                    <p class="text-lg text-gray-600 mb-8">
-                        We develop tailored software solutions that address your specific business challenges. Our applications are built with scalability, security, and user experience in mind.
+        
+        <div class="hero-content-wrapper">
+            <div class="hero-main-content">
+                <div class="hero-left">
+                    <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
+                        Custom <span class="gradient-primary">Software Development</span> Solutions That Transform Business
+                    </h1>
+                    
+                    <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
+                        Build powerful custom software solutions that streamline operations, automate processes, and drive growth. Our expert development team creates enterprise-grade applications, web platforms, and specialized software tailored to your unique business requirements and objectives.
                     </p>
                     
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
-                            <div>
-                                <h3 class="font-semibold">Enterprise Applications</h3>
-                                <p class="text-gray-600">Build robust, scalable software for large organizations and complex workflows.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
-                            <div>
-                                <h3 class="font-semibold">Business Process Automation</h3>
-                                <p class="text-gray-600">Automate repetitive tasks and streamline your business operations.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
-                            <div>
-                                <h3 class="font-semibold">API Development</h3>
-                                <p class="text-gray-600">Create secure, efficient APIs that integrate with your existing systems.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
-                            <div>
-                                <h3 class="font-semibold">Database Design</h3>
-                                <p class="text-gray-600">Design and optimize databases for performance and data integrity.</p>
-                            </div>
+                    <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
+                        <div class="hero-buttons">
+                            <a href="#pricing" class="hero-button-primary">View Software Packages</a>
+                            <a href="#services" class="hero-button-secondary">Explore Services</a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold mb-6">Development Technologies</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white mr-4">
-                                <i class="fab fa-react"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold">Frontend Development</h4>
-                                <p class="text-gray-600">React, Vue.js, Angular, and modern JavaScript frameworks</p>
-                            </div>
+                <!-- CTA Box positioned on right -->
+                <div class="hero-right animate-fade-in-up" style="animation-delay: 1s;">
+                    <div class="cta-box">
+                        <h3>Schedule a FREE Software Development Consultation & Needs Assessment!</h3>
+                        <p>Speak to a software development expert today.</p>
+                        <a href="tel:9168667893" class="cta-button">Get a Free Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Overview Cards -->
+        <div class="hero-services-section animate-fade-in-up" style="animation-delay: 0.8s;">
+            <div class="responsive-container">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-building"></i>
                         </div>
-                        
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white mr-4">
-                                <i class="fab fa-node-js"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold">Backend Development</h4>
-                                <p class="text-gray-600">Node.js, Python, Java, .NET, and cloud-native solutions</p>
-                            </div>
+                        <h3>Enterprise Software</h3>
+                        <p>Large-scale enterprise applications with advanced features, security, and integrations for complex business operations.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-globe"></i>
                         </div>
-                        
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white mr-4">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold">Database Solutions</h4>
-                                <p class="text-gray-600">PostgreSQL, MySQL, MongoDB, and cloud databases</p>
-                            </div>
+                        <h3>Web Applications</h3>
+                        <p>Custom web applications built with modern frameworks, delivering powerful functionality and seamless user experiences.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
                         </div>
-                        
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white mr-4">
-                                <i class="fas fa-cloud"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold">Cloud Deployment</h4>
-                                <p class="text-gray-600">AWS, Azure, Google Cloud, and containerized solutions</p>
-                            </div>
+                        <h3>Business Automation</h3>
+                        <p>Automated workflows and processes that eliminate manual tasks, reduce errors, and improve operational efficiency.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-plug"></i>
                         </div>
+                        <h3>API Development</h3>
+                        <p>RESTful APIs and microservices that enable seamless integration between systems and third-party platforms.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Solutions</h3>
+                        <p>Scalable cloud-based software solutions with high availability, security, and performance optimization.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Software Maintenance</h3>
+                        <p>Ongoing support, updates, and enhancements to keep your software secure, current, and performing optimally.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Ready to Build Custom Software?</h2>
-            <p class="text-lg text-gray-600 mb-8">
-                Let's discuss your software needs and create a custom development plan that transforms your business operations.
-            </p>
-            <button type="button" id="contactConsultationBtn" class="proposal-btn brand-font">
-                Get Free Consultation
-            </button>
-        </div>
-    </section>
-
-    <!-- Modal for consultation -->
-    <div id="noWebsiteModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Start Your Software Development Project</h2>
-                <button class="modal-close" onclick="closeModal()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p class="modal-description">
-                    Ready to build custom software for your business? Fill out the form below and we'll create a tailored development plan for your specific needs.
-                </p>
+    <!-- Main Content -->
+    <main>
+        <!-- Why Choose Us Section -->
+        <section class="section-padding bg-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Why Choose Our Software Development Services?</h2>
+                    <h3 style="font-size: 2rem; font-weight: 600; margin-bottom: 2rem; color: rgb(var(--foreground));">Proven Expertise & Results</h3>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        With decades of combined experience in software development, our team has successfully delivered hundreds of custom software solutions across various industries. We combine technical excellence with business acumen to create software that not only meets your specifications but drives measurable business results.
+                    </p>
+                </div>
                 
-                <form id="proposalForm" class="proposal-form">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div>
+                        <a href="#pricing" style="background: #ff0036; color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block; margin-bottom: 2rem;">See Our Software Packages</a>
+                        <p style="color: rgb(var(--muted-foreground)); line-height: 1.6;">Our comprehensive software development approach ensures your solution not only meets current needs but scales with your business growth, provides exceptional performance, and delivers the ROI you expect from technology investments.</p>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop&crop=faces" alt="Software development team collaboration" style="width: 100%; border-radius: 1rem; box-shadow: var(--shadow-lg);">
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="555-123-4567" maxlength="12">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="company">Company Name</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="softwareType">Software Type</label>
-                        <select id="softwareType" name="softwareType">
-                            <option value="">Select software type...</option>
-                            <option value="Enterprise Application">Enterprise Application</option>
-                            <option value="Business Process Automation">Business Process Automation</option>
-                            <option value="Customer Management System">Customer Management System</option>
-                            <option value="Inventory Management">Inventory Management</option>
-                            <option value="API Development">API Development</option>
-                            <option value="Custom Dashboard">Custom Dashboard</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="budget">Budget Range</label>
-                        <select id="budget" name="budget">
-                            <option value="">Select budget...</option>
-                            <option value="$25,000 - $50,000">$25,000 - $50,000</option>
-                            <option value="$50,000 - $100,000">$50,000 - $100,000</option>
-                            <option value="$100,000 - $250,000">$100,000 - $250,000</option>
-                            <option value="$250,000+">$250,000+</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Project Requirements</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Describe your software needs, business processes to automate, integration requirements, and any specific features you need..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn brand-font">
-                        <span class="btn-text">Get My Software Development Plan</span>
-                        <span class="btn-loading" style="display: none;">
-                            <i class="fas fa-spinner fa-spin"></i> Sending...
-                        </span>
-                    </button>
-                </form>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <script src="../assets/js/main.js"></script>
+        <!-- Development Process Section -->
+        <section class="section-padding bg-gradient-to-br">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Our Software Development Process</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        From initial requirements gathering to deployment and maintenance, we follow a proven development methodology that ensures your software is delivered on time, within budget, and exceeds expectations.
+                    </p>
+                </div>
+                
+                <div class="process-container">
+                    <div class="process-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+                        <div class="process-step" style="background: white; padding: 2rem; border-radius: 1rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgb(var(--border)); transition: all 0.3s ease;">
+                            <div class="process-number" style="width: 4rem; height: 4rem; background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1.5rem; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">01</div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: rgb(var(--foreground));">Analysis & Planning</h3>
+                            <p style="color: rgb(var(--muted-foreground)); line-height: 1.6; font-size: 0.95rem;">We analyze your business requirements, existing systems, and objectives to create a comprehensive software development strategy and technical architecture.</p>
+                        </div>
+                        
+                        <div class="process-step" style="background: white; padding: 2rem; border-radius: 1rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgb(var(--border)); transition: all 0.3s ease;">
+                            <div class="process-number" style="width: 4rem; height: 4rem; background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1.5rem; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">02</div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: rgb(var(--foreground));">Design & Architecture</h3>
+                            <p style="color: rgb(var(--muted-foreground)); line-height: 1.6; font-size: 0.95rem;">Our architects design scalable system architecture, user interfaces, and database structures that ensure optimal performance and maintainability.</p>
+                        </div>
+                        
+                        <div class="process-step" style="background: white; padding: 2rem; border-radius: 1rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgb(var(--border)); transition: all 0.3s ease;">
+                            <div class="process-number" style="width: 4rem; height: 4rem; background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1.5rem; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">03</div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: rgb(var(--foreground));">Development & Testing</h3>
+                            <p style="color: rgb(var(--muted-foreground)); line-height: 1.6; font-size: 0.95rem;">We build your software using best practices, conduct comprehensive testing, and ensure quality assurance throughout the development lifecycle.</p>
+                        </div>
+                        
+                        <div class="process-step" style="background: white; padding: 2rem; border-radius: 1rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgb(var(--border)); transition: all 0.3s ease;">
+                            <div class="process-number" style="width: 4rem; height: 4rem; background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1.5rem; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">04</div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: rgb(var(--foreground));">Deployment & Support</h3>
+                            <p style="color: rgb(var(--muted-foreground)); line-height: 1.6; font-size: 0.95rem;">We deploy your software, provide training, and offer ongoing maintenance and support to ensure optimal performance and user satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Software Development Packages Section -->
+        <section id="pricing" class="section-padding bg-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Custom Software Development Packages</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        Choose the perfect software development package for your business needs. All packages include comprehensive development, testing, and deployment support.
+                    </p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Startup Software Package</h3>
+                        <p>Perfect for startups and small businesses needing custom software solutions to streamline operations.</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Web-based application</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Up to 10 core features</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> User management system</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Database integration</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> 6 months support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Business Software Package</h3>
+                        <p>Comprehensive solution for growing businesses requiring advanced features and integrations.</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Multi-platform application</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Advanced feature set</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Third-party integrations</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> API development</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> 12 months support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3>Enterprise Software Package</h3>
+                        <p>Premium solution for large organizations with complex requirements and enterprise-grade features.</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Enterprise architecture</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Unlimited features</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Advanced security</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Cloud deployment</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> 24 months support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies We Use Section -->
+        <section id="services" class="section-padding bg-gradient-to-br">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Technologies & Frameworks We Master</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        We utilize cutting-edge technologies and proven frameworks to build robust, scalable, and maintainable software solutions.
+                    </p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3>Python & Django</h3>
+                        <p>Powerful backend development with Python and Django framework for rapid, secure, and scalable web applications.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <h3>Node.js & React</h3>
+                        <p>Modern full-stack development using Node.js for backend services and React for dynamic, responsive user interfaces.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>.NET & C#</h3>
+                        <p>Enterprise-grade applications using Microsoft .NET framework and C# for robust, scalable business solutions.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <h3>Java & Spring</h3>
+                        <p>Enterprise Java applications with Spring framework for large-scale, high-performance business systems.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Database Systems</h3>
+                        <p>Expert database design and optimization using PostgreSQL, MySQL, MongoDB, and other database technologies.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Platforms</h3>
+                        <p>Cloud-native development and deployment on AWS, Azure, and Google Cloud Platform for scalability and reliability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section-padding bg-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Frequently Asked Questions</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        Get answers to common questions about our custom software development services and process.
+                    </p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item" style="border-bottom: 1px solid rgb(var(--border)); padding: 1.5rem 0;">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; font-size: 1.125rem;">How long does custom software development take?</span>
+                            <i class="fas fa-chevron-down faq-icon" style="transition: transform 0.3s ease;"></i>
+                        </div>
+                        <div class="faq-answer" style="margin-top: 1rem; color: rgb(var(--muted-foreground)); line-height: 1.6;">
+                            <p>Development timelines vary based on project complexity and scope. Simple applications typically take 3-6 months, while complex enterprise solutions can take 6-18 months. We provide detailed project timelines during our initial consultation based on your specific requirements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" style="border-bottom: 1px solid rgb(var(--border)); padding: 1.5rem 0;">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; font-size: 1.125rem;">What technologies do you recommend for my project?</span>
+                            <i class="fas fa-chevron-down faq-icon" style="transition: transform 0.3s ease;"></i>
+                        </div>
+                        <div class="faq-answer" style="margin-top: 1rem; color: rgb(var(--muted-foreground)); line-height: 1.6;">
+                            <p>Technology selection depends on your specific requirements, scalability needs, budget, and timeline. We'll analyze your project and recommend the most suitable technology stack that balances performance, maintainability, and cost-effectiveness.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" style="border-bottom: 1px solid rgb(var(--border)); padding: 1.5rem 0;">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; font-size: 1.125rem;">Do you provide ongoing maintenance and support?</span>
+                            <i class="fas fa-chevron-down faq-icon" style="transition: transform 0.3s ease;"></i>
+                        </div>
+                        <div class="faq-answer" style="margin-top: 1rem; color: rgb(var(--muted-foreground)); line-height: 1.6;">
+                            <p>Yes! We offer comprehensive maintenance packages including bug fixes, security updates, feature enhancements, performance monitoring, and technical support. Our goal is to ensure your software continues to meet your evolving business needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" style="border-bottom: 1px solid rgb(var(--border)); padding: 1.5rem 0;">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; font-size: 1.125rem;">Can you integrate with our existing systems?</span>
+                            <i class="fas fa-chevron-down faq-icon" style="transition: transform 0.3s ease;"></i>
+                        </div>
+                        <div class="faq-answer" style="margin-top: 1rem; color: rgb(var(--muted-foreground)); line-height: 1.6;">
+                            <p>Absolutely! We specialize in system integration and can seamlessly connect your new software with existing databases, CRM systems, accounting software, and other business applications. We ensure smooth data flow and unified workflows across all your systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding bg-gradient-to-br">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Ready to Build Your Custom Software?</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        Let's discuss your software requirements and create a development strategy that transforms your business operations.
+                    </p>
+                </div>
+                
+                <div class="contact-form-container" style="max-width: 600px; margin: 0 auto;">
+                    <form id="contact-form" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-lg);">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Full Name *</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid rgb(var(--border)); border-radius: 0.5rem; font-size: 1rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email Address *</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid rgb(var(--border)); border-radius: 0.5rem; font-size: 1rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="software-type" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Software Type</label>
+                            <select id="software-type" name="software-type" style="width: 100%; padding: 0.75rem; border: 1px solid rgb(var(--border)); border-radius: 0.5rem; font-size: 1rem;">
+                                <option value="">Select software type</option>
+                                <option value="web-application">Web Application</option>
+                                <option value="enterprise-software">Enterprise Software</option>
+                                <option value="api-development">API Development</option>
+                                <option value="automation-tool">Business Automation</option>
+                                <option value="cloud-solution">Cloud Solution</option>
+                                <option value="not-sure">Not Sure</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="budget" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Project Budget</label>
+                            <select id="budget" name="budget" style="width: 100%; padding: 0.75rem; border: 1px solid rgb(var(--border)); border-radius: 0.5rem; font-size: 1rem;">
+                                <option value="">Select your budget range</option>
+                                <option value="25000-50000">$25,000 - $50,000</option>
+                                <option value="50000-100000">$50,000 - $100,000</option>
+                                <option value="100000-250000">$100,000 - $250,000</option>
+                                <option value="250000+">$250,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Software Requirements & Goals *</label>
+                            <textarea id="message" name="message" required rows="4" placeholder="Describe your software requirements, business challenges, desired features, and project goals..." style="width: 100%; padding: 0.75rem; border: 1px solid rgb(var(--border)); border-radius: 0.5rem; font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
+                        
+                        <button type="submit" style="width: 100%; background: rgb(var(--primary)); color: white; padding: 0.875rem; border: none; border-radius: 0.5rem; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s ease;">Start My Software Project</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Services -->
+        <section class="section-padding bg-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Related Services</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        Explore our other development services that can complement your software development project.
+                    </p>
+                </div>
+                
+                <div class="services-grid">
+                    <a href="/solutions/website-development/" class="service-card" style="text-decoration: none; color: inherit;">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Website Development</h3>
+                        <p>Custom web development solutions with modern technologies and responsive design.</p>
+                    </a>
+                    
+                    <a href="/solutions/app-development/" class="service-card" style="text-decoration: none; color: inherit;">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile App Development</h3>
+                        <p>Native and cross-platform mobile applications for iOS and Android platforms.</p>
+                    </a>
+                    
+                    <a href="/solutions/website-design/" class="service-card" style="text-decoration: none; color: inherit;">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Website Design</h3>
+                        <p>Professional website design services that create engaging user experiences.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+    <!-- Scripts -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/solution-components.js"></script>
+    
     <script>
-        // Load navigation
-        async function loadNavigation() {
+        // Load navigation and footer
+        document.addEventListener('DOMContentLoaded', async function() {
             try {
-                const response = await fetch('../components/navigation.html');
-                const html = await response.text();
-                document.getElementById('navigation').innerHTML = html;
+                // Load navigation
+                const navResponse = await fetch('../../components/navigation.html');
+                const navHtml = await navResponse.text();
+                document.getElementById('navigation').innerHTML = navHtml;
                 
-                // Initialize navigation after loading
-                if (typeof initializeNavigation === 'function') {
-                    initializeNavigation();
-                }
+                // Load footer
+                const footerResponse = await fetch('../../components/footer.html');
+                const footerHtml = await footerResponse.text();
+                document.getElementById('footer').innerHTML = footerHtml;
+                
+                // Initialize animations
+                initAnimations();
+                
+                // Initialize any interactive components
+                if (typeof initializeNavigation === 'function') initializeNavigation();
+                if (typeof initContactForm === 'function') initContactForm();
+                
+                // Initialize FAQ functionality
+                initializeFAQ();
+                
             } catch (error) {
-                console.error('Error loading navigation:', error);
+                console.error('Error loading components:', error);
+            }
+        });
+        
+        // Animation observer
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.animate-fade-in-up').forEach((el) => {
+                observer.observe(el);
+            });
+        }
+        
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('.faq-icon');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    const otherAnswer = item.querySelector('.faq-answer');
+                    const otherIcon = item.querySelector('.faq-icon');
+                    if (otherAnswer) {
+                        otherAnswer.style.display = 'none';
+                        otherAnswer.style.maxHeight = '0';
+                        otherAnswer.style.opacity = '0';
+                    }
+                    if (otherIcon) {
+                        otherIcon.style.transform = 'rotate(0deg)';
+                    }
+                }
+            });
+            
+            // Toggle current FAQ item
+            if (answer && icon) {
+                if (answer.style.display === 'none' || !answer.style.display) {
+                    answer.style.display = 'block';
+                    answer.style.maxHeight = 'none';
+                    answer.style.opacity = '1';
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    answer.style.display = 'none';
+                    answer.style.maxHeight = '0';
+                    answer.style.opacity = '0';
+                    icon.style.transform = 'rotate(0deg)';
+                }
             }
         }
         
-        // Load navigation when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            loadNavigation();
+        // Initialize FAQ functionality
+        function initializeFAQ() {
+            // Initially hide all FAQ answers
+            const faqAnswers = document.querySelectorAll('.faq-answer');
+            faqAnswers.forEach(answer => {
+                answer.style.display = 'none';
+                answer.style.maxHeight = '0';
+                answer.style.opacity = '0';
+                answer.style.transition = 'all 0.3s ease';
+            });
             
-            // Add event listeners for consultation buttons
-            const heroBtn = document.getElementById('heroConsultationBtn');
-            const contactBtn = document.getElementById('contactConsultationBtn');
-            
-            if (heroBtn) {
-                heroBtn.addEventListener('click', function(e) {
+            // Add click handlers to FAQ questions
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach((question, index) => {
+                question.addEventListener('click', function(e) {
                     e.preventDefault();
-                    showModal();
+                    toggleFAQ(this);
                 });
-            }
-            
-            if (contactBtn) {
-                contactBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showModal();
-                });
-            }
-        });
+            });
+        }
     </script>
 </body>
 </html> 
