@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
     <title>App Development Services | Professional Mobile App Development Company - SEO & Web Pros</title>
     <meta name="description" content="Professional app development services. iOS app development, Android app development, cross-platform app development, PWA development, and app maintenance. Expert mobile app developers delivering high-quality applications.">
     <meta name="keywords" content="app development, mobile app development, iOS development, Android development, cross-platform development, PWA development">
     <link rel="canonical" href="https://seoandwebpros.com/solutions/app-development/">
+    
+    <!-- Resource hints for better performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="../../assets/css/optimized-ui.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+    
+    <!-- Load critical CSS immediately -->
     <link rel="stylesheet" href="../../assets/css/optimized-ui.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -220,7 +232,7 @@
             font-size: 0.95rem;
         }
 
-        .cta-button {
+        .hero-cta-button {
             background: white;
             color: rgb(var(--primary));
             padding: 0.75rem 1.5rem;
@@ -231,7 +243,7 @@
             display: inline-block;
         }
 
-        .cta-button:hover {
+        .hero-cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -303,14 +315,14 @@
             }
         }
 
-        /* Service Cards - Matching Reference Design */
+        /* Service Cards - Matching Home Page Exactly */
         .card {
             background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 1rem;
+            border: 1px solid rgb(var(--border));
+            border-radius: var(--radius);
             padding: 2rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: var(--shadow);
             text-align: center;
             height: 100%;
             display: flex;
@@ -319,38 +331,42 @@
         }
 
         .card:hover {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            box-shadow: var(--shadow-lg);
             transform: translateY(-4px);
         }
 
         .service-card {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
             height: 100%;
+            min-height: 400px;
+            position: relative;
         }
 
         .card-header {
             text-align: center;
-            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
         }
 
         .service-icon {
             width: 4rem;
             height: 4rem;
-            background: #3b82f6;
+            background: rgb(var(--primary));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 1.5rem;
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(var(--primary) / 0.3);
         }
 
         .service-icon.primary {
-            background: #3b82f6;
+            background: rgb(var(--primary));
             color: white;
         }
 
@@ -358,12 +374,12 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: #1f2937;
+            color: rgb(var(--foreground));
             line-height: 1.2;
         }
 
         .card-description {
-            color: #6b7280;
+            color: rgb(var(--muted-foreground));
             font-size: 1rem;
             line-height: 1.6;
             margin-bottom: 1.5rem;
@@ -372,7 +388,7 @@
         .card-content {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            flex-grow: 1;
         }
 
         .service-tags {
@@ -380,35 +396,47 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            align-items: center;
+            margin-bottom: 2rem;
+            min-height: 3rem;
+        }
+
+        .service-tags-vertical {
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            min-height: 3rem;
         }
 
         .badge {
-            background: rgba(59, 130, 246, 0.1);
-            color: #3b82f6;
+            background: rgb(var(--primary));
+            color: white;
             padding: 0.375rem 0.75rem;
             border-radius: 9999px;
             font-size: 0.875rem;
             font-weight: 500;
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            border: none;
             transition: all 0.2s ease;
             display: inline-block;
+            min-width: 120px;
+            text-align: center;
+            white-space: nowrap;
         }
 
         .badge-primary {
-            background: rgba(59, 130, 246, 0.1);
-            color: #3b82f6;
-            border-color: rgba(59, 130, 246, 0.2);
+            background: rgb(var(--primary));
+            color: white;
+            border: none;
         }
 
         .badge:hover {
-            background: rgba(59, 130, 246, 0.15);
+            background: rgb(var(--primary) / 0.9);
             transform: translateY(-1px);
         }
 
         .card-footer {
             text-align: center;
-            margin-top: 1rem;
+            margin-top: auto;
         }
 
         .btn {
@@ -416,7 +444,7 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
+            border-radius: var(--radius);
             font-weight: 600;
             text-decoration: none;
             transition: all 0.2s ease;
@@ -427,20 +455,382 @@
 
         .btn-outline {
             background: transparent;
-            color: #3b82f6;
-            border: 2px solid #3b82f6;
+            color: rgb(var(--primary));
+            border: 2px solid rgb(var(--primary));
+            font-weight: 600;
         }
 
         .btn-outline:hover {
-            background: #3b82f6;
+            background: rgb(var(--primary));
             color: white;
             transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgb(var(--primary) / 0.3);
         }
 
         .btn-sm {
             padding: 0.5rem 1rem;
             font-size: 0.875rem;
         }
+
+        /* Horizontal Timeline Flow */
+        .timeline-container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, rgb(var(--primary)), rgb(var(--primary) / 0.3));
+            z-index: 1;
+        }
+
+        .timeline-item {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding: 0 1rem;
+        }
+
+        .timeline-card {
+            position: relative;
+            width: 100%;
+            max-width: 280px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .timeline-card .card {
+            border: 2px solid rgb(var(--border));
+            transition: all 0.3s ease;
+        }
+
+        .timeline-card:hover .card {
+            border-color: rgb(var(--primary));
+            box-shadow: 0 20px 25px -5px rgb(var(--primary) / 0.1);
+        }
+
+        /* Step numbers in top left corner */
+        .timeline-card {
+            position: relative;
+        }
+
+        .timeline-card::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 35px;
+            height: 35px;
+            background: rgb(var(--primary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 700;
+            z-index: 3;
+            box-shadow: 0 2px 4px -1px rgb(var(--primary) / 0.3);
+        }
+
+        /* Remove the timeline line */
+        .timeline-line {
+            display: none;
+        }
+
+        /* Responsive timeline */
+        @media (max-width: 1024px) {
+            .timeline-container {
+                flex-direction: column;
+                gap: 3rem;
+                padding: 2rem 0;
+            }
+
+            .timeline-line {
+                display: none;
+            }
+
+            .timeline-item {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .timeline-item:not(:last-child)::after,
+            .timeline-item:not(:last-child)::before {
+                display: none;
+            }
+
+            .timeline-item:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                bottom: -2rem;
+                left: 50%;
+                width: 2px;
+                height: 2rem;
+                background: rgb(var(--primary));
+                transform: translateX(-50%);
+            }
+
+            .timeline-item:not(:last-child)::before {
+                content: '↓';
+                position: absolute;
+                bottom: -2.5rem;
+                left: 50%;
+                color: rgb(var(--primary));
+                font-size: 1.25rem;
+                font-weight: 700;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .timeline-item {
+                max-width: 100%;
+                padding: 0 0.5rem;
+            }
+            
+            .timeline-card {
+                max-width: 100%;
+            }
+        }
+
+        /* Interactive Accordion Styles */
+        .accordion-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: white;
+            border: 1px solid rgb(var(--border));
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 1.5rem;
+            background: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .accordion-header:hover {
+            background: rgb(var(--background));
+        }
+
+        .accordion-header.active {
+            background: rgb(var(--primary) / 0.05);
+        }
+
+        .accordion-icon {
+            width: 3rem;
+            height: 3rem;
+            background: rgb(var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .accordion-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: rgb(var(--foreground));
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .accordion-arrow {
+            color: rgb(var(--primary));
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-header.active .accordion-arrow {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 500px;
+        }
+
+        .accordion-body {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .accordion-description {
+            color: rgb(var(--muted-foreground));
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .accordion-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: rgb(var(--background));
+            border-radius: var(--radius);
+            transition: all 0.2s ease;
+        }
+
+        .feature-item:hover {
+            background: rgb(var(--primary) / 0.05);
+            transform: translateX(5px);
+        }
+
+        .feature-item i {
+            color: rgb(var(--primary));
+            font-size: 1rem;
+        }
+
+        .feature-item span {
+            font-weight: 500;
+            color: rgb(var(--foreground));
+        }
+
+        /* Responsive accordion */
+        @media (max-width: 768px) {
+            .accordion-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .accordion-header {
+                padding: 1rem;
+            }
+            
+            .accordion-body {
+                padding: 0 1rem 1rem;
+            }
+        }
+
+        /* CTA Section Styling */
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .cta-button-primary {
+            background: white;
+            color: rgb(var(--primary));
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button-primary:hover {
+            background: rgb(249, 250, 251);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .cta-button-secondary:hover {
+            background: white;
+            color: rgb(var(--primary));
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button-primary i,
+        .cta-button-secondary i {
+            font-size: 1rem;
+        }
+
+        /* Responsive CTA buttons */
+        @media (max-width: 640px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .cta-button-primary,
+            .cta-button-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+
     </style>
     
     <!-- Schema Markup for App Development Services -->
@@ -497,7 +887,7 @@
                     <div class="cta-box">
                         <h3>Schedule a FREE App Development Consultation!</h3>
                         <p>Speak to an app development expert today.</p>
-                        <button type="button" class="cta-button" onclick="showModal()">Get a Free Consultation</button>
+                        <button type="button" class="hero-cta-button" onclick="showModal()">Get a Free Consultation</button>
                     </div>
                 </div>
             </div>
@@ -505,7 +895,7 @@
     </section>
 
     <!-- App Development Services Overview -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-white" style="content-visibility: auto;">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-6">Comprehensive App Development Services</h2>
@@ -514,7 +904,19 @@
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 services-grid-container" style="display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem;">
+                <style>
+                    @media (min-width: 768px) {
+                        .services-grid-container {
+                            grid-template-columns: repeat(2, 1fr) !important;
+                        }
+                    }
+                    @media (min-width: 1024px) {
+                        .services-grid-container {
+                            grid-template-columns: repeat(3, 1fr) !important;
+                        }
+                    }
+                </style>
                 <!-- iOS App Development -->
                 <div class="card service-card">
                     <div class="card-header">
@@ -594,98 +996,89 @@
                 </div>
 
                 <!-- PWA Development -->
-                <div class="bg-gradient-to-br from-orange-50 to-amber-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-orange-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-globe text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="card-title">PWA Development</h3>
+                        <p class="card-description">
+                            Create Progressive Web Apps that work like native apps across all devices and platforms.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">PWA Development</h3>
-                    <p class="text-gray-600 mb-6">
-                        Create Progressive Web Apps that work like native apps across all devices and platforms.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-orange-600 mr-2"></i>
-                            Offline Functionality
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-orange-600 mr-2"></i>
-                            Push Notifications
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-orange-600 mr-2"></i>
-                            App-Like Experience
-                        </li>
-                    </ul>
-                    <a href="pwa/" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition-colors">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Offline Functionality</span>
+                            <span class="badge badge-primary">Push Notifications</span>
+                            <span class="badge badge-primary">App-Like Experience</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="pwa/" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- App Maintenance -->
-                <div class="bg-gradient-to-br from-red-50 to-pink-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-red-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-tools text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="card-title">App Maintenance</h3>
+                        <p class="card-description">
+                            Keep your mobile apps updated, secure, and performing optimally with ongoing maintenance.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">App Maintenance</h3>
-                    <p class="text-gray-600 mb-6">
-                        Keep your mobile apps updated, secure, and performing optimally with ongoing maintenance.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
-                            Platform Updates
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
-                            Bug Fixes
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
-                            Performance Monitoring
-                        </li>
-                    </ul>
-                    <a href="maintenance/" class="inline-flex items-center text-red-600 font-semibold hover:text-red-700 transition-colors">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags service-tags-vertical">
+                            <span class="badge badge-primary">Platform Updates</span>
+                            <span class="badge badge-primary">Bug Fixes</span>
+                            <span class="badge badge-primary">Performance Monitoring</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="maintenance/" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- App Store Optimization -->
-                <div class="bg-gradient-to-br from-teal-50 to-cyan-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-teal-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="card-title">App Store Optimization</h3>
+                        <p class="card-description">
+                            Optimize your app for better visibility and higher download rates on app stores.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">App Store Optimization</h3>
-                    <p class="text-gray-600 mb-6">
-                        Optimize your app for better visibility and higher download rates on app stores.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            ASO Strategy
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            App Store Listing
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Performance Analytics
-                        </li>
-                    </ul>
-                    <button type="button" class="inline-flex items-center text-teal-600 font-semibold hover:text-teal-700 transition-colors" onclick="showModal()">
-                        Get Consultation
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
+                    <div class="card-content">
+                        <div class="service-tags service-tags-vertical">
+                            <span class="badge badge-primary">ASO Strategy</span>
+                            <span class="badge badge-primary">App Store Listing</span>
+                            <span class="badge badge-primary">Performance Analytics</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-outline btn-sm" onclick="showModal()">
+                            Get Consultation
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Our App Development -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
+    <section class="py-20 bg-gray-50" style="content-visibility: auto;">
+        <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-6">Why Choose Our App Development Services?</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -693,44 +1086,164 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+            <div class="accordion-container">
+                <!-- Native Performance -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3 class="accordion-title">Native Performance</h3>
+                        <div class="accordion-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">
+                                Apps built with native technologies for optimal performance and user experience across all devices. Our development team leverages the latest Swift and Kotlin frameworks to ensure your app runs smoothly and efficiently.
+                            </p>
+                            <div class="accordion-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Swift & Kotlin Development</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Optimized Code Architecture</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Fast Loading & Responsive UI</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Memory Efficient Performance</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Native Performance</h3>
-                    <p class="text-gray-600">Apps built with native technologies for optimal performance and user experience.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users text-white text-2xl"></i>
+                <!-- User-Centered Design -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="accordion-title">User-Centered Design</h3>
+                        <div class="accordion-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">
+                                Intuitive interfaces designed with user experience and engagement in mind for maximum usability. We conduct extensive user research and testing to create apps that users love to interact with.
+                            </p>
+                            <div class="accordion-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Comprehensive UX Research</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Intuitive User Interface Design</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>User Testing & Feedback Integration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Accessibility & Inclusive Design</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">User-Centered Design</h3>
-                    <p class="text-gray-600">Intuitive interfaces designed with user experience and engagement in mind.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-rocket text-white text-2xl"></i>
+                <!-- Fast Development -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="accordion-title">Fast Development</h3>
+                        <div class="accordion-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">
+                                Efficient development process using modern frameworks and best practices for quick delivery. Our agile methodology ensures rapid iteration and faster time-to-market for your app.
+                            </p>
+                            <div class="accordion-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Agile Development Methodology</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Modern Framework Integration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Rapid Prototyping & Iteration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Continuous Integration & Deployment</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Fast Development</h3>
-                    <p class="text-gray-600">Efficient development process using modern frameworks and best practices.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                <!-- Secure & Reliable -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="accordion-title">Secure & Reliable</h3>
+                        <div class="accordion-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">
+                                Built with security best practices and reliable app store deployment for peace of mind. We implement enterprise-grade security measures and provide ongoing support to ensure your app remains secure and stable.
+                            </p>
+                            <div class="accordion-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Enterprise-Grade Security</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>App Store Compliance Ready</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>24/7 Monitoring & Support</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Regular Security Updates</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Secure & Reliable</h3>
-                    <p class="text-gray-600">Built with security best practices and reliable app store deployment.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Development Process -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-white" style="content-visibility: auto;">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-6">Our App Development Process</h2>
@@ -739,57 +1252,126 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
-                        1
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <!-- Step 1: Discovery & Planning -->
+                <div class="timeline-item">
+                    <div class="timeline-card" data-step="1">
+                        <div class="card service-card">
+                            <div class="card-header">
+                                <div class="service-icon primary">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <h3 class="card-title">Discovery & Planning</h3>
+                                <p class="card-description">
+                                    We start by understanding your business goals, target audience, and app requirements to create a comprehensive development roadmap.
+                                </p>
+                            </div>
+                            <div class="card-content">
+                                <div class="service-tags">
+                                    <span class="badge badge-primary">Requirements Analysis</span>
+                                    <span class="badge badge-primary">Market Research</span>
+                                    <span class="badge badge-primary">Project Roadmap</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Discovery & Planning</h3>
-                    <p class="text-gray-600">Understand your app requirements and create a comprehensive development roadmap.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
-                        2
+                <!-- Step 2: Design & Prototyping -->
+                <div class="timeline-item">
+                    <div class="timeline-card" data-step="2">
+                        <div class="card service-card">
+                            <div class="card-header">
+                                <div class="service-icon primary">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h3 class="card-title">Design & Prototyping</h3>
+                                <p class="card-description">
+                                    Create wireframes, mockups, and interactive prototypes to visualize your app's user experience and interface design.
+                                </p>
+                            </div>
+                            <div class="card-content">
+                                <div class="service-tags">
+                                    <span class="badge badge-primary">Wireframing</span>
+                                    <span class="badge badge-primary">UI/UX Design</span>
+                                    <span class="badge badge-primary">Prototyping</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Design & Prototyping</h3>
-                    <p class="text-gray-600">Create wireframes, mockups, and interactive prototypes for your mobile app.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
-                        3
+                <!-- Step 3: Development & Testing -->
+                <div class="timeline-item">
+                    <div class="timeline-card" data-step="3">
+                        <div class="card service-card">
+                            <div class="card-header">
+                                <div class="service-icon primary">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h3 class="card-title">Development & Testing</h3>
+                                <p class="card-description">
+                                    Build your app using modern technologies and conduct comprehensive testing to ensure quality and performance.
+                                </p>
+                            </div>
+                            <div class="card-content">
+                                <div class="service-tags">
+                                    <span class="badge badge-primary">Agile Development</span>
+                                    <span class="badge badge-primary">Quality Assurance</span>
+                                    <span class="badge badge-primary">Performance Testing</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Development & Testing</h3>
-                    <p class="text-gray-600">Build your app with modern technologies and conduct comprehensive testing.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
-                        4
+                <!-- Step 4: Launch & Optimization -->
+                <div class="timeline-item">
+                    <div class="timeline-card" data-step="4">
+                        <div class="card service-card">
+                            <div class="card-header">
+                                <div class="service-icon primary">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h3 class="card-title">Launch & Optimization</h3>
+                                <p class="card-description">
+                                    Deploy your app to app stores and implement ongoing optimization strategies for better visibility and user engagement.
+                                </p>
+                            </div>
+                            <div class="card-content">
+                                <div class="service-tags">
+                                    <span class="badge badge-primary">App Store Deployment</span>
+                                    <span class="badge badge-primary">ASO Optimization</span>
+                                    <span class="badge badge-primary">Performance Monitoring</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Launch & Optimization</h3>
-                    <p class="text-gray-600">Deploy to app stores and optimize for better visibility and performance.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-purple-600 to-blue-600">
-        <div class="max-w-4xl mx-auto text-center px-4">
+    <section class="py-20 bg-gradient-to-r from-purple-600 to-blue-600" style="content-visibility: auto;">
+        <div class="max-w-4xl mx-auto text-center px-4" style="display: flex; flex-direction: column; align-items: center;">
             <h2 class="text-4xl font-bold text-white mb-6">Ready to Build Your App?</h2>
             <p class="text-xl text-purple-100 mb-8">
                 Get a free consultation and discover how we can create an exceptional mobile app that stands out in the app stores.
             </p>
-            <button type="button" id="contactConsultationBtn" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-                Get Free App Development Consultation
-            </button>
+            <div class="cta-buttons">
+                <button type="button" id="contactConsultationBtn" class="cta-button-primary">
+                    <i class="fas fa-rocket"></i>
+                    Get Free App Development Consultation
+                </button>
+            </div>
         </div>
     </section>
 
-    <!-- Consultation Modal -->
-    <div id="consultationModal" class="modal">
+    <!-- Consultation Modal - Optimized for performance -->
+    <div id="consultationModal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Get Your Free App Development Consultation</h2>
@@ -853,7 +1435,7 @@
                 <button type="submit" class="submit-btn brand-font">
                     <span class="btn-text">Get My App Development Proposal</span>
                     <span class="btn-loading" style="display: none;">
-                        <i class="fas fa-spinner fa-spin"></i> Sending...
+                        <span class="icon icon-spinner icon-spin"></span> Sending...
                     </span>
                 </button>
             </form>
@@ -863,8 +1445,8 @@
     <!-- Footer -->
     <div id="footer"></div>
     
-    <!-- Scripts -->
-    <script src="../../assets/js/main.js"></script>
+    <!-- Scripts - Deferred for better performance -->
+    <script src="../../assets/js/main.js" defer></script>
     <script>
         // Load navigation
         async function loadNavigation() {
@@ -890,6 +1472,25 @@
                 document.getElementById('footer').innerHTML = html;
             } catch (error) {
                 console.error('Error loading footer:', error);
+            }
+        }
+        
+        // Accordion functionality
+        function toggleAccordion(header) {
+            const accordionItem = header.parentElement;
+            const content = accordionItem.querySelector('.accordion-content');
+            const isActive = header.classList.contains('active');
+            
+            // Close all other accordion items
+            document.querySelectorAll('.accordion-header').forEach(h => {
+                h.classList.remove('active');
+                h.nextElementSibling.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                header.classList.add('active');
+                content.classList.add('active');
             }
         }
         
