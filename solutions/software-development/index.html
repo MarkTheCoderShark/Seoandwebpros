@@ -1050,7 +1050,6 @@
                     
                     <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
                         <div class="hero-buttons">
-                            <button type="button" id="heroConsultationBtn" class="hero-button-primary">Get Free Software Development Consultation</button>
                             <a href="#services" class="hero-button-secondary">Explore Our Services</a>
                         </div>
                     </div>
@@ -1656,15 +1655,7 @@
             loadFooter();
             
             // Add event listeners for consultation buttons
-            const heroBtn = document.getElementById('heroConsultationBtn');
             const contactBtn = document.getElementById('contactConsultationBtn');
-            
-            if (heroBtn) {
-                heroBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showModal();
-                });
-            }
             
             if (contactBtn) {
                 contactBtn.addEventListener('click', function(e) {
