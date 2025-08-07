@@ -1009,7 +1009,7 @@
                 
                 <div class="faq-container">
                     <div class="faq-item" style="border-bottom: 1px solid rgb(var(--border)); padding: 1.5rem 0;">
-                        <div class="faq-question" onclick="toggleFAQ(this)" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
                             <span style="font-weight: 600; font-size: 1.125rem;">How long does it take to design a website?</span>
                             <i class="fas fa-chevron-down faq-icon" style="transition: transform 0.3s ease;"></i>
                         </div>
@@ -1019,7 +1019,7 @@
                     </div>
                     
                     <div class="faq-item" style="border-bottom: 1px solid rgb(var(--border)); padding: 1.5rem 0;">
-                        <div class="faq-question" onclick="toggleFAQ(this)" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
                             <span style="font-weight: 600; font-size: 1.125rem;">Will my website be mobile-friendly?</span>
                             <i class="fas fa-chevron-down faq-icon" style="transition: transform 0.3s ease;"></i>
                         </div>
@@ -1029,7 +1029,7 @@
                     </div>
                     
                     <div class="faq-item" style="border-bottom: 1px solid rgb(var(--border)); padding: 1.5rem 0;">
-                        <div class="faq-question" onclick="toggleFAQ(this)" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
                             <span style="font-weight: 600; font-size: 1.125rem;">Do you provide ongoing support?</span>
                             <i class="fas fa-chevron-down faq-icon" style="transition: transform 0.3s ease;"></i>
                         </div>
@@ -1039,7 +1039,7 @@
                     </div>
                     
                     <div class="faq-item" style="border-bottom: 1px solid rgb(var(--border)); padding: 1.5rem 0;">
-                        <div class="faq-question" onclick="toggleFAQ(this)" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
                             <span style="font-weight: 600; font-size: 1.125rem;">Will my website be SEO-friendly?</span>
                             <i class="fas fa-chevron-down faq-icon" style="transition: transform 0.3s ease;"></i>
                         </div>
@@ -1199,9 +1199,15 @@
         
         // FAQ Toggle Function
         function toggleFAQ(element) {
+            console.log('toggleFAQ called with element:', element);
+            
             const faqItem = element.parentElement;
             const answer = faqItem.querySelector('.faq-answer');
             const icon = element.querySelector('.faq-icon');
+            
+            console.log('FAQ item:', faqItem);
+            console.log('Answer element:', answer);
+            console.log('Icon element:', icon);
             
             // Close all other FAQ items
             document.querySelectorAll('.faq-item').forEach(item => {
@@ -1221,24 +1227,34 @@
             
             // Toggle current FAQ item
             if (answer && icon) {
+                console.log('Current answer display:', answer.style.display);
                 if (answer.style.display === 'none' || !answer.style.display) {
+                    console.log('Opening FAQ answer');
                     answer.style.display = 'block';
                     answer.style.maxHeight = 'none';
                     answer.style.opacity = '1';
                     icon.style.transform = 'rotate(180deg)';
                 } else {
+                    console.log('Closing FAQ answer');
                     answer.style.display = 'none';
                     answer.style.maxHeight = '0';
                     answer.style.opacity = '0';
                     icon.style.transform = 'rotate(0deg)';
                 }
+            } else {
+                console.log('Missing answer or icon element!');
             }
         }
         
         // Initialize FAQ functionality
         function initializeFAQ() {
+            console.log('Initializing FAQ functionality...');
+            
             // Initially hide all FAQ answers
-            document.querySelectorAll('.faq-answer').forEach(answer => {
+            const faqAnswers = document.querySelectorAll('.faq-answer');
+            console.log('Found FAQ answers:', faqAnswers.length);
+            
+            faqAnswers.forEach(answer => {
                 answer.style.display = 'none';
                 answer.style.maxHeight = '0';
                 answer.style.opacity = '0';
@@ -1246,8 +1262,14 @@
             });
             
             // Add click handlers to FAQ questions
-            document.querySelectorAll('.faq-question').forEach(question => {
-                question.addEventListener('click', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            console.log('Found FAQ questions:', faqQuestions.length);
+            
+            faqQuestions.forEach((question, index) => {
+                console.log('Adding event listener to FAQ question', index);
+                question.addEventListener('click', function(e) {
+                    console.log('FAQ question clicked:', index);
+                    e.preventDefault();
                     toggleFAQ(this);
                 });
             });
