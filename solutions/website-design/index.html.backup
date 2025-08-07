@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Development Services | Professional Mobile App Development Company - SEO & Web Pros</title>
-    <meta name="description" content="Professional app development services. iOS app development, Android app development, cross-platform app development, PWA development, and app maintenance. Expert mobile app developers delivering high-quality applications.">
-    <meta name="keywords" content="app development, mobile app development, iOS development, Android development, cross-platform development, PWA development">
-    <link rel="canonical" href="https://seoandwebpros.com/solutions/app-development/">
-    <link rel="stylesheet" href="../../assets/css/optimized-ui.css">
+    <title>Website Development Services | Professional Web Development Company - SEO & Web Pros</title>
+    <meta name="description" content="Professional website development services. Custom web development, WordPress development, Shopify development, e-commerce solutions, and website maintenance. Expert web developers delivering scalable solutions.">
+    <meta name="keywords" content="website development, web development services, custom web development, WordPress development, Shopify development, e-commerce development">
+    <link rel="canonical" href="https://seoandwebpros.com/solutions/website-development/">
+    <link rel="stylesheet" href="../assets/css/optimized-ui.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- Schema Markup for App Development Services -->
+    <!-- Schema Markup for Website Development Services -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "App Development Services",
-      "description": "Professional app development services including iOS development, Android development, and cross-platform development.",
+      "name": "Website Development Services",
+      "description": "Professional website development services including custom web development, WordPress development, and e-commerce solutions.",
       "provider": {
         "@type": "Organization",
         "name": "SEO & Web Pros",
         "url": "https://seoandwebpros.com"
       },
-      "serviceType": "App Development",
+      "serviceType": "Web Development",
       "areaServed": "Worldwide"
     }
     </script>
@@ -33,202 +33,202 @@
     <div id="navigation"></div>
 
     <!-- Hero Section -->
-    <section class="hero bg-gradient-to-br from-purple-50 via-white to-gray-50">
+    <section class="hero bg-gradient-to-br from-indigo-50 via-white to-gray-50">
         <div class="hero-content">
             <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
-                Professional <span class="gradient-primary">App Development</span>
-                <br>Services That Stand Out
+                Professional <span class="gradient-primary">Website Development</span>
+                <br>Services That Drive Growth
             </h1>
             
             <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
-                Transform your ideas into exceptional mobile applications with our expert app development services. We create native iOS, Android, and cross-platform apps that deliver outstanding user experiences and drive business growth. From concept to app store launch, our mobile app development company ensures your app succeeds in the competitive marketplace.
+                Transform your business with custom website development services from industry experts. We create scalable, secure, and high-performance websites that convert visitors into customers. From custom web applications to e-commerce solutions, our web development company delivers results that matter.
             </p>
             
             <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
                 <button type="button" id="heroConsultationBtn" class="proposal-btn brand-font">
-                    Get Free App Development Consultation
+                    Get Free Development Consultation
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- App Development Services Overview -->
+    <!-- Website Development Services Overview -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6">Comprehensive App Development Services</h2>
+                <h2 class="text-4xl font-bold mb-6">Comprehensive Website Development Services</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Our app development specialists create high-quality mobile applications for iOS, Android, and cross-platform solutions.
+                    Our web development specialists create custom websites and web applications that drive business growth and deliver exceptional user experiences.
                 </p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- iOS App Development -->
+                <!-- Custom Web Development -->
                 <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
                     <div class="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fab fa-apple text-white text-2xl"></i>
+                        <i class="fas fa-code text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">iOS App Development</h3>
+                    <h3 class="text-2xl font-bold mb-4">Custom Web Development</h3>
                     <p class="text-gray-600 mb-6">
-                        Create native iOS applications using Swift and SwiftUI for iPhone and iPad devices.
+                        Build unique, scalable web applications tailored to your specific business needs and requirements.
                     </p>
                     <ul class="space-y-2 text-sm text-gray-600 mb-6">
                         <li class="flex items-center">
                             <i class="fas fa-check text-blue-600 mr-2"></i>
-                            Native Swift Development
+                            Custom Web Applications
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-blue-600 mr-2"></i>
-                            SwiftUI & UIKit
+                            Responsive Design
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-blue-600 mr-2"></i>
-                            App Store Optimization
+                            Performance Optimization
                         </li>
                     </ul>
-                    <a href="ios/ios-development.html" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                    <a href="custom/custom-development.html" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors">
                         Learn More
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
 
-                <!-- Android App Development -->
+                <!-- WordPress Development -->
                 <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
                     <div class="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fab fa-android text-white text-2xl"></i>
+                        <i class="fab fa-wordpress text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Android App Development</h3>
+                    <h3 class="text-2xl font-bold mb-4">WordPress Development</h3>
                     <p class="text-gray-600 mb-6">
-                        Build native Android applications using Kotlin and Jetpack Compose for Android devices.
+                        Create powerful WordPress websites with custom themes, plugins, and WooCommerce solutions.
                     </p>
                     <ul class="space-y-2 text-sm text-gray-600 mb-6">
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-600 mr-2"></i>
-                            Native Kotlin Development
+                            Custom WordPress Themes
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-600 mr-2"></i>
-                            Jetpack Compose
+                            Plugin Development
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-600 mr-2"></i>
-                            Google Play Optimization
+                            WooCommerce Solutions
                         </li>
                     </ul>
-                    <a href="android/android-development.html" class="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors">
+                    <a href="wordpress-development.html" class="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors">
                         Learn More
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
 
-                <!-- Cross-Platform Development -->
+                <!-- Shopify Development -->
                 <div class="bg-gradient-to-br from-purple-50 to-violet-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
                     <div class="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                        <i class="fab fa-shopify text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Cross-Platform Development</h3>
+                    <h3 class="text-2xl font-bold mb-4">Shopify Development</h3>
                     <p class="text-gray-600 mb-6">
-                        Build apps for both iOS and Android with a single codebase using React Native and Flutter.
+                        Build high-converting Shopify stores with custom themes, apps, and e-commerce optimization.
                     </p>
                     <ul class="space-y-2 text-sm text-gray-600 mb-6">
                         <li class="flex items-center">
                             <i class="fas fa-check text-purple-600 mr-2"></i>
-                            React Native
+                            Custom Shopify Themes
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-purple-600 mr-2"></i>
-                            Flutter Development
+                            Shopify App Development
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-purple-600 mr-2"></i>
-                            Code Reusability
+                            E-commerce Optimization
                         </li>
                     </ul>
-                    <a href="cross-platform/cross-platform-development.html" class="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 transition-colors">
+                    <a href="shopify-development.html" class="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 transition-colors">
                         Learn More
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
 
-                <!-- PWA Development -->
-                <div class="bg-gradient-to-br from-orange-50 to-amber-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-orange-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-globe text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">PWA Development</h3>
-                    <p class="text-gray-600 mb-6">
-                        Create Progressive Web Apps that work like native apps across all devices and platforms.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-orange-600 mr-2"></i>
-                            Offline Functionality
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-orange-600 mr-2"></i>
-                            Push Notifications
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-orange-600 mr-2"></i>
-                            App-Like Experience
-                        </li>
-                    </ul>
-                    <a href="pwa/" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition-colors">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-
-                <!-- App Maintenance -->
+                <!-- E-commerce Development -->
                 <div class="bg-gradient-to-br from-red-50 to-pink-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
                     <div class="w-16 h-16 bg-red-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-tools text-white text-2xl"></i>
+                        <i class="fas fa-shopping-cart text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">App Maintenance</h3>
+                    <h3 class="text-2xl font-bold mb-4">E-commerce Development</h3>
                     <p class="text-gray-600 mb-6">
-                        Keep your mobile apps updated, secure, and performing optimally with ongoing maintenance.
+                        Create powerful online stores with custom e-commerce solutions and payment integrations.
                     </p>
                     <ul class="space-y-2 text-sm text-gray-600 mb-6">
                         <li class="flex items-center">
                             <i class="fas fa-check text-red-600 mr-2"></i>
-                            Platform Updates
+                            Custom E-commerce Platforms
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-red-600 mr-2"></i>
-                            Bug Fixes
+                            Payment Integration
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-red-600 mr-2"></i>
-                            Performance Monitoring
+                            Inventory Management
                         </li>
                     </ul>
-                    <a href="maintenance/" class="inline-flex items-center text-red-600 font-semibold hover:text-red-700 transition-colors">
+                    <a href="ecommerce/" class="inline-flex items-center text-red-600 font-semibold hover:text-red-700 transition-colors">
                         Learn More
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
 
-                <!-- App Store Optimization -->
+                <!-- Website Maintenance -->
+                <div class="bg-gradient-to-br from-orange-50 to-amber-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-orange-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Website Maintenance</h3>
+                    <p class="text-gray-600 mb-6">
+                        Keep your website secure, updated, and performing optimally with ongoing maintenance services.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-orange-600 mr-2"></i>
+                            Security Updates
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-orange-600 mr-2"></i>
+                            Performance Monitoring
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-orange-600 mr-2"></i>
+                            Backup Management
+                        </li>
+                    </ul>
+                    <a href="maintenance/" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition-colors">
+                        Learn More
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Web Application Development -->
                 <div class="bg-gradient-to-br from-teal-50 to-cyan-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
                     <div class="w-16 h-16 bg-teal-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                        <i class="fas fa-laptop-code text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">App Store Optimization</h3>
+                    <h3 class="text-2xl font-bold mb-4">Web Applications</h3>
                     <p class="text-gray-600 mb-6">
-                        Optimize your app for better visibility and higher download rates on app stores.
+                        Build custom web applications that streamline your business processes and improve efficiency.
                     </p>
                     <ul class="space-y-2 text-sm text-gray-600 mb-6">
                         <li class="flex items-center">
                             <i class="fas fa-check text-teal-600 mr-2"></i>
-                            ASO Strategy
+                            Custom Web Apps
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-teal-600 mr-2"></i>
-                            App Store Listing
+                            API Development
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Performance Analytics
+                            Database Integration
                         </li>
                     </ul>
                     <button type="button" class="inline-flex items-center text-teal-600 font-semibold hover:text-teal-700 transition-colors" onclick="showModal()">
@@ -240,39 +240,39 @@
         </div>
     </section>
 
-    <!-- Why Choose Our App Development -->
+    <!-- Why Choose Our Web Development -->
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6">Why Choose Our App Development Services?</h2>
+                <h2 class="text-4xl font-bold mb-6">Why Choose Our Web Development Services?</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Our app development experts deliver high-quality, user-friendly applications that drive business success.
+                    Our web development experts deliver high-quality, scalable solutions that drive business growth.
                 </p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center">
                     <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                        <i class="fas fa-code text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Native Performance</h3>
-                    <p class="text-gray-600">Apps built with native technologies for optimal performance and user experience.</p>
+                    <h3 class="text-xl font-bold mb-2">Expert Development</h3>
+                    <p class="text-gray-600">Experienced developers using modern technologies and best practices.</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users text-white text-2xl"></i>
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">User-Centered Design</h3>
-                    <p class="text-gray-600">Intuitive interfaces designed with user experience and engagement in mind.</p>
+                    <h3 class="text-xl font-bold mb-2">Responsive Design</h3>
+                    <p class="text-gray-600">Websites that work perfectly on all devices and screen sizes.</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-rocket text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Fast Development</h3>
-                    <p class="text-gray-600">Efficient development process using modern frameworks and best practices.</p>
+                    <h3 class="text-xl font-bold mb-2">Fast Performance</h3>
+                    <p class="text-gray-600">Optimized websites that load quickly and provide excellent user experience.</p>
                 </div>
                 
                 <div class="text-center">
@@ -280,7 +280,7 @@
                         <i class="fas fa-shield-alt text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Secure & Reliable</h3>
-                    <p class="text-gray-600">Built with security best practices and reliable app store deployment.</p>
+                    <p class="text-gray-600">Built with security best practices and reliable hosting infrastructure.</p>
                 </div>
             </div>
         </div>
@@ -290,9 +290,9 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6">Our App Development Process</h2>
+                <h2 class="text-4xl font-bold mb-6">Our Web Development Process</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    A systematic approach to app development that ensures quality, performance, and app store success.
+                    A systematic approach to web development that ensures quality, performance, and success.
                 </p>
             </div>
             
@@ -302,7 +302,7 @@
                         1
                     </div>
                     <h3 class="text-xl font-bold mb-4">Discovery & Planning</h3>
-                    <p class="text-gray-600">Understand your app requirements and create a comprehensive development roadmap.</p>
+                    <p class="text-gray-600">Understand your requirements and create a comprehensive development plan.</p>
                 </div>
                 
                 <div class="text-center">
@@ -310,7 +310,7 @@
                         2
                     </div>
                     <h3 class="text-xl font-bold mb-4">Design & Prototyping</h3>
-                    <p class="text-gray-600">Create wireframes, mockups, and interactive prototypes for your mobile app.</p>
+                    <p class="text-gray-600">Create wireframes, mockups, and interactive prototypes for your website.</p>
                 </div>
                 
                 <div class="text-center">
@@ -318,29 +318,29 @@
                         3
                     </div>
                     <h3 class="text-xl font-bold mb-4">Development & Testing</h3>
-                    <p class="text-gray-600">Build your app with modern technologies and conduct comprehensive testing.</p>
+                    <p class="text-gray-600">Build your website with modern technologies and conduct comprehensive testing.</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
                         4
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Launch & Optimization</h3>
-                    <p class="text-gray-600">Deploy to app stores and optimize for better visibility and performance.</p>
+                    <h3 class="text-xl font-bold mb-4">Launch & Support</h3>
+                    <p class="text-gray-600">Deploy your website and provide ongoing maintenance and support.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-purple-600 to-blue-600">
+    <section class="py-20 bg-gradient-to-r from-indigo-600 to-blue-600">
         <div class="max-w-4xl mx-auto text-center px-4">
-            <h2 class="text-4xl font-bold text-white mb-6">Ready to Build Your App?</h2>
-            <p class="text-xl text-purple-100 mb-8">
-                Get a free consultation and discover how we can create an exceptional mobile app that stands out in the app stores.
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Build Your Website?</h2>
+            <p class="text-xl text-indigo-100 mb-8">
+                Get a free consultation and discover how we can create a website that drives business growth and delivers results.
             </p>
-            <button type="button" id="contactConsultationBtn" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-                Get Free App Development Consultation
+            <button type="button" id="contactConsultationBtn" class="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+                Get Free Development Consultation
             </button>
         </div>
     </section>
@@ -349,8 +349,8 @@
     <div id="consultationModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Get Your Free App Development Consultation</h2>
-            <p>Fill out the form below and we'll provide you with a comprehensive consultation for your app development project.</p>
+            <h2>Get Your Free Web Development Consultation</h2>
+            <p>Fill out the form below and we'll provide you with a comprehensive consultation for your web development project.</p>
             
             <form id="consultationForm" class="consultation-form">
                 <div class="form-group">
@@ -374,19 +374,20 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="website">Website (if any)</label>
+                    <label for="website">Current Website (if any)</label>
                     <input type="text" id="website" name="website" placeholder="https://yourwebsite.com">
                 </div>
                 
                 <div class="form-group">
-                    <label for="projectType">App Type</label>
+                    <label for="projectType">Project Type</label>
                     <select id="projectType" name="projectType">
-                        <option value="">Select app type...</option>
-                        <option value="iOS App Development">iOS App Development</option>
-                        <option value="Android App Development">Android App Development</option>
-                        <option value="Cross-Platform Development">Cross-Platform Development</option>
-                        <option value="PWA Development">PWA Development</option>
-                        <option value="App Maintenance">App Maintenance</option>
+                        <option value="">Select project type...</option>
+                        <option value="Custom Web Development">Custom Web Development</option>
+                        <option value="WordPress Development">WordPress Development</option>
+                        <option value="Shopify Development">Shopify Development</option>
+                        <option value="E-commerce Development">E-commerce Development</option>
+                        <option value="Web Application">Web Application</option>
+                        <option value="Website Maintenance">Website Maintenance</option>
                         <option value="Not Sure">Not Sure</option>
                     </select>
                 </div>
@@ -395,20 +396,20 @@
                     <label for="budget">Budget Range</label>
                     <select id="budget" name="budget">
                         <option value="">Select budget...</option>
-                        <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-                        <option value="$25,000 - $50,000">$25,000 - $50,000</option>
-                        <option value="$50,000 - $100,000">$50,000 - $100,000</option>
-                        <option value="$100,000+">$100,000+</option>
+                        <option value="$5,000 - $15,000">$5,000 - $15,000</option>
+                        <option value="$15,000 - $30,000">$15,000 - $30,000</option>
+                        <option value="$30,000 - $50,000">$30,000 - $50,000</option>
+                        <option value="$50,000+">$50,000+</option>
                     </select>
                 </div>
                 
                 <div class="form-group">
-                    <label for="message">App Requirements & Goals</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Describe your app idea, target audience, key features, and business goals..."></textarea>
+                    <label for="message">Project Requirements & Goals</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Describe your project requirements, business goals, target audience, and any specific features or functionality you need..."></textarea>
                 </div>
                 
                 <button type="submit" class="submit-btn brand-font">
-                    <span class="btn-text">Get My App Development Proposal</span>
+                    <span class="btn-text">Get My Development Proposal</span>
                     <span class="btn-loading" style="display: none;">
                         <i class="fas fa-spinner fa-spin"></i> Sending...
                     </span>
@@ -421,12 +422,12 @@
     <div id="footer"></div>
     
     <!-- Scripts -->
-    <script src="../../assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
     <script>
         // Load navigation
         async function loadNavigation() {
             try {
-                const response = await fetch('../../components/navigation.html');
+                const response = await fetch('../components/navigation.html');
                 const html = await response.text();
                 document.getElementById('navigation').innerHTML = html;
                 
@@ -439,21 +440,9 @@
             }
         }
         
-        // Load footer
-        async function loadFooter() {
-            try {
-                const response = await fetch('../../components/footer.html');
-                const html = await response.text();
-                document.getElementById('footer').innerHTML = html;
-            } catch (error) {
-                console.error('Error loading footer:', error);
-            }
-        }
-        
         // Load navigation when page loads
         document.addEventListener('DOMContentLoaded', function() {
             loadNavigation();
-            loadFooter();
             
             // Add event listeners for consultation buttons
             const heroBtn = document.getElementById('heroConsultationBtn');

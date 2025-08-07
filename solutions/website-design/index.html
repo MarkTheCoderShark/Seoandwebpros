@@ -11,6 +11,507 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!-- Critical CSS for Hero Section -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        :root {
+            --primary: 59 130 246;
+            --background: 249 250 251;
+            --foreground: 15 23 42;
+            --card: 255 255 255;
+            --border: 226 232 240;
+            --muted-foreground: 100 116 139;
+            --radius: 0.5rem;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        * { box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, rgb(var(--background)), rgb(var(--card)));
+            color: rgb(var(--foreground));
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8fafc, #ffffff);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgb(var(--primary) / 0.1), rgb(var(--primary) / 0.05));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Hero layout with CTA on right */
+        .hero-content-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .hero-main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+            min-height: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-left {
+            text-align: left;
+            padding-right: 2rem;
+        }
+
+        .hero-right {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            justify-self: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: rgb(var(--foreground));
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: rgb(var(--muted-foreground));
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            margin-bottom: 3rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .hero-button-primary {
+            background: rgb(var(--primary));
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .hero-button-primary:hover {
+            background: rgb(var(--primary) / 0.9);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-button-secondary {
+            background: transparent;
+            color: rgb(var(--primary));
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgb(var(--primary));
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .hero-button-secondary:hover {
+            background: rgb(var(--primary));
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .cta-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .cta-button {
+            background: white;
+            color: rgb(var(--primary));
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animations */
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-main-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+                min-height: auto;
+            }
+            
+            .hero-left {
+                text-align: center;
+                padding-right: 0;
+            }
+
+            .hero-right {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.125rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-button-primary,
+            .hero-button-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Enhanced Component Styles */
+        .card {
+            background: white;
+            border: 1px solid rgb(var(--border));
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: rgb(var(--primary) / 0.5);
+            transform: translateY(-2px);
+        }
+
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card-header {
+            text-align: center;
+        }
+
+        .service-icon {
+            width: 3rem;
+            height: 3rem;
+            background: rgb(var(--primary) / 0.1);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(var(--primary));
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        .service-icon.primary {
+            background: rgb(var(--primary) / 0.1);
+            color: rgb(var(--primary));
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: rgb(var(--foreground));
+        }
+
+        .card-description {
+            color: rgb(var(--muted-foreground));
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .card-content {
+            flex: 1;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .badge {
+            background: rgb(var(--primary) / 0.1);
+            color: rgb(var(--primary));
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid rgb(var(--primary) / 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .badge-primary {
+            background: rgb(var(--primary) / 0.1);
+            color: rgb(var(--primary));
+            border-color: rgb(var(--primary) / 0.2);
+        }
+
+        .badge:hover {
+            background: rgb(var(--primary) / 0.15);
+            transform: translateY(-1px);
+        }
+
+        .card-footer {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: rgb(var(--primary));
+            border: 1px solid rgb(var(--primary));
+        }
+
+        .btn-outline:hover {
+            background: rgb(var(--primary));
+            color: white;
+        }
+
+        .btn-sm {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.75rem;
+        }
+
+        /* Why Choose Us Cards */
+        .why-choose-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: white;
+            border-radius: 0.75rem;
+            border: 1px solid rgb(var(--border));
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .why-choose-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .why-choose-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .why-choose-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: rgb(var(--foreground));
+        }
+
+        .why-choose-description {
+            color: rgb(var(--muted-foreground));
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        /* Process Steps */
+        .process-step {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: white;
+            border-radius: 0.75rem;
+            border: 1px solid rgb(var(--border));
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .process-step:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .process-number {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .process-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: rgb(var(--foreground));
+        }
+
+        .process-description {
+            color: rgb(var(--muted-foreground));
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+    </style>
+    
     <!-- Schema Markup for Website Design Services -->
     <script type="application/ld+json">
     {
@@ -34,20 +535,40 @@
 
     <!-- Hero Section -->
     <section class="hero bg-gradient-to-br from-pink-50 via-white to-gray-50">
-        <div class="hero-content">
-            <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
-                Professional <span class="gradient-primary">Website Design</span>
-                <br>Services That Convert
-            </h1>
-            
-            <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
-                Transform your online presence with stunning, conversion-focused website designs that engage visitors and drive business growth. Our expert web designers create beautiful, user-centered designs that reflect your brand and deliver measurable results.
-            </p>
-            
-            <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
-                <button type="button" id="heroConsultationBtn" class="proposal-btn brand-font">
-                    Get Free Design Consultation
-                </button>
+        <!-- Background Elements -->
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        
+        <div class="hero-content-wrapper">
+            <div class="hero-main-content">
+                <div class="hero-left">
+                    <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
+                        Professional <span class="gradient-primary">Website Design</span> Services That Convert
+                    </h1>
+                    
+                    <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
+                        Transform your online presence with stunning, conversion-focused website designs that engage visitors and drive business growth. Our expert web designers create beautiful, user-centered designs that reflect your brand and deliver measurable results.
+                    </p>
+                    
+                    <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
+                        <div class="hero-buttons">
+                            <button type="button" id="heroConsultationBtn" class="hero-button-primary">Get a Free Consultation</button>
+                            <a href="#services" class="hero-button-secondary">Explore Our Services</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA Box positioned on right -->
+                <div class="hero-right animate-fade-in-up" style="animation-delay: 1s;">
+                    <div class="cta-box">
+                        <h3>Schedule a FREE Design Consultation & Brand Audit!</h3>
+                        <p>Speak to a design expert today.</p>
+                        <button type="button" class="cta-button" onclick="showModal()">Get a Free Consultation</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -56,185 +577,167 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6">Comprehensive Website Design Services</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold mb-4 text-gray-900">Comprehensive <span class="text-blue-600">Website Design</span> Services</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
                     Our web design specialists create beautiful, functional websites that engage visitors and drive conversions.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Custom Website Design -->
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-paint-brush text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="card-title">Custom Website Design</h3>
+                        <p class="card-description">
+                            Create unique, brand-focused website designs tailored to your business goals and target audience.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Custom Website Design</h3>
-                    <p class="text-gray-600 mb-6">
-                        Create unique, brand-focused website designs tailored to your business goals and target audience.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-blue-600 mr-2"></i>
-                            Brand-Centric Design
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-blue-600 mr-2"></i>
-                            User Experience Focus
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-blue-600 mr-2"></i>
-                            Conversion Optimization
-                        </li>
-                    </ul>
-                    <a href="custom/" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Brand-Centric Design</span>
+                            <span class="badge badge-primary">User Experience Focus</span>
+                            <span class="badge badge-primary">Conversion Optimization</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="custom/" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-
+                
                 <!-- WordPress Design -->
-                <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fab fa-wordpress text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fab fa-wordpress"></i>
+                        </div>
+                        <h3 class="card-title">WordPress Design</h3>
+                        <p class="card-description">
+                            Create stunning WordPress websites with custom themes and user-friendly content management.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">WordPress Design</h3>
-                    <p class="text-gray-600 mb-6">
-                        Create stunning WordPress websites with custom themes and user-friendly content management.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-600 mr-2"></i>
-                            Custom WordPress Themes
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-600 mr-2"></i>
-                            Content Management
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-600 mr-2"></i>
-                            SEO-Optimized Design
-                        </li>
-                    </ul>
-                    <a href="wordpress/" class="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Custom WordPress Themes</span>
+                            <span class="badge badge-primary">Content Management</span>
+                            <span class="badge badge-primary">SEO-Optimized Design</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="wordpress/" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-
+                
                 <!-- Shopify Design -->
-                <div class="bg-gradient-to-br from-purple-50 to-violet-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fab fa-shopify text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fab fa-shopify"></i>
+                        </div>
+                        <h3 class="card-title">Shopify Design</h3>
+                        <p class="card-description">
+                            Design high-converting Shopify stores that showcase your products and drive sales.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Shopify Design</h3>
-                    <p class="text-gray-600 mb-6">
-                        Design high-converting Shopify stores that showcase your products and drive sales.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-purple-600 mr-2"></i>
-                            Custom Shopify Themes
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-purple-600 mr-2"></i>
-                            Product Showcase
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-purple-600 mr-2"></i>
-                            Shopping Experience
-                        </li>
-                    </ul>
-                    <a href="shopify/" class="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 transition-colors">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Custom Shopify Themes</span>
+                            <span class="badge badge-primary">Product Showcase</span>
+                            <span class="badge badge-primary">Shopping Experience</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="shopify/" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-
+                
                 <!-- E-commerce Design -->
-                <div class="bg-gradient-to-br from-red-50 to-pink-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-red-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-shopping-cart text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3 class="card-title">E-commerce Design</h3>
+                        <p class="card-description">
+                            Create powerful e-commerce websites designed to maximize conversions and sales.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">E-commerce Design</h3>
-                    <p class="text-gray-600 mb-6">
-                        Create powerful e-commerce websites designed to maximize conversions and sales.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
-                            Product Catalog Design
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
-                            Shopping Cart Optimization
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-red-600 mr-2"></i>
-                            Checkout Process Design
-                        </li>
-                    </ul>
-                    <a href="ecommerce/" class="inline-flex items-center text-red-600 font-semibold hover:text-red-700 transition-colors">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Product Catalog Design</span>
+                            <span class="badge badge-primary">Shopping Cart Optimization</span>
+                            <span class="badge badge-primary">Checkout Process Design</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="ecommerce/" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-
+                
                 <!-- Website Redesign -->
-                <div class="bg-gradient-to-br from-orange-50 to-amber-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-orange-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-redo text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-redo"></i>
+                        </div>
+                        <h3 class="card-title">Website Redesign</h3>
+                        <p class="card-description">
+                            Transform your existing website with modern design, improved functionality, and better user experience.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Website Redesign</h3>
-                    <p class="text-gray-600 mb-6">
-                        Transform your existing website with modern design, improved functionality, and better user experience.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-orange-600 mr-2"></i>
-                            Modern Design Updates
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-orange-600 mr-2"></i>
-                            Improved User Experience
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-orange-600 mr-2"></i>
-                            Performance Optimization
-                        </li>
-                    </ul>
-                    <a href="redesign/" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition-colors">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Modern Design Updates</span>
+                            <span class="badge badge-primary">Improved User Experience</span>
+                            <span class="badge badge-primary">Performance Optimization</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="redesign/" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-
+                
                 <!-- UI/UX Design -->
-                <div class="bg-gradient-to-br from-teal-50 to-cyan-100 p-8 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-teal-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-users text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="card-title">UI/UX Design</h3>
+                        <p class="card-description">
+                            Create intuitive user interfaces and exceptional user experiences that engage and convert visitors.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">UI/UX Design</h3>
-                    <p class="text-gray-600 mb-6">
-                        Create intuitive user interfaces and exceptional user experiences that engage and convert visitors.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            User Interface Design
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            User Experience Design
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Wireframing & Prototyping
-                        </li>
-                    </ul>
-                    <button type="button" class="inline-flex items-center text-teal-600 font-semibold hover:text-teal-700 transition-colors" onclick="showModal()">
-                        Get Consultation
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">User Interface Design</span>
+                            <span class="badge badge-primary">User Experience Design</span>
+                            <span class="badge badge-primary">Wireframing & Prototyping</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-outline btn-sm" onclick="showModal()">
+                            Get Consultation
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -244,43 +747,43 @@
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6">Why Choose Our Website Design Services?</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold mb-4 text-gray-900">Why Choose Our <span class="text-blue-600">Website Design</span> Services?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
                     Our web design experts deliver beautiful, functional websites that drive business success and user engagement.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="why-choose-card">
+                    <div class="why-choose-icon bg-blue-600">
                         <i class="fas fa-palette text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Creative Excellence</h3>
-                    <p class="text-gray-600">Stunning designs that capture your brand essence and engage your audience.</p>
+                    <h3 class="why-choose-title">Creative Excellence</h3>
+                    <p class="why-choose-description">Stunning designs that capture your brand essence and engage your audience.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div class="why-choose-card">
+                    <div class="why-choose-icon bg-green-600">
                         <i class="fas fa-mobile-alt text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Responsive Design</h3>
-                    <p class="text-gray-600">Websites that look and function perfectly on all devices and screen sizes.</p>
+                    <h3 class="why-choose-title">Responsive Design</h3>
+                    <p class="why-choose-description">Websites that look and function perfectly on all devices and screen sizes.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div class="why-choose-card">
+                    <div class="why-choose-icon bg-purple-600">
                         <i class="fas fa-chart-line text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Conversion Focused</h3>
-                    <p class="text-gray-600">Designs optimized to convert visitors into customers and drive business growth.</p>
+                    <h3 class="why-choose-title">Conversion Focused</h3>
+                    <p class="why-choose-description">Designs optimized to convert visitors into customers and drive business growth.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div class="why-choose-card">
+                    <div class="why-choose-icon bg-orange-600">
                         <i class="fas fa-rocket text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Fast Performance</h3>
-                    <p class="text-gray-600">Optimized designs that load quickly and provide excellent user experience.</p>
+                    <h3 class="why-choose-title">Fast Performance</h3>
+                    <p class="why-choose-description">Optimized designs that load quickly and provide excellent user experience.</p>
                 </div>
             </div>
         </div>
@@ -290,56 +793,56 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6">Our Website Design Process</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold mb-4 text-gray-900">Our Website <span class="text-blue-600">Design Process</span></h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
                     A systematic approach to website design that ensures quality, creativity, and successful project delivery.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="process-step">
+                    <div class="process-number bg-blue-600">
                         1
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Discovery & Research</h3>
-                    <p class="text-gray-600">Understand your business, target audience, and design requirements through comprehensive research.</p>
+                    <h3 class="process-title">Discovery & Research</h3>
+                    <p class="process-description">Understand your business, target audience, and design requirements through comprehensive research.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                <div class="process-step">
+                    <div class="process-number bg-green-600">
                         2
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Wireframing & Design</h3>
-                    <p class="text-gray-600">Create wireframes, mockups, and visual designs that align with your brand and goals.</p>
+                    <h3 class="process-title">Wireframing & Design</h3>
+                    <p class="process-description">Create wireframes, mockups, and visual designs that align with your brand and goals.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                <div class="process-step">
+                    <div class="process-number bg-purple-600">
                         3
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Development & Testing</h3>
-                    <p class="text-gray-600">Build your website with modern technologies and conduct comprehensive testing.</p>
+                    <h3 class="process-title">Development & Testing</h3>
+                    <p class="process-description">Build your website with modern technologies and conduct comprehensive testing.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                <div class="process-step">
+                    <div class="process-number bg-orange-600">
                         4
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Launch & Optimization</h3>
-                    <p class="text-gray-600">Deploy your website and optimize for performance, SEO, and user experience.</p>
+                    <h3 class="process-title">Launch & Optimization</h3>
+                    <p class="process-description">Deploy your website and optimize for performance, SEO, and user experience.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-pink-600 to-purple-600">
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-blue-700">
         <div class="max-w-4xl mx-auto text-center px-4">
             <h2 class="text-4xl font-bold text-white mb-6">Ready to Design Your Website?</h2>
-            <p class="text-xl text-pink-100 mb-8">
+            <p class="text-xl text-blue-100 mb-8">
                 Get a free consultation and discover how we can create a stunning website that reflects your brand and drives business growth.
             </p>
-            <button type="button" id="contactConsultationBtn" class="bg-white text-pink-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <button type="button" id="contactConsultationBtn" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
                 Get Free Design Consultation
             </button>
         </div>
