@@ -3,17 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Development Services | Custom Software Solutions - SEO & Web Pros</title>
-    <meta name="description" content="Professional software development services. Custom software development, enterprise software, API development, cloud solutions, and software maintenance. Expert software developers delivering scalable business solutions.">
-    <meta name="keywords" content="software development, custom software, enterprise software, API development, cloud development, software solutions">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>Software Development Services | Professional Custom Software Development - SEO & Web Pros</title>
+    <meta name="description" content="Professional software development services. Custom software development, enterprise software, API development, cloud solutions, and software maintenance. Expert developers delivering scalable business solutions.">
+    <meta name="keywords" content="software development, custom software development, enterprise software, API development, cloud software, software maintenance">
     <link rel="canonical" href="https://seoandwebpros.com/solutions/software-development/">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Software Development Services",
+      "description": "Professional software development services including custom software, enterprise solutions, and API development.",
+      "provider": {
+        "@type": "Organization",
+        "name": "SEO & Web Pros",
+        "url": "https://seoandwebpros.com"
+      },
+      "serviceType": "Software Development",
+      "areaServed": "Worldwide"
+    }
+    </script>
+    
+    <!-- Resource hints for better performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="../../assets/css/optimized-ui.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+    
+    <!-- Load critical CSS immediately -->
     <link rel="stylesheet" href="../../assets/css/optimized-ui.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- Critical CSS for Template Styling -->
+    <!-- Critical CSS for Hero Section and Service Cards -->
     <style>
-        /* CSS Variables */
+        /* Critical CSS for above-the-fold content */
         :root {
             --primary: 59 130 246;
             --background: 249 250 251;
@@ -28,7 +57,7 @@
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
             --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
-
+        
         * { box-sizing: border-box; }
         
         body { 
@@ -116,21 +145,27 @@
         }
 
         .hero-left {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            text-align: left;
+            padding-right: 2rem;
+        }
+
+        .hero-right {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            justify-self: center;
         }
 
         .hero-title {
             font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.1;
+            line-height: 1.2;
+            margin-bottom: 2rem;
             color: rgb(var(--foreground));
-            margin: 0;
         }
 
         .gradient-primary {
-            background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--primary) / 0.8));
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -139,115 +174,159 @@
         .hero-description {
             font-size: 1.25rem;
             color: rgb(var(--muted-foreground));
-            line-height: 1.7;
-            margin: 0;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            line-height: 1.6;
         }
 
         .hero-actions {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+            margin-bottom: 3rem;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
+            justify-content: flex-start;
             flex-wrap: wrap;
         }
 
         .hero-button-primary {
             background: rgb(var(--primary));
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.875rem 2rem;
             border-radius: 0.75rem;
-            font-weight: 700;
-            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgb(var(--primary) / 0.3);
+            font-size: 1rem;
         }
 
         .hero-button-primary:hover {
             background: rgb(var(--primary) / 0.9);
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgb(var(--primary) / 0.3);
+            box-shadow: var(--shadow-lg);
         }
 
         .hero-button-secondary {
             background: transparent;
             color: rgb(var(--primary));
-            padding: 1rem 2rem;
+            padding: 0.875rem 2rem;
             border-radius: 0.75rem;
             font-weight: 600;
-            font-size: 1.125rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
             border: 2px solid rgb(var(--primary));
             cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
+            font-size: 1rem;
         }
 
         .hero-button-secondary:hover {
             background: rgb(var(--primary));
             color: white;
             transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
 
-        .hero-right {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .cta-box {
+        /* Service Cards */
+        .service-card {
             background: white;
-            padding: 2rem;
             border-radius: 1rem;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 300px;
-            width: 100%;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
-        .cta-box h3 {
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 4rem;
+            height: 4rem;
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             font-size: 1.5rem;
-            font-weight: 700;
-            color: rgb(var(--foreground));
-            margin-bottom: 1rem;
-        }
-
-        .cta-box p {
-            color: rgb(var(--muted-foreground));
             margin-bottom: 1.5rem;
         }
 
-        .cta-button {
-            background: rgb(var(--primary));
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgb(var(--foreground));
+        }
+
+        .service-description {
+            color: rgb(var(--muted-foreground));
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: rgb(var(--muted-foreground));
+            font-size: 0.875rem;
+        }
+
+        .service-features li i {
+            color: rgb(var(--primary));
+            margin-right: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        .service-link {
+            color: rgb(var(--primary));
             text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
             transition: all 0.3s ease;
-            display: inline-block;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .service-link:hover {
+            color: rgb(var(--primary) / 0.8);
+            transform: translateX(5px);
         }
 
-        /* Responsive hero */
+        .service-link i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-link:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Responsive Design */
         @media (max-width: 1024px) {
             .hero-main-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+            
+            .hero-left {
+                text-align: center;
+                padding-right: 0;
             }
             
             .hero-title {
@@ -268,763 +347,19 @@
                 font-size: 1.125rem;
             }
             
-            .hero-actions {
-                flex-direction: column;
-            }
-            
             .hero-buttons {
                 flex-direction: column;
+                align-items: center;
             }
             
             .hero-button-primary,
             .hero-button-secondary {
                 width: 100%;
                 max-width: 300px;
-            }
-        }
-
-        /* Service Cards - Matching App Development Template */
-        .card {
-            background: white;
-            border: 1px solid rgb(var(--border));
-            border-radius: var(--radius);
-            padding: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-            text-align: center;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-
-        .card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
-        }
-
-        .service-card {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            min-height: 400px;
-            position: relative;
-        }
-
-        .card-header {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .service-icon {
-            width: 4rem;
-            height: 4rem;
-            background: rgb(var(--primary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgb(var(--primary) / 0.3);
-        }
-
-        .service-icon.primary {
-            background: rgb(var(--primary));
-            color: white;
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: rgb(var(--foreground));
-            line-height: 1.2;
-        }
-
-        .card-description {
-            color: rgb(var(--muted-foreground));
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            min-height: 4.5rem;
-        }
-
-        .card-content {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: flex-start;
-        }
-
-        .service-tags {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            justify-content: flex-start;
-            align-items: center;
-            margin-bottom: 2rem;
-            min-height: 3rem;
-        }
-
-        .badge {
-            background: rgb(var(--primary));
-            color: white;
-            padding: 0.375rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            border: none;
-            transition: all 0.2s ease;
-            display: inline-block;
-            min-width: 120px;
-            text-align: center;
-            white-space: nowrap;
-        }
-
-        .badge-primary {
-            background: rgb(var(--primary));
-            color: white;
-            border: none;
-        }
-
-        .badge:hover {
-            background: rgb(var(--primary) / 0.9);
-            transform: translateY(-1px);
-        }
-
-        .card-footer {
-            text-align: center;
-            margin-top: auto;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius);
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            font-size: 0.875rem;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: rgb(var(--primary));
-            border: 2px solid rgb(var(--primary));
-            font-weight: 600;
-        }
-
-        .btn-outline:hover {
-            background: rgb(var(--primary));
-            color: white;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 6px -1px rgb(var(--primary) / 0.3);
-        }
-
-        .btn-sm {
-            padding: 0.5rem 1rem;
-            font-size: 0.875rem;
-        }
-
-        /* Horizontal Timeline Flow */
-        .timeline-container {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-
-        .timeline-line {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, rgb(var(--primary)), rgb(var(--primary) / 0.3));
-            z-index: 1;
-        }
-
-        .timeline-item {
-            position: relative;
-            z-index: 2;
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            padding: 0 1rem;
-        }
-
-        .timeline-card {
-            position: relative;
-            width: 100%;
-            max-width: 280px;
-            transition: all 0.3s ease;
-        }
-
-        .timeline-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .timeline-card .card {
-            border: 2px solid rgb(var(--border));
-            transition: all 0.3s ease;
-        }
-
-        .timeline-card:hover .card {
-            border-color: rgb(var(--primary));
-            box-shadow: 0 20px 25px -5px rgb(var(--primary) / 0.1);
-        }
-
-        /* Step numbers in top left corner */
-        .timeline-card {
-            position: relative;
-        }
-
-        .timeline-card::before {
-            content: attr(data-step);
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            width: 35px;
-            height: 35px;
-            background: rgb(var(--primary));
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            font-weight: 700;
-            z-index: 3;
-            box-shadow: 0 2px 4px -1px rgb(var(--primary) / 0.3);
-        }
-
-        /* Remove the timeline line */
-        .timeline-line {
-            display: none;
-        }
-
-        /* Responsive timeline */
-        @media (max-width: 1024px) {
-            .timeline-container {
-                flex-direction: column;
-                gap: 3rem;
-                padding: 2rem 0;
-            }
-
-            .timeline-line {
-                display: none;
-            }
-
-            .timeline-item {
-                width: 100%;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .timeline-item:not(:last-child)::after,
-            .timeline-item:not(:last-child)::before {
-                display: none;
-            }
-
-            .timeline-item:not(:last-child)::after {
-                content: '';
-                position: absolute;
-                bottom: -2rem;
-                left: 50%;
-                width: 2px;
-                height: 2rem;
-                background: rgb(var(--primary));
-                transform: translateX(-50%);
-            }
-
-            .timeline-item:not(:last-child)::before {
-                content: '↓';
-                position: absolute;
-                bottom: -2.5rem;
-                left: 50%;
-                color: rgb(var(--primary));
-                font-size: 1.25rem;
-                font-weight: 700;
-                transform: translateX(-50%);
-            }
-        }
-
-        @media (max-width: 640px) {
-            .timeline-item {
-                max-width: 100%;
-                padding: 0 0.5rem;
-            }
-            
-            .timeline-card {
-                max-width: 100%;
-            }
-        }
-
-        /* Interactive Accordion Styles */
-        .accordion-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .accordion-item {
-            background: white;
-            border: 1px solid rgb(var(--border));
-            border-radius: var(--radius);
-            margin-bottom: 1rem;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .accordion-item:hover {
-            box-shadow: var(--shadow-lg);
-        }
-
-        .accordion-header {
-            width: 100%;
-            padding: 1.5rem;
-            background: white;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: left;
-        }
-
-        .accordion-header:hover {
-            background: rgb(var(--background));
-        }
-
-        .accordion-header.active {
-            background: rgb(var(--primary) / 0.05);
-        }
-
-        .accordion-icon {
-            width: 3rem;
-            height: 3rem;
-            background: rgb(var(--primary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.25rem;
-            margin-right: 1rem;
-            flex-shrink: 0;
-        }
-
-        .accordion-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: rgb(var(--foreground));
-            margin: 0;
-            flex-grow: 1;
-        }
-
-        .accordion-arrow {
-            color: rgb(var(--primary));
-            font-size: 1rem;
-            transition: transform 0.3s ease;
-            flex-shrink: 0;
-        }
-
-        .accordion-header.active .accordion-arrow {
-            transform: rotate(180deg);
-        }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .accordion-content.active {
-            max-height: 500px;
-        }
-
-        .accordion-body {
-            padding: 0 1.5rem 1.5rem;
-        }
-
-        .accordion-description {
-            color: rgb(var(--muted-foreground));
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .accordion-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem;
-            background: rgb(var(--background));
-            border-radius: var(--radius);
-            transition: all 0.2s ease;
-        }
-
-        .feature-item:hover {
-            background: rgb(var(--primary) / 0.05);
-            transform: translateX(5px);
-        }
-
-        .feature-item i {
-            color: rgb(var(--primary));
-            font-size: 1rem;
-        }
-
-        .feature-item span {
-            font-weight: 500;
-            color: rgb(var(--foreground));
-        }
-
-        /* Responsive accordion */
-        @media (max-width: 768px) {
-            .accordion-features {
-                grid-template-columns: 1fr;
-            }
-            
-            .accordion-header {
-                padding: 1rem;
-            }
-            
-            .accordion-body {
-                padding: 0 1rem 1rem;
-            }
-        }
-
-        /* CTA Section Styling */
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            width: 100%;
-            text-align: center;
-            margin: 0 auto;
-        }
-
-        .cta-button-primary {
-            background: white;
-            color: rgb(var(--primary));
-            padding: 1rem 2rem;
-            border-radius: 0.75rem;
-            font-weight: 700;
-            font-size: 1.125rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .cta-button-primary:hover {
-            background: rgb(249, 250, 251);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        .cta-button-primary i,
-        .cta-button-secondary i {
-            font-size: 1rem;
-        }
-
-        /* Responsive CTA buttons */
-        @media (max-width: 640px) {
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            .cta-button-primary,
-            .cta-button-secondary {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
                 text-align: center;
             }
         }
-
-        /* Section Styling - Tailwind CSS equivalents */
-        .py-20 {
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-        }
-
-        .bg-white {
-            background-color: white;
-        }
-
-        .bg-gray-50 {
-            background-color: rgb(249, 250, 251);
-        }
-
-        .max-w-7xl {
-            max-width: 80rem;
-        }
-
-        .max-w-4xl {
-            max-width: 56rem;
-        }
-
-        .max-w-3xl {
-            max-width: 48rem;
-        }
-
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .px-4 {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .mb-16 {
-            margin-bottom: 4rem;
-        }
-
-        .mb-6 {
-            margin-bottom: 1.5rem;
-        }
-
-        .mb-8 {
-            margin-bottom: 2rem;
-        }
-
-        .text-4xl {
-            font-size: 2.25rem;
-            line-height: 2.5rem;
-        }
-
-        .text-xl {
-            font-size: 1.25rem;
-            line-height: 1.75rem;
-        }
-
-        .font-bold {
-            font-weight: 700;
-        }
-
-        .text-gray-600 {
-            color: rgb(75, 85, 99);
-        }
-
-        .grid {
-            display: grid;
-        }
-
-        .grid-cols-1 {
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-        }
-
-        .gap-8 {
-            gap: 2rem;
-        }
-
-        .gap-3 {
-            gap: 0.75rem;
-        }
-
-        /* Responsive grid */
-        @media (min-width: 768px) {
-            .md\:grid-cols-2 {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .lg\:grid-cols-3 {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-        }
-
-        @media (min-width: 1280px) {
-            .xl\:grid-cols-4 {
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-            }
-        }
-
-        /* Gradient backgrounds */
-        .bg-gradient-to-r {
-            background-image: linear-gradient(to right, var(--tw-gradient-stops));
-        }
-
-        .from-green-600 {
-            --tw-gradient-from: #059669;
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(5 150 105 / 0));
-        }
-
-        .to-blue-600 {
-            --tw-gradient-to: #2563eb;
-        }
-
-        .text-white {
-            color: white;
-        }
-
-        .text-green-100 {
-            color: rgb(220, 252, 231);
-        }
-
-        /* Animation classes */
-        .animate-fade-in-up {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Modal and Form Styling */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 2rem;
-            border-radius: 0.75rem;
-            width: 90%;
-            max-width: 600px;
-            position: relative;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            position: absolute;
-            right: 1rem;
-            top: 1rem;
-        }
-
-        .close:hover {
-            color: rgb(var(--foreground));
-        }
-
-        .consultation-form {
-            margin-top: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: rgb(var(--foreground));
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid rgb(var(--border));
-            border-radius: var(--radius);
-            font-size: 1rem;
-            transition: border-color 0.2s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: rgb(var(--primary));
-            box-shadow: 0 0 0 3px rgb(var(--primary) / 0.1);
-        }
-
-        .submit-btn {
-            background: rgb(var(--primary));
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: var(--radius);
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            width: 100%;
-        }
-
-        .submit-btn:hover {
-            background: rgb(var(--primary) / 0.9);
-            transform: translateY(-1px);
-        }
-
-        .brand-font {
-            font-family: 'Poppins', sans-serif;
-        }
     </style>
-    
-    <!-- Schema Markup for Software Development Services -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Software Development Services",
-      "description": "Professional software development services including custom software, enterprise solutions, and API development.",
-      "provider": {
-        "@type": "Organization",
-        "name": "SEO & Web Pros",
-        "url": "https://seoandwebpros.com"
-      },
-      "serviceType": "Software Development",
-      "areaServed": "Worldwide"
-    }
-    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -1032,7 +367,6 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <!-- Background Elements -->
         <div class="hero-background">
             <div class="floating-shape shape-1"></div>
             <div class="floating-shape shape-2"></div>
@@ -1042,209 +376,33 @@
         <div class="hero-content-wrapper">
             <div class="hero-main-content">
                 <div class="hero-left">
-                    <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <h1 class="hero-title">
                         Professional <span class="gradient-primary">Software Development</span>
-                        <br>Solutions That Scale
+                        <br>Services That Scale
                     </h1>
                     
-                    <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
-                        Transform your business with custom software solutions designed to streamline operations, improve efficiency, and drive growth. Our expert software developers create scalable, secure, and innovative applications that solve complex business challenges and deliver measurable results.
+                    <p class="hero-description">
+                        Transform your business with custom software solutions that streamline operations, improve efficiency, and drive growth. Our expert developers create scalable, secure, and innovative software applications tailored to your unique business needs.
                     </p>
                     
-                    <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <div class="hero-actions">
                         <div class="hero-buttons">
-                            <a href="#services" class="hero-button-secondary">Explore Our Services</a>
+                            <button type="button" id="heroConsultationBtn" class="hero-button-primary">
+                                Get Free Development Consultation
+                            </button>
+                            <a href="#services" class="hero-button-secondary">
+                                Explore Our Services
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- CTA Box positioned on right -->
-                <div class="hero-right animate-fade-in-up" style="animation-delay: 1s;">
-                    <div class="cta-box">
-                        <h3>Schedule a FREE Software Development Consultation!</h3>
+                <div class="hero-right">
+                    <div class="hero-cta-card">
+                        <h3>Schedule a FREE Development Consultation!</h3>
                         <p>Speak to a software development expert today.</p>
-                        <button type="button" class="cta-button" onclick="showModal()">Get a Free Consultation</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Software Development Services Overview -->
-    <section class="py-20 bg-white" style="content-visibility: auto;">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6">Comprehensive Software Development Services</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Our software development specialists create custom solutions that address your unique business needs and drive operational excellence.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 services-grid-container" style="display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem;">
-                <style>
-                    @media (min-width: 768px) {
-                        .services-grid-container {
-                            grid-template-columns: repeat(2, 1fr) !important;
-                        }
-                    }
-                    @media (min-width: 1024px) {
-                        .services-grid-container {
-                            grid-template-columns: repeat(3, 1fr) !important;
-                        }
-                    }
-                </style>
-                <!-- Custom Software Development -->
-                <div class="card service-card">
-                    <div class="card-header">
-                        <div class="service-icon primary">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h3 class="card-title">Custom Software Development</h3>
-                        <p class="card-description">
-                            Build tailored software solutions that address your specific business requirements and workflows.
-                        </p>
-                    </div>
-                    <div class="card-content">
-                        <div class="service-tags">
-                            <span class="badge badge-primary">Business Process Automation</span>
-                            <span class="badge badge-primary">Custom Applications</span>
-                            <span class="badge badge-primary">Workflow Management</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="custom/" class="btn btn-outline btn-sm">
-                            Learn More
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Enterprise Software Development -->
-                <div class="card service-card">
-                    <div class="card-header">
-                        <div class="service-icon primary">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h3 class="card-title">Enterprise Software Development</h3>
-                        <p class="card-description">
-                            Create robust enterprise-grade software solutions for large organizations and complex business environments.
-                        </p>
-                    </div>
-                    <div class="card-content">
-                        <div class="service-tags">
-                            <span class="badge badge-primary">Enterprise Resource Planning</span>
-                            <span class="badge badge-primary">Customer Relationship Management</span>
-                            <span class="badge badge-primary">Business Intelligence</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="enterprise/" class="btn btn-outline btn-sm">
-                            Learn More
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- API Development -->
-                <div class="card service-card">
-                    <div class="card-header">
-                        <div class="service-icon primary">
-                            <i class="fas fa-plug"></i>
-                        </div>
-                        <h3 class="card-title">API Development</h3>
-                        <p class="card-description">
-                            Build robust APIs and microservices that enable seamless integration between systems and applications.
-                        </p>
-                    </div>
-                    <div class="card-content">
-                        <div class="service-tags">
-                            <span class="badge badge-primary">RESTful APIs</span>
-                            <span class="badge badge-primary">GraphQL APIs</span>
-                            <span class="badge badge-primary">Microservices Architecture</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="api/" class="btn btn-outline btn-sm">
-                            Learn More
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Cloud Development -->
-                <div class="card service-card">
-                    <div class="card-header">
-                        <div class="service-icon primary">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3 class="card-title">Cloud Development</h3>
-                        <p class="card-description">
-                            Develop cloud-native applications and migrate existing systems to cloud platforms for scalability and cost efficiency.
-                        </p>
-                    </div>
-                    <div class="card-content">
-                        <div class="service-tags">
-                            <span class="badge badge-primary">Cloud-Native Applications</span>
-                            <span class="badge badge-primary">Cloud Migration</span>
-                            <span class="badge badge-primary">Serverless Architecture</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="cloud/" class="btn btn-outline btn-sm">
-                            Learn More
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Software Maintenance -->
-                <div class="card service-card">
-                    <div class="card-header">
-                        <div class="service-icon primary">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3 class="card-title">Software Maintenance</h3>
-                        <p class="card-description">
-                            Ensure your software systems remain secure, updated, and performing optimally with ongoing maintenance services.
-                        </p>
-                    </div>
-                    <div class="card-content">
-                        <div class="service-tags">
-                            <span class="badge badge-primary">Bug Fixes & Updates</span>
-                            <span class="badge badge-primary">Security Patches</span>
-                            <span class="badge badge-primary">Performance Optimization</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="maintenance/" class="btn btn-outline btn-sm">
-                            Learn More
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Database Development -->
-                <div class="card service-card">
-                    <div class="card-header">
-                        <div class="service-icon primary">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3 class="card-title">Database Development</h3>
-                        <p class="card-description">
-                            Design and implement robust database solutions that efficiently store, manage, and retrieve your business data.
-                        </p>
-                    </div>
-                    <div class="card-content">
-                        <div class="service-tags">
-                            <span class="badge badge-primary">Database Design</span>
-                            <span class="badge badge-primary">Data Migration</span>
-                            <span class="badge badge-primary">Performance Tuning</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-outline btn-sm" onclick="showModal()">
-                            Get Consultation
-                            <i class="fas fa-arrow-right"></i>
+                        <button type="button" id="heroCtaBtn" class="hero-button-primary">
+                            Get a Free Consultation
                         </button>
                     </div>
                 </div>
@@ -1252,276 +410,222 @@
         </div>
     </section>
 
-    <!-- Why Choose Our Software Development -->
-    <section class="py-20 bg-gray-50" style="content-visibility: auto;">
-        <div class="max-w-4xl mx-auto px-4">
+    <!-- Comprehensive Software Development Services -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6">Why Choose Our Software Development Services?</h2>
+                <h2 class="text-4xl font-bold mb-6">Comprehensive Software Development Services</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Our software development experts deliver high-quality, scalable solutions that drive business success and operational efficiency.
+                    Our software development specialists create custom solutions that streamline business processes, improve efficiency, and drive measurable results across all industries.
                 </p>
             </div>
             
-            <div class="accordion-container">
-                <!-- Expert Development -->
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <div class="accordion-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3 class="accordion-title">Expert Development</h3>
-                        <div class="accordion-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p class="accordion-description">
-                                Experienced developers using modern technologies and industry best practices. Our team consists of certified professionals with expertise in the latest development frameworks and methodologies.
-                            </p>
-                            <div class="accordion-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Certified Developers</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Modern Technologies</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Industry Best Practices</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Continuous Learning</span>
-                                </div>
-                            </div>
-                        </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Custom Software Development -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-desktop"></i>
                     </div>
+                    <h3 class="service-title">Custom Software Development</h3>
+                    <p class="service-description">
+                        Build tailored software solutions designed specifically for your business processes and unique requirements.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Business Process Automation</li>
+                        <li><i class="fas fa-check"></i>Custom Workflow Solutions</li>
+                        <li><i class="fas fa-check"></i>Scalable Architecture</li>
+                        <li><i class="fas fa-check"></i>Integration Capabilities</li>
+                    </ul>
+                    <a href="/solutions/software-development/custom/" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                
-                <!-- Scalable Solutions -->
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <div class="accordion-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3 class="accordion-title">Scalable Solutions</h3>
-                        <div class="accordion-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p class="accordion-description">
-                                Software designed to grow with your business and handle increasing demands. We build scalable architectures that can accommodate your business growth and evolving requirements.
-                            </p>
-                            <div class="accordion-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Scalable Architecture</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Performance Optimization</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Future-Proof Design</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Load Balancing</span>
-                                </div>
-                            </div>
-                        </div>
+
+                <!-- Enterprise Software -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
                     </div>
+                    <h3 class="service-title">Enterprise Software</h3>
+                    <p class="service-description">
+                        Develop robust enterprise-grade software solutions that handle complex business operations and large-scale deployments.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Enterprise Resource Planning</li>
+                        <li><i class="fas fa-check"></i>Customer Relationship Management</li>
+                        <li><i class="fas fa-check"></i>Business Intelligence Tools</li>
+                        <li><i class="fas fa-check"></i>Multi-tenant Architecture</li>
+                    </ul>
+                    <a href="/solutions/software-development/enterprise/" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                
-                <!-- Secure & Reliable -->
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <div class="accordion-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3 class="accordion-title">Secure & Reliable</h3>
-                        <div class="accordion-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p class="accordion-description">
-                                Built with security best practices and robust error handling for reliability. We prioritize security and reliability in every aspect of our software development process.
-                            </p>
-                            <div class="accordion-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Security Best Practices</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Robust Error Handling</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Data Protection</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Regular Security Audits</span>
-                                </div>
-                            </div>
-                        </div>
+
+                <!-- API Development -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plug"></i>
                     </div>
+                    <h3 class="service-title">API Development</h3>
+                    <p class="service-description">
+                        Create powerful APIs that enable seamless integration between systems and provide data access for mobile and web applications.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>RESTful API Design</li>
+                        <li><i class="fas fa-check"></i>GraphQL Development</li>
+                        <li><i class="fas fa-check"></i>API Documentation</li>
+                        <li><i class="fas fa-check"></i>Security & Authentication</li>
+                    </ul>
+                    <a href="/solutions/software-development/api/" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                
-                <!-- User-Centered Design -->
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <div class="accordion-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="accordion-title">User-Centered Design</h3>
-                        <div class="accordion-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p class="accordion-description">
-                                Intuitive interfaces designed with end-user experience and business workflows in mind. We create software that users love to use and that enhances productivity.
-                            </p>
-                            <div class="accordion-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Intuitive UI/UX</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>User Research</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Workflow Optimization</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Accessibility Standards</span>
-                                </div>
-                            </div>
-                        </div>
+
+                <!-- Cloud Software Solutions -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
                     </div>
+                    <h3 class="service-title">Cloud Software Solutions</h3>
+                    <p class="service-description">
+                        Build cloud-native applications that leverage the power of cloud computing for scalability, reliability, and cost-effectiveness.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Cloud-Native Development</li>
+                        <li><i class="fas fa-check"></i>Microservices Architecture</li>
+                        <li><i class="fas fa-check"></i>Container Orchestration</li>
+                        <li><i class="fas fa-check"></i>Serverless Applications</li>
+                    </ul>
+                    <a href="/solutions/software-development/cloud/" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Software Maintenance -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="service-title">Software Maintenance</h3>
+                    <p class="service-description">
+                        Ensure your software applications remain secure, up-to-date, and perform optimally with comprehensive maintenance services.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Bug Fixes & Updates</li>
+                        <li><i class="fas fa-check"></i>Security Patches</li>
+                        <li><i class="fas fa-check"></i>Performance Optimization</li>
+                        <li><i class="fas fa-check"></i>Feature Enhancements</li>
+                    </ul>
+                    <a href="/solutions/software-development/maintenance/" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Software Consulting -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Software Consulting</h3>
+                    <p class="service-description">
+                        Get expert guidance on software architecture, technology selection, and development strategy to ensure project success.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Architecture Planning</li>
+                        <li><i class="fas fa-check"></i>Technology Assessment</li>
+                        <li><i class="fas fa-check"></i>Development Strategy</li>
+                        <li><i class="fas fa-check"></i>Project Management</li>
+                    </ul>
+                    <a href="#consultation" class="service-link">
+                        Get Consultation <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Development Process -->
-    <section class="py-20 bg-white" style="content-visibility: auto;">
+    <!-- Why Choose Our Software Development Services -->
+    <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6">Our Software Development Process</h2>
+                <h2 class="text-4xl font-bold mb-6">Why Choose Our Software Development Services?</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    A systematic approach to software development that ensures quality, performance, and successful project delivery.
+                    Our software development experts deliver high-quality, scalable solutions that drive business efficiency and growth.
                 </p>
             </div>
             
-            <div class="timeline-container">
-                <div class="timeline-line"></div>
-                
-                <!-- Step 1: Requirements Analysis -->
-                <div class="timeline-item">
-                    <div class="timeline-card" data-step="1">
-                        <div class="card service-card">
-                            <div class="card-header">
-                                <div class="service-icon primary">
-                                    <i class="fas fa-search"></i>
-                                </div>
-                                <h3 class="card-title">Requirements Analysis</h3>
-                                <p class="card-description">
-                                    Understand your business needs and create detailed software requirements and specifications for optimal project planning.
-                                </p>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Software Development Benefits</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
                             </div>
-                            <div class="card-content">
-                                <div class="service-tags">
-                                    <span class="badge badge-primary">Business Analysis</span>
-                                    <span class="badge badge-primary">Requirements Gathering</span>
-                                    <span class="badge badge-primary">Project Planning</span>
-                                </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Custom Solutions</h4>
+                                <p class="text-gray-600">Tailored software designed specifically for your business processes and unique requirements.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Scalable Architecture</h4>
+                                <p class="text-gray-600">Built with scalability in mind to grow with your business and handle increased demands.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Security & Compliance</h4>
+                                <p class="text-gray-600">Enterprise-grade security measures and compliance with industry standards and regulations.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Ongoing Support</h4>
+                                <p class="text-gray-600">Comprehensive maintenance and support services to ensure optimal performance and reliability.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Step 2: Design & Architecture -->
-                <div class="timeline-item">
-                    <div class="timeline-card" data-step="2">
-                        <div class="card service-card">
-                            <div class="card-header">
-                                <div class="service-icon primary">
-                                    <i class="fas fa-palette"></i>
-                                </div>
-                                <h3 class="card-title">Design & Architecture</h3>
-                                <p class="card-description">
-                                    Create system architecture, database design, and user interface mockups for your software solution.
-                                </p>
-                            </div>
-                            <div class="card-content">
-                                <div class="service-tags">
-                                    <span class="badge badge-primary">System Architecture</span>
-                                    <span class="badge badge-primary">Database Design</span>
-                                    <span class="badge badge-primary">UI/UX Design</span>
-                                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6">Our Development Process</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">1</div>
+                            <div>
+                                <h4 class="font-semibold">Requirements Analysis</h4>
+                                <p class="text-gray-600 text-sm">Understanding your business needs and technical requirements</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Step 3: Development & Testing -->
-                <div class="timeline-item">
-                    <div class="timeline-card" data-step="3">
-                        <div class="card service-card">
-                            <div class="card-header">
-                                <div class="service-icon primary">
-                                    <i class="fas fa-code"></i>
-                                </div>
-                                <h3 class="card-title">Development & Testing</h3>
-                                <p class="card-description">
-                                    Build your software with modern technologies and conduct comprehensive testing to ensure quality and reliability.
-                                </p>
-                            </div>
-                            <div class="card-content">
-                                <div class="service-tags">
-                                    <span class="badge badge-primary">Agile Development</span>
-                                    <span class="badge badge-primary">Quality Assurance</span>
-                                    <span class="badge badge-primary">Testing</span>
-                                </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">2</div>
+                            <div>
+                                <h4 class="font-semibold">Design & Architecture</h4>
+                                <p class="text-gray-600 text-sm">Creating system architecture and user interface designs</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Step 4: Deployment & Support -->
-                <div class="timeline-item">
-                    <div class="timeline-card" data-step="4">
-                        <div class="card service-card">
-                            <div class="card-header">
-                                <div class="service-icon primary">
-                                    <i class="fas fa-rocket"></i>
-                                </div>
-                                <h3 class="card-title">Deployment & Support</h3>
-                                <p class="card-description">
-                                    Deploy your software and provide ongoing maintenance, updates, and technical support for long-term success.
-                                </p>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">3</div>
+                            <div>
+                                <h4 class="font-semibold">Development & Testing</h4>
+                                <p class="text-gray-600 text-sm">Building and thoroughly testing the software solution</p>
                             </div>
-                            <div class="card-content">
-                                <div class="service-tags">
-                                    <span class="badge badge-primary">Deployment</span>
-                                    <span class="badge badge-primary">Maintenance</span>
-                                    <span class="badge badge-primary">Technical Support</span>
-                                </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">4</div>
+                            <div>
+                                <h4 class="font-semibold">Deployment & Support</h4>
+                                <p class="text-gray-600 text-sm">Launching the solution and providing ongoing support</p>
                             </div>
                         </div>
                     </div>
@@ -1531,162 +635,93 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-green-600 to-blue-600" style="content-visibility: auto;">
-        <div class="max-w-4xl mx-auto text-center px-4">
-            <h2 class="text-4xl font-bold text-white mb-6">Ready to Build Your Software Solution?</h2>
-            <p class="text-xl text-green-100 mb-8">
-                Get a free consultation and discover how we can create custom software that transforms your business operations and drives growth.
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Build Your Custom Software?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Let's discuss your software requirements and create a solution that streamlines your business operations and drives growth.
             </p>
-            <div style="display: flex; flex-direction: column; align-items: center;">
-                <div class="cta-buttons">
-                    <button type="button" id="contactConsultationBtn" class="cta-button-primary">
-                        Get Free Software Development Consultation
-                        <i class="fas fa-arrow-right"></i>
+            <button type="button" id="ctaConsultationBtn" class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
+                Start Your Software Project
+            </button>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Common questions about software development services
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none">
+                        <h3 class="text-lg font-semibold text-gray-900">How much does custom software development cost?</h3>
                     </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Custom software development costs vary based on complexity, features, and timeline. Simple applications start at $15,000, while complex enterprise solutions can range from $50,000 to $200,000+. We provide detailed quotes after understanding your specific requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none">
+                        <h3 class="text-lg font-semibold text-gray-900">How long does software development take?</h3>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Development timelines depend on project scope and complexity. Simple applications take 6-12 weeks, while complex enterprise solutions can take 4-8 months. We use agile methodologies to deliver working features incrementally.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none">
+                        <h3 class="text-lg font-semibold text-gray-900">Do you provide ongoing maintenance and support?</h3>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Yes, we offer comprehensive maintenance and support packages including bug fixes, security updates, performance optimization, and feature enhancements to ensure your software continues to perform optimally.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Consultation Modal -->
-    <div id="consultationModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Get Your Free Software Development Consultation</h2>
-            <p>Fill out the form below and we'll provide you with a comprehensive consultation for your software development project.</p>
-            
-            <form id="consultationForm" class="consultation-form">
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="555-123-4567" maxlength="12">
-                </div>
-                
-                <div class="form-group">
-                    <label for="company">Company Name</label>
-                    <input type="text" id="company" name="company">
-                </div>
-                
-                <div class="form-group">
-                    <label for="website">Website (if any)</label>
-                    <input type="text" id="website" name="website" placeholder="https://yourwebsite.com">
-                </div>
-                
-                <div class="form-group">
-                    <label for="projectType">Software Type</label>
-                    <select id="projectType" name="projectType">
-                        <option value="">Select software type...</option>
-                        <option value="Custom Software Development">Custom Software Development</option>
-                        <option value="Enterprise Software">Enterprise Software</option>
-                        <option value="API Development">API Development</option>
-                        <option value="Cloud Development">Cloud Development</option>
-                        <option value="Software Maintenance">Software Maintenance</option>
-                        <option value="Not Sure">Not Sure</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="budget">Budget Range</label>
-                    <select id="budget" name="budget">
-                        <option value="">Select budget...</option>
-                        <option value="$15,000 - $50,000">$15,000 - $50,000</option>
-                        <option value="$50,000 - $100,000">$50,000 - $100,000</option>
-                        <option value="$100,000 - $250,000">$100,000 - $250,000</option>
-                        <option value="$250,000+">$250,000+</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Software Requirements & Goals</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Describe your software needs, business processes, target users, and goals..."></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn brand-font">
-                    <span class="btn-text">Get My Software Development Proposal</span>
-                    <span class="btn-loading" style="display: none;">
-                        <i class="fas fa-spinner fa-spin"></i> Sending...
-                    </span>
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <div id="footer"></div>
-    
-    <!-- Scripts -->
-    <script src="../../assets/js/main.js"></script>
-    <script>
-        // Load navigation and footer
-        async function loadNavigation() {
-            try {
-                const response = await fetch('../../components/navigation.html');
-                const html = await response.text();
-                document.getElementById('navigation').innerHTML = html;
-                
-                // Initialize navigation after loading
-                if (typeof initializeNavigation === 'function') {
-                    initializeNavigation();
-                }
-            } catch (error) {
-                console.error('Error loading navigation:', error);
-            }
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does custom software development cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom software development costs vary based on complexity, features, and timeline. Simple applications start at $15,000, while complex enterprise solutions can range from $50,000 to $200,000+. We provide detailed quotes after understanding your specific requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does software development take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Development timelines depend on project scope and complexity. Simple applications take 6-12 weeks, while complex enterprise solutions can take 4-8 months. We use agile methodologies to deliver working features incrementally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide ongoing maintenance and support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer comprehensive maintenance and support packages including bug fixes, security updates, performance optimization, and feature enhancements to ensure your software continues to perform optimally."
+          }
         }
-        
-        async function loadFooter() {
-            try {
-                const response = await fetch('../../components/footer.html');
-                const html = await response.text();
-                document.getElementById('footer').innerHTML = html;
-            } catch (error) {
-                console.error('Error loading footer:', error);
-            }
-        }
-        
-        // Load navigation and footer when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            loadNavigation();
-            loadFooter();
-            
-            // Add event listeners for consultation buttons
-            const contactBtn = document.getElementById('contactConsultationBtn');
-            
-            if (contactBtn) {
-                contactBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showModal();
-                });
-            }
-        });
-
-        // Accordion functionality
-        function toggleAccordion(header) {
-            const accordionItem = header.parentElement;
-            const content = accordionItem.querySelector('.accordion-content');
-            const isActive = header.classList.contains('active');
-            
-            // Close all other accordion items
-            const allHeaders = document.querySelectorAll('.accordion-header');
-            const allContents = document.querySelectorAll('.accordion-content');
-            
-            allHeaders.forEach(h => h.classList.remove('active'));
-            allContents.forEach(c => c.classList.remove('active'));
-            
-            // Toggle current item
-            if (!isActive) {
-                header.classList.add('active');
-                content.classList.add('active');
-            }
-        }
+      ]
+    }
     </script>
+
+    <script src="../../assets/js/main.js" defer></script>
 </body>
 </html> 

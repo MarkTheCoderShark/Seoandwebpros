@@ -10,6 +10,23 @@
     <meta name="keywords" content="website design, web design services, custom web design, WordPress design, Shopify design, e-commerce design, website redesign">
     <link rel="canonical" href="https://seoandwebpros.com/solutions/website-design/">
     
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Website Design Services",
+      "description": "Professional website design services including custom design, WordPress design, and e-commerce design.",
+      "provider": {
+        "@type": "Organization",
+        "name": "SEO & Web Pros",
+        "url": "https://seoandwebpros.com"
+      },
+      "serviceType": "Web Design",
+      "areaServed": "Worldwide"
+    }
+    </script>
+    
     <!-- Resource hints for better performance -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
@@ -20,44 +37,10 @@
     
     <!-- Load critical CSS immediately -->
     <link rel="stylesheet" href="../../assets/css/optimized-ui.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- Optimized icon system - inline SVG for better performance -->
-    <style>
-        /* Icon system using inline SVG for optimal performance */
-        .icon {
-            display: inline-block;
-            width: 1em;
-            height: 1em;
-            vertical-align: middle;
-            fill: currentColor;
-        }
-        
-        .icon-spin {
-            animation: icon-spin 2s infinite linear;
-        }
-        
-        @keyframes icon-spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Icon definitions */
-        .icon-paint-brush::before { content: "🎨"; }
-        .icon-arrow-right::before { content: "→"; }
-        .icon-wordpress::before { content: "W"; font-weight: bold; }
-        .icon-shopify::before { content: "S"; font-weight: bold; }
-        .icon-shopping-cart::before { content: "🛒"; }
-        .icon-redo::before { content: "↻"; }
-        .icon-users::before { content: "👥"; }
-        .icon-palette::before { content: "🎨"; }
-        .icon-mobile::before { content: "📱"; }
-        .icon-chart::before { content: "📈"; }
-        .icon-rocket::before { content: "🚀"; }
-        .icon-spinner::before { content: "⟳"; }
-    </style>
-    
-    <!-- Critical CSS for Hero Section -->
+    <!-- Critical CSS for Hero Section and Service Cards -->
     <style>
         /* Critical CSS for above-the-fold content */
         :root {
@@ -233,8 +216,9 @@
             border-radius: 0.75rem;
             font-weight: 600;
             text-decoration: none;
-            border: 2px solid rgb(var(--primary));
             transition: all 0.3s ease;
+            border: 2px solid rgb(var(--primary));
+            cursor: pointer;
             font-size: 1rem;
         }
 
@@ -242,99 +226,125 @@
             background: rgb(var(--primary));
             color: white;
             transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
 
-        /* CTA Box */
-        .cta-box {
-            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
-            color: white;
-            padding: 2rem;
+        /* Service Cards */
+        .service-card {
+            background: white;
             border-radius: 1rem;
-            text-align: center;
-            box-shadow: var(--shadow-xl);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
-        .cta-box h3 {
-            font-size: 1.25rem;
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 4rem;
+            height: 4rem;
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            color: rgb(var(--foreground));
         }
 
-        .cta-box p {
+        .service-description {
+            color: rgb(var(--muted-foreground));
             margin-bottom: 1.5rem;
-            opacity: 0.9;
-            font-size: 0.95rem;
+            flex-grow: 1;
         }
 
-        .cta-button {
-            background: white;
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: rgb(var(--muted-foreground));
+            font-size: 0.875rem;
+        }
+
+        .service-features li i {
             color: rgb(var(--primary));
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
+            margin-right: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        .service-link {
+            color: rgb(var(--primary));
             text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
             transition: all 0.3s ease;
-            display: inline-block;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .service-link:hover {
+            color: rgb(var(--primary) / 0.8);
+            transform: translateX(5px);
         }
 
-        /* Animations */
-        .animate-fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.6s ease forwards;
+        .service-link i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
         }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .service-link:hover i {
+            transform: translateX(3px);
         }
 
         /* Responsive Design */
-        @media (max-width: 968px) {
+        @media (max-width: 1024px) {
             .hero-main-content {
                 grid-template-columns: 1fr;
-                gap: 3rem;
-                text-align: center;
-                min-height: auto;
+                gap: 2rem;
             }
             
             .hero-left {
                 text-align: center;
                 padding-right: 0;
             }
-
-            .hero-right {
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
+            
             .hero-title {
                 font-size: 2.5rem;
             }
-            
-            .hero-description {
-                font-size: 1.125rem;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
-            }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             .hero {
                 padding: 80px 0 60px;
             }
             
             .hero-title {
                 font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1.125rem;
             }
             
             .hero-buttons {
@@ -346,254 +356,17 @@
             .hero-button-secondary {
                 width: 100%;
                 max-width: 300px;
+                text-align: center;
             }
         }
-
-        /* Service Cards - Optimized styling */
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .service-card {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .card-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-icon {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgb(59, 130, 246);
-            font-size: 1.5rem;
-            background: rgba(59, 130, 246, 0.1);
-        }
-
-        .service-icon.primary {
-            background: rgba(59, 130, 246, 0.1);
-            color: rgb(59, 130, 246);
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin: 0;
-            color: rgb(17, 24, 39);
-        }
-
-        .card-description {
-            color: rgb(75, 85, 99);
-            font-size: 0.875rem;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        .card-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .badge {
-            background: rgba(59, 130, 246, 0.1);
-            color: rgb(59, 130, 246);
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            transition: background-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .badge-primary {
-            background: rgba(59, 130, 246, 0.1);
-            color: rgb(59, 130, 246);
-            border-color: rgba(59, 130, 246, 0.2);
-        }
-
-        .badge:hover {
-            background: rgba(59, 130, 246, 0.15);
-            transform: translateY(-1px);
-        }
-
-        .card-footer {
-            text-align: center;
-            margin-top: auto;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-            font-size: 0.875rem;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: rgb(59, 130, 246);
-            border: 1px solid rgb(59, 130, 246);
-        }
-
-        .btn-outline:hover {
-            background: rgb(59, 130, 246);
-            color: white;
-        }
-
-        .btn-sm {
-            padding: 0.375rem 0.75rem;
-            font-size: 0.75rem;
-        }
-
-        /* Why Choose Us Cards */
-        .why-choose-card {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: white;
-            border-radius: 0.75rem;
-            border: 1px solid rgb(var(--border));
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .why-choose-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
-        }
-
-        .why-choose-icon {
-            width: 4rem;
-            height: 4rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .why-choose-title {
-            font-size: 1.125rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: rgb(var(--foreground));
-        }
-
-        .why-choose-description {
-            color: rgb(var(--muted-foreground));
-            font-size: 0.875rem;
-            line-height: 1.5;
-        }
-
-        /* Process Steps */
-        .process-step {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: white;
-            border-radius: 0.75rem;
-            border: 1px solid rgb(var(--border));
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-            position: relative;
-        }
-
-        .process-step:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
-        }
-
-        .process-number {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .process-title {
-            font-size: 1.125rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: rgb(var(--foreground));
-        }
-
-        .process-description {
-            color: rgb(var(--muted-foreground));
-            font-size: 0.875rem;
-            line-height: 1.5;
-        }
     </style>
-    
-    <!-- Schema Markup for Website Design Services -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Website Design Services",
-      "description": "Professional website design services including custom web design, WordPress design, and e-commerce design.",
-      "provider": {
-        "@type": "Organization",
-        "name": "SEO & Web Pros",
-        "url": "https://seoandwebpros.com"
-      },
-      "serviceType": "Web Design",
-      "areaServed": "Worldwide"
-    }
-    </script>
 </head>
 <body>
     <!-- Navigation -->
     <div id="navigation"></div>
 
     <!-- Hero Section -->
-    <section class="hero bg-gradient-to-br from-pink-50 via-white to-gray-50">
-        <!-- Background Elements -->
+    <section class="hero">
         <div class="hero-background">
             <div class="floating-shape shape-1"></div>
             <div class="floating-shape shape-2"></div>
@@ -603,197 +376,33 @@
         <div class="hero-content-wrapper">
             <div class="hero-main-content">
                 <div class="hero-left">
-                    <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
-                        Professional <span class="gradient-primary">Website Design</span> Services That Convert
+                    <h1 class="hero-title">
+                        Professional <span class="gradient-primary">Website Design</span>
+                        <br>Services That Convert
                     </h1>
                     
-                    <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
-                        Transform your online presence with stunning, conversion-focused website designs that engage visitors and drive business growth. Our expert web designers create beautiful, user-centered designs that reflect your brand and deliver measurable results.
+                    <p class="hero-description">
+                        Transform your business with stunning, user-centered website designs that drive conversions and deliver exceptional user experiences. Our expert web designers create beautiful, functional websites that stand out in today's competitive digital landscape.
                     </p>
                     
-                    <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <div class="hero-actions">
                         <div class="hero-buttons">
-                            <button type="button" id="heroConsultationBtn" class="hero-button-primary">Get a Free Consultation</button>
-                            <a href="#services" class="hero-button-secondary">Explore Our Services</a>
+                            <button type="button" id="heroConsultationBtn" class="hero-button-primary">
+                                Get Free Design Consultation
+                            </button>
+                            <a href="#services" class="hero-button-secondary">
+                                Explore Our Services
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- CTA Box positioned on right -->
-                <div class="hero-right animate-fade-in-up" style="animation-delay: 1s;">
-                    <div class="cta-box">
-                        <h3>Schedule a FREE Design Consultation & Brand Audit!</h3>
-                        <p>Speak to a design expert today.</p>
-                        <button type="button" class="cta-button" onclick="showModal()">Get a Free Consultation</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Website Design Services Overview -->
-    <section class="py-20 bg-white" style="content-visibility: auto;">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900">Comprehensive <span class="text-blue-600">Website Design</span> Services</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Our web design specialists create beautiful, functional websites that engage visitors and drive conversions.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Custom Website Design -->
-                <div class="card service-card">
-                    <div class="card-header">
-                        <div class="service-icon primary">
-                            <span class="icon icon-paint-brush"></span>
-                        </div>
-                        <h3 class="card-title">Custom Website Design</h3>
-                        <p class="card-description">
-                            Create unique, brand-focused website designs tailored to your business goals and target audience.
-                        </p>
-                    </div>
-                    <div class="card-content">
-                        <div class="service-tags">
-                            <span class="badge badge-primary">Brand-Centric Design</span>
-                            <span class="badge badge-primary">User Experience Focus</span>
-                            <span class="badge badge-primary">Conversion Optimization</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="custom/" class="btn btn-outline btn-sm">
-                            Learn More
-                            <span class="icon icon-arrow-right"></span>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- WordPress Design -->
-                <div class="card service-card">
-                    <div class="card-header">
-                        <div class="service-icon primary">
-                            <span class="icon icon-wordpress"></span>
-                        </div>
-                        <h3 class="card-title">WordPress Design</h3>
-                        <p class="card-description">
-                            Create stunning WordPress websites with custom themes and user-friendly content management.
-                        </p>
-                    </div>
-                    <div class="card-content">
-                        <div class="service-tags">
-                            <span class="badge badge-primary">Custom WordPress Themes</span>
-                            <span class="badge badge-primary">Content Management</span>
-                            <span class="badge badge-primary">SEO-Optimized Design</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="wordpress/" class="btn btn-outline btn-sm">
-                            Learn More
-                            <span class="icon icon-arrow-right"></span>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Shopify Design -->
-                <div class="card service-card">
-                    <div class="card-header">
-                        <div class="service-icon primary">
-                            <span class="icon icon-shopify"></span>
-                        </div>
-                        <h3 class="card-title">Shopify Design</h3>
-                        <p class="card-description">
-                            Design high-converting Shopify stores that showcase your products and drive sales.
-                        </p>
-                    </div>
-                    <div class="card-content">
-                        <div class="service-tags">
-                            <span class="badge badge-primary">Custom Shopify Themes</span>
-                            <span class="badge badge-primary">Product Showcase</span>
-                            <span class="badge badge-primary">Shopping Experience</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="shopify/" class="btn btn-outline btn-sm">
-                            Learn More
-                            <span class="icon icon-arrow-right"></span>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- E-commerce Design -->
-                <div class="card service-card">
-                    <div class="card-header">
-                        <div class="service-icon primary">
-                            <span class="icon icon-shopping-cart"></span>
-                        </div>
-                        <h3 class="card-title">E-commerce Design</h3>
-                        <p class="card-description">
-                            Create powerful e-commerce websites designed to maximize conversions and sales.
-                        </p>
-                    </div>
-                    <div class="card-content">
-                        <div class="service-tags">
-                            <span class="badge badge-primary">Product Catalog Design</span>
-                            <span class="badge badge-primary">Shopping Cart Optimization</span>
-                            <span class="badge badge-primary">Checkout Process Design</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="ecommerce/" class="btn btn-outline btn-sm">
-                            Learn More
-                            <span class="icon icon-arrow-right"></span>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Website Redesign -->
-                <div class="card service-card">
-                    <div class="card-header">
-                        <div class="service-icon primary">
-                            <span class="icon icon-redo"></span>
-                        </div>
-                        <h3 class="card-title">Website Redesign</h3>
-                        <p class="card-description">
-                            Transform your existing website with modern design, improved functionality, and better user experience.
-                        </p>
-                    </div>
-                    <div class="card-content">
-                        <div class="service-tags">
-                            <span class="badge badge-primary">Modern Design Updates</span>
-                            <span class="badge badge-primary">Improved User Experience</span>
-                            <span class="badge badge-primary">Performance Optimization</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="redesign/" class="btn btn-outline btn-sm">
-                            Learn More
-                            <span class="icon icon-arrow-right"></span>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- UI/UX Design -->
-                <div class="card service-card">
-                    <div class="card-header">
-                        <div class="service-icon primary">
-                            <span class="icon icon-users"></span>
-                        </div>
-                        <h3 class="card-title">UI/UX Design</h3>
-                        <p class="card-description">
-                            Create intuitive user interfaces and exceptional user experiences that engage and convert visitors.
-                        </p>
-                    </div>
-                    <div class="card-content">
-                        <div class="service-tags">
-                            <span class="badge badge-primary">User Interface Design</span>
-                            <span class="badge badge-primary">User Experience Design</span>
-                            <span class="badge badge-primary">Wireframing & Prototyping</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-outline btn-sm" onclick="showModal()">
-                            Get Consultation
-                            <span class="icon icon-arrow-right"></span>
+                <div class="hero-right">
+                    <div class="hero-cta-card">
+                        <h3>Schedule a FREE Design Consultation!</h3>
+                        <p>Speak to a web design expert today.</p>
+                        <button type="button" id="heroCtaBtn" class="hero-button-primary">
+                            Get a Free Consultation
                         </button>
                     </div>
                 </div>
@@ -801,228 +410,318 @@
         </div>
     </section>
 
-    <!-- Why Choose Our Website Design -->
-    <section class="py-20 bg-gray-50" style="content-visibility: auto;">
+    <!-- Comprehensive Website Design Services -->
+    <section id="services" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900">Why Choose Our <span class="text-blue-600">Website Design</span> Services?</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Our web design experts deliver beautiful, functional websites that drive business success and user engagement.
+                <h2 class="text-4xl font-bold mb-6">Comprehensive Website Design Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our web design specialists create stunning, user-friendly websites that drive conversions and deliver exceptional user experiences across all devices and platforms.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="why-choose-card">
-                    <div class="why-choose-icon bg-blue-600">
-                        <span class="icon icon-palette text-white text-2xl"></span>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- WordPress Web Design -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-wordpress"></i>
                     </div>
-                    <h3 class="why-choose-title">Creative Excellence</h3>
-                    <p class="why-choose-description">Stunning designs that capture your brand essence and engage your audience.</p>
+                    <h3 class="service-title">WordPress Web Design</h3>
+                    <p class="service-description">
+                        Create beautiful, responsive WordPress websites with custom themes and user-friendly content management systems.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Custom WordPress Themes</li>
+                        <li><i class="fas fa-check"></i>Responsive Design</li>
+                        <li><i class="fas fa-check"></i>User-Friendly CMS</li>
+                        <li><i class="fas fa-check"></i>SEO-Optimized Design</li>
+                    </ul>
+                    <a href="/solutions/website-design/wordpress/" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                
-                <div class="why-choose-card">
-                    <div class="why-choose-icon bg-green-600">
-                        <span class="icon icon-mobile text-white text-2xl"></span>
+
+                <!-- Shopify Web Design -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-shopify"></i>
                     </div>
-                    <h3 class="why-choose-title">Responsive Design</h3>
-                    <p class="why-choose-description">Websites that look and function perfectly on all devices and screen sizes.</p>
+                    <h3 class="service-title">Shopify Web Design</h3>
+                    <p class="service-description">
+                        Design stunning e-commerce websites on Shopify with custom themes and optimized shopping experiences.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Custom Shopify Themes</li>
+                        <li><i class="fas fa-check"></i>E-commerce Optimization</li>
+                        <li><i class="fas fa-check"></i>Mobile-First Design</li>
+                        <li><i class="fas fa-check"></i>Conversion Optimization</li>
+                    </ul>
+                    <a href="/solutions/website-design/shopify/" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                
-                <div class="why-choose-card">
-                    <div class="why-choose-icon bg-purple-600">
-                        <span class="icon icon-chart text-white text-2xl"></span>
+
+                <!-- E-commerce Web Design -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <h3 class="why-choose-title">Conversion Focused</h3>
-                    <p class="why-choose-description">Designs optimized to convert visitors into customers and drive business growth.</p>
+                    <h3 class="service-title">E-commerce Web Design</h3>
+                    <p class="service-description">
+                        Create powerful e-commerce websites that drive sales and provide seamless shopping experiences.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Product Showcase Design</li>
+                        <li><i class="fas fa-check"></i>Shopping Cart Optimization</li>
+                        <li><i class="fas fa-check"></i>Payment Gateway Integration</li>
+                        <li><i class="fas fa-check"></i>Inventory Management</li>
+                    </ul>
+                    <a href="/solutions/website-design/ecommerce/" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                
-                <div class="why-choose-card">
-                    <div class="why-choose-icon bg-orange-600">
-                        <span class="icon icon-rocket text-white text-2xl"></span>
+
+                <!-- Custom Web Design -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
                     </div>
-                    <h3 class="why-choose-title">Fast Performance</h3>
-                    <p class="why-choose-description">Optimized designs that load quickly and provide excellent user experience.</p>
+                    <h3 class="service-title">Custom Web Design</h3>
+                    <p class="service-description">
+                        Bespoke website designs tailored to your unique brand identity and business requirements.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Brand-Centric Design</li>
+                        <li><i class="fas fa-check"></i>Unique Visual Identity</li>
+                        <li><i class="fas fa-check"></i>Custom Functionality</li>
+                        <li><i class="fas fa-check"></i>Scalable Architecture</li>
+                    </ul>
+                    <a href="/solutions/website-design/custom/" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Website Redesign -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-redo"></i>
+                    </div>
+                    <h3 class="service-title">Website Redesign</h3>
+                    <p class="service-description">
+                        Transform your existing website with modern design, improved functionality, and better user experience.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Modern Design Updates</li>
+                        <li><i class="fas fa-check"></i>Improved User Experience</li>
+                        <li><i class="fas fa-check"></i>Performance Optimization</li>
+                        <li><i class="fas fa-check"></i>Mobile Responsiveness</li>
+                    </ul>
+                    <a href="/solutions/website-design/redesign/" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- UI/UX Design -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-description">
+                        Create intuitive user interfaces and exceptional user experiences that engage and convert visitors.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>User Research & Testing</li>
+                        <li><i class="fas fa-check"></i>Wireframing & Prototyping</li>
+                        <li><i class="fas fa-check"></i>Interactive Design</li>
+                        <li><i class="fas fa-check"></i>Usability Optimization</li>
+                    </ul>
+                    <a href="/services/ui-ux-design.html" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Design Process -->
-    <section class="py-20 bg-white" style="content-visibility: auto;">
+    <!-- Why Choose Our Website Design Services -->
+    <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900">Our Website <span class="text-blue-600">Design Process</span></h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    A systematic approach to website design that ensures quality, creativity, and successful project delivery.
+                <h2 class="text-4xl font-bold mb-6">Why Choose Our Website Design Services?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our web design experts deliver high-quality, user-friendly websites that drive business success and provide exceptional user experiences.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="process-step">
-                    <div class="process-number bg-blue-600">
-                        1
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Website Design Benefits</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">User-Centered Design</h4>
+                                <p class="text-gray-600">Intuitive interfaces designed with user experience and engagement in mind for maximum usability and conversions.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Responsive & Mobile-First</h4>
+                                <p class="text-gray-600">Websites that look and function perfectly across all devices, from mobile phones to desktop computers.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Conversion Optimization</h4>
+                                <p class="text-gray-600">Design strategies focused on converting visitors into customers through strategic layout and call-to-action placement.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">SEO-Friendly Design</h4>
+                                <p class="text-gray-600">Clean, semantic code and optimized structure that helps search engines understand and rank your website.</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="process-title">Discovery & Research</h3>
-                    <p class="process-description">Understand your business, target audience, and design requirements through comprehensive research.</p>
                 </div>
                 
-                <div class="process-step">
-                    <div class="process-number bg-green-600">
-                        2
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6">Our Design Process</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">1</div>
+                            <div>
+                                <h4 class="font-semibold">Discovery & Research</h4>
+                                <p class="text-gray-600 text-sm">Understanding your business, target audience, and design requirements</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">2</div>
+                            <div>
+                                <h4 class="font-semibold">Wireframing & Prototyping</h4>
+                                <p class="text-gray-600 text-sm">Creating wireframes and interactive prototypes for approval</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">3</div>
+                            <div>
+                                <h4 class="font-semibold">Design & Development</h4>
+                                <p class="text-gray-600 text-sm">Building your website with modern technologies and best practices</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">4</div>
+                            <div>
+                                <h4 class="font-semibold">Testing & Launch</h4>
+                                <p class="text-gray-600 text-sm">Quality assurance testing and launching your website</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="process-title">Wireframing & Design</h3>
-                    <p class="process-description">Create wireframes, mockups, and visual designs that align with your brand and goals.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="process-number bg-purple-600">
-                        3
-                    </div>
-                    <h3 class="process-title">Development & Testing</h3>
-                    <p class="process-description">Build your website with modern technologies and conduct comprehensive testing.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="process-number bg-orange-600">
-                        4
-                    </div>
-                    <h3 class="process-title">Launch & Optimization</h3>
-                    <p class="process-description">Deploy your website and optimize for performance, SEO, and user experience.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-blue-600 to-blue-700" style="content-visibility: auto;">
-        <div class="max-w-4xl mx-auto text-center px-4">
-            <h2 class="text-4xl font-bold text-white mb-6">Ready to Design Your Website?</h2>
-            <p class="text-xl text-blue-100 mb-8">
-                Get a free consultation and discover how we can create a stunning website that reflects your brand and drives business growth.
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Design Your Website?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Let's discuss your design requirements and create a stunning website that drives results for your business.
             </p>
-            <button type="button" id="contactConsultationBtn" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-                Get Free Design Consultation
+            <button type="button" id="ctaConsultationBtn" class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
+                Start Your Website Design Project
             </button>
         </div>
     </section>
 
-    <!-- Consultation Modal - Optimized for performance -->
-    <div id="consultationModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Get Your Free Website Design Consultation</h2>
-            <p>Fill out the form below and we'll provide you with a comprehensive consultation for your website design project.</p>
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Common questions about website design services
+                </p>
+            </div>
             
-            <form id="consultationForm" class="consultation-form">
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none">
+                        <h3 class="text-lg font-semibold text-gray-900">How much does website design cost?</h3>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Website design costs vary based on complexity and features, ranging from $3,000 for simple sites to $25,000+ for complex custom designs. We provide detailed quotes after understanding your specific requirements.</p>
+                    </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none">
+                        <h3 class="text-lg font-semibold text-gray-900">How long does website design take?</h3>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Design timelines range from 2-4 weeks for simple sites to 8-12 weeks for complex custom designs. We provide detailed project timelines during the planning phase.</p>
+                    </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="555-123-4567" maxlength="12">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none">
+                        <h3 class="text-lg font-semibold text-gray-900">Do you provide ongoing support after launch?</h3>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Yes, we offer comprehensive support packages including updates, maintenance, and ongoing optimization to ensure your website continues to perform at its best.</p>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="company">Company Name</label>
-                    <input type="text" id="company" name="company">
-                </div>
-                
-                <div class="form-group">
-                    <label for="website">Current Website (if any)</label>
-                    <input type="text" id="website" name="website" placeholder="https://yourwebsite.com">
-                </div>
-                
-                <div class="form-group">
-                    <label for="projectType">Design Type</label>
-                    <select id="projectType" name="projectType">
-                        <option value="">Select design type...</option>
-                        <option value="Custom Website Design">Custom Website Design</option>
-                        <option value="WordPress Design">WordPress Design</option>
-                        <option value="Shopify Design">Shopify Design</option>
-                        <option value="E-commerce Design">E-commerce Design</option>
-                        <option value="Website Redesign">Website Redesign</option>
-                        <option value="UI/UX Design">UI/UX Design</option>
-                        <option value="Not Sure">Not Sure</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="budget">Budget Range</label>
-                    <select id="budget" name="budget">
-                        <option value="">Select budget...</option>
-                        <option value="$3,000 - $8,000">$3,000 - $8,000</option>
-                        <option value="$8,000 - $15,000">$8,000 - $15,000</option>
-                        <option value="$15,000 - $25,000">$15,000 - $25,000</option>
-                        <option value="$25,000+">$25,000+</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Design Requirements & Goals</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Describe your design needs, brand requirements, target audience, and business goals..."></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn brand-font">
-                    <span class="btn-text">Get My Design Proposal</span>
-                    <span class="btn-loading" style="display: none;">
-                        <span class="icon icon-spinner icon-spin"></span> Sending...
-                    </span>
-                </button>
-            </form>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Footer -->
-    <div id="footer"></div>
-    
-    <!-- Scripts - Deferred for better performance -->
-    <script src="../../assets/js/main.js" defer></script>
-    <script>
-        // Load navigation
-        async function loadNavigation() {
-            try {
-                const response = await fetch('../../components/navigation.html');
-                const html = await response.text();
-                document.getElementById('navigation').innerHTML = html;
-                
-                // Initialize navigation after loading
-                if (typeof initializeNavigation === 'function') {
-                    initializeNavigation();
-                }
-            } catch (error) {
-                console.error('Error loading navigation:', error);
-            }
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does website design cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Website design costs vary based on complexity and features, ranging from $3,000 for simple sites to $25,000+ for complex custom designs. We provide detailed quotes after understanding your specific requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does website design take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Design timelines range from 2-4 weeks for simple sites to 8-12 weeks for complex custom designs. We provide detailed project timelines during the planning phase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide ongoing support after launch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer comprehensive support packages including updates, maintenance, and ongoing optimization to ensure your website continues to perform at its best."
+          }
         }
-        
-        // Load navigation when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            loadNavigation();
-            
-            // Add event listeners for consultation buttons
-            const heroBtn = document.getElementById('heroConsultationBtn');
-            const contactBtn = document.getElementById('contactConsultationBtn');
-            
-            if (heroBtn) {
-                heroBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showModal();
-                });
-            }
-            
-            if (contactBtn) {
-                contactBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showModal();
-                });
-            }
-        });
+      ]
+    }
     </script>
+
+    <script src="../../assets/js/main.js" defer></script>
 </body>
 </html> 

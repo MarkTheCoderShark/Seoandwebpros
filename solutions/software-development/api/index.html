@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Development Services | SEO & Web Pros</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Build robust, scalable APIs that power your applications. RESTful, GraphQL, and microservices APIs with comprehensive documentation and security.">
+    <meta name="keywords" content="API development, REST API, GraphQL, microservices, API integration, backend development, API documentation">
+    <meta name="author" content="SEO & Web Pros">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="API Development Services | SEO & Web Pros">
+    <meta property="og:description" content="Build robust, scalable APIs that power your applications. RESTful, GraphQL, and microservices APIs with comprehensive documentation and security.">
+    <meta property="og:image" content="/assets/images/api-development-hero.jpg">
+    <meta property="og:url" content="https://seoandwebpros.com/solutions/software-development/api/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="API Development Services | SEO & Web Pros">
+    <meta name="twitter:description" content="Build robust, scalable APIs that power your applications. RESTful, GraphQL, and microservices APIs with comprehensive documentation and security.">
+    <meta name="twitter:image" content="/assets/images/api-development-hero.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://seoandwebpros.com/solutions/software-development/api/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../../assets/images/icon-144x144.png">
+    
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        :root {
+            --primary: 59 130 246;
+            --background: 249 250 251;
+            --foreground: 15 23 42;
+            --card: 255 255 255;
+            --border: 226 232 240;
+            --muted-foreground: 100 116 139;
+            --radius: 0.5rem;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        * { box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, rgb(var(--background)), rgb(var(--card)));
+            color: rgb(var(--foreground));
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        /* Hero Section - Matching home page */
+        .hero {
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8fafc, #ffffff);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgb(var(--primary) / 0.1), rgb(var(--primary) / 0.05));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .shape-4 {
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            right: 30%;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: rgb(var(--foreground));
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: rgb(var(--muted-foreground));
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            margin-bottom: 3rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-button-primary {
+            background: rgb(var(--primary));
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .hero-button-primary:hover {
+            background: rgb(var(--primary) / 0.9);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-button-secondary {
+            background: transparent;
+            color: rgb(var(--primary));
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgb(var(--primary));
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .hero-button-secondary:hover {
+            background: rgb(var(--primary));
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .badge {
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-primary {
+            background: rgb(var(--primary) / 0.1);
+            color: rgb(var(--primary));
+        }
+
+        /* Section Styles */
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .responsive-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-16 {
+            margin-bottom: 4rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .responsive-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgb(var(--foreground));
+        }
+
+        .responsive-text {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: rgb(var(--muted-foreground));
+        }
+
+        .max-w-3xl {
+            max-width: 48rem;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bg-white {
+            background-color: white;
+        }
+
+        .bg-gradient-to-br {
+            background: linear-gradient(to bottom right, #f9fafb, #ffffff);
+        }
+
+        /* Animations */
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.125rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-button-primary,
+            .hero-button-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .section-padding {
+                padding: 3rem 0;
+            }
+            
+            .responsive-heading {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../../assets/css/optimized-ui.css">
+    <link rel="stylesheet" href="../../../assets/css/enhanced-components.css">
+    <link rel="stylesheet" href="../../../assets/css/animations.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "API Development Services",
+        "description": "Build robust, scalable APIs that power your applications with RESTful, GraphQL, and microservices architecture.",
+        "provider": {
+            "@type": "Organization",
+            "name": "SEO & Web Pros",
+            "url": "https://seoandwebpros.com"
+        },
+        "serviceType": "API Development",
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "API Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "REST API Development"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "GraphQL API Development"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Microservices Architecture"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="navigation"></div>
+    
+    <!-- Hero Section -->
+    <section class="hero bg-gradient-to-br from-blue-50 via-white to-gray-50">
+        <!-- Background Elements -->
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
+                API Development
+                <span class="gradient-primary">That Scales</span>
+            </h1>
+            
+            <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
+                Build robust, scalable APIs that power your applications. RESTful, GraphQL, and microservices APIs with comprehensive documentation and enterprise-grade security.
+            </p>
+            
+            <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
+                <div class="hero-buttons">
+                    <a href="#contact" class="hero-button-primary">Start API Project</a>
+                    <a href="#services" class="hero-button-secondary">View Services</a>
+                </div>
+            </div>
+            
+            <div class="hero-badges animate-fade-in-up" style="animation-delay: 0.8s;">
+                <span class="badge badge-primary">REST & GraphQL</span>
+                <span class="badge badge-primary">Microservices</span>
+                <span class="badge badge-primary">Enterprise Security</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- API Types -->
+        <section id="services" class="section-padding bg-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading">API Development Services</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        We specialize in building all types of APIs to meet your specific business requirements and technical needs.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 rounded-lg bg-gradient-to-br from-blue-50 to-indigo-50">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-exchange-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">REST APIs</h3>
+                        <p class="text-gray-600">Standard RESTful APIs with proper HTTP methods, status codes, and resource-based architecture for maximum compatibility.</p>
+                    </div>
+                    
+                    <div class="text-center p-6 rounded-lg bg-gradient-to-br from-green-50 to-emerald-50">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-project-diagram text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">GraphQL APIs</h3>
+                        <p class="text-gray-600">Flexible GraphQL APIs that allow clients to request exactly the data they need, reducing over-fetching and under-fetching.</p>
+                    </div>
+                    
+                    <div class="text-center p-6 rounded-lg bg-gradient-to-br from-purple-50 to-violet-50">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-cubes text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Microservices</h3>
+                        <p class="text-gray-600">Scalable microservices architecture with independent, deployable services that communicate through APIs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API Features -->
+        <section class="section-padding bg-gradient-to-br from-gray-50 to-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading">Comprehensive API Features</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        Our API development includes all the essential features for production-ready, enterprise-grade APIs.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-shield-alt text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Security & Authentication</h4>
+                                <p class="text-gray-600">OAuth 2.0, JWT tokens, API keys, and role-based access control to protect your data and users.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-book text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Comprehensive Documentation</h4>
+                                <p class="text-gray-600">Interactive API documentation with Swagger/OpenAPI, code examples, and testing interfaces.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-tachometer-alt text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Performance Optimization</h4>
+                                <p class="text-gray-600">Caching strategies, rate limiting, and database optimization for lightning-fast response times.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-chart-line text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Monitoring & Analytics</h4>
+                                <p class="text-gray-600">Real-time monitoring, logging, and analytics to track API performance and usage patterns.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-sync text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Versioning & Migration</h4>
+                                <p class="text-gray-600">API versioning strategies and migration tools to maintain backward compatibility.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-cloud text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Cloud Deployment</h4>
+                                <p class="text-gray-600">Deployment to AWS, Azure, or Google Cloud with auto-scaling and load balancing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development Process -->
+        <section class="section-padding bg-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading">Our API Development Process</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        We follow a systematic approach to ensure your API is robust, scalable, and production-ready.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">1</div>
+                        <h3 class="text-xl font-semibold mb-3">Requirements Analysis</h3>
+                        <p class="text-gray-600">Deep dive into your business needs to design the optimal API architecture and data models.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">2</div>
+                        <h3 class="text-xl font-semibold mb-3">API Design</h3>
+                        <p class="text-gray-600">Create comprehensive API specifications with endpoints, data schemas, and authentication flows.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">3</div>
+                        <h3 class="text-xl font-semibold mb-3">Development & Testing</h3>
+                        <p class="text-gray-600">Build the API with comprehensive unit and integration testing for reliability.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">4</div>
+                        <h3 class="text-xl font-semibold mb-3">Deployment & Documentation</h3>
+                        <p class="text-gray-600">Deploy to production with full documentation and monitoring setup.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Stack -->
+        <section class="section-padding bg-gradient-to-br from-gray-50 to-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading">Technology Stack</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        We use modern, proven technologies to build robust and scalable APIs for your applications.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold mb-6">Backend Technologies</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-node-js text-green-500 text-xl"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-python text-blue-500 text-xl"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-java text-red-500 text-xl"></i>
+                                <span>Java</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-php text-purple-500 text-xl"></i>
+                                <span>PHP</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-dotnet text-blue-600 text-xl"></i>
+                                <span>.NET</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-go text-blue-400 text-xl"></i>
+                                <span>Go</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold mb-6">Frameworks & Tools</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-express text-gray-500 text-xl"></i>
+                                <span>Express.js</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-django text-green-600 text-xl"></i>
+                                <span>Django</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-laravel text-red-500 text-xl"></i>
+                                <span>Laravel</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-spring text-green-500 text-xl"></i>
+                                <span>Spring Boot</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-graphql text-pink-500 text-xl"></i>
+                                <span>GraphQL</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-database text-blue-500 text-xl"></i>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding bg-gradient-to-br from-blue-50 to-indigo-50">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading">Ready to Build Your API?</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        Let's discuss your API requirements and create a robust, scalable solution that powers your applications.
+                    </p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">Start Your API Project</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Tell us about your API needs and we'll design the perfect solution for your business requirements.
+                                </p>
+                                <div class="space-y-4">
+                                    <div class="flex items-center space-x-3">
+                                        <i class="fas fa-phone text-blue-500"></i>
+                                        <span>+1 (555) 123-4567</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i class="fas fa-envelope text-blue-500"></i>
+                                        <span>hello@seoandwebpros.com</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i class="fas fa-clock text-blue-500"></i>
+                                        <span>Mon-Fri: 9AM-6PM EST</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <form class="space-y-4">
+                                    <div>
+                                        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    </div>
+                                    <div>
+                                        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    </div>
+                                    <div>
+                                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                            <option>Select API Type</option>
+                                            <option>REST API</option>
+                                            <option>GraphQL API</option>
+                                            <option>Microservices</option>
+                                            <option>Not Sure</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <textarea placeholder="Describe your API requirements" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                                    </div>
+                                    <button type="submit" class="w-full bg-blue-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                                        Start API Project
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+    <script src="../../../assets/js/components.js"></script>
+    <script src="../../../assets/js/solution-components.js"></script>
+</body>
+</html> 

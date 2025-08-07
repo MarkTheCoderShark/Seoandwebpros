@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Web App Development | SEO & Web Pros</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Transform your website into a powerful Progressive Web App. Fast, reliable, and engaging mobile experiences that work offline and feel like native apps.">
+    <meta name="keywords" content="progressive web app, PWA development, mobile app, offline functionality, app-like experience, web app">
+    <meta name="author" content="SEO & Web Pros">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Progressive Web App Development | SEO & Web Pros">
+    <meta property="og:description" content="Transform your website into a powerful Progressive Web App. Fast, reliable, and engaging mobile experiences that work offline and feel like native apps.">
+    <meta property="og:image" content="/assets/images/pwa-hero.jpg">
+    <meta property="og:url" content="https://seoandwebpros.com/solutions/app-development/pwa/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Progressive Web App Development | SEO & Web Pros">
+    <meta name="twitter:description" content="Transform your website into a powerful Progressive Web App. Fast, reliable, and engaging mobile experiences that work offline and feel like native apps.">
+    <meta name="twitter:image" content="/assets/images/pwa-hero.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://seoandwebpros.com/solutions/app-development/pwa/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../../assets/images/icon-144x144.png">
+    
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        :root {
+            --primary: 59 130 246;
+            --background: 249 250 251;
+            --foreground: 15 23 42;
+            --card: 255 255 255;
+            --border: 226 232 240;
+            --muted-foreground: 100 116 139;
+            --radius: 0.5rem;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        * { box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, rgb(var(--background)), rgb(var(--card)));
+            color: rgb(var(--foreground));
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        /* Hero Section - Matching home page */
+        .hero {
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8fafc, #ffffff);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgb(var(--primary) / 0.1), rgb(var(--primary) / 0.05));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .shape-4 {
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            right: 30%;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Hero layout with CTA on right */
+        .hero-content-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .hero-main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+            min-height: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-left {
+            text-align: left;
+            padding-right: 2rem;
+        }
+
+        .hero-right {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            justify-self: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: rgb(var(--foreground));
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: rgb(var(--muted-foreground));
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            margin-bottom: 3rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-button-primary {
+            background: rgb(var(--primary));
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .hero-button-primary:hover {
+            background: rgb(var(--primary) / 0.9);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-button-secondary {
+            background: transparent;
+            color: rgb(var(--primary));
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgb(var(--primary));
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .hero-button-secondary:hover {
+            background: rgb(var(--primary));
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .cta-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .hero-cta-button {
+            background: white;
+            color: rgb(var(--primary));
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .hero-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .badge {
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-primary {
+            background: rgb(var(--primary) / 0.1);
+            color: rgb(var(--primary));
+        }
+
+        /* Service Cards - Matching Home Page Exactly */
+        .card {
+            background: white;
+            border: 1px solid rgb(var(--border));
+            border-radius: var(--radius);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 400px;
+            position: relative;
+        }
+
+        .card-header {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon {
+            width: 4rem;
+            height: 4rem;
+            background: rgb(var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(var(--primary) / 0.3);
+        }
+
+        .service-icon.primary {
+            background: rgb(var(--primary));
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgb(var(--foreground));
+            line-height: 1.2;
+        }
+
+        .card-description {
+            color: rgb(var(--muted-foreground));
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            min-height: 3rem;
+        }
+
+        .service-tags-vertical {
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            min-height: 3rem;
+        }
+
+        .badge {
+            background: rgb(var(--primary));
+            color: white;
+            padding: 0.375rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: none;
+            transition: all 0.2s ease;
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .badge-primary {
+            background: rgb(var(--primary));
+            color: white;
+            border: none;
+        }
+
+        .badge:hover {
+            background: rgb(var(--primary) / 0.9);
+            transform: translateY(-1px);
+        }
+
+        .card-footer {
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: rgb(var(--primary));
+            border: 2px solid rgb(var(--primary));
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background: rgb(var(--primary));
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgb(var(--primary) / 0.3);
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        /* CTA Button Styles */
+        .cta-button-primary {
+            background: rgb(var(--primary));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.125rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .cta-button-primary:hover {
+            background: rgb(var(--primary) / 0.9);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            color: rgb(var(--primary));
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgb(var(--primary));
+            transition: all 0.3s ease;
+            font-size: 1.125rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .cta-button-secondary:hover {
+            background: white;
+            color: rgb(var(--primary));
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button-primary i,
+        .cta-button-secondary i {
+            font-size: 1rem;
+        }
+
+        /* Responsive CTA buttons */
+        @media (max-width: 640px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .cta-button-primary,
+            .cta-button-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        /* Section Styles */
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .responsive-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-16 {
+            margin-bottom: 4rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .responsive-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgb(var(--foreground));
+        }
+
+        .responsive-text {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: rgb(var(--muted-foreground));
+        }
+
+        .max-w-3xl {
+            max-width: 48rem;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bg-white {
+            background-color: white;
+        }
+
+        .bg-gradient-to-br {
+            background: linear-gradient(to bottom right, #f9fafb, #ffffff);
+        }
+
+        /* Animations */
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-main-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+                min-height: auto;
+            }
+            
+            .hero-left {
+                text-align: center;
+                padding-right: 0;
+            }
+
+            .hero-right {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.125rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.125rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-button-primary,
+            .hero-button-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .section-padding {
+                padding: 3rem 0;
+            }
+            
+            .responsive-heading {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-button-primary,
+            .hero-button-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../../assets/css/optimized-ui.css">
+    <link rel="stylesheet" href="../../../assets/css/enhanced-components.css">
+    <link rel="stylesheet" href="../../../assets/css/animations.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Progressive Web App Development",
+        "description": "Transform your website into a powerful Progressive Web App with offline functionality and native app-like experience.",
+        "provider": {
+            "@type": "Organization",
+            "name": "SEO & Web Pros",
+            "url": "https://seoandwebpros.com"
+        },
+        "serviceType": "PWA Development",
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "PWA Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "PWA Development"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Offline Functionality"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "App Store Optimization"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="navigation"></div>
+    
+    <!-- Hero Section -->
+    <section class="hero bg-gradient-to-br from-blue-50 via-white to-gray-50">
+        <!-- Background Elements -->
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        
+        <div class="hero-content-wrapper">
+            <div class="hero-main-content">
+                <div class="hero-left">
+                    <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
+                        Progressive Web Apps <span class="gradient-primary">That Feel Native</span>
+                    </h1>
+                    
+                    <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
+                        Transform your website into a powerful Progressive Web App. Fast, reliable, and engaging mobile experiences that work offline and feel like native apps.
+                    </p>
+                    
+                    <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
+                        <div class="hero-buttons">
+                            <button type="button" id="heroConsultationBtn" class="hero-button-primary">Start PWA Project</button>
+                            <a href="#services" class="hero-button-secondary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA Box positioned on right -->
+                <div class="hero-right animate-fade-in-up" style="animation-delay: 1s;">
+                    <div class="cta-box">
+                        <h3>Schedule a FREE PWA Consultation!</h3>
+                        <p>Speak to a PWA expert today.</p>
+                        <button type="button" class="hero-cta-button" onclick="showModal()">Get a Free Consultation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- PWA Services Overview -->
+        <section class="py-20 bg-white" style="content-visibility: auto;">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-6">Comprehensive PWA Development Services</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Our PWA development specialists create powerful Progressive Web Apps that deliver native app experiences across all platforms.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 services-grid-container" style="display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem;">
+                    <style>
+                        @media (min-width: 768px) {
+                            .services-grid-container {
+                                grid-template-columns: repeat(2, 1fr) !important;
+                            }
+                        }
+                        @media (min-width: 1024px) {
+                            .services-grid-container {
+                                grid-template-columns: repeat(3, 1fr) !important;
+                            }
+                        }
+                    </style>
+                    
+                    <!-- PWA Development -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="card-title">PWA Development</h3>
+                            <p class="card-description">
+                                Transform your website into a powerful Progressive Web App with service workers and offline functionality.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Service Workers</span>
+                                <span class="badge badge-primary">Offline Support</span>
+                                <span class="badge badge-primary">App Manifest</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Push Notifications -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <h3 class="card-title">Push Notifications</h3>
+                            <p class="card-description">
+                                Engage users with timely push notifications and background sync capabilities.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">User Engagement</span>
+                                <span class="badge badge-primary">Background Sync</span>
+                                <span class="badge badge-primary">Analytics</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Optimization -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3 class="card-title">Mobile Optimization</h3>
+                            <p class="card-description">
+                                Touch-friendly interfaces and gesture support for native app-like experiences.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Touch Interface</span>
+                                <span class="badge badge-primary">Gesture Support</span>
+                                <span class="badge badge-primary">Performance</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PWA Features & Capabilities -->
+        <section class="py-20 bg-gray-50" style="content-visibility: auto;">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-6">PWA Features & Capabilities</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Our PWA development includes all the essential features that make your web app feel like a native mobile application.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Installable -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h3 class="card-title">Installable</h3>
+                            <p class="card-description">
+                                Users can install your PWA directly to their home screen, just like a native app.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Home Screen</span>
+                                <span class="badge badge-primary">App Icon</span>
+                                <span class="badge badge-primary">Splash Screen</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Push Notifications -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <h3 class="card-title">Push Notifications</h3>
+                            <p class="card-description">
+                                Engage users with timely push notifications, even when the app is closed.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">User Engagement</span>
+                                <span class="badge badge-primary">Real-time</span>
+                                <span class="badge badge-primary">Analytics</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Background Sync -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-sync"></i>
+                            </div>
+                            <h3 class="card-title">Background Sync</h3>
+                            <p class="card-description">
+                                Sync data in the background when connection is restored.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Offline First</span>
+                                <span class="badge badge-primary">Data Sync</span>
+                                <span class="badge badge-primary">Reliability</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- HTTPS Secure -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="card-title">HTTPS Secure</h3>
+                            <p class="card-description">
+                                Built with security in mind, PWAs require HTTPS for all functionality.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">SSL Certificate</span>
+                                <span class="badge badge-primary">Data Protection</span>
+                                <span class="badge badge-primary">Privacy</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- SEO Friendly -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3 class="card-title">SEO Friendly</h3>
+                            <p class="card-description">
+                                Maintain search engine visibility while providing app-like functionality.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Search Visibility</span>
+                                <span class="badge badge-primary">Indexable</span>
+                                <span class="badge badge-primary">Performance</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Cross-Platform -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3 class="card-title">Cross-Platform</h3>
+                            <p class="card-description">
+                                Works seamlessly across all devices and platforms without separate development.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Universal</span>
+                                <span class="badge badge-primary">Responsive</span>
+                                <span class="badge badge-primary">Compatible</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose PWA Development -->
+        <section class="py-20 bg-white" style="content-visibility: auto;">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-6">Why Choose Our PWA Development Services?</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Our PWA development experts deliver fast, reliable, and engaging mobile experiences that drive business success.
+                    </p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto space-y-4">
+                    <!-- Works Offline -->
+                    <div class="accordion-item bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <button class="accordion-header w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-wifi text-white text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">Works Offline</h3>
+                            </div>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div class="accordion-content hidden px-6 pb-4">
+                            <div class="ml-16">
+                                <p class="text-gray-600 mb-4">Your app continues to function even without an internet connection, providing seamless user experience.</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-800 mb-2">Service Workers</h4>
+                                        <p class="text-sm text-blue-700">Cache essential resources for offline functionality</p>
+                                    </div>
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-800 mb-2">Background Sync</h4>
+                                        <p class="text-sm text-blue-700">Sync data when connection is restored</p>
+                                    </div>
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-800 mb-2">Offline-First Design</h4>
+                                        <p class="text-sm text-blue-700">Core functionality works without internet</p>
+                                    </div>
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-800 mb-2">Smart Caching</h4>
+                                        <p class="text-sm text-blue-700">Intelligent resource management</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- App-Like Experience -->
+                    <div class="accordion-item bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <button class="accordion-header w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-mobile-alt text-white text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">App-Like Experience</h3>
+                            </div>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div class="accordion-content hidden px-6 pb-4">
+                            <div class="ml-16">
+                                <p class="text-gray-600 mb-4">Native app feel with smooth animations, gestures, and full-screen experience on mobile devices.</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-800 mb-2">Touch Gestures</h4>
+                                        <p class="text-sm text-green-700">Swipe, pinch, and tap interactions</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-800 mb-2">Smooth Animations</h4>
+                                        <p class="text-sm text-green-700">60fps transitions and micro-interactions</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-800 mb-2">Full-Screen Mode</h4>
+                                        <p class="text-sm text-green-700">Immersive app-like experience</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-800 mb-2">Native UI Elements</h4>
+                                        <p class="text-sm text-green-700">Platform-specific design patterns</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lightning Fast -->
+                    <div class="accordion-item bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <button class="accordion-header w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-rocket text-white text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">Lightning Fast</h3>
+                            </div>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div class="accordion-content hidden px-6 pb-4">
+                            <div class="ml-16">
+                                <p class="text-gray-600 mb-4">Instant loading with service workers and optimized performance for better user engagement.</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-purple-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-800 mb-2">Instant Loading</h4>
+                                        <p class="text-sm text-purple-700">Sub-second page loads with caching</p>
+                                    </div>
+                                    <div class="bg-purple-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-800 mb-2">Performance Optimization</h4>
+                                        <p class="text-sm text-purple-700">Code splitting and lazy loading</p>
+                                    </div>
+                                    <div class="bg-purple-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-800 mb-2">Resource Optimization</h4>
+                                        <p class="text-sm text-purple-700">Minified assets and compression</p>
+                                    </div>
+                                    <div class="bg-purple-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-800 mb-2">Progressive Enhancement</h4>
+                                        <p class="text-sm text-purple-700">Core features load first</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cross-Platform -->
+                    <div class="accordion-item bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <button class="accordion-header w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-globe text-white text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">Cross-Platform</h3>
+                            </div>
+                            <i class="fas fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div class="accordion-content hidden px-6 pb-4">
+                            <div class="ml-16">
+                                <p class="text-gray-600 mb-4">Single codebase works across all devices and platforms without separate development.</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-orange-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-orange-800 mb-2">Universal Compatibility</h4>
+                                        <p class="text-sm text-orange-700">Works on iOS, Android, and desktop</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-orange-800 mb-2">Responsive Design</h4>
+                                        <p class="text-sm text-orange-700">Adapts to any screen size</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-orange-800 mb-2">Single Codebase</h4>
+                                        <p class="text-sm text-orange-700">One app for all platforms</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-orange-800 mb-2">Easy Maintenance</h4>
+                                        <p class="text-sm text-orange-700">Update once, deploy everywhere</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PWA Services -->
+        <section class="section-padding bg-gradient-to-br from-gray-50 to-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading">PWA Development Services</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        Comprehensive PWA development services to transform your web presence into a powerful mobile experience.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-code text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">PWA Development</h3>
+                        </div>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Service worker implementation
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Web app manifest creation
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Offline functionality
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                App-like UI/UX design
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-bell text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">Push Notifications</h3>
+                        </div>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Notification system setup
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                User engagement strategies
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Analytics integration
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                A/B testing capabilities
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-mobile-alt text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">Mobile Optimization</h3>
+                        </div>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Touch-friendly interfaces
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Gesture support
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Performance optimization
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Battery efficiency
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-store text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">App Store Optimization</h3>
+                        </div>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                App store listings
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Icon and splash screen design
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Metadata optimization
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                User acquisition strategies
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ready to Build Your PWA? -->
+        <section class="py-20 bg-blue-50" style="content-visibility: auto;">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-6">Ready to Build Your PWA?</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Get a free consultation and discover how we can transform your website into a powerful Progressive Web App.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <button type="button" class="cta-button-primary" onclick="showModal()">
+                        <i class="fas fa-calendar-check"></i>
+                        Get Free PWA Consultation
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+    <script src="../../../assets/js/components.js"></script>
+    <script src="../../../assets/js/solution-components.js"></script>
+    
+    <script>
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.fa-chevron-down');
+            
+            // Toggle the content
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html> 

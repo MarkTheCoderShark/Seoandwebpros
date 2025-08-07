@@ -3,252 +3,631 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce Website Design Services | Custom Online Store Development</title>
-    <meta name="description" content="Professional e-commerce website design services. Create a powerful online store with custom design, seamless checkout, and advanced features that drive sales.">
-    <meta name="keywords" content="ecommerce website design, online store design, custom ecommerce development, ecommerce solutions, online shop design">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>E-commerce Web Design Services | Custom E-commerce Design - SEO & Web Pros</title>
+    <meta name="description" content="Professional e-commerce web design services. Custom e-commerce websites, online store design, shopping cart optimization, and conversion-focused design. Expert e-commerce designers creating high-converting online stores.">
+    <meta name="keywords" content="e-commerce web design, online store design, e-commerce website design, shopping cart design, e-commerce conversion optimization">
     <link rel="canonical" href="https://seoandwebpros.com/solutions/website-design/ecommerce/">
-    <link rel="stylesheet" href="../../../assets/css/optimized-ui.css">
-    <link rel="stylesheet" href="../../../assets/css/enhanced-components.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="E-commerce Website Design Services | Custom Online Store Development">
-    <meta property="og:description" content="Professional e-commerce website design services. Create a powerful online store with custom design, seamless checkout, and advanced features that drive sales.">
-    <meta property="og:image" content="https://seoandwebpros.com/assets/images/ecommerce-design-og.jpg">
-    <meta property="og:url" content="https://seoandwebpros.com/solutions/website-design/ecommerce/">
-    <meta property="og:type" content="website">
-
-    <!-- Schema.org structured data -->
+    
+    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "E-commerce Website Design Services",
-        "description": "Professional e-commerce website design services. Create a powerful online store with custom design, seamless checkout, and advanced features that drive sales.",
-        "provider": {
-            "@type": "Organization",
-            "name": "SEO and Web Pros",
-            "url": "https://seoandwebpros.com"
-        },
-        "areaServed": "Worldwide",
-        "serviceType": "E-commerce Website Design",
-        "offers": {
-            "@type": "Offer",
-            "description": "Custom e-commerce website design and development services"
-        }
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "E-commerce Web Design Services",
+      "description": "Professional e-commerce web design services including custom online stores and conversion optimization.",
+      "provider": {
+        "@type": "Organization",
+        "name": "SEO & Web Pros",
+        "url": "https://seoandwebpros.com"
+      },
+      "serviceType": "Web Design",
+      "areaServed": "Worldwide"
     }
     </script>
-</head>
+    
+    <!-- Resource hints for better performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="../../../assets/css/optimized-ui.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+    
+    <!-- Load critical CSS immediately -->
+    <link rel="stylesheet" href="../../../assets/css/optimized-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Critical CSS for Hero Section and Service Cards -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        :root {
+            --primary: 59 130 246;
+            --background: 249 250 251;
+            --foreground: 15 23 42;
+            --card: 255 255 255;
+            --border: 226 232 240;
+            --muted-foreground: 100 116 139;
+            --radius: 0.5rem;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        * { box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, rgb(var(--background)), rgb(var(--card)));
+            color: rgb(var(--foreground));
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
 
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8fafc, #ffffff);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgb(var(--primary) / 0.1), rgb(var(--primary) / 0.05));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Hero layout with CTA on right */
+        .hero-content-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .hero-main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+            min-height: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-left {
+            text-align: left;
+            padding-right: 2rem;
+        }
+
+        .hero-right {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            justify-self: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: rgb(var(--foreground));
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: rgb(var(--muted-foreground));
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            margin-bottom: 3rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .hero-button-primary {
+            background: rgb(var(--primary));
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .hero-button-primary:hover {
+            background: rgb(var(--primary) / 0.9);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-button-secondary {
+            background: transparent;
+            color: rgb(var(--primary));
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid rgb(var(--primary));
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .hero-button-secondary:hover {
+            background: rgb(var(--primary));
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 4rem;
+            height: 4rem;
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgb(var(--foreground));
+        }
+
+        .service-description {
+            color: rgb(var(--muted-foreground));
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: rgb(var(--muted-foreground));
+            font-size: 0.875rem;
+        }
+
+        .service-features li i {
+            color: rgb(var(--primary));
+            margin-right: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        .service-link {
+            color: rgb(var(--primary));
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            color: rgb(var(--primary) / 0.8);
+            transform: translateX(5px);
+        }
+
+        .service-link i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-link:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-main-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-left {
+                text-align: center;
+                padding-right: 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1.125rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-button-primary,
+            .hero-button-secondary {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
 <body>
     <!-- Navigation -->
     <div id="navigation"></div>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content fade-up">
-                <h1 class="hero-title">E-commerce Website Design Services</h1>
-                <p class="hero-description">Create a powerful online store that delivers exceptional shopping experiences and drives sales growth.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="hero-button-primary">Get a Free Consultation</a>
-                    <a href="#services" class="hero-button-secondary">Explore E-commerce Services</a>
+    <section class="hero">
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        
+        <div class="hero-content-wrapper">
+            <div class="hero-main-content">
+                <div class="hero-left">
+                    <h1 class="hero-title">
+                        Professional <span class="gradient-primary">E-commerce Web Design</span>
+                        <br>Services That Convert
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Design stunning e-commerce websites that drive sales and provide exceptional shopping experiences. Our expert e-commerce designers create high-converting online stores with optimized product showcases, seamless checkout processes, and mobile-first design.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <div class="hero-buttons">
+                            <button type="button" id="heroConsultationBtn" class="hero-button-primary">
+                                Get Free E-commerce Design Consultation
+                            </button>
+                            <a href="#services" class="hero-button-secondary">
+                                Explore Our Services
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-right">
+                    <div class="hero-cta-card">
+                        <h3>Schedule a FREE E-commerce Design Consultation!</h3>
+                        <p>Speak to an e-commerce design expert today.</p>
+                        <button type="button" id="heroCtaBtn" class="hero-button-primary">
+                            Get a Free Consultation
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why E-commerce Section -->
-    <section class="section-padding bg-white">
-        <div class="responsive-container">
-            <div class="text-center mb-16 fade-up">
-                <h2 class="responsive-heading mb-6">Why Professional E-commerce Design Matters</h2>
-                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
-                    In today's digital marketplace, your online store's design can make the difference between a sale and a lost customer.
+    <!-- Comprehensive E-commerce Design Services -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Comprehensive E-commerce Design Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our e-commerce design specialists create beautiful, high-converting online stores with optimized product showcases, seamless checkout processes, and mobile-first design that drives sales and delivers exceptional user experiences.
                 </p>
             </div>
             
-            <div class="stats-grid">
-                <div class="stat-card fade-up" style="animation-delay: 0.1s">
-                    <div class="stat-number">67%</div>
-                    <div class="stat-label">Cart Abandonment</div>
-                    <div class="stat-description">Poor design increases abandonment rates</div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Custom E-commerce Design -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3 class="service-title">Custom E-commerce Design</h3>
+                    <p class="service-description">
+                        Design and develop custom e-commerce websites tailored to your brand identity and product showcase requirements.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Brand-Centric Design</li>
+                        <li><i class="fas fa-check"></i>Product Showcase</li>
+                        <li><i class="fas fa-check"></i>Custom Functionality</li>
+                        <li><i class="fas fa-check"></i>Responsive Layout</li>
+                    </ul>
+                    <a href="#consultation" class="service-link">
+                        Get Quote <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                
-                <div class="stat-card fade-up" style="animation-delay: 0.2s">
-                    <div class="stat-number">88%</div>
-                    <div class="stat-label">Trust Factor</div>
-                    <div class="stat-description">Users won't return after bad experience</div>
-                </div>
-                
-                <div class="stat-card fade-up" style="animation-delay: 0.3s">
-                    <div class="stat-number">3.5x</div>
-                    <div class="stat-label">Revenue Boost</div>
-                    <div class="stat-description">With optimized user experience</div>
-                </div>
-                
-                <div class="stat-card fade-up" style="animation-delay: 0.4s">
-                    <div class="stat-number">73%</div>
-                    <div class="stat-label">Mobile Shopping</div>
-                    <div class="stat-description">Of e-commerce traffic is mobile</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- E-commerce Services -->
-    <section id="services" class="section-padding bg-gradient-to-br from-gray-50 to-white">
-        <div class="responsive-container">
-            <div class="text-center mb-16 fade-up">
-                <h2 class="responsive-heading mb-6">Our E-commerce Design Services</h2>
-                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
-                    We create custom e-commerce solutions that drive sales and deliver exceptional shopping experiences.
-                </p>
-            </div>
-            
-            <div class="service-grid">
-                <div class="service-card fade-up" style="animation-delay: 0.1s">
+                <!-- Product Page Design -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3 class="service-title">Product Page Design</h3>
+                    <p class="service-description">
+                        Create compelling product pages that showcase your products effectively and drive conversions.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Product Photography</li>
+                        <li><i class="fas fa-check"></i>Product Descriptions</li>
+                        <li><i class="fas fa-check"></i>Variants & Options</li>
+                        <li><i class="fas fa-check"></i>Call-to-Action Buttons</li>
+                    </ul>
+                    <a href="#consultation" class="service-link">
+                        Get Quote <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Shopping Cart Design -->
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <h3>Custom Store Design</h3>
-                    <p>Unique e-commerce designs that reflect your brand and optimize for conversions.</p>
+                    <h3 class="service-title">Shopping Cart Design</h3>
+                    <p class="service-description">
+                        Design intuitive shopping carts that minimize cart abandonment and maximize conversions.
+                    </p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Brand Integration</li>
-                        <li><i class="fas fa-check"></i> Mobile Optimization</li>
-                        <li><i class="fas fa-check"></i> Conversion Focus</li>
+                        <li><i class="fas fa-check"></i>Cart Abandonment Prevention</li>
+                        <li><i class="fas fa-check"></i>Easy Quantity Updates</li>
+                        <li><i class="fas fa-check"></i>Clear Pricing Display</li>
+                        <li><i class="fas fa-check"></i>Save for Later Options</li>
                     </ul>
+                    <a href="#consultation" class="service-link">
+                        Get Quote <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                
-                <div class="service-card fade-up" style="animation-delay: 0.2s">
+
+                <!-- Checkout Process Design -->
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-credit-card"></i>
                     </div>
-                    <h3>Payment Integration</h3>
-                    <p>Seamless payment processing with multiple gateway options.</p>
+                    <h3 class="service-title">Checkout Process Design</h3>
+                    <p class="service-description">
+                        Create streamlined checkout processes that reduce friction and increase conversion rates.
+                    </p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Multiple Gateways</li>
-                        <li><i class="fas fa-check"></i> Secure Checkout</li>
-                        <li><i class="fas fa-check"></i> Express Payment</li>
+                        <li><i class="fas fa-check"></i>One-Page Checkout</li>
+                        <li><i class="fas fa-check"></i>Multiple Payment Options</li>
+                        <li><i class="fas fa-check"></i>Guest Checkout</li>
+                        <li><i class="fas fa-check"></i>Order Summary</li>
                     </ul>
+                    <a href="#consultation" class="service-link">
+                        Get Quote <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                
-                <div class="service-card fade-up" style="animation-delay: 0.3s">
+
+                <!-- Mobile E-commerce Design -->
+                <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-box"></i>
+                        <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Product Management</h3>
-                    <p>Powerful tools to manage your products and inventory effectively.</p>
+                    <h3 class="service-title">Mobile E-commerce Design</h3>
+                    <p class="service-description">
+                        Design mobile-optimized e-commerce experiences that drive sales on smartphones and tablets.
+                    </p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Inventory Control</li>
-                        <li><i class="fas fa-check"></i> Variant Management</li>
-                        <li><i class="fas fa-check"></i> Bulk Operations</li>
+                        <li><i class="fas fa-check"></i>Mobile-First Design</li>
+                        <li><i class="fas fa-check"></i>Touch-Friendly Interface</li>
+                        <li><i class="fas fa-check"></i>Fast Loading Times</li>
+                        <li><i class="fas fa-check"></i>Mobile Payment Integration</li>
                     </ul>
+                    <a href="#consultation" class="service-link">
+                        Get Quote <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                
-                <div class="service-card fade-up" style="animation-delay: 0.4s">
+
+                <!-- E-commerce Optimization -->
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Analytics & Reporting</h3>
-                    <p>Detailed insights to track and improve store performance.</p>
+                    <h3 class="service-title">E-commerce Optimization</h3>
+                    <p class="service-description">
+                        Optimize your e-commerce website for maximum conversions and sales performance.
+                    </p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Sales Analytics</li>
-                        <li><i class="fas fa-check"></i> Customer Insights</li>
-                        <li><i class="fas fa-check"></i> Performance Tracking</li>
+                        <li><i class="fas fa-check"></i>Conversion Rate Optimization</li>
+                        <li><i class="fas fa-check"></i>A/B Testing</li>
+                        <li><i class="fas fa-check"></i>Performance Optimization</li>
+                        <li><i class="fas fa-check"></i>Analytics Integration</li>
                     </ul>
+                    <a href="#consultation" class="service-link">
+                        Get Quote <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- E-commerce Development Process -->
-    <section class="section-padding bg-white">
-        <div class="responsive-container">
-            <div class="text-center mb-16 fade-up">
-                <h2 class="responsive-heading mb-6">Our E-commerce Development Process</h2>
-                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
-                    We follow a systematic approach to create online stores that convert visitors into customers.
+    <!-- Why Choose Our E-commerce Design Services -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Why Choose Our E-commerce Design Services?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our e-commerce design experts deliver high-quality, conversion-focused online stores that drive sales and provide exceptional user experiences.
                 </p>
             </div>
             
-            <div class="process-grid">
-                <div class="process-step fade-up" style="animation-delay: 0.1s">
-                    <div class="process-number">1</div>
-                    <h3>Discovery & Planning</h3>
-                    <p>We analyze your products, market, and goals to create a strategic plan.</p>
-                </div>
-                
-                <div class="process-step fade-up" style="animation-delay: 0.2s">
-                    <div class="process-number">2</div>
-                    <h3>UX Design & Prototyping</h3>
-                    <p>We design user flows and create prototypes optimized for conversions.</p>
-                </div>
-                
-                <div class="process-step fade-up" style="animation-delay: 0.3s">
-                    <div class="process-number">3</div>
-                    <h3>Development & Integration</h3>
-                    <p>We build your store with secure payment and shipping integration.</p>
-                </div>
-                
-                <div class="process-step fade-up" style="animation-delay: 0.4s">
-                    <div class="process-number">4</div>
-                    <h3>Testing & Launch</h3>
-                    <p>We thoroughly test and optimize before launching your store.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section-padding bg-white">
-        <div class="responsive-container">
-            <div class="text-center mb-16 fade-up">
-                <h2 class="responsive-heading mb-6">E-commerce Design FAQs</h2>
-                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
-                    Get answers to common questions about our e-commerce website design services.
-                </p>
-            </div>
-            
-            <div class="faq-container">
-                <div class="faq-item fade-up" style="animation-delay: 0.1s">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Which e-commerce platform should I choose?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We'll help you choose the best platform based on your needs, whether it's Shopify, WooCommerce, or a custom solution. Each platform has its strengths, and we'll recommend the one that best fits your business goals, budget, and technical requirements.</p>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">E-commerce Design Benefits</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Conversion-Focused Design</h4>
+                                <p class="text-gray-600">Designs specifically optimized for online sales with conversion-focused layouts and user experiences.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Mobile-First Approach</h4>
+                                <p class="text-gray-600">Responsive designs that work perfectly on all devices, with mobile shopping optimization.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Seamless User Experience</h4>
+                                <p class="text-gray-600">Intuitive navigation and streamlined processes that reduce friction and increase sales.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Scalable Solutions</h4>
+                                <p class="text-gray-600">E-commerce stores that can grow with your business and accommodate new products and features.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="faq-item fade-up" style="animation-delay: 0.2s">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>How long does it take to build an e-commerce site?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>The timeline varies based on complexity and features. A basic e-commerce site typically takes 4-6 weeks, while more complex stores with custom functionality can take 8-12 weeks. We'll provide a detailed timeline during our consultation.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item fade-up" style="animation-delay: 0.3s">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>What payment methods can I accept?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We can integrate any major payment gateway including Stripe, PayPal, Square, and more. You can accept credit cards, digital wallets, and alternative payment methods. We'll help you choose the best options for your target market.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item fade-up" style="animation-delay: 0.4s">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Can you help with product setup and migration?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! We offer complete product setup services including bulk import, category organization, and product optimization. If you're migrating from another platform, we'll ensure all your products, customer data, and order history are transferred correctly.</p>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6">Our E-commerce Design Process</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">1</div>
+                            <div>
+                                <h4 class="font-semibold">Requirements Analysis</h4>
+                                <p class="text-gray-600 text-sm">Understanding your business needs and e-commerce requirements</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">2</div>
+                            <div>
+                                <h4 class="font-semibold">Design & Development</h4>
+                                <p class="text-gray-600 text-sm">Creating custom e-commerce themes and functionality</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">3</div>
+                            <div>
+                                <h4 class="font-semibold">Testing & Optimization</h4>
+                                <p class="text-gray-600 text-sm">Thorough testing and conversion optimization</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">4</div>
+                            <div>
+                                <h4 class="font-semibold">Launch & Training</h4>
+                                <p class="text-gray-600 text-sm">Store launch and e-commerce admin training</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -256,208 +635,93 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="section-padding">
-        <div class="responsive-container">
-            <div class="cta-section fade-up">
-                <h2 class="cta-title">Ready to Launch Your Online Store?</h2>
-                <p class="cta-description">
-                    Let's create an e-commerce website that drives sales and grows your business. Get started with a free consultation today.
-                </p>
-                <a href="#contact" class="cta-button">Get Your Free E-commerce Consultation</a>
-            </div>
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Design Your E-commerce Store?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Let's discuss your e-commerce design requirements and create a stunning online store that drives sales and grows your business.
+            </p>
+            <button type="button" id="ctaConsultationBtn" class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
+                Start Your E-commerce Design Project
+            </button>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-gradient-to-br from-gray-50 to-white">
-        <div class="responsive-container">
-            <div class="text-center mb-16 fade-up">
-                <h2 class="responsive-heading mb-6">Start Your E-commerce Project</h2>
-                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
-                    Ready to get started? Fill out the form below and we'll get back to you within 24 hours with a detailed proposal.
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Common questions about e-commerce web design services
                 </p>
             </div>
             
-            <div class="contact-form-container fade-up">
-                <form id="contact-form" class="space-y-6">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Full Name *</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none">
+                        <h3 class="text-lg font-semibold text-gray-900">How much does e-commerce web design cost?</h3>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">E-commerce web design costs vary based on complexity and features, ranging from $8,000 for simple stores to $35,000+ for complex custom designs. We provide detailed quotes after understanding your specific requirements.</p>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email Address *</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="company" class="form-label">Company Name</label>
-                        <input type="text" id="company" name="company" class="form-input">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="website" class="form-label">Current Website (if any)</label>
-                        <input type="url" id="website" name="website" class="form-input" placeholder="https://">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="products" class="form-label">Number of Products</label>
-                        <select id="products" name="products" class="form-input">
-                            <option value="">Select range...</option>
-                            <option value="1-10">1-10 products</option>
-                            <option value="11-50">11-50 products</option>
-                            <option value="51-200">51-200 products</option>
-                            <option value="201-1000">201-1000 products</option>
-                            <option value="1000+">1000+ products</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="platform" class="form-label">Preferred Platform</label>
-                        <select id="platform" name="platform" class="form-input">
-                            <option value="">Select platform...</option>
-                            <option value="shopify">Shopify</option>
-                            <option value="woocommerce">WooCommerce</option>
-                            <option value="magento">Magento</option>
-                            <option value="custom">Custom Solution</option>
-                            <option value="not-sure">Not Sure - Need Consultation</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="budget" class="form-label">Project Budget</label>
-                        <select id="budget" name="budget" class="form-input">
-                            <option value="">Select your budget range</option>
-                            <option value="5000-10000">$5,000 - $10,000</option>
-                            <option value="10000-25000">$10,000 - $25,000</option>
-                            <option value="25000-50000">$25,000 - $50,000</option>
-                            <option value="50000+">$50,000+</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message" class="form-label">Project Details *</label>
-                        <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your e-commerce project, products, and goals..." required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="form-submit">Send My Request</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Related Services -->
-    <section class="section-padding bg-white">
-        <div class="responsive-container">
-            <div class="text-center mb-16 fade-up">
-                <h2 class="responsive-heading mb-6">Related Services</h2>
-                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
-                    Explore our other services that can complement your e-commerce store.
-                </p>
-            </div>
-            
-            <div class="related-services-grid">
-                <a href="/solutions/website-design/shopify/" class="related-service-card fade-up" style="animation-delay: 0.1s">
-                    <div class="related-service-icon">
-                        <i class="fab fa-shopify"></i>
-                    </div>
-                    <h3 class="related-service-title">Shopify Website Design</h3>
-                    <p class="related-service-description">Custom Shopify store design and development.</p>
-                </a>
+                </div>
                 
-                <a href="/solutions/seo/ecommerce/" class="related-service-card fade-up" style="animation-delay: 0.2s">
-                    <div class="related-service-icon">
-                        <i class="fas fa-search"></i>
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none">
+                        <h3 class="text-lg font-semibold text-gray-900">How long does e-commerce design take?</h3>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">E-commerce design timelines range from 4-8 weeks for simple stores to 10-16 weeks for complex custom designs. We provide detailed project timelines during the planning phase.</p>
                     </div>
-                    <h3 class="related-service-title">E-commerce SEO</h3>
-                    <p class="related-service-description">Optimize your store for search engines.</p>
-                </a>
+                </div>
                 
-                <a href="/solutions/website-development/ecommerce/" class="related-service-card fade-up" style="animation-delay: 0.3s">
-                    <div class="related-service-icon">
-                        <i class="fas fa-code"></i>
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none">
+                        <h3 class="text-lg font-semibold text-gray-900">Do you provide payment gateway integration?</h3>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Yes, we integrate various payment gateways including Stripe, PayPal, Square, and others to ensure secure and convenient payment processing for your customers.</p>
                     </div>
-                    <h3 class="related-service-title">E-commerce Development</h3>
-                    <p class="related-service-description">Custom e-commerce development solutions.</p>
-                </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <div id="footer"></div>
-
-    <!-- Scripts -->
-    <script src="../../../assets/js/main.js"></script>
-    <script>
-        // Load navigation and initialize components
-        document.addEventListener('DOMContentLoaded', function() {
-            loadNavigation();
-            initAnimations();
-            initFAQ();
-            initContactForm();
-        });
-        
-        // Animation observer
-        function initAnimations() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            });
-            
-            document.querySelectorAll('.fade-up').forEach((el) => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does e-commerce web design cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "E-commerce web design costs vary based on complexity and features, ranging from $8,000 for simple stores to $35,000+ for complex custom designs. We provide detailed quotes after understanding your specific requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does e-commerce design take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "E-commerce design timelines range from 4-8 weeks for simple stores to 10-16 weeks for complex custom designs. We provide detailed project timelines during the planning phase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide payment gateway integration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we integrate various payment gateways including Stripe, PayPal, Square, and others to ensure secure and convenient payment processing for your customers."
+          }
         }
-        
-        // FAQ Toggle
-        function toggleFAQ(element) {
-            const faqItem = element.parentElement;
-            const answer = faqItem.querySelector('.faq-answer');
-            const icon = element.querySelector('.faq-icon');
-            
-            document.querySelectorAll('.faq-item').forEach(item => {
-                if (item !== faqItem) {
-                    item.querySelector('.faq-answer').classList.remove('active');
-                    item.querySelector('.faq-icon').classList.remove('active');
-                }
-            });
-            
-            answer.classList.toggle('active');
-            icon.classList.toggle('active');
-        }
-        
-        // Contact Form
-        function initContactForm() {
-            const form = document.getElementById('contact-form');
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const formData = new FormData(form);
-                    const submitBtn = form.querySelector('.form-submit');
-                    const originalText = submitBtn.textContent;
-                    
-                    submitBtn.textContent = 'Sending...';
-                    submitBtn.disabled = true;
-                    
-                    // Replace with actual form submission
-                    setTimeout(() => {
-                        alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-                        form.reset();
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    }, 1000);
-                });
-            }
-        }
+      ]
+    }
     </script>
+
+    <script src="../../../assets/js/main.js" defer></script>
 </body>
 </html> 

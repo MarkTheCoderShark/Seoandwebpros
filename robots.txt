@@ -23,5 +23,4 @@ Allow: /case-study-*.html
 # Sitemap location
 Sitemap: https://seoandwebpros.com/sitemap.xml
 
-# Crawl delay (optional - remove if causing issues)
-Crawl-delay: 1 
+# Remove crawl delay for better indexing 

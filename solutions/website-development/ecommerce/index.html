@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Development Services | SEO & WEB PROS</title>
+    <meta name="description" content="Professional e-commerce development services. Build powerful online stores with custom features, secure payment processing, and mobile optimization.">
+    <meta name="keywords" content="e-commerce development, online store development, shopping cart development, payment processing, e-commerce solutions">
+    
+    <!-- Critical CSS -->
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-color: #1f2937;
+            --light-text: #6b7280;
+            --background: #ffffff;
+            --light-background: #f8fafc;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            min-height: 400px;
+        }
+        
+        .hero-main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .hero-left {
+            max-width: 600px;
+        }
+        
+        .hero-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            max-width: 400px;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .hero-cta-button {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #1f2937;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .hero-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+        }
+        
+        @media (max-width: 968px) {
+            .hero-main-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .service-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .card-header {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .service-icon.primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .card-description {
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        
+        .card-content {
+            padding: 1.5rem 2rem;
+            flex-grow: 1;
+        }
+        
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .badge-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .card-footer {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .cta-button-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .cta-button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+        
+        .cta-button-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .cta-button-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+    </style>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/assets/css/optimized-ui.css">
+    <link rel="stylesheet" href="/assets/css/enhanced-components.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="E-commerce Development Services | SEO & WEB PROS">
+    <meta property="og:description" content="Professional e-commerce development services. Build powerful online stores with custom features, secure payment processing, and mobile optimization.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seoandwebpros.com/solutions/website-development/ecommerce/">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="E-commerce Development Services | SEO & WEB PROS">
+    <meta name="twitter:description" content="Professional e-commerce development services. Build powerful online stores with custom features, secure payment processing, and mobile optimization.">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content-wrapper">
+                <div class="hero-main-content">
+                    <div class="hero-left">
+                        <h1>E-commerce Development</h1>
+                        <p>Transform your business with powerful online stores that drive sales and provide exceptional user experiences. Our e-commerce development experts create secure, scalable, and conversion-optimized platforms.</p>
+                    </div>
+                    <div class="hero-right">
+                        <div class="cta-box">
+                            <h3>Start Your E-commerce Project</h3>
+                            <p>Get a free consultation and discover how we can build your perfect online store.</p>
+                            <a href="#contact" class="hero-cta-button">
+                                <i class="fas fa-calendar-check"></i>
+                                Free Consultation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- E-commerce Services Overview -->
+        <section class="py-20 bg-white" style="content-visibility: auto;">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-6">Comprehensive E-commerce Development Services</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Our e-commerce development specialists create powerful online stores that drive sales and provide exceptional user experiences.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Custom E-commerce Development -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3 class="card-title">Custom E-commerce Development</h3>
+                            <p class="card-description">
+                                Build custom online stores tailored to your specific business needs and requirements.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Custom Features</span>
+                                <span class="badge badge-primary">Scalable Architecture</span>
+                                <span class="badge badge-primary">Unique Design</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Integration -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <h3 class="card-title">Payment Integration</h3>
+                            <p class="card-description">
+                                Secure payment processing with multiple payment gateways and fraud protection.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Stripe</span>
+                                <span class="badge badge-primary">PayPal</span>
+                                <span class="badge badge-primary">Security</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Inventory Management -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-boxes"></i>
+                            </div>
+                            <h3 class="card-title">Inventory Management</h3>
+                            <p class="card-description">
+                                Advanced inventory tracking, stock management, and automated reordering systems.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Stock Tracking</span>
+                                <span class="badge badge-primary">Automation</span>
+                                <span class="badge badge-primary">Analytics</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- E-commerce Features -->
+        <section class="py-20 bg-gray-50" style="content-visibility: auto;">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-6">E-commerce Features & Capabilities</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Our e-commerce platforms include all the essential features needed to run a successful online business.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Secure Checkout -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="card-title">Secure Checkout</h3>
+                            <p class="card-description">
+                                PCI-compliant payment processing with SSL encryption and fraud protection.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">SSL Security</span>
+                                <span class="badge badge-primary">PCI Compliance</span>
+                                <span class="badge badge-primary">Fraud Protection</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Optimization -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3 class="card-title">Mobile Optimization</h3>
+                            <p class="card-description">
+                                Responsive design that works perfectly on all devices and screen sizes.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Responsive</span>
+                                <span class="badge badge-primary">Touch-Friendly</span>
+                                <span class="badge badge-primary">Fast Loading</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Management -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <h3 class="card-title">Order Management</h3>
+                            <p class="card-description">
+                                Complete order tracking, status updates, and automated fulfillment systems.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Order Tracking</span>
+                                <span class="badge badge-primary">Status Updates</span>
+                                <span class="badge badge-primary">Automation</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn btn-outline btn-sm">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose E-commerce Development -->
+        <section class="py-20 bg-white" style="content-visibility: auto;">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-6">Why Choose Our E-commerce Development Services?</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Our e-commerce development experts deliver secure, scalable, and conversion-optimized platforms that drive business growth.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Secure & Compliant</h3>
+                        <p class="text-gray-600">PCI-compliant payment processing with advanced security measures and fraud protection.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Conversion Optimized</h3>
+                        <p class="text-gray-600">User experience designed to maximize conversions and increase average order value.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-expand-arrows-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Scalable Architecture</h3>
+                        <p class="text-gray-600">Built to grow with your business, handling increased traffic and sales volume.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-headset text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">24/7 Support</h3>
+                        <p class="text-gray-600">Ongoing maintenance, updates, and technical support to keep your store running smoothly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ready to Build Your E-commerce Store? -->
+        <section class="py-20 bg-blue-50" style="content-visibility: auto;">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-6">Ready to Build Your E-commerce Store?</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Get a free consultation and discover how we can create your perfect online store.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <button type="button" class="cta-button-primary" onclick="showModal()">
+                        <i class="fas fa-calendar-check"></i>
+                        Get Free E-commerce Consultation
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+    <!-- Scripts -->
+    <script src="../../../assets/js/main.js"></script>
+    <script src="../../../assets/js/components.js"></script>
+    <script src="../../../assets/js/solution-components.js"></script>
+</body>
+</html> 
