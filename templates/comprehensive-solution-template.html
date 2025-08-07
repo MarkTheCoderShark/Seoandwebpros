@@ -151,7 +151,7 @@
             font-size: 1.25rem;
             color: rgb(var(--muted-foreground));
             margin-bottom: 2.5rem;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -204,26 +204,90 @@
             transform: translateY(-2px);
         }
 
-        .hero-badges {
+        /* Service Cards Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgb(var(--border));
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            border-radius: 50%;
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgb(var(--foreground));
+        }
+
+        .service-card p {
+            color: rgb(var(--muted-foreground));
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            text-align: center;
             margin-top: 2rem;
         }
 
-        .badge {
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        .cta-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
-        .badge-primary {
-            background: rgb(var(--primary) / 0.1);
-            color: rgb(var(--primary));
+        .cta-box p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: white;
+            color: #dc2626;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         /* Section Styles */
@@ -279,6 +343,45 @@
             background: linear-gradient(to bottom right, #f9fafb, #ffffff);
         }
 
+        /* Process Steps */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .process-number {
+            width: 4rem;
+            height: 4rem;
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgb(var(--foreground));
+        }
+
+        .process-step p {
+            color: rgb(var(--muted-foreground));
+            line-height: 1.6;
+        }
+
         /* Animations */
         .animate-fade-in-up {
             opacity: 0;
@@ -325,6 +428,14 @@
             .responsive-heading {
                 font-size: 2rem;
             }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     
@@ -358,7 +469,6 @@
         <div class="hero-content">
             <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
                 {{HERO_TITLE}}
-                <span class="gradient-primary">{{HERO_HIGHLIGHT}}</span>
             </h1>
             
             <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
@@ -368,19 +478,129 @@
             <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
                 <div class="hero-buttons">
                     <a href="#contact" class="hero-button-primary">{{PRIMARY_CTA}}</a>
-                    <a href="#services" class="hero-button-secondary">{{SECONDARY_CTA}}</a>
+                    <a href="#pricing" class="hero-button-secondary">{{SECONDARY_CTA}}</a>
                 </div>
             </div>
-            
-            <div class="hero-badges animate-fade-in-up" style="animation-delay: 0.8s;">
-                {{HERO_BADGES}}
+
+            <!-- Service Overview Cards -->
+            <div class="services-grid animate-fade-in-up" style="animation-delay: 0.8s;">
+                {{HERO_SERVICE_CARDS}}
+                
+                <!-- CTA Box -->
+                <div class="cta-box">
+                    <h3>{{CTA_TITLE}}</h3>
+                    <p>{{CTA_DESCRIPTION}}</p>
+                    <a href="tel:{{PHONE_NUMBER}}" class="cta-button">{{CTA_BUTTON_TEXT}}</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Main Content -->
     <main>
-        {{MAIN_CONTENT}}
+        <!-- Why Choose Us Section -->
+        <section class="section-padding bg-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Why Choose Us?</h2>
+                    <h3 style="font-size: 2rem; font-weight: 600; margin-bottom: 2rem; color: rgb(var(--foreground));">{{WHY_SUBTITLE}}</h3>
+                    <p class="responsive-text max-w-3xl mx-auto">{{WHY_DESCRIPTION}}</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div>
+                        {{WHY_CONTENT}}
+                    </div>
+                    <div>
+                        {{WHY_IMAGE}}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="section-padding bg-gradient-to-br">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">See How It Works</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">{{PROCESS_DESCRIPTION}}</p>
+                </div>
+                
+                <div class="process-grid">
+                    {{PROCESS_STEPS}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Packages Section -->
+        <section id="pricing" class="section-padding bg-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Our Packages</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">{{PACKAGES_DESCRIPTION}}</p>
+                </div>
+                
+                <div class="services-grid">
+                    {{PACKAGE_CARDS}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Services We Offer Section -->
+        <section class="section-padding bg-gradient-to-br">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">{{SERVICES_TITLE}}</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">{{SERVICES_DESCRIPTION}}</p>
+                </div>
+                
+                <div class="services-grid">
+                    {{DETAILED_SERVICE_CARDS}}
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section-padding bg-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Frequently Asked Questions</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">{{FAQ_DESCRIPTION}}</p>
+                </div>
+                
+                <div class="faq-container">
+                    {{FAQ_ITEMS}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding bg-gradient-to-br">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Let's Discuss Your Project</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">{{CONTACT_DESCRIPTION}}</p>
+                </div>
+                
+                <div class="contact-form-container">
+                    {{CONTACT_FORM}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Services -->
+        <section class="section-padding bg-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Related Services</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">{{RELATED_DESCRIPTION}}</p>
+                </div>
+                
+                <div class="services-grid">
+                    {{RELATED_SERVICES}}
+                </div>
+            </div>
+        </section>
     </main>
     
     <!-- Footer -->
@@ -390,5 +610,60 @@
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/components.js"></script>
     <script src="../../assets/js/solution-components.js"></script>
+    
+    <script>
+        // Load navigation and footer
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // Load navigation
+                const navResponse = await fetch('../../components/navigation.html');
+                const navHtml = await navResponse.text();
+                document.getElementById('navigation').innerHTML = navHtml;
+                
+                // Load footer
+                const footerResponse = await fetch('../../components/footer.html');
+                const footerHtml = await footerResponse.text();
+                document.getElementById('footer').innerHTML = footerHtml;
+                
+                // Initialize animations
+                initAnimations();
+                
+                // Initialize any interactive components
+                if (typeof initializeNavigation === 'function') initializeNavigation();
+                if (typeof initContactForm === 'function') initContactForm();
+                if (typeof toggleFAQ === 'function') initFAQ();
+                
+            } catch (error) {
+                console.error('Error loading components:', error);
+            }
+        });
+        
+        // Animation observer
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.animate-fade-in-up').forEach((el) => {
+                observer.observe(el);
+            });
+        }
+        
+        // FAQ functionality
+        function initFAQ() {
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', function() {
+                    if (typeof toggleFAQ === 'function') {
+                        toggleFAQ(this);
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 </html> 
