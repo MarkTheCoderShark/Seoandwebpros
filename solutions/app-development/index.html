@@ -3,256 +3,1047 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Design & Development - SEO & Web Pros</title>
-    <meta name="description" content="Create stunning mobile applications with our expert app design and development services. Native and cross-platform solutions.">
-    <link rel="stylesheet" href="../assets/css/optimized-ui.css">
+    <title>Professional Mobile App Development Services | iOS & Android Apps - SEO & Web Pros</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Transform your ideas into powerful mobile applications with our expert app development services. We create native iOS, Android, and cross-platform apps that deliver exceptional user experiences and drive business growth.">
+    <meta name="keywords" content="mobile app development, iOS app development, Android app development, cross-platform apps, native app development, app design, mobile app services, app development company">
+    <meta name="author" content="SEO & Web Pros">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Professional Mobile App Development Services | iOS & Android Apps">
+    <meta property="og:description" content="Transform your ideas into powerful mobile applications with expert app development services for iOS, Android, and cross-platform solutions.">
+    <meta property="og:image" content="/assets/images/app-development-services.jpg">
+    <meta property="og:url" content="https://seoandwebpros.com/solutions/app-development/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Professional Mobile App Development Services">
+    <meta name="twitter:description" content="Expert iOS, Android, and cross-platform app development services that transform ideas into successful mobile applications.">
+    <meta name="twitter:image" content="/assets/images/app-development-services.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://seoandwebpros.com/solutions/app-development/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/images/icon-144x144.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/optimized-ui.css">
+    <link rel="stylesheet" href="../../assets/css/enhanced-components.css">
+    <link rel="stylesheet" href="../../assets/css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Critical CSS for Hero Section -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        :root {
+            --primary: 59 130 246;
+            --background: 249 250 251;
+            --foreground: 15 23 42;
+            --card: 255 255 255;
+            --border: 226 232 240;
+            --muted-foreground: 100 116 139;
+            --radius: 0.5rem;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        * { box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, rgb(var(--background)), rgb(var(--card)));
+            color: rgb(var(--foreground));
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8fafc, #ffffff);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgb(var(--primary) / 0.1), rgb(var(--primary) / 0.05));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .shape-4 {
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            right: 30%;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Hero layout with CTA on right */
+        .hero-content-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .hero-main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+            min-height: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-left {
+            text-align: left;
+            padding-right: 2rem;
+        }
+
+        .hero-right {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            justify-self: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: rgb(var(--foreground));
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: rgb(var(--muted-foreground));
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            margin-bottom: 3rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .hero-button-primary {
+            background: rgb(var(--primary));
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .hero-button-primary:hover {
+            background: rgb(var(--primary) / 0.9);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-button-secondary {
+            background: transparent;
+            color: rgb(var(--primary));
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgb(var(--primary));
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .hero-button-secondary:hover {
+            background: rgb(var(--primary));
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .cta-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .cta-button {
+            background: white;
+            color: rgb(var(--primary));
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Service Cards Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            width: 100%;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgb(var(--border));
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgb(var(--foreground));
+        }
+
+        .service-card p {
+            color: rgb(var(--muted-foreground));
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Animations */
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-main-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+                min-height: auto;
+            }
+            
+            .hero-left {
+                text-align: center;
+                padding-right: 0;
+            }
+
+            .hero-right {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.125rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-button-primary,
+            .hero-button-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Section Styles */
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .responsive-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-16 {
+            margin-bottom: 4rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .responsive-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgb(var(--foreground));
+        }
+
+        .responsive-text {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: rgb(var(--muted-foreground));
+        }
+
+        .max-w-3xl {
+            max-width: 48rem;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bg-white {
+            background-color: white;
+        }
+
+        .bg-gradient-to-br {
+            background: linear-gradient(to bottom right, #f9fafb, #ffffff);
+        }
+    </style>
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Professional Mobile App Development Services",
+        "provider": {
+            "@type": "Organization",
+            "name": "SEO & Web Pros",
+            "url": "https://seoandwebpros.com"
+        },
+        "description": "Expert mobile app development services for iOS, Android, and cross-platform applications that deliver exceptional user experiences and drive business growth.",
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Mobile App Development Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "iOS App Development",
+                        "description": "Native iOS applications built with Swift and Objective-C for optimal performance"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Android App Development",
+                        "description": "Native Android applications using Java and Kotlin for seamless user experience"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Cross-Platform App Development",
+                        "description": "Efficient cross-platform applications using React Native and Flutter"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
     <div id="navigation"></div>
-
+    
     <!-- Hero Section -->
     <section class="hero bg-gradient-to-br from-blue-50 via-white to-gray-50">
-        <div class="hero-content">
-            <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
-                <span class="gradient-primary">App Design & Development</span>
-                <br>That Users Love
-            </h1>
-            
-            <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
-                Transform your ideas into powerful mobile applications. We create native and cross-platform apps with intuitive design, seamless functionality, and exceptional user experience.
-            </p>
-            
-            <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
-                <button type="button" id="heroConsultationBtn" class="proposal-btn brand-font">
-                    Start Your App Project
-                </button>
-            </div>
+        <!-- Background Elements -->
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
         </div>
-    </section>
-
-    <!-- Service Details -->
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold mb-6">Complete App Development Services</h2>
-                    <p class="text-lg text-gray-600 mb-8">
-                        From concept to launch, we handle every aspect of your mobile app development. Our team creates apps that are not only beautiful but also perform flawlessly.
+        
+        <div class="hero-content-wrapper">
+            <div class="hero-main-content">
+                <div class="hero-left">
+                    <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
+                        Professional <span class="gradient-primary">Mobile App Development</span> Services That Drive Results
+                    </h1>
+                    
+                    <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
+                        Transform your innovative ideas into powerful mobile applications that users love. Our expert development team creates native iOS, Android, and cross-platform apps with exceptional user experiences, robust functionality, and scalable architecture that grows with your business success.
                     </p>
                     
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
-                            <div>
-                                <h3 class="font-semibold">UI/UX Design</h3>
-                                <p class="text-gray-600">Create intuitive, user-friendly interfaces that provide exceptional user experience.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
-                            <div>
-                                <h3 class="font-semibold">Native Development</h3>
-                                <p class="text-gray-600">Build high-performance apps for iOS and Android using native technologies.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
-                            <div>
-                                <h3 class="font-semibold">Cross-Platform Apps</h3>
-                                <p class="text-gray-600">Develop apps that work seamlessly across multiple platforms with React Native or Flutter.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
-                            <div>
-                                <h3 class="font-semibold">App Store Optimization</h3>
-                                <p class="text-gray-600">Optimize your app for better visibility and downloads in app stores.</p>
-                            </div>
+                    <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
+                        <div class="hero-buttons">
+                            <a href="#pricing" class="hero-button-primary">View App Packages</a>
+                            <a href="#services" class="hero-button-secondary">Explore Services</a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold mb-6">Development Process</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white mr-4">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold">Discovery & Planning</h4>
-                                <p class="text-gray-600">Define requirements and create project roadmap</p>
-                            </div>
+                <!-- CTA Box positioned on right -->
+                <div class="hero-right animate-fade-in-up" style="animation-delay: 1s;">
+                    <div class="cta-box">
+                        <h3>Schedule a FREE App Development Consultation & Strategy Call!</h3>
+                        <p>Speak to a mobile app expert today.</p>
+                        <a href="tel:9168667893" class="cta-button">Get a Free Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Overview Cards -->
+        <div class="hero-services-section animate-fade-in-up" style="animation-delay: 0.8s;">
+            <div class="responsive-container">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fab fa-apple"></i>
                         </div>
-                        
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white mr-4">
-                                <i class="fas fa-palette"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold">Design & Prototyping</h4>
-                                <p class="text-gray-600">Create wireframes, mockups, and interactive prototypes</p>
-                            </div>
+                        <h3>iOS App Development</h3>
+                        <p>Native iOS applications built with Swift and SwiftUI, optimized for iPhone and iPad with seamless App Store integration.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fab fa-android"></i>
                         </div>
-                        
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white mr-4">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold">Development & Testing</h4>
-                                <p class="text-gray-600">Build, test, and refine your application</p>
-                            </div>
+                        <h3>Android App Development</h3>
+                        <p>High-performance Android apps using Kotlin and Java, designed for Google Play Store success and maximum device compatibility.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
                         </div>
-                        
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white mr-4">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold">Launch & Support</h4>
-                                <p class="text-gray-600">Deploy to app stores and provide ongoing maintenance</p>
-                            </div>
+                        <h3>Cross-Platform Development</h3>
+                        <p>Efficient multi-platform apps using React Native and Flutter, delivering native performance across iOS and Android.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-globe"></i>
                         </div>
+                        <h3>Progressive Web Apps</h3>
+                        <p>Modern PWAs that combine web and mobile app features, offering offline functionality and native-like experiences.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>UI/UX App Design</h3>
+                        <p>Intuitive app designs focused on user experience, conversion optimization, and brand consistency across all platforms.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>App Maintenance & Support</h3>
+                        <p>Ongoing app maintenance, updates, bug fixes, and technical support to ensure optimal performance and user satisfaction.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Ready to Build Your App?</h2>
-            <p class="text-lg text-gray-600 mb-8">
-                Let's discuss your app idea and create a custom development plan that brings your vision to life.
-            </p>
-            <button type="button" id="contactConsultationBtn" class="proposal-btn brand-font">
-                Get Free Consultation
-            </button>
-        </div>
-    </section>
-
-    <!-- Modal for consultation -->
-    <div id="noWebsiteModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Start Your App Development Project</h2>
-                <button class="modal-close" onclick="closeModal()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p class="modal-description">
-                    Ready to bring your app idea to life? Fill out the form below and we'll create a custom development plan for your mobile application.
-                </p>
+    <!-- Main Content -->
+    <main>
+        <!-- Why Choose Us Section -->
+        <section class="section-padding bg-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Why Choose Our Mobile App Development Services?</h2>
+                    <h3 style="font-size: 2rem; font-weight: 600; margin-bottom: 2rem; color: rgb(var(--foreground));">Expertise You Can Trust</h3>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        With years of experience in mobile app development, our team has successfully launched hundreds of applications across various industries. We combine technical expertise with creative innovation to deliver apps that not only meet your requirements but exceed user expectations and drive business growth.
+                    </p>
+                </div>
                 
-                <form id="proposalForm" class="proposal-form">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div>
+                        <a href="#pricing" style="background: #ff0036; color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block; margin-bottom: 2rem;">See Our App Packages</a>
+                        <p style="color: rgb(var(--muted-foreground)); line-height: 1.6;">Our comprehensive mobile app development approach ensures your application not only looks stunning but also delivers exceptional performance, scalability, and user engagement that translates into real business results and long-term success.</p>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop&crop=faces" alt="Mobile app development team" style="width: 100%; border-radius: 1rem; box-shadow: var(--shadow-lg);">
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="555-123-4567" maxlength="12">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="company">Company Name</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="appType">App Type</label>
-                        <select id="appType" name="appType">
-                            <option value="">Select app type...</option>
-                            <option value="iOS Native">iOS Native</option>
-                            <option value="Android Native">Android Native</option>
-                            <option value="Cross-Platform">Cross-Platform</option>
-                            <option value="Progressive Web App">Progressive Web App</option>
-                            <option value="Not Sure">Not Sure</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="budget">Budget Range</label>
-                        <select id="budget" name="budget">
-                            <option value="">Select budget...</option>
-                            <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-                            <option value="$25,000 - $50,000">$25,000 - $50,000</option>
-                            <option value="$50,000 - $100,000">$50,000 - $100,000</option>
-                            <option value="$100,000+">$100,000+</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">App Description</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Describe your app idea, target audience, key features, and any specific requirements..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn brand-font">
-                        <span class="btn-text">Get My App Development Plan</span>
-                        <span class="btn-loading" style="display: none;">
-                            <i class="fas fa-spinner fa-spin"></i> Sending...
-                        </span>
-                    </button>
-                </form>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <script src="../assets/js/main.js"></script>
+        <!-- Development Process Section -->
+        <section class="section-padding bg-gradient-to-br">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Our Mobile App Development Process</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        From initial concept to App Store launch, we follow a proven development methodology that ensures your mobile app is delivered on time, within budget, and exceeds expectations.
+                    </p>
+                </div>
+                
+                <div class="process-container">
+                    <div class="process-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+                        <div class="process-step" style="background: white; padding: 2rem; border-radius: 1rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgb(var(--border)); transition: all 0.3s ease;">
+                            <div class="process-number" style="width: 4rem; height: 4rem; background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1.5rem; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">01</div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: rgb(var(--foreground));">Strategy & Planning</h3>
+                            <p style="color: rgb(var(--muted-foreground)); line-height: 1.6; font-size: 0.95rem;">We analyze your business goals, target audience, and market requirements to create a comprehensive app development strategy and technical roadmap.</p>
+                        </div>
+                        
+                        <div class="process-step" style="background: white; padding: 2rem; border-radius: 1rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgb(var(--border)); transition: all 0.3s ease;">
+                            <div class="process-number" style="width: 4rem; height: 4rem; background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1.5rem; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">02</div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: rgb(var(--foreground));">UI/UX Design</h3>
+                            <p style="color: rgb(var(--muted-foreground)); line-height: 1.6; font-size: 0.95rem;">Our designers create intuitive wireframes, interactive prototypes, and stunning visual designs that prioritize user experience and brand consistency.</p>
+                        </div>
+                        
+                        <div class="process-step" style="background: white; padding: 2rem; border-radius: 1rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgb(var(--border)); transition: all 0.3s ease;">
+                            <div class="process-number" style="width: 4rem; height: 4rem; background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1.5rem; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">03</div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: rgb(var(--foreground));">Development & Testing</h3>
+                            <p style="color: rgb(var(--muted-foreground)); line-height: 1.6; font-size: 0.95rem;">We build your app using cutting-edge technologies, conduct rigorous testing across devices, and ensure optimal performance and security.</p>
+                        </div>
+                        
+                        <div class="process-step" style="background: white; padding: 2rem; border-radius: 1rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgb(var(--border)); transition: all 0.3s ease;">
+                            <div class="process-number" style="width: 4rem; height: 4rem; background: linear-gradient(135deg, rgb(var(--primary)), #3b82f6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1.5rem; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">04</div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: rgb(var(--foreground));">Launch & Support</h3>
+                            <p style="color: rgb(var(--muted-foreground)); line-height: 1.6; font-size: 0.95rem;">We handle App Store submissions, launch your app successfully, and provide ongoing maintenance, updates, and technical support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Development Packages Section -->
+        <section id="pricing" class="section-padding bg-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Mobile App Development Packages</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        Choose the perfect mobile app development package for your business needs. All packages include comprehensive development, testing, and App Store submission.
+                    </p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Startup App Package</h3>
+                        <p>Perfect for startups and small businesses launching their first mobile application.</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Single platform (iOS or Android)</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Up to 10 screens</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Custom UI/UX design</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> App Store submission</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> 3 months support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Business App Package</h3>
+                        <p>Comprehensive solution for businesses requiring advanced features and dual-platform presence.</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> iOS and Android apps</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Up to 20 screens</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Advanced integrations</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Push notifications</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> 6 months support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3>Enterprise App Package</h3>
+                        <p>Premium solution for large organizations with complex requirements and custom functionality.</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Unlimited screens</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Custom backend development</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Advanced security features</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> Analytics integration</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: rgb(var(--primary)); margin-right: 0.5rem;"></i> 12 months support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies We Use Section -->
+        <section id="services" class="section-padding bg-gradient-to-br">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Technologies & Platforms We Master</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        We stay at the forefront of mobile app development technology, using the latest tools and frameworks to build cutting-edge applications.
+                    </p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fab fa-swift"></i>
+                        </div>
+                        <h3>Swift & SwiftUI</h3>
+                        <p>Native iOS development using Apple's latest programming languages and frameworks for optimal performance and user experience.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Kotlin & Java</h3>
+                        <p>Modern Android development with Kotlin and Java, ensuring robust, scalable, and maintainable mobile applications.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h3>React Native</h3>
+                        <p>Cross-platform development that allows code sharing between iOS and Android while maintaining native performance.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-feather-alt"></i>
+                        </div>
+                        <h3>Flutter</h3>
+                        <p>Google's UI toolkit for building natively compiled applications for mobile from a single codebase with beautiful interfaces.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Backend Integration</h3>
+                        <p>Seamless integration with cloud services, APIs, databases, and third-party platforms for comprehensive app functionality.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security & Performance</h3>
+                        <p>Implementation of advanced security measures, encryption, and performance optimization for enterprise-grade applications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section-padding bg-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Frequently Asked Questions</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        Get answers to common questions about our mobile app development services and process.
+                    </p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item" style="border-bottom: 1px solid rgb(var(--border)); padding: 1.5rem 0;">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; font-size: 1.125rem;">How long does mobile app development take?</span>
+                            <i class="fas fa-chevron-down faq-icon" style="transition: transform 0.3s ease;"></i>
+                        </div>
+                        <div class="faq-answer" style="margin-top: 1rem; color: rgb(var(--muted-foreground)); line-height: 1.6;">
+                            <p>Development timelines vary based on app complexity. A simple app typically takes 3-4 months, while complex apps with advanced features can take 6-12 months. We provide detailed timelines during our initial consultation based on your specific requirements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" style="border-bottom: 1px solid rgb(var(--border)); padding: 1.5rem 0;">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; font-size: 1.125rem;">Should I choose native or cross-platform development?</span>
+                            <i class="fas fa-chevron-down faq-icon" style="transition: transform 0.3s ease;"></i>
+                        </div>
+                        <div class="faq-answer" style="margin-top: 1rem; color: rgb(var(--muted-foreground)); line-height: 1.6;">
+                            <p>The choice depends on your specific needs. Native apps offer optimal performance and platform-specific features, while cross-platform apps provide cost efficiency and faster development. We'll recommend the best approach based on your budget, timeline, and requirements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" style="border-bottom: 1px solid rgb(var(--border)); padding: 1.5rem 0;">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; font-size: 1.125rem;">Do you handle App Store submissions?</span>
+                            <i class="fas fa-chevron-down faq-icon" style="transition: transform 0.3s ease;"></i>
+                        </div>
+                        <div class="faq-answer" style="margin-top: 1rem; color: rgb(var(--muted-foreground)); line-height: 1.6;">
+                            <p>Yes! We handle the complete App Store and Google Play Store submission process, including creating store listings, preparing screenshots, writing descriptions, and managing the approval process to ensure successful app launches.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" style="border-bottom: 1px solid rgb(var(--border)); padding: 1.5rem 0;">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; font-size: 1.125rem;">What ongoing support do you provide?</span>
+                            <i class="fas fa-chevron-down faq-icon" style="transition: transform 0.3s ease;"></i>
+                        </div>
+                        <div class="faq-answer" style="margin-top: 1rem; color: rgb(var(--muted-foreground)); line-height: 1.6;">
+                            <p>We offer comprehensive post-launch support including bug fixes, OS updates, feature enhancements, performance monitoring, and technical support. Our maintenance packages ensure your app stays current and performs optimally.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding bg-gradient-to-br">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Ready to Build Your Mobile App?</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        Let's discuss your app idea and create a development strategy that brings your vision to life.
+                    </p>
+                </div>
+                
+                <div class="contact-form-container" style="max-width: 600px; margin: 0 auto;">
+                    <form id="contact-form" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-lg);">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Full Name *</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid rgb(var(--border)); border-radius: 0.5rem; font-size: 1rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email Address *</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid rgb(var(--border)); border-radius: 0.5rem; font-size: 1rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="app-type" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">App Type</label>
+                            <select id="app-type" name="app-type" style="width: 100%; padding: 0.75rem; border: 1px solid rgb(var(--border)); border-radius: 0.5rem; font-size: 1rem;">
+                                <option value="">Select app type</option>
+                                <option value="ios">iOS App</option>
+                                <option value="android">Android App</option>
+                                <option value="cross-platform">Cross-Platform App</option>
+                                <option value="pwa">Progressive Web App</option>
+                                <option value="not-sure">Not Sure</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="budget" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Project Budget</label>
+                            <select id="budget" name="budget" style="width: 100%; padding: 0.75rem; border: 1px solid rgb(var(--border)); border-radius: 0.5rem; font-size: 1rem;">
+                                <option value="">Select your budget range</option>
+                                <option value="10000-25000">$10,000 - $25,000</option>
+                                <option value="25000-50000">$25,000 - $50,000</option>
+                                <option value="50000-100000">$50,000 - $100,000</option>
+                                <option value="100000+">$100,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">App Idea & Requirements *</label>
+                            <textarea id="message" name="message" required rows="4" placeholder="Tell us about your app idea, target audience, key features, and timeline..." style="width: 100%; padding: 0.75rem; border: 1px solid rgb(var(--border)); border-radius: 0.5rem; font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
+                        
+                        <button type="submit" style="width: 100%; background: rgb(var(--primary)); color: white; padding: 0.875rem; border: none; border-radius: 0.5rem; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s ease;">Start My App Project</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Services -->
+        <section class="section-padding bg-white">
+            <div class="responsive-container">
+                <div class="text-center mb-16">
+                    <h2 class="responsive-heading mb-6">Related Services</h2>
+                    <p class="responsive-text max-w-3xl mx-auto">
+                        Explore our other development services that can complement your mobile app project.
+                    </p>
+                </div>
+                
+                <div class="services-grid">
+                    <a href="/solutions/website-development/" class="service-card" style="text-decoration: none; color: inherit;">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Website Development</h3>
+                        <p>Custom web development solutions with modern technologies and responsive design.</p>
+                    </a>
+                    
+                    <a href="/solutions/software-development/" class="service-card" style="text-decoration: none; color: inherit;">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Software Development</h3>
+                        <p>Enterprise software solutions and custom applications for business automation.</p>
+                    </a>
+                    
+                    <a href="/solutions/website-design/" class="service-card" style="text-decoration: none; color: inherit;">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Website Design</h3>
+                        <p>Professional website design services that create engaging user experiences.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+    <!-- Scripts -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/solution-components.js"></script>
+    
     <script>
-        // Load navigation
-        async function loadNavigation() {
+        // Load navigation and footer
+        document.addEventListener('DOMContentLoaded', async function() {
             try {
-                const response = await fetch('../components/navigation.html');
-                const html = await response.text();
-                document.getElementById('navigation').innerHTML = html;
+                // Load navigation
+                const navResponse = await fetch('../../components/navigation.html');
+                const navHtml = await navResponse.text();
+                document.getElementById('navigation').innerHTML = navHtml;
                 
-                // Initialize navigation after loading
-                if (typeof initializeNavigation === 'function') {
-                    initializeNavigation();
-                }
+                // Load footer
+                const footerResponse = await fetch('../../components/footer.html');
+                const footerHtml = await footerResponse.text();
+                document.getElementById('footer').innerHTML = footerHtml;
+                
+                // Initialize animations
+                initAnimations();
+                
+                // Initialize any interactive components
+                if (typeof initializeNavigation === 'function') initializeNavigation();
+                if (typeof initContactForm === 'function') initContactForm();
+                
+                // Initialize FAQ functionality
+                initializeFAQ();
+                
             } catch (error) {
-                console.error('Error loading navigation:', error);
+                console.error('Error loading components:', error);
+            }
+        });
+        
+        // Animation observer
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.animate-fade-in-up').forEach((el) => {
+                observer.observe(el);
+            });
+        }
+        
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('.faq-icon');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    const otherAnswer = item.querySelector('.faq-answer');
+                    const otherIcon = item.querySelector('.faq-icon');
+                    if (otherAnswer) {
+                        otherAnswer.style.display = 'none';
+                        otherAnswer.style.maxHeight = '0';
+                        otherAnswer.style.opacity = '0';
+                    }
+                    if (otherIcon) {
+                        otherIcon.style.transform = 'rotate(0deg)';
+                    }
+                }
+            });
+            
+            // Toggle current FAQ item
+            if (answer && icon) {
+                if (answer.style.display === 'none' || !answer.style.display) {
+                    answer.style.display = 'block';
+                    answer.style.maxHeight = 'none';
+                    answer.style.opacity = '1';
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    answer.style.display = 'none';
+                    answer.style.maxHeight = '0';
+                    answer.style.opacity = '0';
+                    icon.style.transform = 'rotate(0deg)';
+                }
             }
         }
         
-        // Load navigation when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            loadNavigation();
+        // Initialize FAQ functionality
+        function initializeFAQ() {
+            // Initially hide all FAQ answers
+            const faqAnswers = document.querySelectorAll('.faq-answer');
+            faqAnswers.forEach(answer => {
+                answer.style.display = 'none';
+                answer.style.maxHeight = '0';
+                answer.style.opacity = '0';
+                answer.style.transition = 'all 0.3s ease';
+            });
             
-            // Add event listeners for consultation buttons
-            const heroBtn = document.getElementById('heroConsultationBtn');
-            const contactBtn = document.getElementById('contactConsultationBtn');
-            
-            if (heroBtn) {
-                heroBtn.addEventListener('click', function(e) {
+            // Add click handlers to FAQ questions
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach((question, index) => {
+                question.addEventListener('click', function(e) {
                     e.preventDefault();
-                    showModal();
+                    toggleFAQ(this);
                 });
-            }
-            
-            if (contactBtn) {
-                contactBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showModal();
-                });
-            }
-        });
+            });
+        }
     </script>
 </body>
 </html> 
