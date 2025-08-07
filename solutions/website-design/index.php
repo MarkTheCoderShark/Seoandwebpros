@@ -28,14 +28,14 @@
     <link rel="canonical" href="https://seoandwebpros.com/solutions/website-design/">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/icon-144x144.png">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/images/icon-144x144.png">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/optimized-ui.css">
-    <link rel="stylesheet" href="/assets/css/enhanced-components.css">
-    <link rel="stylesheet" href="/assets/css/animations.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/optimized-ui.css">
+    <link rel="stylesheet" href="../../assets/css/enhanced-components.css">
+    <link rel="stylesheet" href="../../assets/css/animations.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -88,7 +88,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/navigation.html'; ?>
+    <?php include '../../components/navigation.html'; ?>
     
     <!-- Main Content -->
     <main>
@@ -417,11 +417,11 @@
     </main>
     
     <!-- Footer -->
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/footer.html'; ?>
+    <?php include '../../components/footer.html'; ?>
     
     <!-- Scripts -->
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/components.js"></script>
-    <script src="/assets/js/solution-components.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/solution-components.js"></script>
 </body>
 </html> 
