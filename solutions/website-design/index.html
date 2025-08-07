@@ -135,8 +135,8 @@
         .hero-title {
             font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            margin-bottom: 2rem;
             color: rgb(var(--foreground));
         }
 
@@ -293,33 +293,34 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Hero layout with CTA on right - separate from content flow */
+        /* Hero layout with CTA on right - properly centered */
         .hero-content-wrapper {
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 2rem;
             width: 100%;
         }
 
         .hero-main-content {
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            align-items: start;
+            gap: 4rem;
+            align-items: center;
             width: 100%;
+            min-height: 400px;
         }
 
         .hero-left {
             text-align: left;
+            padding-right: 2rem;
         }
 
         .hero-right {
-            position: absolute;
-            top: 0;
-            right: 1rem;
-            width: 300px;
-            z-index: 10;
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            justify-self: center;
         }
 
         /* Services grid spans full width independently */
@@ -341,18 +342,19 @@
         @media (max-width: 968px) {
             .hero-main-content {
                 grid-template-columns: 1fr;
+                gap: 3rem;
                 text-align: center;
+                min-height: auto;
             }
             
             .hero-left {
                 text-align: center;
+                padding-right: 0;
             }
 
             .hero-right {
-                position: relative;
-                right: auto;
-                width: 100%;
-                margin-top: 2rem;
+                max-width: 400px;
+                margin: 0 auto;
             }
 
             .hero-services-section .services-grid {
@@ -708,28 +710,28 @@
             <div class="hero-main-content">
                 <div class="hero-left">
                     <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
-                        Website Design Company
+                        Professional <span class="gradient-primary">Website Design</span> Services That Drive Results
                     </h1>
                     
                     <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
-                        Your website is more than just a digital storefront—it's a critical tool for growing your business. Our expert team in WordPress website design, development, and SEO is ready to deliver a custom solution that drives results and helps your business stand out.
+                        Transform your online presence with custom website design services that combine stunning visuals with powerful functionality. Our expert web designers create responsive, SEO-optimized websites that convert visitors into customers and help your business stand out in today's competitive digital landscape.
                     </p>
                     
                     <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
                         <div class="hero-buttons">
-                            <a href="#pricing" class="hero-button-primary">See Our Pricing</a>
-                            <a href="#services" class="hero-button-secondary">View Services</a>
+                            <a href="#pricing" class="hero-button-primary">View Our Packages</a>
+                            <a href="#services" class="hero-button-secondary">Explore Services</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- CTA Box positioned absolutely on right -->
-            <div class="hero-right animate-fade-in-up" style="animation-delay: 1s;">
-                <div class="cta-box">
-                    <h3>Schedule a FREE Discovery Call & Website Audit!</h3>
-                    <p>Speak to a marketing expert today. Schedule now</p>
-                    <a href="tel:9168667893" class="cta-button">Get a Free Consultation</a>
+                
+                <!-- CTA Box positioned on right -->
+                <div class="hero-right animate-fade-in-up" style="animation-delay: 1s;">
+                    <div class="cta-box">
+                        <h3>Schedule a FREE Discovery Call & Website Audit!</h3>
+                        <p>Speak to a website design expert today.</p>
+                        <a href="tel:9168667893" class="cta-button">Get a Free Consultation</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -741,48 +743,48 @@
                     <div class="service-icon">
                         <i class="fas fa-palette"></i>
                     </div>
-                    <h3>Website Design</h3>
-                    <p>Beautiful websites made by top WordPress designers.</p>
+                    <h3>Custom Website Design</h3>
+                    <p>Stunning, user-centered web designs that reflect your brand identity and engage your target audience with modern aesthetics.</p>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-code"></i>
+                        <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>WordPress Development</h3>
-                    <p>Full WordPress development team with deep technical experience.</p>
+                    <h3>Responsive Web Design</h3>
+                    <p>Mobile-first website designs that deliver exceptional user experiences across all devices and screen sizes.</p>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <h3>WordPress Maintenance</h3>
-                    <p>Our sites are always secured, always up and always fully functional.</p>
+                    <h3>E-commerce Design</h3>
+                    <p>Conversion-optimized online store designs with secure checkout processes that maximize sales and customer satisfaction.</p>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-server"></i>
+                        <i class="fab fa-wordpress"></i>
                     </div>
-                    <h3>WordPress Managed Hosting</h3>
-                    <p>High-level security, ultra-fast speeds, fully managed updates.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Premium Support</h3>
-                    <p>A dedicated point of contact, priority support and more.</p>
+                    <h3>WordPress Website Design</h3>
+                    <p>Professional WordPress sites combining beautiful design with powerful CMS functionality for easy content management.</p>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-search"></i>
                     </div>
-                    <h3>Search Engine Optimization</h3>
-                    <p>Set your website up for success with our SEO programs.</p>
+                    <h3>SEO-Optimized Design</h3>
+                    <p>Search engine friendly website architecture with optimized code, fast loading speeds, and SEO best practices built-in.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Website Redesign Services</h3>
+                    <p>Transform outdated websites into modern, high-performing digital assets that drive traffic, leads, and conversions.</p>
                 </div>
             </div>
         </div>
