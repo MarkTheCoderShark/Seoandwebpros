@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content SEO Services - SEO & Web Pros</title>
-    <meta name="description" content="Expert content SEO services. Keyword research, content optimization, on-page SEO, and content strategy that ranks. Get a free content SEO audit today!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>Content SEO Services | Professional Content Optimization - SEO & Web Pros</title>
+    <meta name="description" content="Professional content SEO services. Keyword research, content optimization, on-page SEO, and content strategy that ranks. Expert content SEO specialists delivering measurable results.">
     <meta name="keywords" content="content SEO, content optimization, keyword research, on-page SEO, content strategy, content marketing SEO">
     <link rel="canonical" href="https://seoandwebpros.com/solutions/seo/content/content-seo.html">
+    
+    <!-- Resource hints for better performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="../../assets/css/optimized-ui.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+    
+    <!-- Load critical CSS immediately -->
     <link rel="stylesheet" href="../../assets/css/optimized-ui.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -27,77 +39,1054 @@
       "areaServed": "Worldwide"
     }
     </script>
+    
+    <!-- Critical CSS for Hero Section and Service Cards -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        :root {
+            --primary: 59 130 246;
+            --background: 249 250 251;
+            --foreground: 15 23 42;
+            --card: 255 255 255;
+            --border: 226 232 240;
+            --muted-foreground: 100 116 139;
+            --radius: 0.5rem;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        * { box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, rgb(var(--background)), rgb(var(--card)));
+            color: rgb(var(--foreground));
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8fafc, #ffffff);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgb(var(--primary) / 0.1), rgb(var(--primary) / 0.05));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Hero layout with CTA on right */
+        .hero-content-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .hero-main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+            min-height: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-left {
+            text-align: left;
+            padding-right: 2rem;
+        }
+
+        .hero-right {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            justify-self: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: rgb(var(--foreground));
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--primary) / 0.8));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: rgb(var(--muted-foreground));
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-button-primary {
+            background: rgb(var(--primary));
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-button-primary:hover {
+            background: rgb(var(--primary) / 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgb(var(--primary) / 0.3);
+        }
+
+        .hero-button-secondary {
+            background: transparent;
+            color: rgb(var(--primary));
+            padding: 1rem 2rem;
+            border: 2px solid rgb(var(--primary));
+            border-radius: var(--radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-button-secondary:hover {
+            background: rgb(var(--primary));
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+            border: 1px solid rgb(var(--border));
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgb(var(--foreground));
+        }
+
+        .cta-box p {
+            color: rgb(var(--muted-foreground));
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            background: rgb(var(--primary));
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .cta-button:hover {
+            background: rgb(var(--primary) / 0.9);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive hero */
+        @media (max-width: 1024px) {
+            .hero-main-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .hero-left {
+                padding-right: 0;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-button-primary,
+            .hero-button-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        /* Service Cards */
+        .card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border: 1px solid rgb(var(--border));
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+        }
+
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 400px;
+            position: relative;
+        }
+
+        .card-header {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .service-icon {
+            width: 4rem;
+            height: 4rem;
+            background: rgb(var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(var(--primary) / 0.3);
+        }
+
+        .service-icon.primary {
+            background: rgb(var(--primary));
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgb(var(--foreground));
+            line-height: 1.2;
+        }
+
+        .card-description {
+            color: rgb(var(--muted-foreground));
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            min-height: 4.5rem;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: flex-start;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 2rem;
+            min-height: 3rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .badge-primary {
+            background: rgb(var(--primary) / 0.1);
+            color: rgb(var(--primary));
+            border: 1px solid rgb(var(--primary) / 0.2);
+        }
+
+        .badge-primary:hover {
+            background: rgb(var(--primary) / 0.2);
+            transform: translateY(-1px);
+        }
+
+        .card-footer {
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: rgb(var(--primary));
+            border: 1px solid rgb(var(--primary));
+        }
+
+        .btn-outline:hover {
+            background: rgb(var(--primary));
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        /* Timeline Styles */
+        .timeline-container {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 3rem 0;
+            position: relative;
+        }
+
+        .timeline-item {
+            flex: 1;
+            max-width: 300px;
+            position: relative;
+        }
+
+        .timeline-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border: 1px solid rgb(var(--border));
+            transition: all 0.3s ease;
+            position: relative;
+            text-align: center;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+        }
+
+        .timeline-card:hover .card {
+            border-color: rgb(var(--primary));
+            box-shadow: 0 20px 25px -5px rgb(var(--primary) / 0.1);
+        }
+
+        /* Step numbers in top left corner */
+        .timeline-card {
+            position: relative;
+        }
+
+        .timeline-card::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 35px;
+            height: 35px;
+            background: rgb(var(--primary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 700;
+            z-index: 3;
+            box-shadow: 0 2px 4px -1px rgb(var(--primary) / 0.3);
+        }
+
+        /* Remove the timeline line */
+        .timeline-line {
+            display: none;
+        }
+
+        /* Responsive timeline */
+        @media (max-width: 1024px) {
+            .timeline-container {
+                flex-direction: column;
+                gap: 3rem;
+                padding: 2rem 0;
+            }
+
+            .timeline-line {
+                display: none;
+            }
+
+            .timeline-item {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .timeline-item:not(:last-child)::after,
+            .timeline-item:not(:last-child)::before {
+                display: none;
+            }
+
+            .timeline-item:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                bottom: -2rem;
+                left: 50%;
+                width: 2px;
+                height: 2rem;
+                background: rgb(var(--primary));
+                transform: translateX(-50%);
+            }
+
+            .timeline-item:not(:last-child)::before {
+                content: '↓';
+                position: absolute;
+                bottom: -2.5rem;
+                left: 50%;
+                color: rgb(var(--primary));
+                font-size: 1.25rem;
+                font-weight: 700;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .timeline-item {
+                max-width: 100%;
+                padding: 0 0.5rem;
+            }
+            
+            .timeline-card {
+                max-width: 100%;
+            }
+        }
+
+        /* Interactive Accordion Styles */
+        .accordion-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: white;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border: 1px solid rgb(var(--border));
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .accordion-header:hover {
+            background: rgb(var(--background));
+        }
+
+        .accordion-header.active {
+            background: rgb(var(--primary) / 0.05);
+        }
+
+        .accordion-icon {
+            width: 3rem;
+            height: 3rem;
+            background: rgb(var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .accordion-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: rgb(var(--foreground));
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .accordion-arrow {
+            color: rgb(var(--primary));
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active .accordion-arrow {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 500px;
+        }
+
+        .accordion-body {
+            padding: 0 2rem 2rem;
+        }
+
+        .accordion-description {
+            color: rgb(var(--muted-foreground));
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .accordion-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: rgb(var(--background));
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .feature-item i {
+            color: rgb(var(--primary));
+            font-size: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .cta-button-primary {
+            background: rgb(var(--primary));
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-button-primary:hover {
+            background: rgb(var(--primary) / 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgb(var(--primary) / 0.3);
+        }
+
+        /* General section styles */
+        .py-20 { padding: 5rem 0; }
+        .bg-white { background: white; }
+        .bg-gray-50 { background: rgb(var(--background)); }
+        .max-w-7xl { max-width: 80rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .text-center { text-align: center; }
+        .mb-16 { margin-bottom: 4rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-xl { font-size: 1.25rem; }
+        .font-bold { font-weight: 700; }
+        .text-gray-600 { color: rgb(var(--muted-foreground)); }
+        .max-w-3xl { max-width: 48rem; }
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+        .gap-8 { gap: 2rem; }
+        .gap-6 { gap: 1.5rem; }
+        .gap-4 { gap: 1rem; }
+
+        @media (min-width: 768px) {
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0 0 0 / 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        }
+
+        .close {
+            color: rgb(var(--muted-foreground));
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+        }
+
+        .close:hover {
+            color: rgb(var(--foreground));
+        }
+
+        .consultation-form {
+            margin-top: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: rgb(var(--foreground));
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgb(var(--border));
+            border-radius: var(--radius);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgb(var(--primary));
+            box-shadow: 0 0 0 3px rgb(var(--primary) / 0.1);
+        }
+
+        .submit-btn {
+            background: rgb(var(--primary));
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: rgb(var(--primary) / 0.9);
+            transform: translateY(-2px);
+        }
+
+        .brand-font {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Animation classes */
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <div id="navigation"></div>
 
     <!-- Hero Section -->
-    <section class="hero bg-gradient-to-br from-purple-50 via-white to-gray-50">
-        <div class="hero-content">
-            <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
-                <span class="gradient-primary">Content SEO</span>
-                <br>That Ranks & Engages
-            </h1>
-            
-            <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
-                Create content that search engines love and users engage with. Our content SEO experts develop keyword strategies, optimize on-page content, and create content that drives organic traffic and conversions.
-            </p>
-            
-            <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
-                <button type="button" id="heroConsultationBtn" class="proposal-btn brand-font">
-                    Get Free Content SEO Audit
-                </button>
+    <section class="hero">
+        <!-- Background Elements -->
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        
+        <div class="hero-content-wrapper">
+            <div class="hero-main-content">
+                <div class="hero-left">
+                    <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
+                        Professional <span class="gradient-primary">Content SEO</span> That Ranks & Engages
+                    </h1>
+                    
+                    <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
+                        Create content that search engines love and users engage with. Our content SEO experts develop keyword strategies, optimize on-page content, and create content that drives organic traffic and conversions.
+                    </p>
+                    
+                    <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
+                        <div class="hero-buttons">
+                            <a href="#services" class="hero-button-secondary">Explore Our Services</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA Box positioned on right -->
+                <div class="hero-right animate-fade-in-up" style="animation-delay: 1s;">
+                    <div class="cta-box">
+                        <h3>Schedule a FREE Content SEO Audit!</h3>
+                        <p>Speak to a content SEO expert today.</p>
+                        <button type="button" class="cta-button" onclick="showModal()">Get a Free Audit</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Grid -->
-    <section class="py-20 bg-white">
+    <!-- Content SEO Services Overview -->
+    <section class="py-20 bg-white" style="content-visibility: auto;">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6">Content SEO Services</h2>
+                <h2 class="text-4xl font-bold mb-6">Comprehensive Content SEO Services</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Our content SEO specialists create and optimize content that ranks well in search engines and engages your target audience.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 services-grid-container" style="display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem;">
+                <style>
+                    @media (min-width: 768px) {
+                        .services-grid-container {
+                            grid-template-columns: repeat(2, 1fr) !important;
+                        }
+                    }
+                    @media (min-width: 1024px) {
+                        .services-grid-container {
+                            grid-template-columns: repeat(3, 1fr) !important;
+                        }
+                    }
+                </style>
+                
                 <!-- Keyword Research -->
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
-                    <div class="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-search text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="card-title">Keyword Research</h3>
+                        <p class="card-description">
+                            Comprehensive keyword research to identify high-value search terms that drive qualified traffic and conversions.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Keyword Research</h3>
-                    <p class="text-gray-600 mb-6">
-                        Comprehensive keyword research to identify high-value search terms that drive qualified traffic.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-blue-600 mr-2"></i>
-                            Long-tail Keyword Research
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-blue-600 mr-2"></i>
-                            Search Volume Analysis
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-blue-600 mr-2"></i>
-                            Competitor Keyword Analysis
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-blue-600 mr-2"></i>
-                            Keyword Difficulty Assessment
-                        </li>
-                    </ul>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Long-tail Keywords</span>
+                            <span class="badge badge-primary">Search Volume Analysis</span>
+                            <span class="badge badge-primary">Competitor Analysis</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-
+                
                 <!-- On-Page SEO -->
-                <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-2xl">
-                    <div class="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-edit text-white text-2xl"></i>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3 class="card-title">On-Page SEO</h3>
+                        <p class="card-description">
+                            Optimize your content for search engines with proper meta tags, headings, and content structure.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">On-Page SEO</h3>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Meta Tags</span>
+                            <span class="badge badge-primary">Content Structure</span>
+                            <span class="badge badge-primary">Internal Linking</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Content Strategy -->
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="card-title">Content Strategy</h3>
+                        <p class="card-description">
+                            Develop a comprehensive content strategy that aligns with your business goals and target audience.
+                        </p>
+                    </div>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Content Planning</span>
+                            <span class="badge badge-primary">Audience Research</span>
+                            <span class="badge badge-primary">Content Calendar</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Content Optimization -->
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="card-title">Content Optimization</h3>
+                        <p class="card-description">
+                            Optimize existing content to improve search rankings and user engagement metrics.
+                        </p>
+                    </div>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Content Audits</span>
+                            <span class="badge badge-primary">Performance Analysis</span>
+                            <span class="badge badge-primary">Conversion Optimization</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Content -->
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-blog"></i>
+                        </div>
+                        <h3 class="card-title">Blog Content</h3>
+                        <p class="card-description">
+                            Create engaging blog content that ranks for target keywords and drives organic traffic.
+                        </p>
+                    </div>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">SEO Writing</span>
+                            <span class="badge badge-primary">Topic Research</span>
+                            <span class="badge badge-primary">Content Distribution</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Content Analytics -->
+                <div class="card service-card">
+                    <div class="card-header">
+                        <div class="service-icon primary">
+                            <i class="fas fa-analytics"></i>
+                        </div>
+                        <h3 class="card-title">Content Analytics</h3>
+                        <p class="card-description">
+                            Track and analyze content performance to optimize your content strategy and improve results.
+                        </p>
+                    </div>
+                    <div class="card-content">
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Performance Tracking</span>
+                            <span class="badge badge-primary">ROI Analysis</span>
+                            <span class="badge badge-primary">A/B Testing</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-outline btn-sm">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
                     <p class="text-gray-600 mb-6">
                         Optimize your web pages for search engines with proper meta tags, headings, and content structure.
                     </p>
@@ -240,7 +1229,7 @@
         </div>
     </section>
 
-    <!-- Why Choose Us -->
+    <!-- Why Choose Our Content SEO Services -->
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
@@ -250,43 +1239,159 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-pen text-white text-2xl"></i>
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <div class="accordion-title">Content Expertise</div>
+                        <div class="accordion-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Content Expertise</h3>
-                    <p class="text-gray-600">Experienced content creators who understand both SEO and user engagement.</p>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">
+                                Our team of experienced content creators understands both SEO best practices and user engagement principles. We create content that ranks well in search engines while providing genuine value to your audience.
+                            </p>
+                            <div class="accordion-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>SEO-Optimized Content Creation</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>User Engagement Optimization</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Content Performance Analysis</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Conversion-Focused Writing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="accordion-title">Data-Driven Approach</div>
+                        <div class="accordion-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Data-Driven Approach</h3>
-                    <p class="text-gray-600">Content strategies backed by data and performance analysis.</p>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">
+                                Every content strategy we develop is backed by comprehensive data analysis and performance metrics. We use advanced analytics to identify opportunities and optimize content for maximum impact.
+                            </p>
+                            <div class="accordion-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Keyword Performance Tracking</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Content Analytics & Insights</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Competitor Content Analysis</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>ROI Measurement & Reporting</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users text-white text-2xl"></i>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="accordion-title">User-Focused Content</div>
+                        <div class="accordion-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">User-Focused</h3>
-                    <p class="text-gray-600">Content that serves both search engines and your target audience.</p>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">
+                                We create content that serves both search engines and your target audience. Our content is designed to answer user queries, solve problems, and drive meaningful engagement and conversions.
+                            </p>
+                            <div class="accordion-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Audience Research & Personas</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>User Intent Optimization</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Engagement Metrics Focus</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Conversion Path Optimization</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-clock text-white text-2xl"></i>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="accordion-title">Consistent Results</div>
+                        <div class="accordion-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Consistent Results</h3>
-                    <p class="text-gray-600">Ongoing content optimization and performance monitoring.</p>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">
+                                We provide ongoing content optimization and performance monitoring to ensure your content continues to perform well and drive sustainable organic growth for your business.
+                            </p>
+                            <div class="accordion-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Regular Content Audits</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Performance Monitoring</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Continuous Optimization</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Long-term Growth Strategy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
+    <!-- Our Content SEO Process -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
@@ -296,52 +1401,91 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
-                        1
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-card" data-step="1">
+                        <div class="service-icon primary">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="card-title">Content Audit</h3>
+                        <p class="card-description">
+                            Comprehensive analysis of your existing content and SEO performance to identify opportunities and gaps.
+                        </p>
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Content Performance Analysis</span>
+                            <span class="badge badge-primary">SEO Gap Identification</span>
+                            <span class="badge badge-primary">Competitor Content Review</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Content Audit</h3>
-                    <p class="text-gray-600">Comprehensive analysis of your existing content and SEO performance.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
-                        2
+                <div class="timeline-item">
+                    <div class="timeline-card" data-step="2">
+                        <div class="service-icon primary">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="card-title">Strategy Development</h3>
+                        <p class="card-description">
+                            Create a comprehensive content strategy based on keyword research, business goals, and audience insights.
+                        </p>
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Keyword Research</span>
+                            <span class="badge badge-primary">Content Planning</span>
+                            <span class="badge badge-primary">Audience Analysis</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Strategy Development</h3>
-                    <p class="text-gray-600">Create a content strategy based on keyword research and business goals.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
-                        3
+                <div class="timeline-item">
+                    <div class="timeline-card" data-step="3">
+                        <div class="service-icon primary">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3 class="card-title">Content Creation</h3>
+                        <p class="card-description">
+                            Create and optimize content that ranks well in search engines and engages your target audience.
+                        </p>
+                        <div class="service-tags">
+                            <span class="badge badge-primary">SEO Writing</span>
+                            <span class="badge badge-primary">Content Optimization</span>
+                            <span class="badge badge-primary">On-Page SEO</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Content Creation</h3>
-                    <p class="text-gray-600">Create and optimize content that ranks and engages your audience.</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
-                        4
+                <div class="timeline-item">
+                    <div class="timeline-card" data-step="4">
+                        <div class="service-icon primary">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="card-title">Performance Optimization</h3>
+                        <p class="card-description">
+                            Monitor performance metrics and continuously optimize content for better rankings and engagement.
+                        </p>
+                        <div class="service-tags">
+                            <span class="badge badge-primary">Performance Monitoring</span>
+                            <span class="badge badge-primary">Content Optimization</span>
+                            <span class="badge badge-primary">ROI Analysis</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Performance Optimization</h3>
-                    <p class="text-gray-600">Monitor performance and continuously optimize content for better results.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-purple-600 to-blue-600">
+    <!-- Ready to Create Content That Ranks? -->
+    <section class="py-20 bg-gray-50">
         <div class="max-w-4xl mx-auto text-center px-4">
-            <h2 class="text-4xl font-bold text-white mb-6">Ready to Create Content That Ranks?</h2>
-            <p class="text-xl text-purple-100 mb-8">
+            <h2 class="text-4xl font-bold mb-6">Ready to Create Content That Ranks?</h2>
+            <p class="text-xl text-gray-600 mb-8">
                 Get a free content SEO audit and discover how we can improve your content strategy and search rankings.
             </p>
-            <button type="button" id="contactConsultationBtn" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-                Get Free Content SEO Audit
-            </button>
+            <div class="cta-buttons">
+                <button type="button" id="contactConsultationBtn" class="cta-button-primary" onclick="showModal()">
+                    Get Free Content SEO Audit
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -425,7 +1569,7 @@
     <!-- Scripts -->
     <script src="../../assets/js/main.js"></script>
     <script>
-        // Load navigation
+        // Load navigation and footer
         async function loadNavigation() {
             try {
                 const response = await fetch('../../components/navigation.html');
@@ -441,20 +1585,66 @@
             }
         }
         
-        // Load navigation when page loads
+        async function loadFooter() {
+            try {
+                const response = await fetch('../../components/footer.html');
+                const html = await response.text();
+                document.getElementById('footer').innerHTML = html;
+            } catch (error) {
+                console.error('Error loading footer:', error);
+            }
+        }
+        
+        // Accordion functionality
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const isActive = header.classList.contains('active');
+            
+            // Close all accordion items
+            document.querySelectorAll('.accordion-header').forEach(h => {
+                h.classList.remove('active');
+                h.nextElementSibling.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                header.classList.add('active');
+                content.classList.add('active');
+            }
+        }
+        
+        // Modal functionality
+        function showModal() {
+            const modal = document.getElementById('consultationModal');
+            modal.style.display = 'block';
+        }
+        
+        // Close modal when clicking on X
         document.addEventListener('DOMContentLoaded', function() {
-            loadNavigation();
+            const modal = document.getElementById('consultationModal');
+            const closeBtn = document.querySelector('.close');
             
-            // Add event listeners for consultation buttons
-            const heroBtn = document.getElementById('heroConsultationBtn');
-            const contactBtn = document.getElementById('contactConsultationBtn');
-            
-            if (heroBtn) {
-                heroBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showModal();
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    modal.style.display = 'none';
                 });
             }
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+        
+        // Load navigation and footer when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNavigation();
+            loadFooter();
+            
+            // Add event listeners for consultation buttons
+            const contactBtn = document.getElementById('contactConsultationBtn');
             
             if (contactBtn) {
                 contactBtn.addEventListener('click', function(e) {
