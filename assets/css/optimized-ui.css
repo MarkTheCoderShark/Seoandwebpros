@@ -377,6 +377,115 @@ body {
   background-color: rgb(255 255 255);
 }
 
+/* Hero Section */
+.hero-section {
+    position: relative;
+    padding: 0.2rem 2rem 4rem;  /* Minimal top padding */
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgb(var(--background)), rgb(var(--card)));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, rgb(var(--foreground)), rgb(var(--primary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgb(var(--muted-foreground));
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.hero-button-primary {
+    background: rgb(var(--primary));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.hero-button-primary:hover {
+    background: rgba(var(--primary), 0.9);
+}
+
+.hero-button-secondary {
+    background: transparent;
+    color: rgb(var(--primary));
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    border: 2px solid rgb(var(--primary));
+    transition: all 0.3s ease;
+}
+
+.hero-button-secondary:hover {
+    background: rgb(var(--primary));
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 0.2rem 1rem 3rem;  /* Minimal top padding on mobile */
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.125rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .hero-button-primary,
+    .hero-button-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Content Container */
+.content-container {
+    padding-top: 0.1rem; /* Minimal padding */
+}
+
 /* Navigation Styles */
 .nav {
   position: fixed;

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}} | SEO and Web Pros</title>
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <meta name="keywords" content="{{META_KEYWORDS}}">
+    <link rel="canonical" href="https://seoandwebpros.com{{PAGE_URL}}">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/optimized-ui.css">
+    <link rel="stylesheet" href="/assets/css/enhanced-components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{PAGE_TITLE}} | SEO and Web Pros">
+    <meta property="og:description" content="{{META_DESCRIPTION}}">
+    <meta property="og:image" content="https://seoandwebpros.com/assets/images/{{OG_IMAGE}}">
+    <meta property="og:url" content="https://seoandwebpros.com{{PAGE_URL}}">
+    <meta property="og:type" content="website">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "{{PAGE_TITLE}}",
+        "description": "{{META_DESCRIPTION}}",
+        "provider": {
+            "@type": "Organization",
+            "name": "SEO and Web Pros",
+            "url": "https://seoandwebpros.com"
+        },
+        "areaServed": "Worldwide",
+        "serviceType": "{{SERVICE_TYPE}}",
+        "offers": {
+            "@type": "Offer",
+            "description": "{{SERVICE_DESCRIPTION}}"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div id="navigation"></div>
+
+    <!-- Page Content -->
+    {{PAGE_CONTENT}}
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/components.js"></script>
+    <script>
+        // Initialize page-specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeAnimations();
+            initializeFAQ();
+            initializeContactForm();
+        });
+        
+        // Animation observer
+        function initializeAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.fade-up').forEach((el) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+        
+        // FAQ Toggle
+        function initializeFAQ() {
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const icon = this.querySelector('.faq-icon');
+                    
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem) {
+                            item.querySelector('.faq-answer').classList.remove('active');
+                            item.querySelector('.faq-icon').classList.remove('active');
+                        }
+                    });
+                    
+                    answer.classList.toggle('active');
+                    icon.classList.toggle('active');
+                });
+            });
+        }
+        
+        // Contact Form
+        function initializeContactForm() {
+            const form = document.getElementById('contact-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(form);
+                    const submitBtn = form.querySelector('.form-submit');
+                    const originalText = submitBtn.textContent;
+                    
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // Replace with actual form submission
+                    setTimeout(() => {
+                        alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+                        form.reset();
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 1000);
+                });
+            }
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}} | SEO and Web Pros</title>
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <meta name="keywords" content="{{META_KEYWORDS}}">
+    <link rel="canonical" href="https://seoandwebpros.com/solutions/{{PAGE_URL}}/">
+    <link rel="stylesheet" href="../../assets/css/optimized-ui.css">
+    <link rel="stylesheet" href="../../assets/css/enhanced-components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{PAGE_TITLE}} | SEO and Web Pros">
+    <meta property="og:description" content="{{META_DESCRIPTION}}">
+    <meta property="og:image" content="https://seoandwebpros.com/assets/images/{{OG_IMAGE}}">
+    <meta property="og:url" content="https://seoandwebpros.com/solutions/{{PAGE_URL}}/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{PAGE_TITLE}} | SEO and Web Pros">
+    <meta name="twitter:description" content="{{META_DESCRIPTION}}">
+    <meta name="twitter:image" content="https://seoandwebpros.com/assets/images/{{OG_IMAGE}}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon-16x16.png">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "{{PAGE_TITLE}}",
+        "description": "{{META_DESCRIPTION}}",
+        "provider": {
+            "@type": "Organization",
+            "name": "SEO and Web Pros",
+            "url": "https://seoandwebpros.com"
+        },
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "{{PAGE_TITLE}} Services",
+            "itemListElement": [
+                {{SCHEMA_SERVICES}}
+            ]
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div id="navigation"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content fade-up">
+                <h1 class="hero-title">{{HERO_TITLE}}</h1>
+                <p class="hero-description">{{HERO_DESCRIPTION}}</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="hero-button-primary">{{CTA_PRIMARY}}</a>
+                    <a href="#services" class="hero-button-secondary">{{CTA_SECONDARY}}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Service Matters Section -->
+    <section class="section-padding bg-white">
+        <div class="responsive-container">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="responsive-heading mb-6">{{WHY_TITLE}}</h2>
+                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">{{WHY_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div class="space-y-6">
+                    {{IMPACT_CARDS}}
+                </div>
+                
+                <div class="stats-grid">
+                    {{STATS_CARDS}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services/Features Section -->
+    <section id="services" class="section-padding bg-gradient-to-br from-gray-50 to-white">
+        <div class="responsive-container">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="responsive-heading mb-6">{{SERVICES_TITLE}}</h2>
+                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">{{SERVICES_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="service-grid">
+                {{SERVICE_CARDS}}
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section-padding bg-white">
+        <div class="responsive-container">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="responsive-heading mb-6">{{PROCESS_TITLE}}</h2>
+                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">{{PROCESS_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="process-grid">
+                {{PROCESS_STEPS}}
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding bg-white">
+        <div class="responsive-container">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="responsive-heading mb-6">Frequently Asked Questions</h2>
+                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
+                    Get answers to common questions about our {{SERVICE_NAME}} services and process.
+                </p>
+            </div>
+            
+            <div class="faq-container">
+                {{FAQ_ITEMS}}
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding bg-gradient-to-br from-gray-50 to-white">
+        <div class="responsive-container">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="responsive-heading mb-6">What Our Clients Say</h2>
+                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
+                    Don't just take our word for it. Here's what our satisfied clients have to say about our {{SERVICE_NAME}} services.
+                </p>
+            </div>
+            
+            <div class="testimonial-grid">
+                {{TESTIMONIAL_CARDS}}
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding">
+        <div class="responsive-container">
+            <div class="cta-section fade-up">
+                <h2 class="cta-title">{{CTA_TITLE}}</h2>
+                <p class="cta-description">{{CTA_DESCRIPTION}}</p>
+                <a href="#contact" class="cta-button">{{CTA_BUTTON_TEXT}}</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-gradient-to-br from-gray-50 to-white">
+        <div class="responsive-container">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="responsive-heading mb-6">Let's Discuss Your Project</h2>
+                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
+                    Ready to get started? Fill out the form below and we'll get back to you within 24 hours with a detailed proposal.
+                </p>
+            </div>
+            
+            <div class="contact-form-container fade-up">
+                <form id="contact-form" class="space-y-6">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company" class="form-label">Company Name</label>
+                        <input type="text" id="company" name="company" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget" class="form-label">Project Budget</label>
+                        <select id="budget" name="budget" class="form-input">
+                            <option value="">Select your budget range</option>
+                            <option value="5000-10000">$5,000 - $10,000</option>
+                            <option value="10000-25000">$10,000 - $25,000</option>
+                            <option value="25000-50000">$25,000 - $50,000</option>
+                            <option value="50000+">$50,000+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Project Details *</label>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project, goals, and timeline..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Send My Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="section-padding bg-white">
+        <div class="responsive-container">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="responsive-heading mb-6">Related Services</h2>
+                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
+                    Explore our other services that can complement your {{SERVICE_NAME}} project.
+                </p>
+            </div>
+            
+            <div class="related-services-grid">
+                {{RELATED_SERVICES}}
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        // Load navigation
+        async function loadNavigation() {
+            try {
+                const response = await fetch('../../components/navigation.html');
+                const html = await response.text();
+                document.getElementById('navigation').innerHTML = html;
+                
+                // Initialize navigation after loading
+                if (typeof initializeNavigation === 'function') {
+                    initializeNavigation();
+                }
+            } catch (error) {
+                console.error('Error loading navigation:', error);
+            }
+        }
+        
+        // Animation observer for fade-up elements
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            // Observe all fade-up elements
+            document.querySelectorAll('.fade-up').forEach((el) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+        
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNavigation();
+            initAnimations();
+            initFAQ();
+            initContactForm();
+        });
+        
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('.faq-icon');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.querySelector('.faq-answer').classList.remove('active');
+                    item.querySelector('.faq-icon').classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ item
+            answer.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+        
+        // Initialize FAQ functionality
+        function initFAQ() {
+            // Add click handlers to FAQ questions
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', function() {
+                    toggleFAQ(this);
+                });
+            });
+        }
+        
+        // Contact Form Handler
+        function initContactForm() {
+            const form = document.getElementById('contact-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(form);
+                    const submitBtn = form.querySelector('.form-submit');
+                    const originalText = submitBtn.textContent;
+                    
+                    // Show loading state
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // Simulate form submission (replace with actual form handler)
+                    setTimeout(() => {
+                        alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+                        form.reset();
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 1000);
+                });
+            }
+        }
+    </script>
+</body>
+</html> 
