@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/assets/css/enhanced-components.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
     <style>
         /* Match app-development hero layout/styles */
         .hero {
@@ -72,14 +73,30 @@
         .timeline-card .card { border: 2px solid rgb(226 232 240); transition: all 0.3s ease; }
         .timeline-card:hover .card { border-color: rgb(59 130 246); box-shadow: 0 20px 25px -5px rgb(59 130 246 / 0.1); }
         .timeline-card::before { content: attr(data-step); position: absolute; top: -10px; left: -10px; width: 35px; height: 35px; background: rgb(59 130 246); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 700; z-index: 3; box-shadow: 0 2px 4px -1px rgb(59 130 246 / 0.3); }
-        @media (max-width: 1024px) {
-            .timeline-container { flex-direction: column; gap: 3rem; padding: 2rem 0; }
-            .timeline-item { width: 100%; max-width: 400px; margin: 0 auto; }
-        }
-        @media (max-width: 640px) {
-            .timeline-item { max-width: 100%; padding: 0 0.5rem; }
-            .timeline-card { max-width: 100%; }
-        }
+        @media (max-width: 1024px) { .timeline-container { flex-direction: column; gap: 3rem; padding: 2rem 0; } .timeline-item { width: 100%; max-width: 400px; margin: 0 auto; } }
+        @media (max-width: 640px) { .timeline-item { max-width: 100%; padding: 0 0.5rem; } .timeline-card { max-width: 100%; } }
+
+        /* Accordion (Why Choose) - match app page */
+        .accordion-container { max-width: 800px; margin: 0 auto; }
+        .accordion-item { background: white; border: 1px solid rgb(226 232 240); border-radius: 0.75rem; margin-bottom: 1rem; overflow: hidden; box-shadow: 0 1px 3px rgb(0 0 0 / 0.1); transition: all 0.3s ease; }
+        .accordion-item:hover { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); }
+        .accordion-header { width: 100%; padding: 1.5rem; background: white; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.3s ease; text-align: left; }
+        .accordion-header:hover { background: #f8fafc; }
+        .accordion-header.active { background: rgb(59 130 246 / 0.05); }
+        .accordion-icon { width: 3rem; height: 3rem; background: rgb(59 130 246); border-radius: 9999px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.25rem; margin-right: 1rem; flex-shrink: 0; }
+        .accordion-title { font-size: 1.25rem; font-weight: 700; color: rgb(17 24 39); margin: 0; flex-grow: 1; }
+        .accordion-arrow { color: rgb(59 130 246); font-size: 1rem; transition: transform 0.3s ease; flex-shrink: 0; }
+        .accordion-header.active .accordion-arrow { transform: rotate(180deg); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .accordion-content.active { max-height: 500px; }
+        .accordion-body { padding: 0 1.5rem 1.5rem; }
+        .accordion-description { color: rgb(100 116 139); font-size: 1rem; line-height: 1.6; margin-bottom: 1rem; }
+        .accordion-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+        .feature-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8fafc; border-radius: 0.75rem; transition: all 0.2s ease; }
+        .feature-item:hover { background: rgb(59 130 246 / 0.05); transform: translateX(5px); }
+        .feature-item i { color: rgb(59 130 246); font-size: 1rem; }
+        .feature-item span { font-weight: 500; color: rgb(17 24 39); }
+        @media (max-width: 768px) { .accordion-features { grid-template-columns: 1fr; } .accordion-header { padding: 1rem; } .accordion-body { padding: 0 1rem 1rem; } }
 
         /* CTA Buttons - from app-development */
         .cta-buttons { display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap; width: 100%; text-align: center; margin: 0 auto; }
@@ -136,28 +153,88 @@
             </div>
         </section>
 
-        <!-- Why WordPress -->
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4">
+        <!-- Why Choose Our WordPress Development Services (Accordion) -->
+        <section class="py-20 bg-gray-50" style="content-visibility: auto;">
+            <div class="max-w-4xl mx-auto px-4">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-6">Why Choose WordPress for Your Website?</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">WordPress powers over 43% of all websites. It’s SEO-friendly, scalable, cost-effective, and easy to manage.</p>
+                    <h2 class="text-4xl font-bold mb-6">Why Choose Our WordPress Development Services?</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">We deliver high-performance, secure, and scalable WordPress solutions tailored to your business.</p>
                 </div>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6">WordPress Development Benefits</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start"><div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1"><i class="fas fa-check text-white text-sm"></i></div><div><h4 class="font-semibold mb-2">SEO-Friendly Architecture</h4><p class="text-gray-600">Clean, semantic code and robust SEO controls.</p></div></div>
-                            <div class="flex items-start"><div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1"><i class="fas fa-check text-white text-sm"></i></div><div><h4 class="font-semibold mb-2">Scalable & Flexible</h4><p class="text-gray-600">From small sites to enterprise applications.</p></div></div>
-                            <div class="flex items-start"><div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1"><i class="fas fa-check text-white text-sm"></i></div><div><h4 class="font-semibold mb-2">Cost-Effective</h4><p class="text-gray-600">Lower development and maintenance costs.</p></div></div>
-                            <div class="flex items-start"><div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1"><i class="fas fa-check text-white text-sm"></i></div><div><h4 class="font-semibold mb-2">User-Friendly Management</h4><p class="text-gray-600">Intuitive admin UI to manage your site easily.</p></div></div>
+                <div class="accordion-container">
+                    <!-- SEO-Ready Architecture -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-icon"><i class="fas fa-chart-line"></i></div>
+                            <h3 class="accordion-title">SEO-Ready Architecture</h3>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p class="accordion-description">Clean code structure, schema markup, and Core Web Vitals improvements built-in for better rankings.</p>
+                                <div class="accordion-features">
+                                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Schema & Open Graph</span></div>
+                                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Optimized CWV & caching</span></div>
+                                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>SEO-friendly URLs</span></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-xl text-center"><div class="text-4xl font-extrabold text-blue-600 mb-2">43%</div><div class="text-gray-600">of all websites use WordPress</div></div>
-                        <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-6 rounded-xl text-center"><div class="text-4xl font-extrabold text-green-600 mb-2">65M+</div><div class="text-gray-600">WordPress Sites</div></div>
-                        <div class="bg-gradient-to-br from-purple-50 to-violet-100 p-6 rounded-xl text-center"><div class="text-4xl font-extrabold text-purple-600 mb-2">59k+</div><div class="text-gray-600">Plugins Available</div></div>
-                        <div class="bg-gradient-to-br from-orange-50 to-amber-100 p-6 rounded-xl text-center"><div class="text-4xl font-extrabold text-orange-600 mb-2">#1</div><div class="text-gray-600">CMS by market share</div></div>
+
+                    <!-- Custom Design & Flexibility -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-icon"><i class="fas fa-paint-brush"></i></div>
+                            <h3 class="accordion-title">Custom Design & Flexibility</h3>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p class="accordion-description">Pixel-perfect themes and custom blocks that reflect your brand and scale with your needs.</p>
+                                <div class="accordion-features">
+                                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Custom theme development</span></div>
+                                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Gutenberg/ACF Blocks</span></div>
+                                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Reusable design system</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance & Speed -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-icon"><i class="fas fa-bolt"></i></div>
+                            <h3 class="accordion-title">Performance & Speed</h3>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p class="accordion-description">Server and frontend optimizations to hit fast load times and high Lighthouse scores.</p>
+                                <div class="accordion-features">
+                                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Image/CDN optimization</span></div>
+                                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Code splitting & lazy-loading</span></div>
+                                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Edge caching</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secure & Reliable -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-icon"><i class="fas fa-shield-alt"></i></div>
+                            <h3 class="accordion-title">Secure & Reliable</h3>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p class="accordion-description">Hardened WordPress setups with proactive monitoring and backups.</p>
+                                <div class="accordion-features">
+                                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>WAF & login protection</span></div>
+                                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Automated backups</span></div>
+                                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Uptime monitoring</span></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -358,5 +435,19 @@
     <div id="footer"></div>
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/components.js"></script>
+    <script>
+        // Minimal accordion toggle, matching app page behavior
+        function toggleAccordion(header) {
+            const isActive = header.classList.contains('active');
+            document.querySelectorAll('.accordion-header').forEach(h => {
+                h.classList.remove('active');
+                const next = h.nextElementSibling; if (next) next.classList.remove('active');
+            });
+            if (!isActive) {
+                header.classList.add('active');
+                const next = header.nextElementSibling; if (next) next.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html> 
