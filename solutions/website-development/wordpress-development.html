@@ -10,12 +10,64 @@
     <link rel="stylesheet" href="/assets/css/enhanced-components.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Match app-development hero layout/styles */
+        .hero {
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8fafc, #ffffff);
+        }
+        .hero-background { position: absolute; inset: 0; z-index: 0; }
+        .floating-shape { position: absolute; border-radius: 50%; background: linear-gradient(135deg, rgb(59 130 246 / 0.1), rgb(59 130 246 / 0.05)); animation: float 6s ease-in-out infinite; }
+        .shape-1 { width: 100px; height: 100px; top: 20%; left: 10%; animation-delay: 0s; }
+        .shape-2 { width: 150px; height: 150px; top: 60%; right: 15%; animation-delay: 2s; }
+        .shape-3 { width: 80px; height: 80px; bottom: 20%; left: 20%; animation-delay: 4s; }
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+        .hero-content-wrapper { position: relative; max-width: 1200px; margin: 0 auto; padding: 0 2rem; width: 100%; }
+        .hero-main-content { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: center; width: 100%; min-height: 400px; position: relative; z-index: 1; }
+        .hero-left { text-align: left; padding-right: 2rem; }
+        .hero-right { position: relative; width: 100%; max-width: 350px; justify-self: center; }
+        .hero-title { font-size: 3.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 2rem; color: rgb(15 23 42); }
+        .gradient-primary { background: linear-gradient(135deg, rgb(59 130 246), #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-description { font-size: 1.25rem; color: rgb(100 116 139); margin-bottom: 2.5rem; max-width: 700px; line-height: 1.6; }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .hero-button-primary { background: rgb(59 130 246); color: white; padding: 0.875rem 2rem; border-radius: 0.75rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; border: none; cursor: pointer; font-size: 1rem; }
+        .hero-button-primary:hover { background: rgb(59 130 246 / 0.9); transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); }
+        .hero-button-secondary { background: transparent; color: rgb(59 130 246); padding: 0.875rem 2rem; border-radius: 0.75rem; font-weight: 600; text-decoration: none; border: 2px solid rgb(59 130 246); transition: all 0.3s ease; font-size: 1rem; }
+        .hero-button-secondary:hover { background: rgb(59 130 246); color: white; transform: translateY(-2px); }
+        .cta-box { background: linear-gradient(135deg, rgb(59 130 246), #3b82f6); color: white; padding: 2rem; border-radius: 1rem; text-align: center; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04); }
+        .cta-box h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; }
+        .cta-box p { margin-bottom: 1.5rem; opacity: 0.9; font-size: 0.95rem; }
+        .hero-cta-button { background: white; color: rgb(59 130 246); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; display: inline-block; border: none; cursor: pointer; }
+        .hero-cta-button:hover { transform: translateY(-2px); box-shadow: 0 4px 6px rgb(0 0 0 / 0.1); }
+        @media (max-width: 968px) {
+            .hero-main-content { grid-template-columns: 1fr; gap: 3rem; text-align: center; min-height: auto; }
+            .hero-left { text-align: center; padding-right: 0; }
+            .hero-right { max-width: 400px; margin: 0 auto; }
+            .hero-title { font-size: 2.5rem; }
+            .hero-description { font-size: 1.125rem; }
+            .hero-buttons { justify-content: center; }
+        }
+        @media (max-width: 640px) {
+            .hero { padding: 80px 0 60px; }
+            .hero-title { font-size: 2rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .hero-button-primary, .hero-button-secondary { width: 100%; max-width: 300px; }
+        }
+    </style>
 </head>
 <body>
     <div id="navigation"></div>
     <main>
         <!-- Hero -->
         <section class="hero bg-gradient-to-br from-blue-50 via-white to-gray-50">
+            <div class="hero-background">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+            </div>
             <div class="hero-content-wrapper">
                 <div class="hero-main-content">
                     <div class="hero-left">
