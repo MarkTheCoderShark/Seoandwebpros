@@ -546,86 +546,80 @@
 
     <!-- Why Choose Our Software Development Services -->
     <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-6">Why Choose Our Software Development Services?</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Our software development experts deliver high-quality, scalable solutions that drive business efficiency and growth.
-                </p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Our software development experts deliver high-quality, scalable solutions that drive business efficiency and growth.</p>
             </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl font-bold mb-6">Software Development Benefits</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
-                                <i class="fas fa-check text-white text-sm"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-2">Custom Solutions</h4>
-                                <p class="text-gray-600">Tailored software designed specifically for your business processes and unique requirements.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
-                                <i class="fas fa-check text-white text-sm"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-2">Scalable Architecture</h4>
-                                <p class="text-gray-600">Built with scalability in mind to grow with your business and handle increased demands.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
-                                <i class="fas fa-check text-white text-sm"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-2">Security & Compliance</h4>
-                                <p class="text-gray-600">Enterprise-grade security measures and compliance with industry standards and regulations.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1">
-                                <i class="fas fa-check text-white text-sm"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-2">Ongoing Support</h4>
-                                <p class="text-gray-600">Comprehensive maintenance and support services to ensure optimal performance and reliability.</p>
+
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon"><i class="fas fa-cogs"></i></div>
+                        <h3 class="accordion-title">Custom Solutions</h3>
+                        <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">Tailored software designed specifically for your business processes and unique requirements.</p>
+                            <div class="accordion-features">
+                                <div class="feature-item"><i class="fas fa-check-circle"></i><span>Business Process Automation</span></div>
+                                <div class="feature-item"><i class="fas fa-check-circle"></i><span>Custom Workflows</span></div>
+                                <div class="feature-item"><i class="fas fa-check-circle"></i><span>Integration Ready</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold mb-6">Our Development Process</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">1</div>
-                            <div>
-                                <h4 class="font-semibold">Requirements Analysis</h4>
-                                <p class="text-gray-600 text-sm">Understanding your business needs and technical requirements</p>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                        <h3 class="accordion-title">Scalable Architecture</h3>
+                        <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">Built with scalability in mind to grow with your business and handle increased demands.</p>
+                            <div class="accordion-features">
+                                <div class="feature-item"><i class="fas fa-check-circle"></i><span>Cloud-Native Options</span></div>
+                                <div class="feature-item"><i class="fas fa-check-circle"></i><span>Microservices</span></div>
+                                <div class="feature-item"><i class="fas fa-check-circle"></i><span>High Availability</span></div>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">2</div>
-                            <div>
-                                <h4 class="font-semibold">Design & Architecture</h4>
-                                <p class="text-gray-600 text-sm">Creating system architecture and user interface designs</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="accordion-title">Security & Compliance</h3>
+                        <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">Enterprise-grade security measures and compliance with industry standards and regulations.</p>
+                            <div class="accordion-features">
+                                <div class="feature-item"><i class="fas fa-check-circle"></i><span>Best-Practice Security</span></div>
+                                <div class="feature-item"><i class="fas fa-check-circle"></i><span>Compliance Ready</span></div>
+                                <div class="feature-item"><i class="fas fa-check-circle"></i><span>Regular Audits</span></div>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">3</div>
-                            <div>
-                                <h4 class="font-semibold">Development & Testing</h4>
-                                <p class="text-gray-600 text-sm">Building and thoroughly testing the software solution</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 text-white font-bold">4</div>
-                            <div>
-                                <h4 class="font-semibold">Deployment & Support</h4>
-                                <p class="text-gray-600 text-sm">Launching the solution and providing ongoing support</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon"><i class="fas fa-headset"></i></div>
+                        <h3 class="accordion-title">Ongoing Support</h3>
+                        <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">Comprehensive maintenance and support services to ensure optimal performance and reliability.</p>
+                            <div class="accordion-features">
+                                <div class="feature-item"><i class="fas fa-check-circle"></i><span>Maintenance Plans</span></div>
+                                <div class="feature-item"><i class="fas fa-check-circle"></i><span>Performance Monitoring</span></div>
+                                <div class="feature-item"><i class="fas fa-check-circle"></i><span>Enhancement Roadmaps</span></div>
                             </div>
                         </div>
                     </div>
@@ -652,36 +646,46 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Common questions about software development services
-                </p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Common questions about software development services</p>
             </div>
-            
-            <div class="max-w-4xl mx-auto space-y-6">
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
-                    <button class="faq-question w-full text-left p-6 focus:outline-none">
-                        <h3 class="text-lg font-semibold text-gray-900">How much does custom software development cost?</h3>
+
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <h3 class="accordion-title">How much does custom software development cost?</h3>
+                        <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
                     </button>
-                    <div class="faq-answer px-6 pb-6">
-                        <p class="text-gray-600">Custom software development costs vary based on complexity, features, and timeline. Simple applications start at $15,000, while complex enterprise solutions can range from $50,000 to $200,000+. We provide detailed quotes after understanding your specific requirements.</p>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">Custom software development costs vary based on complexity, features, and timeline. Simple applications start at $15,000, while complex enterprise solutions can range from $50,000 to $200,000+. We provide detailed quotes after understanding your specific requirements.</p>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
-                    <button class="faq-question w-full text-left p-6 focus:outline-none">
-                        <h3 class="text-lg font-semibold text-gray-900">How long does software development take?</h3>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon"><i class="fas fa-clock"></i></div>
+                        <h3 class="accordion-title">How long does software development take?</h3>
+                        <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
                     </button>
-                    <div class="faq-answer px-6 pb-6">
-                        <p class="text-gray-600">Development timelines depend on project scope and complexity. Simple applications take 6-12 weeks, while complex enterprise solutions can take 4-8 months. We use agile methodologies to deliver working features incrementally.</p>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">Development timelines depend on project scope and complexity. Simple applications take 6-12 weeks, while complex enterprise solutions can take 4-8 months. We use agile methodologies to deliver working features incrementally.</p>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
-                    <button class="faq-question w-full text-left p-6 focus:outline-none">
-                        <h3 class="text-lg font-semibold text-gray-900">Do you provide ongoing maintenance and support?</h3>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-icon"><i class="fas fa-tools"></i></div>
+                        <h3 class="accordion-title">Do you provide ongoing maintenance and support?</h3>
+                        <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
                     </button>
-                    <div class="faq-answer px-6 pb-6">
-                        <p class="text-gray-600">Yes, we offer comprehensive maintenance and support packages including bug fixes, security updates, performance optimization, and feature enhancements to ensure your software continues to perform optimally.</p>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="accordion-description">Yes, we offer comprehensive maintenance and support packages including bug fixes, security updates, performance optimization, and feature enhancements to ensure your software continues to perform optimally.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -723,6 +727,28 @@
     </script>
 
     <div id="footer"></div>
+
+    <style>
+        .accordion-container{max-width:800px;margin:0 auto}
+        .accordion-item{background:#fff;border:1px solid rgb(var(--border));border-radius:var(--radius);margin-bottom:1rem;overflow:hidden;box-shadow:var(--shadow);transition:all .3s ease}
+        .accordion-item:hover{box-shadow:var(--shadow-lg)}
+        .accordion-header{width:100%;padding:1.5rem;background:#fff;border:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:all .3s ease;text-align:left}
+        .accordion-header:hover{background:rgb(var(--background))}
+        .accordion-header.active{background:rgb(var(--primary) / 0.05)}
+        .accordion-icon{width:3rem;height:3rem;background:rgb(var(--primary));border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.25rem;margin-right:1rem;flex-shrink:0}
+        .accordion-title{font-size:1.25rem;font-weight:700;color:rgb(var(--foreground));margin:0;flex-grow:1}
+        .accordion-arrow{color:rgb(var(--primary));font-size:1rem;transition:transform .3s ease;flex-shrink:0}
+        .accordion-header.active .accordion-arrow{transform:rotate(180deg)}
+        .accordion-content{max-height:0;overflow:hidden;transition:max-height .3s ease}
+        .accordion-content.active{max-height:500px}
+        .accordion-body{padding:0 1.5rem 1.5rem}
+        .accordion-description{color:rgb(var(--muted-foreground));font-size:1rem;line-height:1.6;margin-bottom:1rem}
+        .accordion-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+        .feature-item{display:flex;align-items:center;gap:.75rem;padding:.75rem;background:rgb(var(--background));border-radius:var(--radius);transition:all .2s ease}
+        .feature-item i{color:rgb(var(--primary))}
+        .feature-item:hover{background:rgb(var(--primary) / 0.05);transform:translateX(5px)}
+        @media (max-width:768px){.accordion-header{padding:1rem}.accordion-body{padding:0 1rem 1rem}.accordion-features{grid-template-columns:1fr}}
+    </style>
 
     <script src="../../assets/js/main.js" defer></script>
     <script src="../../assets/js/components.js" defer></script>

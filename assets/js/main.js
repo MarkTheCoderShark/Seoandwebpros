@@ -411,3 +411,25 @@ document.addEventListener('keydown', function(e) {
         closeModal();
     }
 }); 
+
+// Accordion functionality (shared)
+function toggleAccordion(header) {
+    const accordionItem = header.parentElement;
+    const content = accordionItem.querySelector('.accordion-content');
+    const isActive = header.classList.contains('active');
+
+    // Close all accordion items on the page
+    document.querySelectorAll('.accordion-header').forEach(h => {
+        h.classList.remove('active');
+        const c = h.nextElementSibling;
+        if (c && c.classList.contains('accordion-content')) {
+            c.classList.remove('active');
+        }
+    });
+
+    // Toggle current item
+    if (!isActive) {
+        header.classList.add('active');
+        if (content) content.classList.add('active');
+    }
+} 
