@@ -424,6 +424,7 @@
     
     <!-- Scripts -->
     <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/components.js"></script>
     <script>
         // Load navigation
         async function loadNavigation() {
@@ -441,10 +442,7 @@
             }
         }
         
-        // Load navigation when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            loadNavigation();
-            
             // Add event listeners for consultation buttons
             const heroBtn = document.getElementById('heroConsultationBtn');
             const contactBtn = document.getElementById('contactConsultationBtn');

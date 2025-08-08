@@ -6,13 +6,14 @@
     <title>Shopify Web Development Services - SEO & Web Pros</title>
     <meta name="description" content="Expert Shopify web development services. Custom Shopify themes, app development, e-commerce solutions, and store optimization. Get a free consultation today!">
     <meta name="keywords" content="Shopify development, Shopify web development, custom Shopify themes, Shopify apps, Shopify e-commerce, Shopify agency">
-    <link rel="stylesheet" href="../assets/css/optimized-ui.css">
+    <link rel="stylesheet" href="/assets/css/optimized-ui.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <div id="navigation"></div>
+    <div id="footer"></div>
 
     <!-- Hero Section -->
     <section class="hero bg-gradient-to-br from-green-50 via-white to-gray-50">
@@ -443,28 +444,10 @@
         </div>
     </div>
 
-    <script src="../assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/components.js"></script>
     <script>
-        // Load navigation
-        async function loadNavigation() {
-            try {
-                const response = await fetch('../components/navigation.html');
-                const html = await response.text();
-                document.getElementById('navigation').innerHTML = html;
-                
-                // Initialize navigation after loading
-                if (typeof initializeNavigation === 'function') {
-                    initializeNavigation();
-                }
-            } catch (error) {
-                console.error('Error loading navigation:', error);
-            }
-        }
-        
-        // Load navigation when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            loadNavigation();
-            
             // Add event listeners for consultation buttons
             const heroBtn = document.getElementById('heroConsultationBtn');
             const contactBtn = document.getElementById('contactConsultationBtn');

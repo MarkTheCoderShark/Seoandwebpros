@@ -477,27 +477,9 @@
     
     <!-- Scripts -->
     <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/components.js"></script>
     <script>
-        // Load navigation
-        async function loadNavigation() {
-            try {
-                const response = await fetch('../../components/navigation.html');
-                const html = await response.text();
-                document.getElementById('navigation').innerHTML = html;
-                
-                // Initialize navigation after loading
-                if (typeof initializeNavigation === 'function') {
-                    initializeNavigation();
-                }
-            } catch (error) {
-                console.error('Error loading navigation:', error);
-            }
-        }
-        
-        // Load navigation when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            loadNavigation();
-            
             // Add event listeners for consultation buttons
             const heroBtn = document.getElementById('heroConsultationBtn');
             const contactBtn = document.getElementById('contactConsultationBtn');
