@@ -19,4 +19,20 @@
 [[redirects]]
   from = "/solutions/seo/"
   to = "/solutions/seo/index.html"
+  status = 200
+
+# Extensionless paths for Website Development subpages
+[[redirects]]
+  from = "/solutions/website-development/wordpress-development"
+  to = "/solutions/website-development/wordpress-development.html"
+  status = 200
+
+[[redirects]]
+  from = "/solutions/website-development/shopify-development"
+  to = "/solutions/website-development/shopify-development.html"
+  status = 200
+
+[[redirects]]
+  from = "/solutions/website-development/custom-development"
+  to = "/solutions/website-development/custom-development.html"
   status = 200 
