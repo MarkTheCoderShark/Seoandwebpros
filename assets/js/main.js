@@ -367,7 +367,7 @@ function initializeSuccessCarousel() {
     const nextBtn = document.querySelector('.carousel-btn[data-direction="1"]');
 
     function updateCarousel() {
-        const slideWidth = 100 / totalSlides;
+        const slideWidth = 100 / totalSlides; // 25%
         track.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
         dots.forEach((dot, idx) => dot.classList.toggle('active', idx === currentSlide));
     }

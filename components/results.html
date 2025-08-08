@@ -76,7 +76,7 @@
                 <div class="success-carousel overflow-hidden">
                     <div class="carousel-track flex transition-transform duration-500 ease-in-out" id="carouselTrack">
                         <!-- Sacramento Gutter Guard -->
-                        <div class="carousel-slide flex-shrink-0 w-full px-4">
+                        <div class="carousel-slide flex-shrink-0">
                             <div class="bg-gray-50 rounded-lg p-6 h-full hover:shadow-md transition-shadow">
                                 <div class="flex items-start space-x-3 mb-4">
                                     <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -105,7 +105,7 @@
                         </div>
                         
                         <!-- Lake Tahoe Property Management -->
-                        <div class="carousel-slide flex-shrink-0 w-full px-4">
+                        <div class="carousel-slide flex-shrink-0">
                             <div class="bg-gray-50 rounded-lg p-6 h-full hover:shadow-md transition-shadow">
                                 <div class="flex items-start space-x-3 mb-4">
                                     <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -134,7 +134,7 @@
                         </div>
                         
                         <!-- Tay's Barbershop -->
-                        <div class="carousel-slide flex-shrink-0 w-full px-4">
+                        <div class="carousel-slide flex-shrink-0">
                             <div class="bg-gray-50 rounded-lg p-6 h-full hover:shadow-md transition-shadow">
                                 <div class="flex items-start space-x-3 mb-4">
                                     <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -163,7 +163,7 @@
                         </div>
                         
                         <!-- Peptide FAQ -->
-                        <div class="carousel-slide flex-shrink-0 w-full px-4">
+                        <div class="carousel-slide flex-shrink-0">
                             <div class="bg-gray-50 rounded-lg p-6 h-full hover:shadow-md transition-shadow">
                                 <div class="flex items-start space-x-3 mb-4">
                                     <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -224,7 +224,8 @@
             
             .carousel-slide {
                 transition: all 0.3s ease;
-                flex: 0 0 100%; /* one slide per view */
+                flex: 0 0 25%; /* 4 slides => each is 25% of track (400% width) */
+                box-sizing: border-box;
             }
             
             .carousel-btn {
