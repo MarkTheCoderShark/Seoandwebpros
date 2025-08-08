@@ -2236,3 +2236,16 @@ body {
         display: none;
     }
 } 
+
+/* Background utilities (Tailwind-like) */
+.bg-white { background-color: #ffffff !important; }
+.bg-gray-50 { background-color: #f9fafb !important; }
+.bg-gray-100 { background-color: #f3f4f6 !important; }
+.bg-blue-50 { background-color: #eff6ff !important; }
+.bg-muted { background-color: rgb(var(--muted)) !important; }
+.bg-secondary { background-color: rgb(var(--secondary)) !important; }
+
+/* Alternating section backgrounds - opt-in via body.alt-sections */
+body.alt-sections main > section:not(.hero):not([class*="bg-"]):nth-of-type(even) {
+  background-color: rgb(var(--muted));
+} 

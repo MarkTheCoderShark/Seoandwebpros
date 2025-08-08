@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeFormHandling();
     initializeCounterAnimations();
     initializeScrollEffects();
+    // Enable alternating section backgrounds sitewide
+    document.body.classList.add('alt-sections');
 });
 
 // Navigation functionality
