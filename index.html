@@ -80,6 +80,8 @@
         @media (max-width: 768px) {
             .hero { margin-top: 0 !important; padding-top: 70px !important; }
         }
+        /* Visually hidden for semantic H1 */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     </style>
     
     <!-- Critical CSS - Load immediately -->
@@ -141,6 +143,7 @@
     <noscript><link rel="stylesheet" href="assets/css/optimized-ui.css"></noscript>
 </head>
 <body class="overflow-hidden h-screen">
+    <h1 class="sr-only">SEO & Web Pros — Expert Digital Marketing, SEO, and Web Development Services</h1>
     <!-- Fixed Navigation -->
     <div id="navigation" class="fixed top-0 left-0 right-0 z-50"></div>
     
