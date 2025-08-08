@@ -350,6 +350,51 @@ function initializeScrollEffects() {
             }
         });
     });
+
+    // Initialize success stories carousel (after dynamic content is loaded)
+    initializeSuccessCarousel();
+}
+
+function initializeSuccessCarousel() {
+    const track = document.getElementById('carouselTrack');
+    if (!track) return;
+
+    let currentSlide = 0;
+    const totalSlides = 4;
+
+    const dots = Array.from(document.querySelectorAll('.carousel-dot'));
+    const prevBtn = document.querySelector('.carousel-btn[data-direction="-1"]');
+    const nextBtn = document.querySelector('.carousel-btn[data-direction="1"]');
+
+    function updateCarousel() {
+        const slideWidth = 100 / totalSlides;
+        track.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+        dots.forEach((dot, idx) => dot.classList.toggle('active', idx === currentSlide));
+    }
+
+    function moveCarousel(direction) {
+        currentSlide += direction;
+        if (currentSlide < 0) currentSlide = totalSlides - 1;
+        if (currentSlide >= totalSlides) currentSlide = 0;
+        updateCarousel();
+    }
+
+    // Bind events
+    if (prevBtn) prevBtn.addEventListener('click', () => moveCarousel(-1));
+    if (nextBtn) nextBtn.addEventListener('click', () => moveCarousel(1));
+    dots.forEach(dot => {
+        const index = parseInt(dot.getAttribute('data-index'), 10);
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            updateCarousel();
+        });
+    });
+
+    // Auto-advance
+    setInterval(() => moveCarousel(1), 5000);
+
+    // Initial state
+    updateCarousel();
 }
 
 // Close modal when clicking outside

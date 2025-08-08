@@ -195,16 +195,16 @@
                 
                 <!-- Carousel Navigation -->
                 <div class="flex justify-center mt-8 space-x-4">
-                    <button class="carousel-btn bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-700 transition-colors" onclick="moveCarousel(-1)">
+                    <button class="carousel-btn bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-700 transition-colors" data-direction="-1">
                         <i class="fas fa-chevron-left"></i>
                     </button>
                     <div class="flex space-x-2">
-                        <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 transition-colors" onclick="goToSlide(0)"></button>
-                        <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 transition-colors" onclick="goToSlide(1)"></button>
-                        <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 transition-colors" onclick="goToSlide(2)"></button>
-                        <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 transition-colors" onclick="goToSlide(3)"></button>
+                        <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 transition-colors" data-index="0"></button>
+                        <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 transition-colors" data-index="1"></button>
+                        <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 transition-colors" data-index="2"></button>
+                        <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 transition-colors" data-index="3"></button>
                     </div>
-                    <button class="carousel-btn bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-700 transition-colors" onclick="moveCarousel(1)">
+                    <button class="carousel-btn bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-700 transition-colors" data-direction="1">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
@@ -256,51 +256,5 @@
                 }
             }
         </style>
-        
-        <script>
-            let currentSlide = 0;
-            const totalSlides = 4;
-            
-            function moveCarousel(direction) {
-                currentSlide += direction;
-                
-                if (currentSlide < 0) {
-                    currentSlide = totalSlides - 1;
-                } else if (currentSlide >= totalSlides) {
-                    currentSlide = 0;
-                }
-                
-                updateCarousel();
-            }
-            
-            function goToSlide(slideIndex) {
-                currentSlide = slideIndex;
-                updateCarousel();
-            }
-            
-            function updateCarousel() {
-                const track = document.getElementById('carouselTrack');
-                const dots = document.querySelectorAll('.carousel-dot');
-                
-                // Update track position
-                const slideWidth = 100 / totalSlides;
-                track.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
-                
-                // Update dots
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentSlide);
-                });
-            }
-            
-            // Auto-advance carousel every 5 seconds
-            setInterval(() => {
-                moveCarousel(1);
-            }, 5000);
-            
-            // Initialize carousel
-            document.addEventListener('DOMContentLoaded', function() {
-                updateCarousel();
-            });
-        </script>
     </div>
 </section> 
