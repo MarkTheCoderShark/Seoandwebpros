@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="../../../assets/css/enhanced-components.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .section-padding { padding: 5rem 0; }
+        .responsive-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .text-center { text-align: center; }
+        .mb-16 { margin-bottom: 4rem; }
+        .responsive-heading { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
+        .responsive-text { font-size: 1.125rem; color: rgb(100 116 139); line-height: 1.6; }
+    </style>
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Website Redesign Services | Modern Website Transformation">
@@ -44,27 +53,44 @@
 <body>
     <!-- Navigation -->
     <div id="navigation"></div>
-
+    
+    <main>
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content fade-up">
-                <h1 class="hero-title">Website Redesign Services</h1>
-                <p class="hero-description">Transform your outdated website into a modern, high-performing digital asset that drives real business results.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="hero-button-primary">Get a Free Consultation</a>
-                    <a href="#services" class="hero-button-secondary">Explore Redesign Services</a>
+    <section class="hero bg-gradient-to-br from-blue-50 via-white to-gray-50">
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        <div class="hero-content-wrapper">
+            <div class="hero-main-content">
+                <div class="hero-left">
+                    <h1 class="hero-title fade-up" style="animation-delay: 0.2s;">Website <span class="gradient-primary">Redesign Services</span></h1>
+                    <p class="hero-description fade-up" style="animation-delay: 0.4s;">Transform your outdated website into a modern, high-performing digital asset that drives real business results.</p>
+                    <div class="hero-actions fade-up" style="animation-delay: 0.6s;">
+                        <div class="hero-buttons">
+                            <a href="#contact" class="hero-button-primary">Get a Free Consultation</a>
+                            <a href="#services" class="hero-button-secondary">Explore Redesign Services</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-right fade-up" style="animation-delay: 1s;">
+                    <div class="cta-box">
+                        <h3>Schedule a FREE Website Redesign Consultation!</h3>
+                        <p>Speak to a redesign expert today.</p>
+                        <button type="button" class="hero-cta-button" onclick="showModal()">Get a Free Consultation</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Why Redesign Section -->
     <section class="section-padding bg-white">
         <div class="responsive-container">
             <div class="text-center mb-16 fade-up">
                 <h2 class="responsive-heading mb-6">Why Your Website Needs a Redesign</h2>
-                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
+                <p class="responsive-text max-w-3xl mx-auto">
                     In today's digital landscape, an outdated website can significantly impact your business success.
                 </p>
             </div>
@@ -98,11 +124,11 @@
     </section>
 
     <!-- Redesign Services -->
-    <section id="services" class="section-padding bg-gradient-to-br from-gray-50 to-white">
+    <section id="services" class="section-padding">
         <div class="responsive-container">
             <div class="text-center mb-16 fade-up">
                 <h2 class="responsive-heading mb-6">Our Website Redesign Services</h2>
-                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
+                <p class="responsive-text max-w-3xl mx-auto">
                     We transform outdated websites into modern, high-performing digital assets.
                 </p>
             </div>
@@ -168,7 +194,7 @@
         <div class="responsive-container">
             <div class="text-center mb-16 fade-up">
                 <h2 class="responsive-heading mb-6">Our Website Redesign Process</h2>
-                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
+                <p class="responsive-text max-w-3xl mx-auto">
                     We follow a systematic approach to transform your website while preserving its value.
                 </p>
             </div>
@@ -206,7 +232,7 @@
         <div class="responsive-container">
             <div class="text-center mb-16 fade-up">
                 <h2 class="responsive-heading mb-6">Website Redesign FAQs</h2>
-                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
+                <p class="responsive-text max-w-3xl mx-auto">
                     Get answers to common questions about our website redesign services.
                 </p>
             </div>
@@ -269,11 +295,11 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-gradient-to-br from-gray-50 to-white">
+    <section id="contact" class="section-padding">
         <div class="responsive-container">
             <div class="text-center mb-16 fade-up">
                 <h2 class="responsive-heading mb-6">Start Your Website Transformation</h2>
-                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
+                <p class="responsive-text max-w-3xl mx-auto">
                     Ready to get started? Fill out the form below and we'll get back to you within 24 hours with a detailed proposal.
                 </p>
             </div>
@@ -367,7 +393,7 @@
         <div class="responsive-container">
             <div class="text-center mb-16 fade-up">
                 <h2 class="responsive-heading mb-6">Related Services</h2>
-                <p class="responsive-text text-gray-600 max-w-3xl mx-auto">
+                <p class="responsive-text max-w-3xl mx-auto">
                     Explore our other services that can complement your website redesign.
                 </p>
             </div>
@@ -399,18 +425,18 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <div id="footer"></div>
 
     <!-- Scripts -->
     <script src="../../../assets/js/main.js"></script>
+    <script src="../../../assets/js/components.js"></script>
     <script>
-        // Load navigation and initialize components
+        // Load interactions
         document.addEventListener('DOMContentLoaded', function() {
-            loadNavigation();
             initAnimations();
-            initFAQ();
             initContactForm();
         });
         
@@ -457,14 +483,12 @@
                 form.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    const formData = new FormData(form);
                     const submitBtn = form.querySelector('.form-submit');
                     const originalText = submitBtn.textContent;
                     
                     submitBtn.textContent = 'Sending...';
                     submitBtn.disabled = true;
                     
-                    // Replace with actual form submission
                     setTimeout(() => {
                         alert('Thank you for your message! We\'ll get back to you within 24 hours.');
                         form.reset();
