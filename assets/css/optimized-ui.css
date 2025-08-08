@@ -29,11 +29,15 @@
 
 /* Showcase Section Styles - High Priority */
 section.showcase-section {
-  padding: 5rem 0 !important;
+  padding: 4rem 0 !important;
   background: linear-gradient(135deg, #f8fafc, #ffffff) !important;
   position: relative;
   width: 100%;
   display: block;
+}
+
+@media (max-width: 768px) {
+  section.showcase-section { padding: 3rem 0 !important; }
 }
 
 .showcase-section .showcase-container {
@@ -1518,9 +1522,10 @@ body {
       padding-bottom: 80px;
     }
     
+    /* Remove global offset to prevent gaps before sections on mobile */
     section:not(.hero):first-of-type,
     main {
-      margin-top: 70px;
+      margin-top: 0;
     }
     
     /* Mobile menu adjustments */
