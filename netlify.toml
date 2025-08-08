@@ -37,7 +37,7 @@
   to = "/solutions/website-development/custom-development.html"
   status = 200
 
-# Security headers
+# Security headers (relaxed CSP to allow required assets)
 [[headers]]
   for = "/*"
   [headers.values]
@@ -46,4 +46,4 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com https://seoandwebpros.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self'; frame-ancestors 'self'; upgrade-insecure-requests" 
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; connect-src 'self' https:; frame-ancestors 'self'; upgrade-insecure-requests" 
