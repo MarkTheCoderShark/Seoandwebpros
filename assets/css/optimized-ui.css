@@ -1191,7 +1191,9 @@ body {
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
+  overflow-x: hidden;
   box-shadow: var(--shadow-xl);
+  position: relative;
 }
 
 .modal-header {
@@ -1270,6 +1272,73 @@ body {
   outline: none;
   border-color: rgb(var(--primary));
   box-shadow: 0 0 0 3px rgb(var(--primary) / 0.1);
+}
+
+/* Ensure select dropdowns work properly in modals */
+.modal .form-group select {
+  position: relative;
+  z-index: 2001;
+  background-color: white;
+  appearance: auto;
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+  cursor: pointer;
+  width: 100%;
+  min-height: 44px; /* Ensure minimum touch target size */
+  box-sizing: border-box;
+}
+
+/* Additional select styling to ensure it works */
+.modal .form-group select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  pointer-events: auto;
+  user-select: auto;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+}
+
+/* Ensure the select dropdown can expand above other elements */
+.modal .form-group select:focus {
+  position: relative;
+  z-index: 2002;
+}
+
+/* Make sure the select is not being blocked by other elements */
+.modal .form-group {
+  position: relative;
+  z-index: 2001;
+}
+
+/* Browser-specific select styling */
+.modal .form-group select {
+  /* Firefox */
+  -moz-appearance: auto;
+  /* Safari and Chrome */
+  -webkit-appearance: auto;
+  /* Standard */
+  appearance: auto;
+}
+
+/* Ensure select works in all browsers */
+.modal .form-group select::-ms-expand {
+  display: block;
+}
+
+/* Remove default styling in WebKit browsers */
+.modal .form-group select::-webkit-select-placeholder {
+  color: rgb(var(--muted-foreground));
+}
+
+/* Ensure select options are visible */
+.modal .form-group select option {
+  background-color: white;
+  color: rgb(var(--foreground));
+  padding: 0.5rem;
 }
 
 .submit-btn {

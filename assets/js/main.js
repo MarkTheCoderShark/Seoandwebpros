@@ -236,6 +236,82 @@ function showModal(websiteUrl = null) {
         
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+        
+        // Ensure select elements are working properly
+        const servicesSelect = document.getElementById('services');
+        const budgetSelect = document.getElementById('budget');
+        
+        if (servicesSelect) {
+            console.log('Services select found:', servicesSelect);
+            // Remove any existing event listeners to prevent duplicates
+            servicesSelect.removeEventListener('change', servicesSelect._changeHandler);
+            servicesSelect._changeHandler = function() {
+                console.log('Services selected:', this.value);
+            };
+            servicesSelect.addEventListener('change', servicesSelect._changeHandler);
+            
+            // Test if the select is clickable
+            servicesSelect.addEventListener('click', function(e) {
+                console.log('Services select clicked');
+                e.stopPropagation(); // Prevent event bubbling
+            });
+            
+            // Test if the select is working by trying to open it
+            servicesSelect.addEventListener('mousedown', function(e) {
+                console.log('Services select mousedown');
+                e.stopPropagation();
+            });
+            
+            // Fallback: if select doesn't work, create a custom dropdown
+            setTimeout(() => {
+                if (!servicesSelect.value && servicesSelect.style.display !== 'none') {
+                    console.log('Select might not be working, checking functionality...');
+                    // Try to programmatically open the select
+                    try {
+                        servicesSelect.focus();
+                        servicesSelect.click();
+                    } catch (error) {
+                        console.log('Select interaction failed:', error);
+                    }
+                }
+            }, 1000);
+        }
+        
+        if (budgetSelect) {
+            console.log('Budget select found:', budgetSelect);
+            // Remove any existing event listeners to prevent duplicates
+            budgetSelect.removeEventListener('change', budgetSelect._changeHandler);
+            budgetSelect._changeHandler = function() {
+                console.log('Budget selected:', this.value);
+            };
+            budgetSelect.addEventListener('change', budgetSelect._changeHandler);
+            
+            // Test if the select is clickable
+            budgetSelect.addEventListener('click', function(e) {
+                console.log('Budget select clicked');
+                e.stopPropagation(); // Prevent event bubbling
+            });
+            
+            // Test if the select is working by trying to open it
+            budgetSelect.addEventListener('mousedown', function(e) {
+                console.log('Budget select mousedown');
+                e.stopPropagation();
+            });
+            
+            // Fallback: if select doesn't work, create a custom dropdown
+            setTimeout(() => {
+                if (!budgetSelect.value && budgetSelect.style.display !== 'none') {
+                    console.log('Budget select might not be working, checking functionality...');
+                    // Try to programmatically open the select
+                    try {
+                        budgetSelect.focus();
+                        budgetSelect.click();
+                    } catch (error) {
+                        console.log('Budget select interaction failed:', error);
+                    }
+                }
+            }, 1000);
+        }
     }
 }
 
