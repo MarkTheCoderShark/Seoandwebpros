@@ -1341,6 +1341,37 @@ body {
   padding: 0.5rem;
 }
 
+/* Specific styling for required select elements */
+.modal .form-group select[required] {
+  position: relative;
+  z-index: 2001;
+  background-color: white;
+  appearance: auto;
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+  cursor: pointer;
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.modal .form-group select[required]:focus {
+  z-index: 2002;
+  outline: none;
+  border-color: rgb(var(--primary));
+  box-shadow: 0 0 0 3px rgb(var(--primary) / 0.1);
+}
+
+/* Ensure required select dropdowns work in all browsers */
+.modal .form-group select[required]::-ms-expand {
+  display: block;
+}
+
+/* Remove any browser-specific styling that might interfere */
+.modal .form-group select[required]::-webkit-select-placeholder {
+  color: rgb(var(--muted-foreground));
+}
+
 .submit-btn {
   background: rgb(var(--primary));
   color: white;

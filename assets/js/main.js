@@ -243,6 +243,10 @@ function showModal(websiteUrl = null) {
         
         if (servicesSelect) {
             console.log('Services select found:', servicesSelect);
+            console.log('Services select required:', servicesSelect.required);
+            console.log('Services select disabled:', servicesSelect.disabled);
+            console.log('Services select style:', servicesSelect.style.cssText);
+            
             // Remove any existing event listeners to prevent duplicates
             servicesSelect.removeEventListener('change', servicesSelect._changeHandler);
             servicesSelect._changeHandler = function() {
@@ -262,16 +266,26 @@ function showModal(websiteUrl = null) {
                 e.stopPropagation();
             });
             
+            // Add focus event listener
+            servicesSelect.addEventListener('focus', function(e) {
+                console.log('Services select focused');
+            });
+            
+            // Add keydown event listener
+            servicesSelect.addEventListener('keydown', function(e) {
+                console.log('Services select keydown:', e.key);
+            });
+            
             // Fallback: if select doesn't work, create a custom dropdown
             setTimeout(() => {
                 if (!servicesSelect.value && servicesSelect.style.display !== 'none') {
-                    console.log('Select might not be working, checking functionality...');
+                    console.log('Services select might not be working, checking functionality...');
                     // Try to programmatically open the select
                     try {
                         servicesSelect.focus();
                         servicesSelect.click();
                     } catch (error) {
-                        console.log('Select interaction failed:', error);
+                        console.log('Services select interaction failed:', error);
                     }
                 }
             }, 1000);
@@ -335,6 +349,14 @@ function handleProposalSubmission() {
     const submitBtn = form.querySelector('.submit-btn');
     const btnText = submitBtn.querySelector('.btn-text');
     const btnLoading = submitBtn.querySelector('.btn-loading');
+    
+    // Validate required fields
+    const servicesSelect = document.getElementById('services');
+    if (!servicesSelect.value) {
+        alert('Please select a service of interest.');
+        servicesSelect.focus();
+        return;
+    }
     
     // Show loading state
     btnText.style.display = 'none';
