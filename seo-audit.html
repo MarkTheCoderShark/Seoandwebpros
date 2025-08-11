@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='impact-site-verification' value='8b032149-a885-446f-a335-af8de21390fe'>
+    <title>Free SEO Audit - Comprehensive Website Analysis | SEO & Web Pros</title>
+    <meta name="description" content="Get a comprehensive SEO audit of your website. Our expert analysis covers technical SEO, on-page optimization, content strategy, and competitive analysis. Free consultation included!">
+    
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        :root {
+            --primary: 37 99 235;
+            --background: 249 250 251;
+            --foreground: 17 24 39;
+            --card: 255 255 255;
+            --border: 229 231 235;
+        }
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-display: swap;
+            background: linear-gradient(135deg, rgb(var(--background)), rgb(var(--card)));
+            color: rgb(var(--foreground));
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: 100vw;
+        }
+        .overflow-hidden { overflow: hidden; }
+        .h-screen { height: 100vh; }
+        .fixed { position: fixed; }
+        .top-0 { top: 0; }
+        .left-0 { left: 0; }
+        .right-0 { right: 0; }
+        .z-50 { z-index: 50; }
+        .overflow-y-auto { overflow-y: auto; }
+        .pt-\[3\.5rem\] { padding-top: 3.5rem; }
+        .bg-white { background-color: rgb(255 255 255); }
+        .border-b { border-bottom-width: 1px; }
+        .border-gray-200 { border-color: rgb(229 231 235); }
+        .shadow-sm { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); }
+        .max-w-7xl { max-width: 80rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .sm\:px-6 { @media (min-width: 640px) { padding-left: 1.5rem; padding-right: 1.5rem; } }
+        .lg\:px-8 { @media (min-width: 1024px) { padding-left: 2rem; padding-right: 2rem; } }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .h-16 { height: 4rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .font-bold { font-weight: 700; }
+        .text-blue-600 { color: rgb(37 99 235); }
+        .hidden { display: none; }
+        .md\:block { @media (min-width: 768px) { display: block; } }
+        .ml-10 { margin-left: 2.5rem; }
+        .space-x-4 > * + * { margin-left: 1rem; }
+        .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .rounded-md { border-radius: 0.375rem; }
+        .text-sm { font-size: 0.875rem; }
+        .font-medium { font-weight: 500; }
+        .text-gray-600 { color: rgb(75 85 99); }
+        .hover\:text-blue-600:hover { color: rgb(37 99 235); }
+        .bg-blue-600 { background-color: rgb(37 99 235); }
+        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .rounded-full { border-radius: 9999px; }
+        .text-white { color: rgb(255 255 255); }
+        .hover\:bg-blue-700:hover { background-color: rgb(29 78 216); }
+        .transition { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; }
+        .duration-300 { transition-duration: 300ms; }
+        .content-container { height: 100vh; overflow-y: auto; padding-top: 0; }
+        
+        /* Visually hidden for semantic H1 */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    </style>
+    
+    <!-- Critical CSS - Load immediately -->
+    <link rel="stylesheet" href="assets/css/optimized-ui.css?v=2.0.0">
+    <link rel="preload" href="assets/js/main.js" as="script">
+    
+    <!-- Font Optimization - Preload and async loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Preload critical font files -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/images/icon-144x144.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Open Graph and Twitter Meta Tags -->
+    <meta property="og:title" content="Free SEO Audit - Comprehensive Website Analysis | SEO & Web Pros">
+    <meta property="og:description" content="Get a comprehensive SEO audit of your website. Our expert analysis covers technical SEO, on-page optimization, content strategy, and competitive analysis. Free consultation included!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seoandwebpros.com/seo-audit.html">
+    <meta property="og:image" content="https://seoandwebpros.com/assets/images/seo-audit-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free SEO Audit - Comprehensive Website Analysis">
+    <meta name="twitter:description" content="Get a comprehensive SEO audit of your website. Expert analysis and actionable recommendations included.">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "SEO Audit",
+        "description": "Comprehensive website SEO audit and analysis service",
+        "provider": {
+            "@type": "Organization",
+            "name": "SEO & Web Pros",
+            "url": "https://seoandwebpros.com"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Free SEO audit consultation"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Fixed Navigation -->
+    <div id="navigation" class="fixed top-0 left-0 right-0 z-50"></div>
+    
+    <!-- Scrollable Content Container -->
+    <div class="content-container h-screen overflow-y-auto pt-[3.5rem]">
+        <!-- Hero Section -->
+        <section class="hero bg-gradient-to-br from-blue-50 via-white to-gray-50">
+            <!-- Background Elements -->
+            <div class="hero-background">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+                <div class="floating-shape shape-4"></div>
+            </div>
+            
+            <div class="hero-content">
+                <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.2s;">
+                    Get Your Free <span class="gradient-primary">SEO Audit</span>
+                </h1>
+                
+                <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
+                    Discover exactly what's holding your website back from ranking higher in search results. Our comprehensive SEO audit analyzes 150+ factors and provides actionable recommendations to boost your organic traffic and conversions.
+                </p>
+                
+                <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <form id="auditForm" class="website-submission-form">
+                        <div class="form-row">
+                            <input 
+                                type="text" 
+                                id="websiteUrl" 
+                                name="websiteUrl"
+                                class="website-input" 
+                                placeholder="Enter your website URL"
+                                required
+                            >
+                            <button type="submit" class="proposal-btn brand-font">
+                                Get Free SEO Audit
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="no-website-section">
+                        <p class="no-website-text">
+                            Need help with SEO strategy? <a href="#" class="no-website-link" id="noWebsiteLink">Get a Free Consultation</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="hero-stats animate-fade-in-up" style="animation-delay: 0.8s;">
+                    <div class="hero-avatars">
+                        <div class="hero-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" alt="Client" class="w-8 h-8 rounded-full">
+                        </div>
+                        <div class="hero-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face" alt="Client" class="w-8 h-8 rounded-full">
+                        </div>
+                        <div class="hero-avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" alt="Client" class="w-8 h-8 rounded-full">
+                        </div>
+                    </div>
+                    <div class="hero-rating">
+                        <div class="hero-stars">★★★★★</div>
+                        <div class="hero-trust">500+ websites audited</div>
+                    </div>
+                </div>
+                
+                <div class="hero-badges animate-fade-in-up" style="animation-delay: 1s;">
+                    <span class="badge badge-primary">150+ Factors Analyzed</span>
+                    <span class="badge badge-primary">Actionable Recommendations</span>
+                    <span class="badge badge-primary">Free Consultation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Audit Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4 text-gray-900">What Our <span class="text-blue-600">SEO Audit</span> Covers</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Our comprehensive SEO audit analyzes every aspect of your website's search engine optimization, from technical performance to content quality and competitive positioning.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Technical SEO -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3 class="card-title">Technical SEO</h3>
+                            <p class="card-description">
+                                Comprehensive analysis of your website's technical foundation, including site speed, mobile optimization, crawlability, and indexation issues.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Site Speed</span>
+                                <span class="badge badge-primary">Mobile Optimization</span>
+                                <span class="badge badge-primary">Crawlability</span>
+                                <span class="badge badge-primary">Indexation</span>
+                                <span class="badge badge-primary">Core Web Vitals</span>
+                                <span class="badge badge-primary">SSL & Security</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- On-Page SEO -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h3 class="card-title">On-Page SEO</h3>
+                            <p class="card-description">
+                                Detailed review of your content optimization, including title tags, meta descriptions, heading structure, and internal linking strategies.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Title Tags</span>
+                                <span class="badge badge-primary">Meta Descriptions</span>
+                                <span class="badge badge-primary">Heading Structure</span>
+                                <span class="badge badge-primary">Internal Linking</span>
+                                <span class="badge badge-primary">Image Optimization</span>
+                                <span class="badge badge-primary">Schema Markup</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Analysis -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-pen-fancy"></i>
+                            </div>
+                            <h3 class="card-title">Content Analysis</h3>
+                            <p class="card-description">
+                                Evaluation of your content quality, keyword optimization, readability, and content gaps that could be affecting your search rankings.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Keyword Optimization</span>
+                                <span class="badge badge-primary">Content Quality</span>
+                                <span class="badge badge-primary">Readability</span>
+                                <span class="badge badge-primary">Content Gaps</span>
+                                <span class="badge badge-primary">User Intent</span>
+                                <span class="badge badge-primary">Content Freshness</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Competitive Analysis -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="card-title">Competitive Analysis</h3>
+                            <p class="card-description">
+                                In-depth analysis of your competitors' SEO strategies, identifying opportunities and threats in your market space.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Competitor Research</span>
+                                <span class="badge badge-primary">Keyword Gaps</span>
+                                <span class="badge badge-primary">Backlink Analysis</span>
+                                <span class="badge badge-primary">Content Opportunities</span>
+                                <span class="badge badge-primary">Market Positioning</span>
+                                <span class="badge badge-primary">Ranking Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Local SEO -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3 class="card-title">Local SEO</h3>
+                            <p class="card-description">
+                                Analysis of your local search presence, including Google My Business optimization, local citations, and location-based keywords.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Google My Business</span>
+                                <span class="badge badge-primary">Local Citations</span>
+                                <span class="badge badge-primary">Local Keywords</span>
+                                <span class="badge badge-primary">Review Management</span>
+                                <span class="badge badge-primary">Local Content</span>
+                                <span class="badge badge-primary">NAP Consistency</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Performance Metrics -->
+                    <div class="card service-card">
+                        <div class="card-header">
+                            <div class="service-icon primary">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h3 class="card-title">Performance Metrics</h3>
+                            <p class="card-description">
+                                Comprehensive analysis of your website's performance metrics, including Core Web Vitals, page speed, and user experience factors.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-tags">
+                                <span class="badge badge-primary">Core Web Vitals</span>
+                                <span class="badge badge-primary">Page Speed</span>
+                                <span class="badge badge-primary">User Experience</span>
+                                <span class="badge badge-primary">Conversion Rate</span>
+                                <span class="badge badge-primary">Bounce Rate</span>
+                                <span class="badge badge-primary">Mobile Performance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audit Process Section -->
+        <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4 text-gray-900">Our <span class="text-blue-600">Audit Process</span></h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        We follow a systematic approach to ensure no aspect of your website's SEO is overlooked. Here's how we conduct our comprehensive analysis.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white text-2xl font-bold">1</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-900">Initial Analysis</h3>
+                        <p class="text-gray-600">
+                            We start by analyzing your website's current performance, identifying key issues, and understanding your business goals and target audience.
+                        </p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white text-2xl font-bold">2</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-900">Deep Dive Audit</h3>
+                        <p class="text-gray-600">
+                            Our team conducts a thorough analysis of 150+ SEO factors, from technical issues to content optimization and competitive positioning.
+                        </p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white text-2xl font-bold">3</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-900">Report Generation</h3>
+                        <p class="text-gray-600">
+                            We create a detailed, actionable report with prioritized recommendations, implementation timelines, and expected impact on your rankings.
+                        </p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white text-2xl font-bold">4</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-900">Strategy Session</h3>
+                        <p class="text-gray-600">
+                            We schedule a free consultation to walk through your audit results, answer questions, and discuss implementation strategies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You Get Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4 text-gray-900">What You <span class="text-blue-600">Get</span></h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Our SEO audit delivers comprehensive insights and actionable recommendations to help you improve your search rankings and drive more organic traffic.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Detailed Report -->
+                    <div class="flex items-start space-x-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-file-alt text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-900">Comprehensive Report</h3>
+                            <p class="text-gray-600 mb-4">
+                                A detailed 50+ page report covering every aspect of your website's SEO performance, with clear explanations and prioritized recommendations.
+                            </p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Executive summary with key findings</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Technical SEO analysis</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Content optimization recommendations</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Competitive analysis insights</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Implementation roadmap</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Actionable Recommendations -->
+                    <div class="flex items-start space-x-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-lightbulb text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-900">Actionable Recommendations</h3>
+                            <p class="text-gray-600 mb-4">
+                                Prioritized list of specific actions you can take to improve your SEO, with estimated impact and implementation difficulty.
+                            </p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> High-priority quick wins</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Medium-term improvements</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Long-term strategic changes</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Resource requirements</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Expected timeline for results</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Free Consultation -->
+                    <div class="flex items-start space-x-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-900">Free Consultation</h3>
+                            <p class="text-gray-600 mb-4">
+                                A 30-minute strategy session with our SEO experts to discuss your audit results and answer any questions you may have.
+                            </p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Walkthrough of audit findings</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Q&A session</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Implementation guidance</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Next steps discussion</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Ongoing support options</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Competitive Insights -->
+                    <div class="flex items-start space-x-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-chart-bar text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-900">Competitive Insights</h3>
+                            <p class="text-gray-600 mb-4">
+                                Analysis of your top competitors' SEO strategies, identifying opportunities and threats in your market space.
+                            </p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Competitor keyword analysis</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Content gap identification</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Backlink opportunity analysis</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Market positioning insights</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Competitive advantage strategies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-6">Ready to Boost Your Search Rankings?</h2>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">
+                    Get your comprehensive SEO audit today and discover exactly what's holding your website back from ranking higher in search results. Our expert analysis will provide you with actionable recommendations to improve your organic traffic and conversions.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button type="button" id="ctaAuditBtn" class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
+                        Get Your Free SEO Audit
+                    </button>
+                    <button type="button" id="ctaConsultationBtn" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
+                        Schedule Free Consultation
+                    </button>
+                </div>
+                <p class="text-sm mt-4 opacity-90">No commitment required • Results in 3-5 business days</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Common questions about our SEO audit process and what you can expect
+                    </p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                        <button class="faq-question w-full text-left p-6 focus:outline-none">
+                            <h3 class="text-lg font-semibold text-gray-900">How long does the SEO audit take?</h3>
+                        </button>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">Our comprehensive SEO audit typically takes 3-5 business days to complete. We analyze 150+ factors across technical SEO, on-page optimization, content quality, and competitive positioning to provide you with the most thorough analysis possible.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                        <button class="faq-question w-full text-left p-6 focus:outline-none">
+                            <h3 class="text-lg font-semibold text-gray-900">What's included in the free consultation?</h3>
+                        </button>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">The free consultation includes a 30-minute strategy session where we walk through your audit results, answer any questions you have, discuss implementation priorities, and provide guidance on next steps. There's no sales pitch - just valuable insights and recommendations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                        <button class="faq-question w-full text-left p-6 focus:outline-none">
+                            <h3 class="text-lg font-semibold text-gray-900">Do I need to sign up for ongoing services?</h3>
+                        </button>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">No, there's absolutely no obligation to sign up for ongoing services. Our SEO audit is completely free and independent. However, if you'd like help implementing the recommendations, we do offer ongoing SEO services that we can discuss during the consultation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                        <button class="faq-question w-full text-left p-6 focus:outline-none">
+                            <h3 class="text-lg font-semibold text-gray-900">What if my website is very small or new?</h3>
+                        </button>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">Our SEO audit is valuable for websites of all sizes and ages. For new or small websites, we focus on foundational SEO elements, content strategy, and growth opportunities. The audit will help you build a strong SEO foundation from the start.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                        <button class="faq-question w-full text-left p-6 focus:outline-none">
+                            <h3 class="text-lg font-semibold text-gray-900">How accurate are the recommendations?</h3>
+                        </button>
+                        <div class="faq-answer px-6 pb-6">
+                            <p class="text-gray-600">Our recommendations are based on current SEO best practices, Google's guidelines, and our experience working with hundreds of websites. We prioritize recommendations by potential impact and implementation difficulty, so you can focus on the changes that will make the biggest difference.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div id="footer"></div>
+    </div>
+    
+    <!-- Modal for users without a website -->
+    <div id="noWebsiteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Get Your Free SEO Audit</h2>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">
+                    Thank you for your interest in our SEO audit service! Please fill out the form below, and we'll conduct a comprehensive analysis of your website's SEO performance.
+                </p>
+                
+                <form id="proposalForm" class="proposal-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="555-123-4567" maxlength="12">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="services">Services of Interest *</label>
+                        <select id="services" name="services">
+                            <option value="">Select services...</option>
+                            <option value="SEO Audit">SEO Audit</option>
+                            <option value="SEO Optimization">SEO Optimization</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option value="Digital Marketing">Digital Marketing</option>
+                            <option value="Full Package">Full Package (All Services)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select budget...</option>
+                            <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                            <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                            <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                            <option value="$25,000+">$25,000+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Project Details</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your website, current SEO challenges, and goals..."></textarea>
+                    </div>
+                    
+                    <div class="form-group" id="websiteField" style="display: none;">
+                        <label for="submittedWebsite">Website URL</label>
+                        <input type="text" id="submittedWebsite" name="submittedWebsite" readonly>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn brand-font">
+                        <span class="btn-text">Get My Free SEO Audit</span>
+                        <span class="btn-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Sending...
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Custom JavaScript - Load after content -->
+    <script src="assets/js/main.js" defer></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        // Register service worker for caching and offline functionality
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registered successfully:', registration);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+    
+    <!-- Component Loading Script -->
+    <script>
+        // Function to load a component
+        async function loadComponent(componentId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(componentId).innerHTML = html;
+                console.log(`Loaded component: ${componentId}`);
+            } catch (error) {
+                console.error(`Error loading ${componentId}:`, error);
+            }
+        }
+        
+        // Load all components and initialize JavaScript after
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Load critical components first
+            await loadComponent('navigation', 'components/navigation.html');
+            await loadComponent('footer', 'components/footer.html');
+            
+            // Initialize JavaScript after all components are loaded
+            if (typeof initializeNavigation === 'function') initializeNavigation();
+            if (typeof initializeAnimations === 'function') initializeAnimations();
+            if (typeof initializeFormHandling === 'function') initializeFormHandling();
+            if (typeof initializeCounterAnimations === 'function') initializeCounterAnimations();
+            if (typeof initializeScrollEffects === 'function') initializeScrollEffects();
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
+        });
+        
+        // FAQ functionality
+        function initializeFAQ() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isOpen = answer.style.display === 'block';
+                    
+                    // Close all other answers
+                    document.querySelectorAll('.faq-answer').forEach(ans => {
+                        ans.style.display = 'none';
+                    });
+                    
+                    // Toggle current answer
+                    answer.style.display = isOpen ? 'none' : 'block';
+                });
+            });
+        }
+        
+        // CTA button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaAuditBtn = document.getElementById('ctaAuditBtn');
+            const ctaConsultationBtn = document.getElementById('ctaConsultationBtn');
+            
+            if (ctaAuditBtn) {
+                ctaAuditBtn.addEventListener('click', function() {
+                    showModal();
+                });
+            }
+            
+            if (ctaConsultationBtn) {
+                ctaConsultationBtn.addEventListener('click', function() {
+                    showModal();
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
