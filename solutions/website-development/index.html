@@ -618,6 +618,19 @@
             transform: translateY(-2px);
             box-shadow: var(--shadow-xl);
         }
+
+        /* Align service card headers vertically like Web Applications */
+        .card.service-card .card-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Ensure the icon is centered and spaced consistently */
+        .card.service-card .card-header .service-icon {
+            margin: 0 auto 1.5rem;
+        }
     </style>
     
     <!-- Schema Markup for Website Development Services -->
