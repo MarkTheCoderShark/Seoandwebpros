@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeAnimations();
     initializeFormHandling();
+    initializeModalHandlers();
     initializeCounterAnimations();
     initializeScrollEffects();
     // Enable alternating section backgrounds sitewide
@@ -219,127 +220,102 @@ function initializeFormHandling() {
     }
 }
 
+function initializeModalHandlers() {
+    // Close buttons inside any modal
+    document.querySelectorAll('.modal .close').forEach(closeBtn => {
+        closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            closeModal();
+        });
+    });
+
+    // Common CTA buttons used across pages
+    const heroBtn = document.getElementById('heroConsultationBtn');
+    if (heroBtn) {
+        heroBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showModal();
+        });
+    }
+
+    const contactBtn = document.getElementById('contactConsultationBtn');
+    if (contactBtn) {
+        contactBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showModal();
+        });
+    }
+}
+
 // Modal functionality
 function showModal(websiteUrl = null) {
-    const modal = document.getElementById('noWebsiteModal');
+    // Prefer consultation modal if present on the page; fallback to legacy noWebsite modal
+    const consultationModal = document.getElementById('consultationModal');
+    const noWebsiteModal = document.getElementById('noWebsiteModal');
+
+    // Determine which modal to open
+    const modal = consultationModal || noWebsiteModal;
+
+    // Optional legacy fields support
     const websiteField = document.getElementById('websiteField');
     const submittedWebsite = document.getElementById('submittedWebsite');
-    
+
     if (modal) {
-        // If website URL is provided, show it in the form
+        // If website URL is provided, show it in the form (legacy support)
         if (websiteUrl && websiteField && submittedWebsite) {
             websiteField.style.display = 'block';
             submittedWebsite.value = websiteUrl;
         } else if (websiteField) {
             websiteField.style.display = 'none';
         }
-        
+
+        // Use flex to center modal content
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
-        
-        // Ensure select elements are working properly
+
+        // Ensure selects work in modal if present
         const servicesSelect = document.getElementById('services');
         const budgetSelect = document.getElementById('budget');
-        
+
         if (servicesSelect) {
-            console.log('Services select found:', servicesSelect);
-            console.log('Services select required:', servicesSelect.required);
-            console.log('Services select disabled:', servicesSelect.disabled);
-            console.log('Services select style:', servicesSelect.style.cssText);
-            
-            // Remove any existing event listeners to prevent duplicates
             servicesSelect.removeEventListener('change', servicesSelect._changeHandler);
-            servicesSelect._changeHandler = function() {
-                console.log('Services selected:', this.value);
-            };
+            servicesSelect._changeHandler = function() {};
             servicesSelect.addEventListener('change', servicesSelect._changeHandler);
-            
-            // Test if the select is clickable
-            servicesSelect.addEventListener('click', function(e) {
-                console.log('Services select clicked');
-                e.stopPropagation(); // Prevent event bubbling
-            });
-            
-            // Test if the select is working by trying to open it
-            servicesSelect.addEventListener('mousedown', function(e) {
-                console.log('Services select mousedown');
-                e.stopPropagation();
-            });
-            
-            // Add focus event listener
-            servicesSelect.addEventListener('focus', function(e) {
-                console.log('Services select focused');
-            });
-            
-            // Add keydown event listener
-            servicesSelect.addEventListener('keydown', function(e) {
-                console.log('Services select keydown:', e.key);
-            });
-            
-            // Fallback: if select doesn't work, create a custom dropdown
-            setTimeout(() => {
-                if (!servicesSelect.value && servicesSelect.style.display !== 'none') {
-                    console.log('Services select might not be working, checking functionality...');
-                    // Try to programmatically open the select
-                    try {
-                        servicesSelect.focus();
-                        servicesSelect.click();
-                    } catch (error) {
-                        console.log('Services select interaction failed:', error);
-                    }
-                }
-            }, 1000);
         }
-        
+
         if (budgetSelect) {
-            console.log('Budget select found:', budgetSelect);
-            // Remove any existing event listeners to prevent duplicates
             budgetSelect.removeEventListener('change', budgetSelect._changeHandler);
-            budgetSelect._changeHandler = function() {
-                console.log('Budget selected:', this.value);
-            };
+            budgetSelect._changeHandler = function() {};
             budgetSelect.addEventListener('change', budgetSelect._changeHandler);
-            
-            // Test if the select is clickable
-            budgetSelect.addEventListener('click', function(e) {
-                console.log('Budget select clicked');
-                e.stopPropagation(); // Prevent event bubbling
-            });
-            
-            // Test if the select is working by trying to open it
-            budgetSelect.addEventListener('mousedown', function(e) {
-                console.log('Budget select mousedown');
-                e.stopPropagation();
-            });
-            
-            // Fallback: if select doesn't work, create a custom dropdown
-            setTimeout(() => {
-                if (!budgetSelect.value && budgetSelect.style.display !== 'none') {
-                    console.log('Budget select might not be working, checking functionality...');
-                    // Try to programmatically open the select
-                    try {
-                        budgetSelect.focus();
-                        budgetSelect.click();
-                    } catch (error) {
-                        console.log('Budget select interaction failed:', error);
-                    }
-                }
-            }, 1000);
         }
     }
 }
 
 function closeModal() {
-    const modal = document.getElementById('noWebsiteModal');
-    if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        
-        // Reset form
-        const proposalForm = document.getElementById('proposalForm');
-        if (proposalForm) {
-            proposalForm.reset();
+    // Close whichever modal is open
+    const modals = [
+        document.getElementById('consultationModal'),
+        document.getElementById('noWebsiteModal')
+    ].filter(Boolean);
+
+    modals.forEach(m => {
+        if (m && (m.style.display === 'block' || m.style.display === 'flex')) {
+            m.style.display = 'none';
         }
+    });
+
+    document.body.style.overflow = 'auto';
+
+    // Reset possible forms
+    const proposalForm = document.getElementById('proposalForm');
+    if (proposalForm) {
+        proposalForm.reset();
+    }
+    const consultationForm = document.getElementById('consultationForm');
+    if (consultationForm) {
+        consultationForm.reset();
+        const submitBtn = consultationForm.querySelector('.submit-btn');
+        if (submitBtn) submitBtn.disabled = false;
     }
 }
 
@@ -499,8 +475,9 @@ function initializeSuccessCarousel() {
 
 // Close modal when clicking outside
 document.addEventListener('click', function(e) {
-    const modal = document.getElementById('noWebsiteModal');
-    if (modal && e.target === modal) {
+    const consultationModal = document.getElementById('consultationModal');
+    const noWebsiteModal = document.getElementById('noWebsiteModal');
+    if ((consultationModal && e.target === consultationModal) || (noWebsiteModal && e.target === noWebsiteModal)) {
         closeModal();
     }
 });
