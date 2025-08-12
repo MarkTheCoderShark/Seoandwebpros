@@ -1181,7 +1181,7 @@ body {
   z-index: 2000;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 1.5rem; /* Room around modal to prevent clipping */
 }
 
 .modal-content {
@@ -1194,15 +1194,25 @@ body {
   overflow-x: hidden;
   box-shadow: var(--shadow-xl);
   position: relative;
+  padding: 1.25rem; /* Default padding for unstructured modals */
 }
 
 .modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 1.5rem 0;
+  padding: 1.25rem 1.25rem 0; /* Match modal-content default padding */
   border-bottom: 1px solid rgb(var(--border));
   padding-bottom: 1rem;
+}
+
+/* When structured header/body are used, remove outer padding on container to avoid double spacing */
+.modal-content:has(.modal-header,.modal-body) {
+  padding: 0;
+}
+
+.modal-body {
+  padding: 1.25rem;
 }
 
 .modal-header h2 {
@@ -1229,7 +1239,7 @@ body {
 }
 
 .modal-body {
-  padding: 1.5rem;
+  padding: 1.25rem;
 }
 
 .modal-description {
@@ -1238,7 +1248,7 @@ body {
   line-height: 1.6;
 }
 
-.proposal-form {
+.proposal-form, .consultation-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -1259,7 +1269,7 @@ body {
 .form-group input,
 .form-group select,
 .form-group textarea {
-  padding: 0.75rem;
+  padding: 0.875rem 1rem;
   border: 1px solid rgb(var(--border));
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -1676,7 +1686,7 @@ body {
   
   .modal-header,
   .modal-body {
-    padding: 1rem;
+    padding: 1.25rem;
   }
 } 
 
