@@ -15,11 +15,11 @@
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="../../assets/css/optimized-ui.css" as="style">
+    <link rel="preload" href="../../../assets/css/optimized-ui.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
     
     <!-- Load critical CSS immediately -->
-    <link rel="stylesheet" href="../../assets/css/optimized-ui.css">
+    <link rel="stylesheet" href="../../../assets/css/optimized-ui.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -1567,14 +1567,14 @@
     <div id="footer"></div>
     
     <!-- Scripts -->
-    <script src="../../assets/js/main.js"></script>
-    <script src="../../assets/js/components.js"></script>
-    <script src="../../assets/js/solution-components.js" defer></script>
+    <script src="../../../assets/js/main.js"></script>
+    <script src="../../../assets/js/components.js"></script>
+    <script src="../../../assets/js/solution-components.js" defer></script>
     <script>
         // Load navigation and footer
         async function loadNavigation() {
             try {
-                const response = await fetch('../../components/navigation.html');
+                const response = await fetch('../../../components/navigation.html');
                 const html = await response.text();
                 document.getElementById('navigation').innerHTML = html;
                 
