@@ -2359,3 +2359,97 @@ body {
 body.alt-sections main > section:not(.hero):not([class*="bg-"]):nth-of-type(even) {
   background-color: rgb(var(--muted));
 } 
+
+/* Extended utility classes for SEO subpages */
+.bg-gradient-to-r { background: linear-gradient(to right, var(--tw-gradient-stops)); }
+
+/* Gradient stops */
+.from-blue-50 { --tw-gradient-from: rgb(239 246 255); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(239 246 255 / 0)); }
+.from-green-50 { --tw-gradient-from: rgb(240 253 244); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(240 253 244 / 0)); }
+.from-purple-50 { --tw-gradient-from: rgb(250 245 255); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(250 245 255 / 0)); }
+.from-orange-50 { --tw-gradient-from: rgb(255 247 237); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 247 237 / 0)); }
+.from-red-50 { --tw-gradient-from: rgb(254 242 242); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(254 242 242 / 0)); }
+.from-teal-50 { --tw-gradient-from: rgb(240 253 250); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(240 253 250 / 0)); }
+
+.to-indigo-100 { --tw-gradient-to: rgb(224 231 255); }
+.to-emerald-100 { --tw-gradient-to: rgb(209 250 229); }
+.to-violet-100 { --tw-gradient-to: rgb(237 233 254); }
+.to-amber-100 { --tw-gradient-to: rgb(254 243 199); }
+.to-pink-100 { --tw-gradient-to: rgb(252 231 243); }
+.to-cyan-100 { --tw-gradient-to: rgb(207 250 254); }
+.to-gray-50 { --tw-gradient-to: rgb(249 250 251); }
+
+.via-white { --tw-gradient-stops: var(--tw-gradient-from), rgb(255 255 255), var(--tw-gradient-to, rgb(255 255 255 / 0)); }
+
+/* Solid background colors */
+.bg-blue-600 { background-color: rgb(37 99 235) !important; color: #fff; }
+.bg-green-600 { background-color: rgb(22 163 74) !important; color: #fff; }
+.bg-purple-600 { background-color: rgb(147 51 234) !important; color: #fff; }
+.bg-orange-600 { background-color: rgb(234 88 12) !important; color: #fff; }
+.bg-red-600 { background-color: rgb(220 38 38) !important; color: #fff; }
+.bg-teal-600 { background-color: rgb(13 148 136) !important; color: #fff; }
+
+/* Text colors */
+.text-white { color: #ffffff !important; }
+.text-red-100 { color: rgb(254 226 226) !important; }
+.text-blue-100 { color: rgb(219 234 254) !important; }
+.text-green-100 { color: rgb(220 252 231) !important; }
+
+/* Rounding */
+.rounded-xl { border-radius: 0.75rem !important; }
+.rounded-2xl { border-radius: 1rem !important; }
+.rounded-full { border-radius: 9999px !important; }
+
+/* Sizing */
+.w-16 { width: 4rem !important; }
+.h-16 { height: 4rem !important; }
+.w-20 { width: 5rem !important; }
+.h-20 { height: 5rem !important; }
+
+/* Spacing */
+.p-8 { padding: 2rem !important; }
+.mb-4 { margin-bottom: 1rem !important; }
+.mb-6 { margin-bottom: 1.5rem !important; }
+.mr-2 { margin-right: 0.5rem !important; }
+.px-8 { padding-left: 2rem !important; padding-right: 2rem !important; }
+.py-4 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+.space-y-2 > * + * { margin-top: 0.5rem !important; }
+
+/* Typography */
+.text-2xl { font-size: 1.5rem !important; }
+.text-lg { font-size: 1.125rem !important; }
+.text-sm { font-size: 0.875rem !important; }
+
+/* Layout */
+.gap-8 { gap: 2rem !important; }
+
+/* Responsive grid helpers */
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+} 
+
+/* Additional gradient stop utilities */
+.from-blue-600 { --tw-gradient-from: rgb(37 99 235); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(37 99 235 / 0)); }
+.from-green-600 { --tw-gradient-from: rgb(22 163 74); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(22 163 74 / 0)); }
+.from-red-600 { --tw-gradient-from: rgb(220 38 38); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(220 38 38 / 0)); }
+
+.to-blue-600 { --tw-gradient-to: rgb(37 99 235); }
+.to-purple-600 { --tw-gradient-to: rgb(147 51 234); }
+.to-orange-600 { --tw-gradient-to: rgb(234 88 12); }
+
+/* Text color utilities at 600 shade */
+.text-blue-600 { color: rgb(37 99 235) !important; }
+.text-green-600 { color: rgb(22 163 74) !important; }
+.text-purple-600 { color: rgb(147 51 234) !important; }
+.text-orange-600 { color: rgb(234 88 12) !important; }
+.text-red-600 { color: rgb(220 38 38) !important; }
+.text-teal-600 { color: rgb(13 148 136) !important; }
+
+/* Additional backgrounds and widths */
+.bg-gray-50 { background-color: rgb(249 250 251) !important; }
+.max-w-4xl { max-width: 56rem !important; }
+.text-3xl { font-size: 1.875rem !important; } 

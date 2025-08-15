@@ -7,7 +7,7 @@
     <meta name="description" content="Expert WordPress SEO services that improve rankings and drive organic traffic. Technical SEO, schema markup, site speed optimization, and content strategy. Free WordPress SEO audit available.">
     <meta name="keywords" content="WordPress SEO, WordPress search engine optimization, WordPress technical SEO, WordPress schema markup, WordPress site speed, WordPress SEO services">
     <link rel="canonical" href="https://seoandwebpros.com/solutions/seo/wordpress-seo.html">
-    <link rel="stylesheet" href="../assets/css/optimized-ui.css">
+    <link rel="stylesheet" href="../../assets/css/optimized-ui.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -461,13 +461,14 @@
         </div>
     </div>
 
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/components.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/solution-components.js" defer></script>
     <script>
         // Load navigation
         async function loadNavigation() {
             try {
-                const response = await fetch('../components/navigation.html');
+                const response = await fetch('../../components/navigation.html');
                 const html = await response.text();
                 document.getElementById('navigation').innerHTML = html;
                 
