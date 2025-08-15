@@ -7,7 +7,7 @@
     <meta name="description" content="Professional custom website development services. Custom web applications, responsive design, and scalable solutions. Expert web developers delivering unique websites that drive business growth.">
     <meta name="keywords" content="custom website development, custom web development services, professional web development company, custom web applications, responsive web design, scalable web solutions">
     <link rel="canonical" href="https://seoandwebpros.com/solutions/website-development/custom/custom-development.html">
-    <link rel="stylesheet" href="../../assets/css/optimized-ui.css">
+    <link rel="stylesheet" href="../../../assets/css/optimized-ui.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -31,6 +31,7 @@
 <body>
     <!-- Navigation -->
     <div id="navigation"></div>
+    <div id="footer"></div>
 
     <!-- Hero Section -->
     <section class="hero bg-gradient-to-br from-indigo-50 via-white to-gray-50">
@@ -458,16 +459,12 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <div id="footer"></div>
-    
     <!-- Scripts -->
-    <script src="../../assets/js/main.js"></script>
     <script>
         // Load navigation
         async function loadNavigation() {
             try {
-                const response = await fetch('../../components/navigation.html');
+                const response = await fetch('../../../components/navigation.html');
                 const html = await response.text();
                 document.getElementById('navigation').innerHTML = html;
                 
@@ -503,5 +500,8 @@
             }
         });
     </script>
+    <script src="../../../assets/js/main.js"></script>
+    <script src="../../../assets/js/components.js"></script>
+    <script src="../../../assets/js/solution-components.js" defer></script>
 </body>
 </html> 
